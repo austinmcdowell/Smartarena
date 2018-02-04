@@ -75,13 +75,13 @@
                 <li><a href="/">SMART ARENA</a></li>
                 <li><a href="/">LEADERBOARDS</a></li>
             </ul>
-            @if ($isLoggedIn) 
+            @if (isset($isLoggedIn) && $isLoggedIn) 
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">TJ Barber<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{ $user->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             @else
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/">Log in</a></li>
+                    <li><a href="/login">Log in</a></li>
                 </ul>
             @endif
             </div>

@@ -14,7 +14,11 @@ class LeaderboardController extends Controller
      */
     public function __invoke()
     {   
+        $user = Auth::user();
         $isLoggedIn = Auth::check();
-        return view('leaderboard', ['isLoggedIn' => $isLoggedIn]);
+        return view('leaderboard', [
+            'isLoggedIn' => $isLoggedIn,
+            'user' => $user
+        ]);
     }
 }

@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'LeaderboardController');
+
+Route::get('/login', 'LoginController@login');
+Route::get('login/google', 'LoginController@redirectToGoogle');
+Route::get('login/google/callback', 'LoginController@handleGoogleCallback');
