@@ -16,3 +16,6 @@ Route::get('/', 'LeaderboardController');
 Route::get('/login', 'LoginController@login');
 Route::get('login/google', 'LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'LoginController@handleGoogleCallback');
+
+Route::get('/massupload/runs', 'MassRunUploader@get');
+Route::post('/massupload/process', 'MassRunUploader@process');

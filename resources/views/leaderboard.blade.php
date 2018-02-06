@@ -23,42 +23,20 @@
                     </thead>
             
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Austin McDowell</td>
-                            <td>7</td>
-                            <td>7</td>
-                            <td>5</td>
-                            <td>15</td>
-                            <td>70.64s</td>
-                            <td>80.00s</td>
-                            <td>100.00%</td>
-                            <td>12.23s</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Austin McDowell</td>
-                            <td>7</td>
-                            <td>7</td>
-                            <td>5</td>
-                            <td>15</td>
-                            <td>70.64s</td>
-                            <td>80.00s</td>
-                            <td>100.00%</td>
-                            <td>12.23s</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Austin McDowell</td>
-                            <td>7</td>
-                            <td>7</td>
-                            <td>5</td>
-                            <td>15</td>
-                            <td>70.64s</td>
-                            <td>80.00s</td>
-                            <td>100.00%</td>
-                            <td>12.23s</td>
-                        </tr>
+                        @foreach ($humans as $human)
+                            <tr>
+                                <td>1</td>
+                                <td><a href="/profile/{{ $human->id }}">{{ $human->name }}</a></td>
+                                <td>7</td>
+                                <td>7</td>
+                                <td>5</td>
+                                <td>15</td>
+                                <td>70.64s</td>
+                                <td>80.00s</td>
+                                <td>100.00%</td>
+                                <td>12.23s</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
