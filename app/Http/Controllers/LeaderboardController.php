@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\User;
+use App\Human;
 
 class LeaderboardController extends Controller
 {
@@ -17,7 +17,7 @@ class LeaderboardController extends Controller
     {   
         $user = Auth::user();
         $isLoggedIn = Auth::check();
-        $humans = User::all();
+        $humans = Human::all();
         return view('leaderboard', [
             'isLoggedIn' => $isLoggedIn,
             'user' => $user,

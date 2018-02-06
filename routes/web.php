@@ -17,5 +17,8 @@ Route::get('/login', 'LoginController@login');
 Route::get('login/google', 'LoginController@redirectToGoogle');
 Route::get('login/google/callback', 'LoginController@handleGoogleCallback');
 
+Route::get('/massupload/humans', 'MassHumanUploader@get');
+Route::post('/massupload/humans/process', 'MassHumanUploader@process');
+
 Route::get('/massupload/runs', 'MassRunUploader@get');
-Route::post('/massupload/process', 'MassRunUploader@process');
+Route::post('/massupload/runs/process', 'MassRunUploader@process');

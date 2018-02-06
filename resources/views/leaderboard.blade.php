@@ -26,7 +26,7 @@
                         @foreach ($humans as $human)
                             <tr>
                                 <td>1</td>
-                                <td><a href="/profile/{{ $human->id }}">{{ $human->name }}</a></td>
+                                <td><a href="/profile/{{ $human->id }}">{{ $human->first_name . ' ' . $human->last_name }}</a></td>
                                 <td>7</td>
                                 <td>7</td>
                                 <td>5</td>

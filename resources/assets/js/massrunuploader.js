@@ -60,8 +60,7 @@ $(document).ready(function() {
       parsedCSVData.push(parseRun(run, eventId))
     }
 
-    console.log(parsedCSVData);
-    $.post('/massupload/process', JSON.stringify(parsedCSVData), function() {
+    $.post('/massupload/process', JSON.stringify(parsedCSVData), function(data) {
       console.log('done');
     });
 

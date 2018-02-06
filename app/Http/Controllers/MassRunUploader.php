@@ -36,12 +36,12 @@ class MassRunUploader extends Controller
           $run->header_did_catch = $runData->headerCatch;
           $run->header_catch_type = $runData->headerCatchType;
           $run->header_penalty_time = $runData->headerPenaltyTime;
-          $run->header_user_id = $runData->headerUserId;
+          $run->header_human_id = $runData->headerHumanId;
 
           $run->heeler_did_catch = $runData->heelerCatch;
           $run->heeler_catch_type = $runData->heelerCatchType;
           $run->heeler_penalty_time = $runData->heelerPenaltyTime;
-          $run->heeler_user_id = $runData->heelerUserId;
+          $run->heeler_human_id = $runData->heelerHumanId;
 
           $run->raw_time = $runData->rawTime;
 
