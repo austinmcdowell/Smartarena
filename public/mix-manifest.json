@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/massrunuploader.css": "/css/massrunuploader.css",
+    "/css/profile.css": "/css/profile.css",
     "/js/massrunuploader.js": "/js/massrunuploader.js",
     "/js/masshumanuploader.js": "/js/masshumanuploader.js"
 }

@@ -22,3 +22,5 @@ Route::post('/massupload/humans/process', 'MassHumanUploader@process');
 
 Route::get('/massupload/runs', 'MassRunUploader@get');
 Route::post('/massupload/runs/process', 'MassRunUploader@process');
+
+Route::get('/profile/{id}', 'ProfileController@get');
