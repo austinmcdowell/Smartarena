@@ -76,6 +76,8 @@ module.exports = __webpack_require__(38);
 /***/ 38:
 /***/ (function(module, exports) {
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 $(document).ready(function () {
   // $('#event-select').material_select();
 
@@ -121,7 +123,7 @@ $(document).ready(function () {
     e.preventDefault();
     var csvData = $('.csv-textarea').val().split('\n');
     var eventId = $('#event-select').val();
-    console.log(eventId);
+
     if (!eventId) {
       alert("You must select an event.");
       return;
@@ -129,7 +131,7 @@ $(document).ready(function () {
 
     var parsedCSVData = [];
 
-    for (var i = 0; i < csvData.length; i++) {
+    for (var i = 1; i < csvData.length; i++) {
       var run = csvData[i].split(',');
       if (run.length !== 19) {
         alert('Invalid data. Records do not contain enough data.');
@@ -138,8 +140,15 @@ $(document).ready(function () {
       parsedCSVData.push(parseRun(run, eventId));
     }
 
-    $.post('/massupload/process', JSON.stringify(parsedCSVData), function (data) {
-      console.log('done');
+    console.log(parsedCSVData);
+
+    $.post('/massupload/runs/process', JSON.stringify(parsedCSVData), function (data) {
+      console.log(typeof data === 'undefined' ? 'undefined' : _typeof(data));
+      if (data.success) {
+        alert('Humans imported successfully!');
+      } else {
+        alert('There was an error.');
+      }
     });
   });
 });

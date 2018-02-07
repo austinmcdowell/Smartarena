@@ -43,7 +43,7 @@ $(document).ready(function() {
     e.preventDefault();
     const csvData = $('.csv-textarea').val().split('\n');
     const eventId = $('#event-select').val();
-    console.log(eventId);
+
     if (!eventId) {
       alert("You must select an event.");
       return;
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
     let parsedCSVData = [];
     
-    for (let i = 0; i < csvData.length; i++) {
+    for (let i = 1; i < csvData.length; i++) {
       let run = csvData[i].split(',');
       if (run.length !== 19) {
         alert('Invalid data. Records do not contain enough data.');
@@ -60,8 +60,15 @@ $(document).ready(function() {
       parsedCSVData.push(parseRun(run, eventId))
     }
 
-    $.post('/massupload/process', JSON.stringify(parsedCSVData), function(data) {
-      console.log('done');
+    console.log(parsedCSVData);
+
+    $.post('/massupload/runs/process', JSON.stringify(parsedCSVData), function(data) {
+      console.log(typeof data);
+      if (data.success) {
+        alert('Humans imported successfully!');
+      } else {
+        alert('There was an error.');
+      }
     });
 
   });

@@ -6,7 +6,12 @@ use App\User;
 use App\Http\Controllers\Controller;
 use App\Event;
 use App\TeamropingRun;
+use App\Human;
+
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\DB;
 
 class MassRunUploader extends Controller
 {
@@ -26,31 +31,78 @@ class MassRunUploader extends Controller
     public function process(Request $request)
     {
         $input = json_decode($request->getContent(), true);
+        $didSucceed = true;
+
+        DB::beginTransaction();
 
         foreach ($input as $runData) {
-          $run = new TeamropingRun;
+            $run = new TeamropingRun;
 
-          $run->date = $runData->date;
-          $run->event_id = $runData->eventId;
-          // Come back to $run->total_time
-          $run->header_did_catch = $runData->headerCatch;
-          $run->header_catch_type = $runData->headerCatchType;
-          $run->header_penalty_time = $runData->headerPenaltyTime;
-          $run->header_human_id = $runData->headerHumanId;
+            $run->date = $runData['date'];
+            $run->event_id = $runData['eventId']; 
 
-          $run->heeler_did_catch = $runData->heelerCatch;
-          $run->heeler_catch_type = $runData->heelerCatchType;
-          $run->heeler_penalty_time = $runData->heelerPenaltyTime;
-          $run->heeler_human_id = $runData->heelerHumanId;
+            if ($runData['headerSaid']) {
+                try {
+                    $human = Human::where('import_id', $runData['headerSaid'])->firstOrFail();
+                    $run->header_human_id = $human->id;
+                } catch (ModelNotFoundException $e) {
+                    report($e);
 
-          $run->raw_time = $runData->rawTime;
+                    $didSucceed = false;
+                    DB::rollback();
+                    break;
+                }    
+            }
 
-          $run->save();
+            $run->header_did_catch = $runData['headerCatch'];
+            if ($runData['headerCatchType']) {
+                $run->header_catch_type = $runData['headerCatchType'];
+            } else {
+                $run->header_catch_type = null;
+            }
+            $run->header_penalty_time = $runData['headerPenaltyTime'];
+
+            if ($runData['heelerSaid']) {
+                try {
+                    $human = Human::where('import_id', $runData['heelerSaid'])->firstOrFail();
+                    $run->heeler_human_id = $human->id;
+                } catch (ModelNotFoundException $e) {
+                    report($e);
+   
+                    $didSucceed = false;
+                    DB::rollback();
+                    break;
+                }
+            }
+
+            $run->heeler_did_catch = $runData['heelerCatch'];
+
+            if ($runData['heelerCatchType']) {
+                $run->heeler_catch_type = $runData['heelerCatchType'];
+            } else {
+                $run->heeler_catch_type = null;
+            }
+            
+            $run->heeler_penalty_time = $runData['heelerPenaltyTime'];
+
+            $run->raw_time = $runData['rawTime'];
+            $run->total_time = ($run->raw_time - $run->header_penalty_time - $run->heeler_penalty_time);
+            
+            try {
+                $run->save();
+            } catch (QueryException $e) {
+                report($e);
+
+                $didSucceed = false;
+                DB::rollback();
+                break;
+            }
         }
 
-        // Catch errors, return the proper message along with status code
-        // Tomorrow make some columns nullable, also change some of the json
-        // node names to be more accurate. Also, change the import data to support
-        // user unique IDs
+        if ($didSucceed) {
+            DB::commit();
+        }
+
+        return ['success' => $didSucceed];
     }
 }

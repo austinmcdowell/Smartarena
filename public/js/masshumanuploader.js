@@ -96,7 +96,11 @@ $(document).ready(function () {
     }
 
     $.post('/massupload/humans/process', JSON.stringify(parsedCSVData), function (data) {
-      console.log(data);
+      if (data.success) {
+        alert('Humans imported successfully!');
+      } else {
+        alert('There was an error.');
+      }
     });
   });
 });
