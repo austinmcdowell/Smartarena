@@ -71,7 +71,7 @@
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="/massupload/humans">Mass Upload Humans</a></li>
             <li><a href="/massupload/runs">Mass Upload Runs</a></li>
-            <li><a href="#!">Logout</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
         <nav>
             <div class="nav-wrapper">

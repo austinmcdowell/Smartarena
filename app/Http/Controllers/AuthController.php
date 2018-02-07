@@ -6,11 +6,17 @@ use Socialite;
 use Auth;
 use App\User;
 
-class LoginController extends Controller
+class AuthController extends Controller
 {
     public function login()
     {
         return view('login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
     /**
      * Redirect the user to the GitHub authentication page.

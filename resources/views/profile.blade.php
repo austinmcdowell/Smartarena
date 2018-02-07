@@ -12,7 +12,7 @@
       </div>
   </div>
   <div class="row">
-      <div class="col s2">
+      <div class="col offset-s1 s2">
         <div class="user-image"></div>
       </div>
       <div class="col s4">
@@ -20,7 +20,7 @@
         <span class="sport-title">Sport: Team Roping</span>
         <span class="location">Location: {{ $human->location }}</span>
       </div>
-      <div class="col offset-s3 s2 actions">
+      <div class="col offset-s2 s2 actions">
         <a href="/teamropingrun/new?humanId={{ $human->id }}" class="waves-effect waves-light btn">Add Run</a>
       </div>
   </div>

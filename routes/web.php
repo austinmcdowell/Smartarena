@@ -13,9 +13,10 @@
 
 Route::get('/', 'LeaderboardController');
 
-Route::get('/login', 'LoginController@login');
-Route::get('login/google', 'LoginController@redirectToGoogle');
-Route::get('login/google/callback', 'LoginController@handleGoogleCallback');
+Route::get('/login', 'AuthController@login');
+Route::get('/logout', 'AuthController@logout');
+Route::get('login/google', 'AuthController@redirectToGoogle');
+Route::get('login/google/callback', 'AuthController@handleGoogleCallback');
 
 Route::get('/massupload/humans', 'MassHumanUploader@get');
 Route::post('/massupload/humans/process', 'MassHumanUploader@process');
