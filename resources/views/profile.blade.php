@@ -21,7 +21,7 @@
         <span class="location">Location: {{ $human->location }}</span>
       </div>
       <div class="col offset-s2 s2 actions">
-        <a href="/teamropingrun/new?humanId={{ $human->id }}" class="waves-effect waves-light btn">Add Run</a>
+        <a href="/teamroping/new" class="waves-effect waves-light btn">Add Run</a>
       </div>
   </div>
   <div class="row">

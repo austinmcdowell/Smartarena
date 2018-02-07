@@ -1,3 +1,10 @@
+.input-field>select {
+  position: inherit;
+  width: 100%;
+  opacity: 1;
+  height: 44px;
+  pointer-events: all;
+}
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
@@ -6,4 +13,4 @@
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap";

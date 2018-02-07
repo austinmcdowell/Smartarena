@@ -3,6 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/massrunuploader.css": "/css/massrunuploader.css",
     "/css/profile.css": "/css/profile.css",
+    "/js/teamroping/new.js": "/js/teamroping/new.js",
     "/js/massrunuploader.js": "/js/massrunuploader.js",
     "/js/masshumanuploader.js": "/js/masshumanuploader.js"
 }
