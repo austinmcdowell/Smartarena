@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class TeamropingRun extends Model
 {
-    function event()
+    public function event()
     {
-        $this->belongsTo('App\Event');
+        return $this->belongsTo('\App\Event');
     }
 
-    function header()
+    public function header()
     {
-        $this->belongsTo('App\User', 'header_user_id');
+        return $this->belongsTo('\App\User', 'header_user_id');
     }
 
-    function heeler()
+    public function heeler()
     {
-        $this->belongsTo('App\User', 'heeler_user_id');
+        return $this->belongsTo('\App\User', 'heeler_user_id');
     }
 }

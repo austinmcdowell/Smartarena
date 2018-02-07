@@ -12,3 +12,30 @@
   background-position: center center;
 }
 
+.user-image {
+  background-size: cover;
+  background-image: url("/img/profile.jpg");
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border-color: #28a745;
+  border-width: 0px;
+  border-style: solid;
+  margin: 0 auto;
+}
+
+.human-name {
+  margin: 0;
+  font-size: 28pt;
+}
+
+.sport-title,
+.location {
+  display: block;
+  font-size: 12pt;
+}
+
+.actions a {
+  width: 100%;
+}
+
