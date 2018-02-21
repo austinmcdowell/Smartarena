@@ -18,6 +18,7 @@ class LeaderboardController extends Controller
         $user = Auth::user();
         $isLoggedIn = Auth::check();
         $humans = Human::all();
+        
         return view('leaderboard', [
             'isLoggedIn' => $isLoggedIn,
             'user' => $user,

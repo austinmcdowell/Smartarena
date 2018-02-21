@@ -63,7 +63,6 @@ $(document).ready(function() {
     console.log(parsedCSVData);
 
     $.post('/massupload/runs/process', JSON.stringify(parsedCSVData), function(data) {
-      console.log(typeof data);
       if (data.success) {
         alert('Humans imported successfully!');
       } else {

@@ -17,9 +17,9 @@ class ProfileController extends Controller
         $header_runs = TeamropingRun::where('header_human_id', $id)->get();
         $heeler_runs = TeamropingRun::where('heeler_human_id', $id)->get();
         return view('profile', [
-          'human'       => $human,
-          'header_runs' => $header_runs,
-          'heeler_runs' => $heeler_runs
+            'human'       => $human,
+            'header_runs' => $header_runs,
+            'heeler_runs' => $heeler_runs
         ]);
     }
 

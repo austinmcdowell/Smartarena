@@ -60,91 +60,36 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 45);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 39:
+/***/ 45:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(40);
+module.exports = __webpack_require__(46);
 
 
 /***/ }),
 
-/***/ 40:
+/***/ 46:
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  // $('#event-select').material_select();
+  var userSelect = $('#user-select');
+  var humanSelect = $('#human-select');
 
-  function parseDate(string) {
-    var newDate = new Date(string);
-    if (newDate.toJSON === null) {
-      return new Date(0);
-    } else {
-      return newDate;
-    }
-  }
-
-  function parseBool(string) {
-    return string.toString().trim().toLowerCase() === 'true';
-  }
-
-  function parseRun(run, eventId) {
-    return {
-      file: run[0].trim(),
-      date: parseDate(run[1]),
-      eventId: eventId,
-      roping: run[2].trim(),
-      round: run[3].trim(),
-      rawTime: parseFloat(run[4]),
-      headerSaid: run[5].trim(),
-      headerName: run[6].trim().toLowerCase(),
-      headerLocation: run[7].trim().toLowerCase(),
-      heelerSaid: run[8].trim(),
-      heelerName: run[9].trim().toLowerCase(),
-      heelerLocation: run[10].trim().toLowerCase(),
-      headerCatch: parseBool(run[11]),
-      headerCatchType: run[12].trim(),
-      headerPenaltyType: run[13].trim(),
-      headerPenaltyTime: parseFloat(run[14]),
-      heelerCatch: parseBool(run[15]),
-      heelerCatchType: run[16].trim(),
-      heelerPenaltyType: run[17].trim(),
-      heelerPenaltyTime: parseFloat(run[18])
-    };
-  }
-
-  $('.upload-button').on('click', function (e) {
+  $('.link-button').on('click', function (e) {
     e.preventDefault();
-    var csvData = $('.csv-textarea').val().split('\n');
-    var eventId = $('#event-select').val();
+    var userId = userSelect.val();
+    var humanId = humanSelect.val();
 
-    if (!eventId) {
-      alert("You must select an event.");
-      return;
-    }
-
-    var parsedCSVData = [];
-
-    for (var i = 1; i < csvData.length; i++) {
-      var run = csvData[i].split(',');
-      if (run.length !== 19) {
-        alert('Invalid data. Records do not contain enough data.');
-        break;
-      }
-      parsedCSVData.push(parseRun(run, eventId));
-    }
-
-    console.log(parsedCSVData);
-
-    $.post('/massupload/runs/process', JSON.stringify(parsedCSVData), function (data) {
+    $.post('/userhumanlinker', { userId: userId, humanId: humanId }, function (data) {
       if (data.success) {
-        alert('Humans imported successfully!');
+        alert("Human and User successfully linked.");
       } else {
-        alert('There was an error.');
+        alert(data.message);
       }
     });
   });

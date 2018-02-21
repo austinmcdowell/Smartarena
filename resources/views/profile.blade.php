@@ -20,9 +20,11 @@
         <span class="sport-title">Sport: Team Roping</span>
         <span class="location">Location: {{ $human->location }}</span>
       </div>
+      @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
       <div class="col offset-s2 s2 actions">
         <a href="/teamroping/new" class="waves-effect waves-light btn">Add Run</a>
       </div>
+      @endif
   </div>
   <div class="row">
     <div class="col s10 offset-s1">

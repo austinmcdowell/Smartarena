@@ -24,6 +24,9 @@ Route::post('/massupload/humans/process', 'MassHumanUploader@process');
 Route::get('/massupload/runs', 'MassRunUploader@get');
 Route::post('/massupload/runs/process', 'MassRunUploader@process');
 
+Route::get('/userhumanlinker', 'UserHumanLinkController@get');
+Route::post('/userhumanlinker', 'UserHumanLinkController@post');
+
 Route::get('/profile/{id}', 'ProfileController@get');
 
 Route::get('/teamroping/new', 'TeamropingController@new');
