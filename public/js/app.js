@@ -780,7 +780,6 @@ __webpack_require__(9);
 // });
 
 $(document).ready(function () {
-  console.log($('meta[name="csrf-token"]').attr('content'));
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -6,6 +6,11 @@
   pointer-events: all;
 }
 
+.input-field>select + label {
+  font-size: 12px;
+  margin-top: -36px;
+}
+
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
