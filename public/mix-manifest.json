@@ -5,9 +5,9 @@
     "/css/massrunuploader.css": "/css/massrunuploader.css",
     "/css/profile.css": "/css/profile.css",
     "/css/userhumanlinker.css": "/css/userhumanlinker.css",
-    "/css/teamroping/new.css": "/css/teamroping/new.css",
+    "/css/runeditor.css": "/css/runeditor.css",
     "/js/userhumanlinker.js": "/js/userhumanlinker.js",
-    "/js/teamroping/new.js": "/js/teamroping/new.js",
+    "/js/runeditor.js": "/js/runeditor.js",
     "/js/massrunuploader.js": "/js/massrunuploader.js",
     "/js/masshumanuploader.js": "/js/masshumanuploader.js"
 }

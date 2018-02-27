@@ -15,10 +15,15 @@ class TeamropingController extends Controller
     {
         $events = Event::all();
         $humans = Human::all();
-        return view('teamroping.new', [
+        return view('runeditor', [
             'events' => $events,
             'humans' => $humans
         ]);
+    }
+
+    public function edit()
+    {
+
     }
 
     public function create(Request $request)

@@ -76,7 +76,88 @@ module.exports = __webpack_require__(46);
 /***/ 46:
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/home/vagrant/code/resources/assets/js/teamroping/new.js'");
+$(document).ready(function () {
+
+  var videoHeight = $('#my-video').height();
+  var videoWidth = $('#my-video').width();
+
+  var LAST_DELTA_X = 0;
+  var LAST_DELTA_Y = 0;
+
+  var CURRENT_SCALE = 1;
+
+  var isZoomed = false;
+  var el = document.getElementById('protection');
+
+  var hammertime = new Hammer.Manager(el);
+  var pan = new Hammer.Pan();
+
+  hammertime.add([pan]);
+
+  hammertime.on('pan', function (ev) {
+    if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
+      console.log(ev.srcEvent.srcElement.className);
+      return;
+    }
+
+    var currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
+    var currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
+
+    var top = currentTop + (ev.deltaY - LAST_DELTA_Y);
+    var left = currentLeft + (ev.deltaX - LAST_DELTA_X);
+
+    LAST_DELTA_Y = ev.deltaY;
+    LAST_DELTA_X = ev.deltaX;
+
+    var currentWidth = $('#my-video_html5_api').width() * CURRENT_SCALE;
+    var currentHeight = $('#my-video_html5_api').height() * CURRENT_SCALE;
+
+    if (isZoomed) {
+      if (left <= currentWidth / 5.6 && left >= -(currentWidth / 5.6)) {
+        $('#my-video_html5_api').css({ left: left });
+      }
+
+      if (top <= currentHeight / 5.6 && top >= -(currentHeight / 5.6)) {
+        $('#my-video_html5_api').css({ top: top });
+      }
+    }
+  });
+
+  hammertime.on('panend', function (ev) {
+    LAST_DELTA_Y = 0;
+    LAST_DELTA_X = 0;
+  });
+
+  $('.zoom-in').on('click tap', function (e) {
+    e.preventDefault();
+
+    if (CURRENT_SCALE < 1) {
+      return;
+    }
+
+    CURRENT_SCALE += 0.1;
+
+    isZoomed = true;
+    $('#my-video_html5_api').css({ transform: 'scale(' + CURRENT_SCALE + ')' });
+  });
+
+  $('.zoom-out').on('click tap', function (e) {
+    e.preventDefault();
+
+    if (CURRENT_SCALE === 1) {
+      return;
+    }
+
+    CURRENT_SCALE -= 0.1;
+
+    if (CURRENT_SCALE > 1) {
+      $('#my-video_html5_api').css({ transform: 'scale(' + CURRENT_SCALE + ')' });
+    } else {
+      isZoomed = false;
+      $('#my-video_html5_api').css({ top: "0", left: "0" });
+    }
+  });
+});
 
 /***/ })
 
