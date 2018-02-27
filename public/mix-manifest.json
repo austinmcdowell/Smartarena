@@ -1,9 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/leaderboard.css": "/css/leaderboard.css",
     "/css/massrunuploader.css": "/css/massrunuploader.css",
     "/css/profile.css": "/css/profile.css",
     "/css/userhumanlinker.css": "/css/userhumanlinker.css",
+    "/css/teamroping/new.css": "/css/teamroping/new.css",
     "/js/userhumanlinker.js": "/js/userhumanlinker.js",
     "/js/teamroping/new.js": "/js/teamroping/new.js",
     "/js/massrunuploader.js": "/js/massrunuploader.js",

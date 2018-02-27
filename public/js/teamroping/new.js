@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 43);
+/******/ 	return __webpack_require__(__webpack_require__.s = 45);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 43:
+/***/ 45:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(44);
+module.exports = __webpack_require__(46);
 
 
 /***/ }),
 
-/***/ 44:
+/***/ 46:
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
@@ -177,6 +177,35 @@ $(document).ready(function () {
       console.log('abort!');
       isSaving = false;
     }
+  });
+
+  $(window).on('drop', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $(window).on('dragover', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $('.card').on('drop', function (e) {
+    var file = e.originalEvent.dataTransfer.files[0];
+    var form = new FormData();
+    form.append('video', file);
+
+    if (file.type !== 'video/mp4') {
+      alert('The only file type we currently accept is MP4.');
+      return;
+    }
+
+    $.ajax({
+      type: 'POST',
+      processData: false,
+      contentType: false,
+      data: form,
+      url: '/teamroping/upload'
+    });
   });
 });
 

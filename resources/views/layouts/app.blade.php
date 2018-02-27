@@ -77,16 +77,16 @@
         </ul>
         <nav>
             <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="/">SMART ARENA</a></li>
+            <ul id="nav-mobile" class="left">
+                <li class="hide-on-med-and-down"><a href="/">SMART ARENA</a></li>
                 <li><a href="/">LEADERBOARDS</a></li>
             </ul>
             @if (isset($isLoggedIn) && $isLoggedIn) 
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right">
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{ $user->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             @else
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right">
                     <li><a href="/login">Log in</a></li>
                 </ul>
             @endif

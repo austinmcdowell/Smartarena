@@ -17,6 +17,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/teamroping/new.js', 'public/js/teamroping')
    .js('resources/assets/js/userhumanlinker.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
+   .sass('resources/assets/sass/leaderboard.scss', 'public/css')
    .sass('resources/assets/sass/massrunuploader.scss', 'public/css')
    .sass('resources/assets/sass/profile.scss', 'public/css')
-   .sass('resources/assets/sass/userhumanlinker.scss', 'public/css');
+   .sass('resources/assets/sass/userhumanlinker.scss', 'public/css')
+   .sass('resources/assets/sass/teamroping/new.scss', 'public/css/teamroping');

@@ -1,9 +1,32 @@
 @extends('layouts.app')
 
+@section('css')
+<link href="/css/leaderboard.css" rel="stylesheet" type="text/css">
+@endsection
+
 @section('content')
     <br />
-    <div class="row">
+    <div class="row hide-on-large-only">
         <div class="col s10 offset-s1">
+            @foreach ($humans as $human)
+                <div class="card">
+                    <div class="card-content">
+                        <h4><a href="/profile/{{ $human->id }}">{{ ucfirst($human->first_name) . ' ' . ucfirst($human->last_name) }}</a></h4>
+                        <p>Classification: 1</p>
+                        <p>Catch count: 7</p>
+                        <p>Runs: 7</p>
+                        <p>Total Run Penalties: 7</p>
+                        <p>Total Raw Time: 70.64s</p>
+                        <p>Time With Penalties: 80.00s</p>
+                        <p>Catch Percentage: 100.00%</p>
+                        <p>Average Time: 12.23s</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="row hide-on-med-and-down">
+        <div class="col l10 offset-l1">
           <div class="card">
             <div class="card-content">
                 <table>

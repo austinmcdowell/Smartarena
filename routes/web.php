@@ -31,3 +31,4 @@ Route::get('/profile/{id}', 'ProfileController@get');
 
 Route::get('/teamroping/new', 'TeamropingController@new')->middleware('auth');
 Route::post('/teamroping', 'TeamropingController@create')->middleware('auth');
+Route::post('/teamroping/upload', 'TeamropingController@upload')->middleware('auth');

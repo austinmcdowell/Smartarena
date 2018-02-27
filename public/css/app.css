@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.input-field > select {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.nav-wrapper {
+  background-color: #28a745;
+}
+
+.input-field > select {
   position: inherit;
   width: 100%;
   opacity: 1;

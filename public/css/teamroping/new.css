@@ -1,0 +1,12 @@
+.card {
+  overflow: auto;
+}
+
+.card .file-upload {
+  margin-bottom: 50px;
+}
+
+.card .file-upload label {
+  margin-top: 10px;
+}
+

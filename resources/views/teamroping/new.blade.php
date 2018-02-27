@@ -2,13 +2,33 @@
 
 @section('css')
 <link href="/css/lib/materialize-stepper.min.css" rel="stylesheet" type="text/css">
+<link href="/css/teamroping/new.css" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
 <div class="row">
   <div class="col offset-s3 s6">
     <ul class="stepper linear horizontal">
-      <li class="step active">
+    <li class="step active">
+          <div class="step-title waves-effect">Upload Video</div>
+          <div class="step-content">
+            <div class="row">
+              <div class="card">
+                <div class="card-content">
+                  <div class="input-field col s12 file-upload">
+                    <input id="file" name="file" type="file">
+                    <label for="file">Upload Your Video (not required)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="step-actions">
+                <button class="waves-effect waves-dark btn">Finish</button>
+                <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
+            </div>
+          </div>
+      </li>
+      <li class="step">
           <div class="step-title waves-effect">Create a run</div>
           <div class="step-content">
             <form id="runForm">
@@ -113,21 +133,6 @@
               </div>
             </div>
             
-          </div>
-      </li>
-      <li class="step">
-          <div class="step-title waves-effect">Upload Video</div>
-          <div class="step-content">
-            <div class="row">
-                <div class="input-field col s12">
-                  <input id="password" name="password" type="password" class="validate" required>
-                  <label for="password">Your password</label>
-                </div>
-            </div>
-            <div class="step-actions">
-                <button class="waves-effect waves-dark btn">Finish</button>
-                <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
-            </div>
           </div>
       </li>
     </ul>

@@ -17,7 +17,6 @@ $(document).ready(function() {
   let heelerSelect = $('#heeler-select');
   let heelerCatchCheckbox = $('heeler_did_catch');
 
-
   function resizeStepper() {
     let stepperSize = stepperContent.prop('scrollHeight') + STEPPER_SELECTOR_HEIGHT;
     stepper.css('height', stepperSize);
@@ -99,6 +98,36 @@ $(document).ready(function() {
       console.log('abort!');
       isSaving = false;
     }
+  });
+
+  $(window).on('drop', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $(window).on('dragover', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $('.card').on('drop', function(e) {
+    let file = e.originalEvent.dataTransfer.files[0];
+    let form = new FormData();
+    form.append('video', file);
+
+    if (file.type !== 'video/mp4') {
+      alert('The only file type we currently accept is MP4.');
+      return;
+    }
+
+    $.ajax({
+      type: 'POST',
+      processData: false,
+      contentType:  false,
+      data: form,
+      url: '/teamroping/upload'
+    });
+
   });
 
 });
