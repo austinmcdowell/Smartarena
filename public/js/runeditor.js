@@ -77,24 +77,41 @@ module.exports = __webpack_require__(46);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-
   var videoHeight = $('#my-video').height();
   var videoWidth = $('#my-video').width();
 
   var LAST_DELTA_X = 0;
   var LAST_DELTA_Y = 0;
-
   var CURRENT_SCALE = 1;
-
   var isZoomed = false;
-  var el = document.getElementById('protection');
 
-  var hammertime = new Hammer.Manager(el);
-  var pan = new Hammer.Pan();
+  // hammer event functions
 
-  hammertime.add([pan]);
+  var zoomIn = function zoomIn() {
+    if (CURRENT_SCALE < 1) {
+      return;
+    }
+    CURRENT_SCALE += 0.1;
+    isZoomed = true;
+    $('#my-video_html5_api').css({ transform: 'scale(' + CURRENT_SCALE + ')' });
+  };
 
-  hammertime.on('pan', function (ev) {
+  var zoomOut = function zoomOut() {
+    if (CURRENT_SCALE === 1) {
+      return;
+    }
+
+    CURRENT_SCALE -= 0.1;
+
+    if (CURRENT_SCALE > 1) {
+      $('#my-video_html5_api').css({ transform: 'scale(' + CURRENT_SCALE + ')' });
+    } else {
+      isZoomed = false;
+      $('#my-video_html5_api').css({ top: "0", left: "0" });
+    }
+  };
+
+  var pan = function pan(ev) {
     if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
       console.log(ev.srcEvent.srcElement.className);
       return;
@@ -121,6 +138,29 @@ $(document).ready(function () {
         $('#my-video_html5_api').css({ top: top });
       }
     }
+  };
+
+  // video functions
+
+  var play = function play(file) {
+    console.log('im here');
+    $('#video-player').show();
+    var reader = new FileReader();
+    reader.onload = function (videoFile) {
+      var player = videojs('my-video');
+      player.src({ type: 'video/mp4', src: videoFile.target.result });
+    };
+    reader.readAsDataURL(file);
+  };
+
+  // hammer initialization
+  var el = document.getElementById('protection');
+  var hammertime = new Hammer.Manager(el);
+  var panGesture = new Hammer.Pan();
+  hammertime.add([panGesture]);
+
+  hammertime.on('pan', function (ev) {
+    pan(ev);
   });
 
   hammertime.on('panend', function (ev) {
@@ -129,34 +169,65 @@ $(document).ready(function () {
   });
 
   $('.zoom-in').on('click tap', function (e) {
-    e.preventDefault();
-
-    if (CURRENT_SCALE < 1) {
-      return;
-    }
-
-    CURRENT_SCALE += 0.1;
-
-    isZoomed = true;
-    $('#my-video_html5_api').css({ transform: 'scale(' + CURRENT_SCALE + ')' });
+    zoomIn();
   });
 
   $('.zoom-out').on('click tap', function (e) {
-    e.preventDefault();
+    zoomOut();
+  });
 
-    if (CURRENT_SCALE === 1) {
+  // disable drag and drop on the window
+
+  $(window).on('drop', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $(window).on('dragover', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $('.upload-card').on('drop', function (e) {
+    var file = e.originalEvent.dataTransfer.files[0];
+    var form = new FormData();
+    form.append('video', file);
+
+    if (file.type !== 'video/mp4') {
+      alert('The only file type we currently accept is MP4.');
       return;
     }
 
-    CURRENT_SCALE -= 0.1;
+    play(file);
 
-    if (CURRENT_SCALE > 1) {
-      $('#my-video_html5_api').css({ transform: 'scale(' + CURRENT_SCALE + ')' });
-    } else {
-      isZoomed = false;
-      $('#my-video_html5_api').css({ top: "0", left: "0" });
-    }
+    $.ajax({
+      type: 'POST',
+      processData: false,
+      contentType: false,
+      data: form,
+      url: '/teamroping/upload',
+      beforeSend: function beforeSend(request, xhr) {
+        $('.upload-progress').show();
+        $('.upload-progress .determinate').css('width', '0%');
+      },
+      xhr: function xhr() {
+        var xhr = $.ajaxSettings.xhr();
+
+        xhr.upload.onprogress = function (data) {
+          var perc = Math.round(data.loaded / data.total * 100);
+          $('.upload-progress .determinate').css('width', perc + '%');
+        };
+
+        return xhr;
+      }
+    });
   });
+
+  // A video exists on load
+  // let's show the video player and hide the uploader.
+  if (SA.videos.length) {
+    $('#video-player').show();
+  }
 });
 
 /***/ })

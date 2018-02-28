@@ -16,11 +16,11 @@ class CreateVideosTable extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('original_file_path')->nullable();
+            $table->string('file_name')->nullable();
             $table->string('file_url')->nullable();
             $table->string('thumbnail_url')->nullable();
             $table->enum('run_type', ['teamroping'])->nullable();
-            $table->int('run_id')->unsigned()->nullable();
+            $table->integer('run_id')->unsigned()->nullable();
             $table->boolean('processing_complete');
         });
     }

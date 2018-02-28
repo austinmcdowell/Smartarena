@@ -1,3 +1,7 @@
+#video-player {
+  display: none;
+}
+
 #my-video {
   width: 100% !important;
   height: 300px !important;
@@ -19,14 +23,18 @@
   font-size: 28pt;
 }
 
-// .card {
-//   overflow: auto;
+.upload-card {
+  overflow: auto;
 
-//   .file-upload {
-//     margin-bottom: 50px;
+  .file-upload {
+    margin-bottom: 50px;
     
-//     label {
-//       margin-top: 10px;
-//     }
-//   }
-// }
+    label {
+      margin-top: 10px;
+    }
+  }
+}
+
+.upload-progress {
+  display: none;
+}

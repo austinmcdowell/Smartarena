@@ -20,4 +20,9 @@ class TeamropingRun extends Model
     {
         return $this->belongsTo('\App\User', 'heeler_user_id');
     }
+
+    public function videos()
+    {
+        return $this->hasMany('\App\Video');
+    }
 }
