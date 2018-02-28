@@ -85,6 +85,10 @@ $(document).ready(function () {
   var CURRENT_SCALE = 1;
   var isZoomed = false;
 
+  var currentVideo = null;
+  var playbackInterval = null;
+  var isIntervalSet = false;
+
   // hammer event functions
 
   var zoomIn = function zoomIn() {
@@ -143,7 +147,6 @@ $(document).ready(function () {
   // video functions
 
   var play = function play(file) {
-    console.log('im here');
     $('#video-player').show();
     var reader = new FileReader();
     reader.onload = function (videoFile) {
@@ -151,6 +154,35 @@ $(document).ready(function () {
       player.src({ type: 'video/mp4', src: videoFile.target.result });
     };
     reader.readAsDataURL(file);
+  };
+
+  var rewind = function rewind(rate, ms) {
+    if (!isIntervalSet) {
+      var player = videojs('my-video');
+      player.pause();
+      player.currentTime(player.currentTime() - rate);
+      playbackInterval = setInterval(function () {
+        player.currentTime(player.currentTime() - rate);
+      }, ms);
+      isIntervalSet = true;
+    }
+  };
+
+  var forward = function forward(rate, ms) {
+    if (!isIntervalSet) {
+      var player = videojs('my-video');
+      player.pause();
+      player.currentTime(player.currentTime() + rate);
+      playbackInterval = setInterval(function () {
+        player.currentTime(player.currentTime() + rate);
+      }, ms);
+      isIntervalSet = true;
+    }
+  };
+
+  var resetScrobbling = function resetScrobbling() {
+    clearInterval(playbackInterval);
+    isIntervalSet = false;
   };
 
   // hammer initialization
@@ -188,6 +220,33 @@ $(document).ready(function () {
     e.stopPropagation();
   });
 
+  // video controls
+
+  $('.double-rewind').on('mousedown touchstart', function (e) {
+    e.preventDefault();
+    rewind(0.2, 125);
+  });
+
+  $('.single-rewind').on('mousedown touchstart', function (e) {
+    e.preventDefault();
+    rewind(0.1, 125);
+  });
+
+  $('.single-forward').on('mousedown touchstart', function (e) {
+    e.preventDefault();
+    forward(0.1, 125);
+  });
+
+  $('.double-forward').on('mousedown touchstart', function (e) {
+    e.preventDefault();
+    forward(0.2, 125);
+  });
+
+  $('.control-button').on('mouseup touchend', function (e) {
+    e.preventDefault();
+    resetScrobbling();
+  });
+
   $('.upload-card').on('drop', function (e) {
     var file = e.originalEvent.dataTransfer.files[0];
     var form = new FormData();
@@ -219,9 +278,14 @@ $(document).ready(function () {
         };
 
         return xhr;
+      },
+      success: function success(data) {
+        currentVideo = data;
       }
     });
   });
+
+  // init:
 
   // A video exists on load
   // let's show the video player and hide the uploader.

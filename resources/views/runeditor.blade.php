@@ -15,12 +15,26 @@
         </p>
       </video>
   </div>
-  <div class="row">
+  <div class="row zoom-panel">
     <div class="col s6 zoom-button center-align">
       <span class="zoom-in">+</span>
     </div>
     <div class="col s6 zoom-button center-align">
       <span class="zoom-out">-</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s3 control-button center-align double-rewind">
+      <span><i class="fas fa-angle-double-left"></i></span>
+    </div>
+    <div class="col s3 control-button center-align single-rewind">
+      <span><i class="fas fa-angle-left"></i></span>
+    </div>
+    <div class="col s3 control-button center-align single-forward">
+      <span><i class="fas fa-angle-right"></i></span>
+    </div>
+    <div class="col s3 control-button center-align double-forward">
+      <span><i class="fas fa-angle-double-right"></i></span>
     </div>
   </div>
 </div>

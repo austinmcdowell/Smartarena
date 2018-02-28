@@ -17,10 +17,19 @@
   pointer-events: all !important;
 }
 
-.zoom-button {
+.zoom-panel {
+  margin-bottom: 0;
+}
+
+.zoom-button,
+.control-button {
   background-color: #2b333f;
   color: #fff;
   font-size: 28pt;
+}
+
+.control-button {
+  font-size: 20pt;
 }
 
 .upload-card {
