@@ -48,3 +48,23 @@
   display: none;
 }
 
+.catch-type-button {
+  display: table;
+  border: 1px solid #000;
+  border-radius: 100%;
+  width: 66px;
+  height: 66px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.catch-type-button span {
+  display: table-cell;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.details {
+  overflow: auto;
+}
+

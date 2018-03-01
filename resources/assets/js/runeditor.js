@@ -107,6 +107,69 @@ $(document).ready(function() {
     isIntervalSet = false;
   }
 
+  // Catch functions
+
+  let setCatchType = function setCatchType(element, riderType) {
+    let isCatch = element.hasClass('catch') ? true : false;
+    let catchType = element.data('catch-type');
+    let card = $(element.parents('.card')[0]);
+
+    card.find('.catch-type-button').each(function(index, el) {
+      let button = $(el);
+      button.css({
+        'background-color': '#fff',
+        'color': '#000'
+      });
+    });
+    
+    if (isCatch) {
+      if (SA.run[riderType].catchType === catchType) {
+        SA.run[riderType].catchType = null;
+        return
+      }
+      SA.run[riderType].catchType = catchType;
+      if (SA.run.header.penaltyType) {
+        $('.heeler-stats').find('.catch-type-button').each(function(index, el) {
+          let button = $(el);
+          button.css({
+            'background-color': '#fff',
+            'color': '#000'
+          });
+        });
+        SA.run.header.penaltyType = null;
+      }
+      element.css({
+        'background-color': '#28a745',
+        'color': '#fff'
+      });
+    } else {
+      if (SA.run[riderType].penaltyType === catchType) {
+        SA.run[riderType].penaltyType = null;
+        return
+      }
+
+      // disable heeler stats and clear is header missed
+      if (riderType === 'header' && catchType === 'missed') {
+        $('.heeler-stats').find('.catch-type-button').each(function(index, el) {
+          let button = $(el);
+          button.css({
+            'background-color': '#ccc',
+            'color': '#fff'
+          });
+        });
+        SA.run.heeler.catchType = null;
+        SA.run.heeler.penaltyType = null;
+      }
+
+      SA.run[riderType].penaltyType = catchType;
+      SA.run[riderType].catchType = null;
+      element.css({
+        'background-color': 'red',
+        'color': '#fff'
+      });
+    }
+  }
+
   // hammer initialization
   let el = document.getElementById('protection');
   let hammertime = new Hammer.Manager(el)
@@ -205,7 +268,34 @@ $(document).ready(function() {
         currentVideo = data;
       }
     });
+  });
 
+  $('.header-stats .catch').on('click', function(e) {
+    e.preventDefault();
+    let element = $(this);
+    setCatchType(element, 'header');
+  });
+
+  $('.header-stats .penalty').on('click', function(e) {
+    e.preventDefault();
+    let element = $(this);
+    setCatchType(element, 'header');
+  });
+
+  $('.heeler-stats .catch').on('click', function(e) {
+    e.preventDefault();
+    let element = $(this);
+    if (SA.run.header.penaltyType !== 'missed') {
+      setCatchType(element, 'heeler');
+    }
+  });
+
+  $('.heeler-stats .penalty').on('click', function(e) {
+    e.preventDefault();
+    let element = $(this);
+    if (SA.run.header.penaltyType !== 'missed') {
+      setCatchType(element, 'heeler');
+    }
   });
 
   // init:
@@ -216,5 +306,22 @@ $(document).ready(function() {
     $('#video-player').show();
   }
 
+  // Create SA.run object if we don't have one
+  if (!SA.run) {
+    SA.run = {
+      header: {},
+      heeler: {}
+    }
+  }
+
+  // Date picker initializer
+  $('#date').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: true // Close upon selecting a date,
+  });
 
 });
