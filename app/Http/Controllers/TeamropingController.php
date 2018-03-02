@@ -111,7 +111,7 @@ class TeamropingController extends Controller
 
         $run->roping = $request->input('roping');
         $run->round  = $request->input('round');
-        $run->raw_time = (int)$request->input('time');
+        $run->raw_time = (float)$request->input('time');
 
         // penalty calculations
         if ($run->header_penalty_type == 'missed') {

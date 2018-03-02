@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  let player = videojs('my-video');
   let videoHeight = $('#my-video').height();
   let videoWidth  = $('#my-video').width();
   
@@ -8,6 +9,9 @@ $(document).ready(function() {
   let isZoomed = false;
 
   let currentVideo = {};
+  let currentScrobbleTime = null;
+  let startTime = null;
+  let endTime = null;
   let playbackInterval = null;
   let isIntervalSet = false;
 
@@ -74,7 +78,6 @@ $(document).ready(function() {
     $('#video-player').show();
     let reader = new FileReader();
     reader.onload = function(videoFile) {
-      let player = videojs('my-video');
       player.src({ type: 'video/mp4', src: videoFile.target.result});
     }
     reader.readAsDataURL(file);
@@ -82,7 +85,6 @@ $(document).ready(function() {
 
   let rewind = function rewind(rate, ms) {
     if (!isIntervalSet) {
-      let player = videojs('my-video');
       player.pause();
       player.currentTime(player.currentTime() - rate);
       playbackInterval = setInterval(function() {
@@ -94,13 +96,26 @@ $(document).ready(function() {
 
   let forward = function forward(rate, ms) {
     if (!isIntervalSet) {
-      let player = videojs('my-video');
       player.pause();
       player.currentTime(player.currentTime() + rate);
       playbackInterval = setInterval(function() {
         player.currentTime(player.currentTime() + rate);
       }, ms);
       isIntervalSet = true;
+    }
+  }
+
+  let updateLabel = function updateLabel() {
+    let timeLabel = $('.time-label');
+
+    if (startTime && !endTime) {
+      timeLabel.html('Starting at ' + startTime.toFixed(2) + 's');
+    }
+
+    if (startTime && endTime) {
+      let timeValue = (endTime - startTime).toFixed(2);
+      timeLabel.html(`Time: ${timeValue}s`);
+      $('#time').val(timeValue);
     }
   }
 
@@ -180,6 +195,7 @@ $(document).ready(function() {
     $('#roping').val(SA.run.roping);
     $('#round').val(SA.run.round);
     $('#time').val(SA.run.time);
+    $('.time-label').html(`Time: ${SA.run.time}s`);
 
     $('#no-time').prop('checked', SA.run.noTime);
     $('#score').prop('checked', SA.run.score);
@@ -270,6 +286,35 @@ $(document).ready(function() {
   $('.control-button').on('mouseup touchend', function(e) {
     e.preventDefault();
     resetScrobbling();
+  });
+
+  $('.set-start-button').on('click', function(e) {
+    e.preventDefault();
+    startTime = currentScrobbleTime;
+    updateLabel();
+  });
+
+  $('.set-end-button').on('click', function(e) {
+    e.preventDefault();
+    if (!startTime) {
+      startTime = 0.0;
+    }
+
+    if (currentScrobbleTime < startTime) {
+      return;
+    }
+
+    endTime = currentScrobbleTime;
+    updateLabel();
+  });
+
+  player.on('timeupdate', function() {
+    currentScrobbleTime = player.currentTime();
+  });
+
+  $('#time').on('change', function(e) {
+    let $this = $(this);
+    $('.time-label').html(`Time: ${$this.val()}s`)
   });
 
   $('.upload-card').on('drop', function(e) {
@@ -364,9 +409,9 @@ $(document).ready(function() {
     }
     
     SA.run.header.humanId = $('#header-select').val();
-    SA.run.header.barrierPenalty = $('header-barrier-penalty').val();
+    SA.run.header.barrierPenalty = $('#header-barrier-penalty').val();
     SA.run.heeler.humanId = $('#heeler-select').val();
-    SA.run.heeler.barrierPenalty = $('heeler-barrier-penalty').val();
+    SA.run.heeler.barrierPenalty = $('#heeler-barrier-penalty').val();
     SA.run.currentVideo = currentVideo;
 
     if (SA.run.header.humanId === SA.run.heeler.humanId) {
@@ -404,9 +449,9 @@ $(document).ready(function() {
 
   // A video exists on load
   // let's show the video player and hide the uploader.
+
   if (SA.videos.length) {
     $('#video-player').show();
-    let player = videojs('my-video');
     let video  = SA.videos[0];
     player.src({ type: 'video/mp4', src: video.file_url});
     player.play();

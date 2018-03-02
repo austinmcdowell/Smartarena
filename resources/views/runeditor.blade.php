@@ -37,6 +37,19 @@
       <span><i class="fas fa-angle-double-right"></i></span>
     </div>
   </div>
+  <div class="row">
+    <div class="col s12 center-align">
+      <p class="time-label">Time: 0.00s</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s6 center-align">
+      <button class="waves-effect waves-light btn set-start-button">Set Start</button>
+    </div>
+    <div class="col s6 center-align">
+      <button class="waves-effect waves-light btn set-end-button">Set End</button>
+    </div>
+  </div>
 </div>
 <div class="row video-uploader">
   <div class="col s12 offset-l3 l6">
