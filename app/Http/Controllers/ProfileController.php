@@ -14,13 +14,12 @@ class ProfileController extends Controller
     public function get($id)
     {
         $human       = Human::find($id);
-        $header_runs = TeamropingRun::where('header_human_id', $id)->get();
-        $heeler_runs = TeamropingRun::where('heeler_human_id', $id)->get();
+        $header_runs = TeamropingRun::where('header_human_id', $id)->with('videos')->get();
+        $heeler_runs = TeamropingRun::where('heeler_human_id', $id)->with('videos')->get();
         return view('profile', [
             'human'       => $human,
             'header_runs' => $header_runs,
             'heeler_runs' => $heeler_runs
         ]);
     }
-
 }

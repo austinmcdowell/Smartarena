@@ -60,48 +60,36 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+/******/ 	return __webpack_require__(__webpack_require__.s = 50);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 44:
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(45);
+module.exports = __webpack_require__(51);
 
 
 /***/ }),
 
-/***/ 45:
+/***/ 51:
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
+  var player = videojs('my-video');
 
-  $('.upload-button').on('click', function (e) {
-    e.preventDefault();
-
-    var csvData = $('.csv-textarea').val().split('\n');
-    var parsedCSVData = [];
-
-    for (var i = 1; i < csvData.length; i++) {
-      var record = csvData[i].split(',');
-      parsedCSVData.push({
-        importId: record[0],
-        classification: parseInt(record[1], 10),
-        firstName: record[2],
-        lastName: record[3],
-        location: record[4]
-      });
+  $('#video-modal').modal({
+    complete: function complete() {
+      player.pause();
     }
+  });
 
-    $.post('/massupload/humans/process', JSON.stringify(parsedCSVData), function (data) {
-      if (data.success) {
-        alert('Humans imported successfully!');
-      } else {
-        alert('There was an error.');
-      }
-    });
+  $('.play-button').on('click', function (e) {
+    e.preventDefault();
+    var videoUrl = $(this).data('video-url');
+    $('#video-modal').modal('open');
+    player.src({ type: 'video/mp4', src: videoUrl });
   });
 });
 

@@ -1,0 +1,28 @@
+#my-video {
+  width: 100% !important;
+  height: 300px !important;
+  pointer-events: none;
+}
+
+#protection {
+  overflow: hidden;
+}
+
+.vjs-control-bar {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+.zoom-panel {
+  margin-bottom: 0;
+}
+
+.zoom-button, .control-button {
+  background-color: #2b333f;
+  color: #fff;
+  font-size: 28pt;
+}
+
+.control-button {
+  font-size:20pt;
+}

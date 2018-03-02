@@ -60,95 +60,31 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 45);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 45:
+/***/ 46:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(46);
+module.exports = __webpack_require__(47);
 
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
   var player = videojs('my-video');
-  var videoHeight = $('#my-video').height();
-  var videoWidth = $('#my-video').width();
-
-  var LAST_DELTA_X = 0;
-  var LAST_DELTA_Y = 0;
-  var CURRENT_SCALE = 1;
-  var isZoomed = false;
 
   var currentVideo = {};
   var currentScrobbleTime = null;
   var startTime = null;
   var endTime = null;
-  var playbackInterval = null;
-  var isIntervalSet = false;
 
   var onLoad = true;
-
-  // hammer event functions
-
-  var zoomIn = function zoomIn() {
-    if (CURRENT_SCALE < 1) {
-      return;
-    }
-    CURRENT_SCALE += 0.1;
-    isZoomed = true;
-    $('#my-video_html5_api').css({ transform: 'scale(' + CURRENT_SCALE + ')' });
-  };
-
-  var zoomOut = function zoomOut() {
-    if (CURRENT_SCALE === 1) {
-      return;
-    }
-
-    CURRENT_SCALE -= 0.1;
-
-    if (CURRENT_SCALE > 1) {
-      $('#my-video_html5_api').css({ transform: 'scale(' + CURRENT_SCALE + ')' });
-    } else {
-      isZoomed = false;
-      $('#my-video_html5_api').css({ top: "0", left: "0" });
-    }
-  };
-
-  var pan = function pan(ev) {
-    if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
-      console.log(ev.srcEvent.srcElement.className);
-      return;
-    }
-
-    var currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
-    var currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
-
-    var top = currentTop + (ev.deltaY - LAST_DELTA_Y);
-    var left = currentLeft + (ev.deltaX - LAST_DELTA_X);
-
-    LAST_DELTA_Y = ev.deltaY;
-    LAST_DELTA_X = ev.deltaX;
-
-    var currentWidth = $('#my-video_html5_api').width() * CURRENT_SCALE;
-    var currentHeight = $('#my-video_html5_api').height() * CURRENT_SCALE;
-
-    if (isZoomed) {
-      if (left <= currentWidth / 5.6 && left >= -(currentWidth / 5.6)) {
-        $('#my-video_html5_api').css({ left: left });
-      }
-
-      if (top <= currentHeight / 5.6 && top >= -(currentHeight / 5.6)) {
-        $('#my-video_html5_api').css({ top: top });
-      }
-    }
-  };
 
   // video functions
 
@@ -159,28 +95,6 @@ $(document).ready(function () {
       player.src({ type: 'video/mp4', src: videoFile.target.result });
     };
     reader.readAsDataURL(file);
-  };
-
-  var rewind = function rewind(rate, ms) {
-    if (!isIntervalSet) {
-      player.pause();
-      player.currentTime(player.currentTime() - rate);
-      playbackInterval = setInterval(function () {
-        player.currentTime(player.currentTime() - rate);
-      }, ms);
-      isIntervalSet = true;
-    }
-  };
-
-  var forward = function forward(rate, ms) {
-    if (!isIntervalSet) {
-      player.pause();
-      player.currentTime(player.currentTime() + rate);
-      playbackInterval = setInterval(function () {
-        player.currentTime(player.currentTime() + rate);
-      }, ms);
-      isIntervalSet = true;
-    }
   };
 
   var updateLabel = function updateLabel() {
@@ -304,29 +218,6 @@ $(document).ready(function () {
     onLoad = false;
   };
 
-  // hammer initialization
-  var el = document.getElementById('protection');
-  var hammertime = new Hammer.Manager(el);
-  var panGesture = new Hammer.Pan();
-  hammertime.add([panGesture]);
-
-  hammertime.on('pan', function (ev) {
-    pan(ev);
-  });
-
-  hammertime.on('panend', function (ev) {
-    LAST_DELTA_Y = 0;
-    LAST_DELTA_X = 0;
-  });
-
-  $('.zoom-in').on('click tap', function (e) {
-    zoomIn();
-  });
-
-  $('.zoom-out').on('click tap', function (e) {
-    zoomOut();
-  });
-
   // disable drag and drop on the window
 
   $(window).on('drop', function (e) {
@@ -337,33 +228,6 @@ $(document).ready(function () {
   $(window).on('dragover', function (e) {
     e.preventDefault();
     e.stopPropagation();
-  });
-
-  // video controls
-
-  $('.double-rewind').on('mousedown touchstart', function (e) {
-    e.preventDefault();
-    rewind(0.2, 125);
-  });
-
-  $('.single-rewind').on('mousedown touchstart', function (e) {
-    e.preventDefault();
-    rewind(0.1, 125);
-  });
-
-  $('.single-forward').on('mousedown touchstart', function (e) {
-    e.preventDefault();
-    forward(0.1, 125);
-  });
-
-  $('.double-forward').on('mousedown touchstart', function (e) {
-    e.preventDefault();
-    forward(0.2, 125);
-  });
-
-  $('.control-button').on('mouseup touchend', function (e) {
-    e.preventDefault();
-    resetScrobbling();
   });
 
   $('.set-start-button').on('click', function (e) {

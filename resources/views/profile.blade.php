@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('css')
+<link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
 <link href="/css/profile.css" rel="stylesheet" type="text/css">
+<link href="/css/videoplayer.css" rel="stylesheet" type="text/css">
 @endsection
 
 
@@ -109,7 +111,11 @@
               @foreach ($header_runs as $run)
                 <tr>
                   <td><a href="/teamroping/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
-                  <td><a href="#"><i class="material-icons">play_arrow</i></a></td>
+                  @if ($run->videos->first())
+                  <td><a class="play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}"><i class="material-icons">play_arrow</i></a></td>
+                  @else
+                  <td></td>
+                  @endif
                   <td>{{ $run->date }}</td>
                   <td>{{ $run->event->location }} </td>
                   <td>{{ $run->header_catch_type }}</td>
@@ -190,7 +196,11 @@
               @foreach ($heeler_runs as $run)
                 <tr>
                   <td><a href="/teamroping/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
-                  <td><a href="#"><i class="material-icons">play_arrow</i></a></td>
+                  @if ($run->videos->first())
+                  <td><a class="play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}"><i class="material-icons">play_arrow</i></a></td>
+                  @else
+                  <td></td>
+                  @endif
                   <td>{{ $run->date }}</td>
                   <td>{{ $run->event->location }} </td>
                   <td>{{ $run->header_catch_type }}</td>
@@ -210,6 +220,42 @@
   </div>
   @endif
 
+  <div id="video-modal" class="modal">
+    <div class="modal-content">
+      <div id="video-player">
+        <div id="protection">
+          <video id="my-video" class="video-js" autoplay controls data-setup="{}" playsinline>
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a web browser that
+              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+          </video>
+        </div>
+        <div class="row zoom-panel">
+          <div class="col s6 zoom-button center-align">
+            <span class="zoom-in">+</span>
+          </div>
+          <div class="col s6 zoom-button center-align">
+            <span class="zoom-out">-</span>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col s3 control-button center-align double-rewind">
+          <span><i class="fas fa-angle-double-left"></i></span>
+        </div>
+        <div class="col s3 control-button center-align single-rewind">
+          <span><i class="fas fa-angle-left"></i></span>
+        </div>
+        <div class="col s3 control-button center-align single-forward">
+          <span><i class="fas fa-angle-right"></i></span>
+        </div>
+        <div class="col s3 control-button center-align double-forward">
+          <span><i class="fas fa-angle-double-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   @if ($header_runs->isEmpty() && $heeler_runs->isEmpty())
   <div class="row center-align">
     <div class="col s10 offset-s1">
@@ -217,4 +263,11 @@
     </div>
   </div>
   @endif
+@endsection
+
+@section('javascript')
+<script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="/js/profile.js"></script>
+<script src="/js/videoplayer.js"></script>
 @endsection
