@@ -1,7 +1,10 @@
 $(document).ready(function() {
   let player = videojs('my-video');
-  
+
   $('#video-modal').modal({
+    ready: function() {
+      player.play();
+    },
     complete: function() {
       player.pause();
     }

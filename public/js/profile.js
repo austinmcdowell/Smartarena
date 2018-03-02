@@ -80,6 +80,9 @@ $(document).ready(function () {
   var player = videojs('my-video');
 
   $('#video-modal').modal({
+    ready: function ready() {
+      player.play();
+    },
     complete: function complete() {
       player.pause();
     }

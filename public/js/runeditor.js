@@ -111,11 +111,6 @@ $(document).ready(function () {
     }
   };
 
-  var resetScrobbling = function resetScrobbling() {
-    clearInterval(playbackInterval);
-    isIntervalSet = false;
-  };
-
   // Catch functions
 
   var setCatchType = function setCatchType(element, riderType) {

@@ -33,11 +33,6 @@ $(document).ready(function() {
     }
   }
 
-  let resetScrobbling = function resetScrobbling() {
-    clearInterval(playbackInterval);
-    isIntervalSet = false;
-  }
-
   // Catch functions
 
   let setCatchType = function setCatchType(element, riderType) {

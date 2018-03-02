@@ -73,8 +73,17 @@
               <p>Total Time: {{ $run->total_time }}</p>
             </div>
             @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
-            <div class="col s12">
-              <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
+            <div class="row">
+              <div class="col s12">
+                <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
+              </div>
+            </div>
+            @endif
+            @if ($run->videos->first())
+            <div class="row">
+              <div class="col s12 center-align">
+                <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}">Play Video</a>
+              </div>
             </div>
             @endif
             <!-- if has videos -->
@@ -160,8 +169,17 @@
               <p>Total Time: {{ $run->total_time }}</p>
             </div>
             @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
-            <div class="col s12">
-              <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
+            <div class="row">
+              <div class="col s12 center-align">
+                <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
+              </div>
+            </div>
+            @endif
+            @if ($run->videos->first())
+            <div class="row">
+              <div class="col s12 center-align">
+                <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}">Play Video</a>
+              </div>
             </div>
             @endif
           </div>
