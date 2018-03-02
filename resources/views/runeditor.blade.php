@@ -218,7 +218,7 @@
   SA.humanId = @json($human_id);
   SA.videos = @json($videos);
   @if (isset($run))
-  SA.run = @json($run);
+  SA.rawRun = @json($run);
   @endif
 
 </script>

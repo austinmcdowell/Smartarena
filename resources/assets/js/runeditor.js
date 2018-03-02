@@ -11,6 +11,8 @@ $(document).ready(function() {
   let playbackInterval = null;
   let isIntervalSet = false;
 
+  let onLoad = true;
+
   // hammer event functions
 
   let zoomIn = function zoomIn() {
@@ -123,7 +125,7 @@ $(document).ready(function() {
     });
     
     if (isCatch) {
-      if (SA.run[riderType].catchType === catchType) {
+      if (SA.run[riderType].catchType === catchType && !onLoad) {
         SA.run[riderType].catchType = null;
         return
       }
@@ -143,7 +145,7 @@ $(document).ready(function() {
         'color': '#fff'
       });
     } else {
-      if (SA.run[riderType].penaltyType === catchType) {
+      if (SA.run[riderType].penaltyType === catchType && !onLoad) {
         SA.run[riderType].penaltyType = null;
         return
       }
@@ -168,6 +170,44 @@ $(document).ready(function() {
         'color': '#fff'
       });
     }
+  }
+
+  // Set Field Values on Load (for Edits)
+
+  let setFieldValues = function setFieldValues() {
+    $('#date').val(SA.run.date);
+    $('#event-select').val(SA.run.eventId);
+    $('#roping').val(SA.run.roping);
+    $('#round').val(SA.run.round);
+    $('#time').val(SA.run.time);
+
+    $('#no-time').prop('checked', SA.run.noTime);
+    $('#score').prop('checked', SA.run.score);
+
+    $('#header-select').val(SA.run.header.humanId);
+    $('#header-barrier-penalty').val(SA.run.header.barrierPenalty);
+
+    $('#heeler-select').val(SA.run.heeler.humanId);
+    $('#heeler-barrier-penalty').val(SA.run.heeler.barrierPenalty);
+
+    if (SA.run.header.catchType) {
+      console.log(SA.run.header.catchType)
+      let element = $($('.header-stats').find(`[data-catch-type='${SA.run.header.catchType}']`)[0]);
+      setCatchType(element, 'header');
+    } else if (SA.run.header.penaltyType) {
+      let element = $($('.header-stats').find(`[data-catch-type='${SA.run.header.penaltyType}']`)[0]);
+      setCatchType(element, 'header');
+    }
+
+    if (SA.run.heeler.catchType) {
+      let element = $($('.heeler-stats').find(`[data-catch-type='${SA.run.heeler.catchType}']`)[0]);
+      setCatchType(element, 'heeler');
+    } else if (SA.run.heeler.penaltyType) {
+      let element = $($('.heeler-stats').find(`[data-catch-type='${SA.run.heeler.penaltyType}']`)[0]);
+      setCatchType(element, 'heeler');
+    }
+
+    onLoad = false;
   }
 
   // hammer initialization
@@ -372,12 +412,32 @@ $(document).ready(function() {
     player.play();
   }
 
-  // Create SA.run object if we don't have one
-  if (!SA.run) {
-    SA.run = {
-      header: {},
-      heeler: {}
-    }
+  // Create SA.run object
+  SA.run = {
+    header: {},
+    heeler: {}
+  }
+
+  if (SA.rawRun) {
+    SA.run.runId = SA.rawRun.id;
+    SA.run.eventId = SA.rawRun.event_id;
+    SA.run.date = SA.rawRun.date;
+
+    SA.run.header.barrierPenalty = SA.rawRun.header_barrier_penalty;
+    SA.run.header.catchType = SA.rawRun.header_catch_type;
+    SA.run.header.humanId = SA.rawRun.header_human_id;
+    SA.run.header.penaltyType = SA.rawRun.header_penalty_type;
+
+    SA.run.heeler.barrierPenalty = SA.rawRun.heeler_barrier_penalty;
+    SA.run.heeler.catchType = SA.rawRun.heeler_catch_type;
+    SA.run.heeler.humanId = SA.rawRun.heeler_human_id;
+    SA.run.heeler.penaltyType = SA.rawRun.heeler_penalty_type;
+
+    SA.run.time = SA.rawRun.raw_time;
+    SA.run.roping = SA.rawRun.roping;
+    SA.run.round = SA.rawRun.round;
+
+    setFieldValues();
   }
 
   // Date picker initializer

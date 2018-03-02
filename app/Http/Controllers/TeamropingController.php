@@ -46,9 +46,10 @@ class TeamropingController extends Controller
     public function save(Request $request)
     {
         $user = Auth::user();
-
-        if ($request->input('id')) {
-            // get run from db
+        $runId = $request->input('runId');
+        
+        if ($runId) {
+            $run = TeamropingRun::find($runId);
         } else {
             $run = new TeamropingRun;
         }
