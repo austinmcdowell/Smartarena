@@ -135,6 +135,49 @@ $(document).ready(function() {
     onLoad = false;
   }
 
+  let uploadVideo = function uploadVideo(file) {
+    let form = new FormData();
+    form.append('video', file);
+    if (SA.run.runId) {
+      form.append('runId', SA.run.runId);
+    }
+
+    if (file.type !== 'video/mp4') {
+      alert('The only file type we currently accept is MP4.');
+      return;
+    }
+
+    play(file);
+
+    $.ajax({
+      type: 'POST',
+      processData: false,
+      contentType:  false,
+      data: form,
+      url: '/teamroping/upload',
+      beforeSend: function(request, xhr) {        
+        $('.upload-progress').show();
+        $('.upload-progress .determinate').css('width', '0%');
+        $('.save-button').addClass('disabled');
+      },
+      xhr: function() {
+        let xhr = $.ajaxSettings.xhr() ;
+        
+        xhr.upload.onprogress = function(data){
+          let perc = Math.round((data.loaded / data.total) * 100);
+          $('.upload-progress .determinate').css('width', perc + '%');
+        };
+
+        return xhr;
+      },
+      success: function(data) {
+        currentVideo = data;
+        currentVideo.newUpload = true;
+        $('.save-button').removeClass('disabled');
+      }
+    });
+  }
+
   // disable drag and drop on the window
 
   $(window).on('drop', function(e) {
@@ -178,43 +221,13 @@ $(document).ready(function() {
 
   $('.upload-card').on('drop', function(e) {
     let file = e.originalEvent.dataTransfer.files[0];
-    let form = new FormData();
-    form.append('video', file);
+    uploadVideo(file);
+  });
 
-    if (file.type !== 'video/mp4') {
-      alert('The only file type we currently accept is MP4.');
-      return;
-    }
-
-    play(file);
-
-    $.ajax({
-      type: 'POST',
-      processData: false,
-      contentType:  false,
-      data: form,
-      url: '/teamroping/upload',
-      beforeSend: function(request, xhr) {        
-        $('.upload-progress').show();
-        $('.upload-progress .determinate').css('width', '0%');
-        $('.save-button').addClass('disabled');
-      },
-      xhr: function() {
-        let xhr = $.ajaxSettings.xhr() ;
-        
-        xhr.upload.onprogress = function(data){
-          let perc = Math.round((data.loaded / data.total) * 100);
-          $('.upload-progress .determinate').css('width', perc + '%');
-        };
-
-        return xhr;
-      },
-      success: function(data) {
-        currentVideo = data;
-        currentVideo.newUpload = true;
-        $('.save-button').removeClass('disabled');
-      }
-    });
+  $('#file').on('change', function(e) {
+    e.preventDefault();
+    let file = (e.originalEvent.srcElement.files[0]);
+    uploadVideo(file);
   });
 
   $('.header-stats .catch').on('click', function(e) {

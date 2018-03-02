@@ -213,6 +213,49 @@ $(document).ready(function () {
     onLoad = false;
   };
 
+  var uploadVideo = function uploadVideo(file) {
+    var form = new FormData();
+    form.append('video', file);
+    if (SA.run.runId) {
+      form.append('runId', SA.run.runId);
+    }
+
+    if (file.type !== 'video/mp4') {
+      alert('The only file type we currently accept is MP4.');
+      return;
+    }
+
+    play(file);
+
+    $.ajax({
+      type: 'POST',
+      processData: false,
+      contentType: false,
+      data: form,
+      url: '/teamroping/upload',
+      beforeSend: function beforeSend(request, xhr) {
+        $('.upload-progress').show();
+        $('.upload-progress .determinate').css('width', '0%');
+        $('.save-button').addClass('disabled');
+      },
+      xhr: function xhr() {
+        var xhr = $.ajaxSettings.xhr();
+
+        xhr.upload.onprogress = function (data) {
+          var perc = Math.round(data.loaded / data.total * 100);
+          $('.upload-progress .determinate').css('width', perc + '%');
+        };
+
+        return xhr;
+      },
+      success: function success(data) {
+        currentVideo = data;
+        currentVideo.newUpload = true;
+        $('.save-button').removeClass('disabled');
+      }
+    });
+  };
+
   // disable drag and drop on the window
 
   $(window).on('drop', function (e) {
@@ -256,43 +299,13 @@ $(document).ready(function () {
 
   $('.upload-card').on('drop', function (e) {
     var file = e.originalEvent.dataTransfer.files[0];
-    var form = new FormData();
-    form.append('video', file);
+    uploadVideo(file);
+  });
 
-    if (file.type !== 'video/mp4') {
-      alert('The only file type we currently accept is MP4.');
-      return;
-    }
-
-    play(file);
-
-    $.ajax({
-      type: 'POST',
-      processData: false,
-      contentType: false,
-      data: form,
-      url: '/teamroping/upload',
-      beforeSend: function beforeSend(request, xhr) {
-        $('.upload-progress').show();
-        $('.upload-progress .determinate').css('width', '0%');
-        $('.save-button').addClass('disabled');
-      },
-      xhr: function xhr() {
-        var xhr = $.ajaxSettings.xhr();
-
-        xhr.upload.onprogress = function (data) {
-          var perc = Math.round(data.loaded / data.total * 100);
-          $('.upload-progress .determinate').css('width', perc + '%');
-        };
-
-        return xhr;
-      },
-      success: function success(data) {
-        currentVideo = data;
-        currentVideo.newUpload = true;
-        $('.save-button').removeClass('disabled');
-      }
-    });
+  $('#file').on('change', function (e) {
+    e.preventDefault();
+    var file = e.originalEvent.srcElement.files[0];
+    uploadVideo(file);
   });
 
   $('.header-stats .catch').on('click', function (e) {

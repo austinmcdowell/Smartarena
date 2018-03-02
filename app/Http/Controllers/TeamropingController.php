@@ -156,6 +156,7 @@ class TeamropingController extends Controller
     public function upload(Request $request)
     {
         $user = Auth::user();
+        $run_id = $request->input('runId');
         $original_file = $request->file('video');
         $tmp_dir = sys_get_temp_dir();
         $mime_type = $original_file->getClientMimeType();
@@ -167,6 +168,10 @@ class TeamropingController extends Controller
             // CHOKE
         }
 
+        if ($run_id) {
+            Video::where('run_id', $run_id)->delete();
+        }
+
         // move the file to tmp so we can start processing
         $moved_file = $original_file->move($tmp_dir, $filename);
 
@@ -175,6 +180,11 @@ class TeamropingController extends Controller
         $video->file_name = $filename;
         $video->run_type = "teamroping";
         $video->processing_complete = false;
+
+        if ($run_id) {
+            $video->run_id = $run_id;
+        }
+
         $video->save();
 
         // Let's queue it up
