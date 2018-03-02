@@ -23,6 +23,6 @@ class TeamropingRun extends Model
 
     public function videos()
     {
-        return $this->hasMany('\App\Video');
+        return $this->hasMany('\App\Video', 'run_id');
     }
 }

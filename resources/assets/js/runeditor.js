@@ -7,7 +7,7 @@ $(document).ready(function() {
   let CURRENT_SCALE = 1;
   let isZoomed = false;
 
-  let currentVideo = null;
+  let currentVideo = {};
   let playbackInterval = null;
   let isIntervalSet = false;
 
@@ -253,6 +253,7 @@ $(document).ready(function() {
       beforeSend: function(request, xhr) {        
         $('.upload-progress').show();
         $('.upload-progress .determinate').css('width', '0%');
+        $('.save-button').addClass('disabled');
       },
       xhr: function() {
         let xhr = $.ajaxSettings.xhr() ;
@@ -266,6 +267,8 @@ $(document).ready(function() {
       },
       success: function(data) {
         currentVideo = data;
+        currentVideo.newUpload = true;
+        $('.save-button').removeClass('disabled');
       }
     });
   });
@@ -298,12 +301,75 @@ $(document).ready(function() {
     }
   });
 
+  // Save Button
+  $('.save-button').on('click', function(e) {
+    e.preventDefault();
+
+    SA.run.date = $('#date').val();
+    SA.run.eventId = $('#event-select').val();
+    SA.run.roping  = $('#roping').val();
+    SA.run.round   = $('#round').val();
+    SA.run.time    = $('#time').val();
+    
+    if ($('#no-time').val() === "on") {
+      SA.run.noTime = true;
+    } else {
+      SA.run.noTime = false;
+    }
+
+    if ($('#score').val() === "on") {
+      SA.run.score = true;
+    } else {
+      SA.run.score = false;
+    }
+    
+    SA.run.header.humanId = $('#header-select').val();
+    SA.run.header.barrierPenalty = $('header-barrier-penalty').val();
+    SA.run.heeler.humanId = $('#heeler-select').val();
+    SA.run.heeler.barrierPenalty = $('heeler-barrier-penalty').val();
+    SA.run.currentVideo = currentVideo;
+
+    if (SA.run.header.humanId === SA.run.heeler.humanId) {
+      alert('The header and heeler cannot both be the same person!');
+      return;
+    }
+
+    if (!SA.run.eventId) {
+      alert('You must select an event!');
+      return;
+    }
+
+    if (!SA.run.header.humanId || !SA.run.heeler.humanId) {
+      alert('You must select both a header and heeler.');
+      return;
+    }
+
+    $.ajax({
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(SA.run),
+      url: '/teamroping/save',
+      success: function(data) {
+        window.location.replace('/profile/' + SA.humanId);
+      },
+      error: function(xhr, textStatus, error) {
+        console.log(xhr, textStatus, error);
+        alert("Something went wrong. Please contact support.");
+        //window.history.back();
+      }
+    })
+  });
+
   // init:
 
   // A video exists on load
   // let's show the video player and hide the uploader.
   if (SA.videos.length) {
     $('#video-player').show();
+    let player = videojs('my-video');
+    let video  = SA.videos[0];
+    player.src({ type: 'video/mp4', src: video.file_url});
+    player.play();
   }
 
   // Create SA.run object if we don't have one

@@ -72,7 +72,7 @@
             </div>
             @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
             <div class="col s12">
-              <a href="/teamroping/edit?id={{$run->id}}" class="waves-effect waves-light btn">Edit Run</a>
+              <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
             </div>
             @endif
             <!-- if has videos -->
@@ -108,7 +108,7 @@
             <tbody>
               @foreach ($header_runs as $run)
                 <tr>
-                  <td><a href="/teamropingrun/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
+                  <td><a href="/teamroping/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
                   <td><a href="#"><i class="material-icons">play_arrow</i></a></td>
                   <td>{{ $run->date }}</td>
                   <td>{{ $run->event->location }} </td>
@@ -155,7 +155,7 @@
             </div>
             @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
             <div class="col s12">
-              <a href="/teamroping/edit?id={{$run->id}}" class="waves-effect waves-light btn">Edit Run</a>
+              <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
             </div>
             @endif
           </div>
@@ -189,7 +189,7 @@
             <tbody>
               @foreach ($heeler_runs as $run)
                 <tr>
-                  <td><a href="/teamropingrun/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
+                  <td><a href="/teamroping/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
                   <td><a href="#"><i class="material-icons">play_arrow</i></a></td>
                   <td>{{ $run->date }}</td>
                   <td>{{ $run->event->location }} </td>

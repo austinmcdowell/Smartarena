@@ -60,18 +60,18 @@
         <h4>Header Stats</h4>
         <div class="row">
           <div class="col s4 center-align">
-            <div class="catch-type-button catch" data-catch-type="half head">
-              <span>Half Head</span>
-            </div>
-          </div>
-          <div class="col s4 center-align">
-            <div class="catch-type-button catch" data-catch-type="two horns">
-              <span>Two Horns</span>
-            </div>
-          </div>
-          <div class="col s4 center-align">
             <div class="catch-type-button catch" data-catch-type="slick horns">
               <span>Slick Horns</span>
+            </div>
+          </div>
+          <div class="col s4 center-align">
+            <div class="catch-type-button catch" data-catch-type="neck">
+              <span>Neck</span>
+            </div>
+          </div>
+          <div class="col s4 center-align">
+            <div class="catch-type-button catch" data-catch-type="half head">
+              <span>Half Horns</span>
             </div>
           </div>
         </div>
@@ -116,6 +116,7 @@
           <div class="row">
             <div class="col s12 input-field">
               <input placeholder="Date" id="date" type="text">
+              <label for="date">Date</label>
             </div>
           </div>
           <div class="row">
@@ -131,16 +132,19 @@
           <div class="row">
             <div class="col s12 input-field">
               <input placeholder="Roping" id="roping" type="text" class="validate">
+              <label for="roping">Roping</label>
             </div>
           </div>
           <div class="row">
             <div class="col s12 input-field">
               <input placeholder="Round" id="round" type="text" class="validate">
+              <label for="round">Round</label>
             </div>
           </div>
           <div class="row">
             <div class="col s12 input-field">
-              <input placeholder="Time" id="time" type="text" class="validate">
+              <input placeholder="Time" id="time" type="number" class="validate">
+              <label for="time">Time</label>
             </div>
           </div>
           <div class="row">
@@ -193,6 +197,11 @@
               </select>
             </div>
           </div>
+          <div class="row">
+            <div class="col s12 l4 offset-l4 center-align">
+              <button class="waves-effect waves-light btn save-button">Save Run</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -206,6 +215,7 @@
 <script>
 
   let SA = {};
+  SA.humanId = @json($human_id);
   SA.videos = @json($videos);
   @if (isset($run))
   SA.run = @json($run);
