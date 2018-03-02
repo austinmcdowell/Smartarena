@@ -18,14 +18,14 @@ Route::get('/logout', 'AuthController@logout');
 Route::get('login/google', 'AuthController@redirectToGoogle');
 Route::get('login/google/callback', 'AuthController@handleGoogleCallback');
 
-Route::get('/massupload/humans', 'MassHumanUploader@get')->middleware('auth');
-Route::post('/massupload/humans/process', 'MassHumanUploader@process')->middleware('auth');
+Route::get('/massupload/humans', 'MassHumanUploader@get')->middleware('auth', 'admin');
+Route::post('/massupload/humans/process', 'MassHumanUploader@process')->middleware('auth', 'admin');
 
-Route::get('/massupload/runs', 'MassRunUploader@get')->middleware('auth');
-Route::post('/massupload/runs/process', 'MassRunUploader@process')->middleware('auth');
+Route::get('/massupload/runs', 'MassRunUploader@get')->middleware('auth', 'admin');
+Route::post('/massupload/runs/process', 'MassRunUploader@process')->middleware('auth', 'admin');
 
-Route::get('/userhumanlinker', 'UserHumanLinkController@get')->middleware('auth');
-Route::post('/userhumanlinker', 'UserHumanLinkController@post')->middleware('auth');
+Route::get('/userhumanlinker', 'UserHumanLinkController@get')->middleware('auth', 'admin');
+Route::post('/userhumanlinker', 'UserHumanLinkController@post')->middleware('auth', 'admin');
 
 Route::get('/profile/{id}', 'ProfileController@get');
 
