@@ -34,9 +34,9 @@ class MassHumanUploader extends Controller
 
             $human->import_id      = $humanData['importId'];
             $human->classification = $humanData['classification'];
-            $human->first_name     = $humanData['firstName'];
-            $human->last_name      = $humanData['lastName'];
-            $human->location       = $humanData['location'];
+            $human->first_name     = ucfirst(strtolower($humanData['firstName']));
+            $human->last_name      = ucfirst(strtolower($humanData['lastName']));
+            $human->location       = ucwords(strtolower($humanData['location']));
 
             try {
                 $human->save();
