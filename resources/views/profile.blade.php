@@ -62,7 +62,7 @@
         <div class="card-content">
           <div class="row">
             <div class="col s12">
-              <p>Date: {{ $run->date }}</td>
+              <p>Date: {{ $run->date }}</p>
               <p>Event: {{ $run->event->location }} </p>
               <p>Header Catch: {{ $run->header_catch_type }}</p>
               <p>Heeler Catch: {{ $run->heeler_catch_type }}</p>
@@ -72,23 +72,21 @@
               <p>Raw Time: {{ $run->raw_time }}</p>
               <p>Total Time: {{ $run->total_time }}</p>
             </div>
-            @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
-            <div class="row">
-              <div class="col s12">
-                <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
-              </div>
-            </div>
-            @endif
-            @if ($run->videos->first())
-            <div class="row">
-              <div class="col s12 center-align">
-                <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}">Play Video</a>
-              </div>
-            </div>
-            @endif
-            <!-- if has videos -->
-            <!-- end if -->
           </div>
+          @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
+          <div class="row">
+            <div class="col s12 center-align">
+              <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
+            </div>
+          </div>
+          @endif
+          @if ($run->videos->first())
+          <div class="row">
+            <div class="col s12 center-align">
+              <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}">Play Video</a>
+            </div>
+          </div>
+          @endif
         </div>
       </div>
     </div>
@@ -158,7 +156,7 @@
         <div class="card-content">
           <div class="row">
             <div class="col s12">
-              <p>Date: {{ $run->date }}</td>
+              <p>Date: {{ $run->date }}</p>
               <p>Event: {{ $run->event->location }} </p>
               <p>Header Catch: {{ $run->header_catch_type }}</p>
               <p>Heeler Catch: {{ $run->heeler_catch_type }}</p>
@@ -168,21 +166,21 @@
               <p>Raw Time: {{ $run->raw_time }}</p>
               <p>Total Time: {{ $run->total_time }}</p>
             </div>
-            @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
-            <div class="row">
-              <div class="col s12 center-align">
-                <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
-              </div>
-            </div>
-            @endif
-            @if ($run->videos->first())
-            <div class="row">
-              <div class="col s12 center-align">
-                <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}">Play Video</a>
-              </div>
-            </div>
-            @endif
           </div>
+          @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
+          <div class="row">
+            <div class="col s12 center-align">
+              <a href="/teamroping/{{ $run->id }}/edit" class="waves-effect waves-light btn">Edit Run</a>
+            </div>
+          </div>
+          @endif
+          @if ($run->videos->first())
+          <div class="row">
+            <div class="col s12 center-align">
+              <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}">Play Video</a>
+            </div>
+          </div>
+          @endif
         </div>
       </div>
     </div>
@@ -257,6 +255,7 @@
             <span class="zoom-out">-</span>
           </div>
         </div>
+      </div>
       <div class="row">
         <div class="col s3 control-button center-align double-rewind">
           <span><i class="fas fa-angle-double-left"></i></span>
