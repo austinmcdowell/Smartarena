@@ -6,6 +6,35 @@
 
 @section('content')
     <br />
+    <div class="row">
+        <div class="col s6 offset-s3 awards center-align">
+
+            @if (isset($most_runs_badge))
+            <div class="award most-runs">
+                <div class="circle"></div>
+                <div class='full-name'>{{ $most_runs_badge['human_name'] }}</div>
+                <div class='description'>({{ $most_runs_badge['count'] }}) Most Runs</div>
+            </div>
+            @endif
+
+            @if (isset($most_efficient_badge))
+            <div class="award most-efficient">
+                <div class="circle"></div>
+                <div class='full-name'>{{ $most_efficient_badge['human_name'] }}</div>
+                <div class='description'>Most Efficient</div>
+            </div>
+            @endif
+
+            @if (isset($shortest_average_time_badge))
+            <div class="award shortest-average-time">
+                <div class="circle"></div>
+                <div class='full-name'>{{ $shortest_average_time_badge['human_name'] }}</div>
+                <div class='description'>Best Average Time: {{ $shortest_average_time_badge['count'] }}</div>
+            </div>
+            @endif
+
+        </div>
+    </div>
     <div class="row hide-on-large-only">
         <div class="col s10 offset-s1">
             @foreach ($humans as $human)

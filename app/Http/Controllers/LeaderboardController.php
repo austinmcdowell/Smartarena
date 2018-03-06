@@ -18,7 +18,14 @@ class LeaderboardController extends Controller
         $user = Auth::user();
         $isLoggedIn = Auth::check();
         $humans = Human::all();
+
+        $most_runs_badge = null;
+        $most_efficient_badge = null;
+        $shortest_average_time_badge = null;
+
         $stats = [];
+
+        // At some point we want to take this logic and put it into a job that runs every few minutes
 
         foreach ($humans as $human) {
             $run_count = 0;
@@ -100,6 +107,48 @@ class LeaderboardController extends Controller
                 $sum_of_average_time = $time_with_penalties / $run_count;
             }
 
+            if ($shortest_average_time_badge) {
+                if ($sum_of_average_time < $shortest_average_time_badge['count']) {
+                    $shortest_average_time_badge = [
+                        'human_name' => $human->first_name . ' ' . $human->last_name,
+                        'count' => $sum_of_average_time
+                    ];
+                }
+            } else {
+                $shortest_average_time_badge = [
+                    'human_name' => $human->first_name . ' ' . $human->last_name,
+                    'count' => $sum_of_average_time
+                ];
+            }
+
+            if ($most_efficient_badge) {
+                if ($penalties < $most_efficient_badge['count']) {
+                    $most_efficient_badge = [
+                        'human_name' => $human->first_name . ' ' . $human->last_name,
+                        'count' => $penalties
+                    ];
+                }
+            } else {
+                $most_efficient_badge = [
+                    'human_name' => $human->first_name . ' ' . $human->last_name,
+                    'count' => $penalties
+                ];
+            }
+
+            if ($most_runs_badge) {
+                if ($run_count > $most_runs_badge['count']) {
+                    $most_runs_badge = [
+                        'human_name' => $human->first_name . ' ' . $human->last_name,
+                        'count' => $run_count
+                    ];
+                }
+            } else {
+                $most_runs_badge = [
+                    'human_name' => $human->first_name . ' ' . $human->last_name,
+                    'count' => $run_count
+                ];
+            }
+
             $stats[$human->id] = [
                 'catch_count' => $catch_count, 
                 'run_count' => $run_count,
@@ -116,7 +165,10 @@ class LeaderboardController extends Controller
             'isLoggedIn' => $isLoggedIn,
             'user' => $user,
             'humans' => $humans,
-            'stats' => $stats
+            'stats' => $stats,
+            'most_runs_badge' => $most_runs_badge,
+            'most_efficient_badge' => $most_efficient_badge,
+            'shortest_average_time_badge' => $shortest_average_time_badge
         ]);
     }
 }

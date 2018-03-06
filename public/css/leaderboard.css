@@ -1,0 +1,44 @@
+.award {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.awards .circle {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+}
+
+.awards .award {
+  display: inline-block;
+  text-align: center;
+}
+
+.awards .most-runs .circle {
+  background-color: #4f8f64;
+  background-image: url("/img/mostruns.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.awards .most-efficient .circle {
+  background-color: #ffdb8c;
+  background-image: url("/img/leastpenalties.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.awards .shortest-average-time .circle {
+  background-color: #ffaeae;
+  background-image: url("/img/bestaveragetime.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
