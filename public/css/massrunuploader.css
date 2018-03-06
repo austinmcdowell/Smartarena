@@ -6,3 +6,15 @@
   pointer-events: all;
 }
 
+.upload-card {
+  overflow: auto;
+}
+
+.upload-card .file-upload {
+  margin-bottom: 50px;
+}
+
+.upload-card .file-upload label {
+  margin-top: 10px;
+}
+

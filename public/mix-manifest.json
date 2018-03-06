@@ -12,5 +12,6 @@
     "/js/runeditor.js": "/js/runeditor.js",
     "/js/profile.js": "/js/profile.js",
     "/js/massrunuploader.js": "/js/massrunuploader.js",
-    "/js/masshumanuploader.js": "/js/masshumanuploader.js"
+    "/js/masshumanuploader.js": "/js/masshumanuploader.js",
+    "/js/createhuman.js": "/js/createhuman.js"
 }

@@ -75,6 +75,7 @@
             <li><a href="/massupload/humans">Mass Upload Humans</a></li>
             <li><a href="/massupload/runs">Mass Upload Runs</a></li>
             <li><a href="/userhumanlinker">User Human Linker</a></li>
+            <li><a href="/createhuman">Create Human</a></li>
             @endif
             <li><a href="/logout">Logout</a></li>
         </ul>
