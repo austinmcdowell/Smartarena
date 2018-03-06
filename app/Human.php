@@ -10,4 +10,14 @@ class Human extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function teamropingHeaderRuns()
+    {
+        return $this->hasMany('App\TeamropingRun', 'header_human_id');
+    }
+
+    public function teamropingHeelerRuns()
+    {
+        return $this->hasMany('App\TeamropingRun', 'heeler_human_id');
+    }
 }

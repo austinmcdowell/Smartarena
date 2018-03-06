@@ -12,14 +12,14 @@
                 <div class="card">
                     <div class="card-content">
                         <h4><a href="/profile/{{ $human->id }}">{{ ucfirst($human->first_name) . ' ' . ucfirst($human->last_name) }}</a></h4>
-                        <p>Classification: 1</p>
-                        <p>Catch count: 7</p>
-                        <p>Runs: 7</p>
-                        <p>Total Run Penalties: 7</p>
-                        <p>Total Raw Time: 70.64s</p>
-                        <p>Time With Penalties: 80.00s</p>
-                        <p>Catch Percentage: 100.00%</p>
-                        <p>Average Time: 12.23s</p>
+                        <p>Classification: {{ $human->classification }}</p>
+                        <p>Catch count: {{ $stats[$human->id]['catch_count'] }}</p>
+                        <p>Runs: {{ $stats[$human->id]['run_count'] }}</p>
+                        <p>Total Run Penalties: {{ $stats[$human->id]['total_penalties'] }}</p>
+                        <p>Total Raw Time: {{ $stats[$human->id]['total_raw_time'] }}s</p>
+                        <p>Time With Penalties: {{ $stats[$human->id]['time_with_penalties'] }}s</p>
+                        <p>Catch Percentage: {{ $stats[$human->id]['catch_percentage'] }}%</p>
+                        <p>Average Time: {{ $stats[$human->id]['sum_of_average_time'] }}s</p>
                     </div>
                 </div>
             @endforeach
@@ -48,16 +48,16 @@
                     <tbody>
                         @foreach ($humans as $human)
                             <tr>
-                                <td>1</td>
+                                <td>{{ $human->classification }}</td>
                                 <td><a href="/profile/{{ $human->id }}">{{ $human->first_name . ' ' . $human->last_name }}</a></td>
-                                <td>7</td>
-                                <td>7</td>
-                                <td>5</td>
-                                <td>15</td>
-                                <td>70.64s</td>
-                                <td>80.00s</td>
-                                <td>100.00%</td>
-                                <td>12.23s</td>
+                                <td>{{ $stats[$human->id]['catch_count'] }}</td>
+                                <td>{{ $stats[$human->id]['run_count'] }}</td>
+                                <td>{{ $stats[$human->id]['penalties'] }}</td>
+                                <td>{{ $stats[$human->id]['total_penalties'] }}</td>
+                                <td>{{ $stats[$human->id]['total_raw_time'] }}s</td>
+                                <td>{{ $stats[$human->id]['time_with_penalties'] }}s</td>
+                                <td>{{ $stats[$human->id]['catch_percentage'] }}%</td>
+                                <td>{{ $stats[$human->id]['sum_of_average_time'] }}s</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -67,31 +67,3 @@
         </div>
     </div>
 @endsection
-
-<!-- <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-            @endauth
-        </div>
-    @endif
-
-    <div class="content">
-        <div class="title m-b-md">
-            Laravel
-        </div>
-
-        <div class="links">
-            <a href="https://laravel.com/docs">Documentation</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
-        </div>
-    </div>
-</div>
-     -->
