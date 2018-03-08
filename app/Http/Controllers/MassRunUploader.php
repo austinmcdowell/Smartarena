@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use DateTime;
+
 use App\User;
 use App\Http\Controllers\Controller;
 use App\Event;
 use App\TeamropingRun;
 use App\Human;
+use App\Video;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
@@ -88,8 +92,17 @@ class MassRunUploader extends Controller
             $run->raw_time = $runData['rawTime'];
             $run->total_time = ($run->raw_time - $run->header_penalty_time - $run->heeler_penalty_time);
             
+            if ($runData['file']) {
+                $video = new Video;
+                $video->file_name = $runData['file'];
+                $video->processing_complete = false;
+                $video->run_type = "teamroping";
+            }
+
             try {
                 $run->save();
+                $video->run_id = $run->id;
+                $video->save();
             } catch (QueryException $e) {
                 report($e);
 
@@ -104,5 +117,41 @@ class MassRunUploader extends Controller
         }
 
         return ['success' => $didSucceed];
+    }
+
+    public function uploadVideo(Request $request)
+    {
+        $user = Auth::user();
+        $run_id = $request->input('runId');
+        $original_file = $request->file('video');
+        $tmp_dir = sys_get_temp_dir();
+        $mime_type = $original_file->getClientMimeType();
+        $date = new DateTime;
+        $original_filename = $original_file->getClientOriginalName();
+        $filename = $user->id . "-" . $date->getTimestamp() . "-". $original_filename;
+        
+        if ($mime_type != "video/mp4") {
+            // CHOKE
+        }
+
+        $video = Video::where('file_name', $original_filename)
+            ->where('processing_complete', 'false')
+            ->where('file_url', null)
+            ->where('thumbnail_url', null)->firstOrFail();
+
+        if ($run_id) {
+            Video::where('run_id', $video->run_id)->delete();
+        }
+
+        // move the file to tmp so we can start processing
+        $moved_file = $original_file->move($tmp_dir, $filename);
+
+        $video->file_name = $filename;
+        $video->save();
+
+        // Let's queue it up
+        $this->dispatch(new \App\Jobs\ProcessVideo($video));
+        
+        return $video;
     }
 }

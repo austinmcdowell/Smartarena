@@ -40,6 +40,7 @@
         <div class="progress upload-progress">
           <div class="determinate" style="width: 0%"></div>
         </div>
+        <ul id="successfully-uploaded"></ul>
       </div>
     </div>
   </div>

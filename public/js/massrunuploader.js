@@ -77,22 +77,22 @@ module.exports = __webpack_require__(43);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  // $('#event-select').material_select();
+  var queue = [];
 
-  function parseDate(string) {
+  var parseDate = function parseDate(string) {
     var newDate = new Date(string);
     if (newDate.toJSON === null) {
       return new Date(0);
     } else {
       return newDate;
     }
-  }
+  };
 
-  function parseBool(string) {
+  var parseBool = function parseBool(string) {
     return string.toString().trim().toLowerCase() === 'true';
-  }
+  };
 
-  function parseRun(run, eventId) {
+  var parseRun = function parseRun(run, eventId) {
     return {
       file: run[0].trim(),
       date: parseDate(run[1]),
@@ -115,7 +115,121 @@ $(document).ready(function () {
       heelerPenaltyType: run[17].trim(),
       heelerPenaltyTime: parseFloat(run[18])
     };
-  }
+  };
+
+  var parseContentsOf = function parseContentsOf(entry) {
+    if (entry.isFile) {
+      if (entry.name !== '.DS_Store') {
+        return prepareForUpload(entry);
+      }
+    } else {
+      var entryReader = entry.createReader();
+      var promises = [];
+      return new Promise(function (resolve, reject) {
+        promises.push(new Promise(function (resolveEntry, rejectEntry) {
+          entryReader.readEntries(function (entryNodes) {
+            var childPromises = [];
+            entryNodes.forEach(function (node) {
+              if (node.name !== '.DS_Store') {
+                if (node.isDirectory) {
+                  childPromises.push(parseContentsOf(node));
+                } else {
+                  childPromises.push(prepareForUpload(node));
+                }
+              }
+            });
+            resolveEntry(Promise.all(childPromises));
+          });
+        }));
+        resolve(Promise.all(promises));
+      });
+    }
+  };
+
+  var prepareForUpload = function prepareForUpload(fileEntry) {
+    return new Promise(function (resolve, reject) {
+      fileEntry.file(function (file) {
+        var filename = fileEntry.name;
+
+        queue.push(function () {
+          var form = new FormData();
+          form.append('video', file);
+
+          if (file.type !== 'video/mp4') {
+            alert('The only file type we currently accept is MP4.');
+            return Promise.reject();
+          }
+
+          return $.ajax({
+            type: 'POST',
+            processData: false,
+            contentType: false,
+            data: form,
+            url: '/massupload/runs/uploadVideo',
+            beforeSend: function beforeSend(request, xhr) {
+              $('.upload-progress .determinate').css('width', '0%');
+            },
+            xhr: function xhr() {
+              var xhr = $.ajaxSettings.xhr();
+
+              xhr.upload.onprogress = function (data) {
+                var perc = Math.round(data.loaded / data.total * 100);
+                $('.upload-progress .determinate').css('width', perc + '%');
+              };
+
+              return xhr;
+            },
+            success: function success(data) {
+              $('<li>' + filename + ' was uploaded successful!</li>').appendTo('#successfully-uploaded');
+            }
+          });
+        });
+        resolve();
+      });
+    });
+  };
+
+  // disable drag and drop on the window
+
+  $(window).on('drop', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $(window).on('dragover', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $('.upload-card').on('drop', function (e) {
+    var length = e.originalEvent.dataTransfer.items.length;
+    var parentPromises = [];
+
+    for (var i = 0; i < length; i++) {
+      var entry = e.originalEvent.dataTransfer.items[i].webkitGetAsEntry();
+      parentPromises.push(parseContentsOf(entry));
+    }
+
+    Promise.all(parentPromises).then(function () {
+      if (queue.length === 1) {
+        return queue[0]();
+      } else {
+        queue.reduce(function (promiseChain, nextPromise) {
+          // All of the items in the queue are functions, but the only way this can run is if we run .then against a promise
+          // We first check if promiseChain is a function and if so we call it. After that iteration it'll be a promise object.
+          if (typeof promiseChain === 'function') {
+            return promiseChain().then(function (result) {
+              return nextPromise().then(Array.prototype.concat.bind(result));
+            }, Promise.resolve([]));
+          } else {
+            return promiseChain.then(function (result) {
+              return nextPromise().then(Array.prototype.concat.bind(result));
+            }, Promise.resolve([]));
+          }
+        });
+      }
+    });
+  });
 
   $('.upload-button').on('click', function (e) {
     e.preventDefault();

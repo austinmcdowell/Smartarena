@@ -23,6 +23,7 @@ Route::post('/massupload/humans/process', 'MassHumanUploader@process')->middlewa
 
 Route::get('/massupload/runs', 'MassRunUploader@get')->middleware('auth', 'admin');
 Route::post('/massupload/runs/process', 'MassRunUploader@process')->middleware('auth', 'admin');
+Route::post('/massupload/runs/uploadVideo', 'MassRunUploader@uploadVideo')->middleware('auth', 'admin');
 
 Route::get('/createhuman', 'CreateHumanController@get')->middleware('auth', 'admin');
 Route::post('/createhuman', 'CreateHumanController@post')->middleware('auth', 'admin');
