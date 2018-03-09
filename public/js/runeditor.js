@@ -248,6 +248,9 @@ $(document).ready(function () {
 
         return xhr;
       },
+      error: function error() {
+        alert('Something went wrong. Please contact support.');
+      },
       success: function success(data) {
         currentVideo = data;
         currentVideo.newUpload = true;

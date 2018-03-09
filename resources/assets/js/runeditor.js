@@ -170,6 +170,9 @@ $(document).ready(function() {
 
         return xhr;
       },
+      error: function() {
+        alert('Something went wrong. Please contact support.');
+      },
       success: function(data) {
         currentVideo = data;
         currentVideo.newUpload = true;
