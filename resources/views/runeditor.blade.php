@@ -136,7 +136,7 @@
           <div class="row">
             <div class="col s12 input-field">
               <select id="event-select">
-                <option value="" disabled selected>Choose your option</option>
+                <option value="" disabled selected>Choose event</option>
                 @foreach ($events as $event)
                   <option value="{{ $event->id }}">{{ $event->location }}</option>
                 @endforeach
