@@ -143,7 +143,7 @@ $(document).ready(function() {
     }
 
     if (file.type !== 'video/mp4') {
-      alert('The only file type we currently accept is MP4.');
+      alert(`The only file type we currently accept is MP4. This file type is ${file.type}`);
       return;
     }
 
