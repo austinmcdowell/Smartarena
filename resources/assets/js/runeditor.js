@@ -142,7 +142,7 @@ $(document).ready(function() {
       form.append('runId', SA.run.runId);
     }
 
-    if (file.type !== 'video/mp4') {
+    if (['video/mp4', 'video/quicktime'].indexOf(file.type) === -1) {
       alert(`The only file type we currently accept is MP4. This file type is ${file.type}`);
       return;
     }

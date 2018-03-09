@@ -164,10 +164,6 @@ class TeamropingController extends Controller
         $original_filename = $original_file->getClientOriginalName();
         $filename = $user->id . "-" . $date->getTimestamp() . "-". str_replace([' ', '(', ')', '%'], '', $original_filename);
     
-        if ($mime_type != "video/mp4") {
-            // CHOKE
-        }
-
         if ($run_id) {
             Video::where('run_id', $run_id)->delete();
         }
