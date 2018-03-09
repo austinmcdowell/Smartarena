@@ -83,7 +83,11 @@
           @if ($run->videos->first())
           <div class="row">
             <div class="col s12 center-align">
+              @if ($run->videos->first()->processing_complete)
               <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}">Play Video</a>
+              @else
+              <a class="waves-effect waves-light btn disabled" href="#">Processing...</a>
+              @endif
             </div>
           </div>
           @endif
@@ -118,10 +122,10 @@
               @foreach ($header_runs as $run)
                 <tr>
                   <td><a href="/teamroping/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
-                  @if ($run->videos->first())
+                  @if ($run->videos->first() && $run->videos->first()->processing_complete)
                   <td><a class="play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}"><i class="material-icons">play_arrow</i></a></td>
-                  @else
-                  <td></td>
+                  @elseif ($run->videos->first() && !$run->videos->first()->processing_complete)
+                  <td><i class="material-icons">alarm</i></td>
                   @endif
                   <td>{{ $run->date }}</td>
                   <td>{{ $run->event->location }} </td>
@@ -174,10 +178,14 @@
             </div>
           </div>
           @endif
-          @if ($run->videos->first())
+          @if ($run->videos->first() && $run->videos->first()->processing_complete)
           <div class="row">
             <div class="col s12 center-align">
+              @if ($run->videos->first()->processing_complete)
               <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}">Play Video</a>
+              @else
+              <a class="waves-effect waves-light btn disabled" href="#">Processing...</a>
+              @endif
             </div>
           </div>
           @endif
@@ -212,10 +220,10 @@
               @foreach ($heeler_runs as $run)
                 <tr>
                   <td><a href="/teamroping/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
-                  @if ($run->videos->first())
+                  @if ($run->videos->first() && $run->videos->first()->processing_complete)
                   <td><a class="play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}"><i class="material-icons">play_arrow</i></a></td>
-                  @else
-                  <td></td>
+                  @elseif ($run->videos->first() && !$run->videos->first()->processing_complete)
+                  <td><i class="material-icons">alarm</i></td>
                   @endif
                   <td>{{ $run->date }}</td>
                   <td>{{ $run->event->location }} </td>
