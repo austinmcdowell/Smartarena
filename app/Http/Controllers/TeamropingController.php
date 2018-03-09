@@ -162,7 +162,7 @@ class TeamropingController extends Controller
         $mime_type = $original_file->getClientMimeType();
         $date = new DateTime;
         $original_filename = $original_file->getClientOriginalName();
-        $filename = $user->id . "-" . $date->getTimestamp() . "-". str_replace([' ', '(', ')'], '', $original_filename);
+        $filename = $user->id . "-" . $date->getTimestamp() . "-". str_replace([' ', '(', ')', '%'], '', $original_filename);
     
         if ($mime_type != "video/mp4") {
             // CHOKE
