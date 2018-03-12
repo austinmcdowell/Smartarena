@@ -29,6 +29,8 @@ class CreateHumanController extends Controller
         $human->first_name     = $request->input('firstName');
         $human->last_name      = $request->input('lastName');
         $human->location       = $request->input('location');
+        $human->email          = $request->input('email');
+        $human->phone          = $request->input('phone');
 
         $human->save();
     

@@ -80,6 +80,8 @@ $(document).ready(function () {
   var classificationInput = $('#classification');
   var firstNameInput = $('#first_name');
   var lastNameInput = $('#last_name');
+  var emailInput = $('#email');
+  var phoneInput = $('#phone');
   var locationInput = $('#location');
 
   $('.upload-button').on('click', function (e) {
@@ -87,14 +89,37 @@ $(document).ready(function () {
     var classification = parseInt(classificationInput.val());
     var firstName = firstNameInput.val();
     var lastName = lastNameInput.val();
+    var email = emailInput.val();
+    var phone = phoneInput.val();
     var location = locationInput.val();
 
-    $.post('/createhuman', {
+    var payload = {
       classification: classification,
       firstName: firstName,
       lastName: lastName,
+      email: email,
+      phone: phone,
       location: location
-    }, function (data) {
+    };
+
+    var validationErrors = validate(payload, {
+      email: {
+        email: true
+      }
+    });
+
+    if (validationErrors) {
+      var error = "";
+
+      for (var i = 0; i < validationErrors['email'].length; i++) {
+        error += validationErrors['email'][i] + '\n';
+      }
+
+      alert(error);
+      return;
+    }
+
+    $.post('/createhuman', payload, function (data) {
       if (data.success) {
         alert("Human successfully created.");
       } else {

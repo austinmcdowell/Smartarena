@@ -15,7 +15,6 @@ class AppComposer {
         // Dependencies automatically resolved by service container...
         $this->isLoggedIn = Auth::check();
         $this->user = Auth::user();
-        $this->human = Human::where('user_id', $this->user->id)->first();
     }
 
     /**
@@ -28,7 +27,6 @@ class AppComposer {
     {
         $view->with('isLoggedIn', $this->isLoggedIn);
         $view->with('user', $this->user);
-        $view->with('human', $this->human);
     }
 
 }

@@ -29,6 +29,18 @@
           </div>
           <div class="row">
             <div class="col s12 input-field">
+              <input placeholder="Email" id="email" type="text">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 input-field">
+              <input placeholder="Phone number" id="phone" type="text">
+              <label for="phone">Phone number</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 input-field">
               <input placeholder="Location" id="location" type="text">
               <label for="location">Location</label>
             </div>
@@ -44,5 +56,6 @@
 @endsection
 
 @section('javascript')
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
 <script src="/js/createhuman.js"></script>
 @endsection
