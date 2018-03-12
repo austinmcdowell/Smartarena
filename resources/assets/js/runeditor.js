@@ -75,16 +75,19 @@ $(document).ready(function() {
       }
 
       // disable heeler stats and clear is header missed
-      if (riderType === 'header' && catchType === 'missed') {
-        $('.heeler-stats').find('.catch-type-button').each(function(index, el) {
-          let button = $(el);
-          button.css({
-            'background-color': '#ccc',
-            'color': '#fff'
+      if (catchType === 'missed') {
+        $('#no-time').prop('checked', true);
+        if (riderType === 'header') {
+          $('.heeler-stats').find('.catch-type-button').each(function(index, el) {
+            let button = $(el);
+            button.css({
+              'background-color': '#ccc',
+              'color': '#fff'
+            });
           });
-        });
-        SA.run.heeler.catchType = null;
-        SA.run.heeler.penaltyType = null;
+          SA.run.heeler.catchType = null;
+          SA.run.heeler.penaltyType = null;
+        }
       }
 
       SA.run[riderType].penaltyType = catchType;
