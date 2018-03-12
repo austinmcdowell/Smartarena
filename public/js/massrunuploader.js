@@ -256,7 +256,7 @@ $(document).ready(function () {
 
     $.post('/massupload/runs/process', JSON.stringify(parsedCSVData), function (data) {
       if (data.success) {
-        alert('Humans imported successfully!');
+        alert('Runs imported successfully!');
       } else {
         alert('There was an error.');
       }

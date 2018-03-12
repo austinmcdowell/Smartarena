@@ -59,12 +59,31 @@ class MassRunUploader extends Controller
             }
 
             $run->header_did_catch = $runData['headerCatch'];
-            if ($runData['headerCatchType']) {
-                $run->header_catch_type = $runData['headerCatchType'];
+
+            if (!$run->header_did_catch) {
+                $run->no_time = true;
+            }
+
+            $header_catch_type = $runData['headerCatchType'];
+            if ($header_catch_type) {
+                if ($header_catch_type == 'missed') {
+                    $run->no_time = true;
+                    $run->header_catch_type = null;
+                } else {
+                    $run->header_catch_type = $header_catch_type;
+                }    
             } else {
                 $run->header_catch_type = null;
             }
             $run->header_penalty_time = $runData['headerPenaltyTime'];
+            
+            if ($runData['headerPenaltyType']) {
+                if ($runData['headerPenaltyType'] == 'barrier') {
+                    $run->header_barrier_penalty = 5;
+                } else if ($runData['headerPenaltyType'] != 'none'){
+                    $run->header_penalty_type = $runData['headerPenaltyType'];
+                }
+            }
 
             if ($runData['heelerSaid']) {
                 try {
@@ -81,13 +100,32 @@ class MassRunUploader extends Controller
 
             $run->heeler_did_catch = $runData['heelerCatch'];
 
-            if ($runData['heelerCatchType']) {
-                $run->heeler_catch_type = $runData['heelerCatchType'];
+            if (!$run->heeler_did_catch) {
+                $run->no_time = true;
+            }
+
+            $heeler_catch_type = $runData['heelerCatchType'];
+
+            if ($heeler_catch_type) {
+                if ($heeler_catch_type == 'missed') {
+                    $run->no_time = true;
+                    $run->heeler_catch_type = null;
+                } else {
+                    $run->heeler_catch_type = $heeler_catch_type;
+                }
             } else {
                 $run->heeler_catch_type = null;
             }
             
             $run->heeler_penalty_time = $runData['heelerPenaltyTime'];
+
+            if ($runData['heelerPenaltyType']) {
+                if ($runData['heelerPenaltyType'] == 'barrier') {
+                    $run->heeler_barrier_penalty = 5;
+                } else if ($runData['heelerPenaltyType'] != 'none') {
+                    $run->heeler_penalty_type = $runData['heelerPenaltyType'];
+                }
+            }
 
             $run->raw_time = $runData['rawTime'];
             $run->total_time = ($run->raw_time - $run->header_penalty_time - $run->heeler_penalty_time);
