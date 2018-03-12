@@ -87,6 +87,9 @@
             </ul>
             @if (isset($isLoggedIn) && $isLoggedIn) 
                 <ul id="nav-mobile" class="right">
+                    @if (isset($human))
+                    <li><a href="/profile/{{ $human->id }}">My Profile</a></li>
+                    @endif
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{ $user->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             @else
