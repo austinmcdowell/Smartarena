@@ -17,6 +17,8 @@ Route::get('/login', 'AuthController@login');
 Route::get('/logout', 'AuthController@logout');
 Route::get('login/google', 'AuthController@redirectToGoogle');
 Route::get('login/google/callback', 'AuthController@handleGoogleCallback');
+Route::get('login/facebook', 'AuthController@redirectToFacebook');
+Route::get('login/facebook/callback', 'AuthController@handleFacebookCallback');
 
 Route::get('/massupload/humans', 'MassHumanUploader@get')->middleware('auth', 'admin');
 Route::post('/massupload/humans/process', 'MassHumanUploader@process')->middleware('auth', 'admin');

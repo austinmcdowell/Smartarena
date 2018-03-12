@@ -19,7 +19,7 @@ class AuthController extends Controller
         return redirect('/');
     }
     /**
-     * Redirect the user to the GitHub authentication page.
+     * Redirect the user to the Google authentication page.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,7 +29,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Obtain the user information from GitHub.
+     * Obtain the user information from Google.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,6 +38,30 @@ class AuthController extends Controller
         $user = Socialite::driver('google')->user();
         
         $authUser = $this->findOrCreateUser($user, 'google');
+        Auth::login($authUser, true);
+        return redirect('/');
+    }
+
+    /**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectToFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from Facebook.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleFacebookCallback()
+    {
+        $user = Socialite::driver('facebook')->user();
+        
+        $authUser = $this->findOrCreateUser($user, 'facebook');
         Auth::login($authUser, true);
         return redirect('/');
     }
