@@ -106,14 +106,19 @@
       <div class="card-content">
         <h4>Heeler Stats</h4>
         <div class="row">
-          <div class="col s6 center-align">
+          <div class="col s4 center-align">
             <div class="catch-type-button catch" data-catch-type="clean">
               <span>Clean</span>
             </div>
           </div>
-          <div class="col s6 center-align">
+          <div class="col s4 center-align">
             <div class="catch-type-button penalty" data-catch-type="leg">
               <span>Leg</span>
+            </div>
+          </div>
+          <div class="col s4 center-align">
+            <div class="catch-type-button penalty" data-catch-type="missed">
+              <span>Missed</span>
             </div>
           </div>
         </div>
