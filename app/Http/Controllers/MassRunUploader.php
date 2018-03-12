@@ -170,24 +170,29 @@ class MassRunUploader extends Controller
 
         // Eventually do MIME type checks
 
-        $video = Video::where('file_name', $original_filename)
+        try {
+            $video = Video::where('file_name', $original_filename)
             ->where('processing_complete', 'false')
             ->where('file_url', null)
             ->where('thumbnail_url', null)->firstOrFail();
 
-        if ($run_id) {
-            Video::where('run_id', $video->run_id)->delete();
+            if ($run_id) {
+                Video::where('run_id', $video->run_id)->delete();
+            }
+
+            // move the file to tmp so we can start processing
+            $moved_file = $original_file->move($tmp_dir, $filename);
+
+            $video->file_name = $filename;
+            $video->save();
+
+            // Let's queue it up
+            $this->dispatch(new \App\Jobs\ProcessVideo($video));
+            
+            return $video;
+        } catch (\Exception $e) {
+            return ['message' => 'Video record not found.'];
         }
-
-        // move the file to tmp so we can start processing
-        $moved_file = $original_file->move($tmp_dir, $filename);
-
-        $video->file_name = $filename;
-        $video->save();
-
-        // Let's queue it up
-        $this->dispatch(new \App\Jobs\ProcessVideo($video));
         
-        return $video;
     }
 }
