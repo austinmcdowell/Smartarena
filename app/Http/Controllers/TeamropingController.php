@@ -115,7 +115,11 @@ class TeamropingController extends Controller
 
         // penalty calculations
         if ($run->header_penalty_type == 'missed') {
-            $run->header_penalty_time = 5;
+            $run->no_time = true;
+        }
+
+        if ($run->heeler_penalty_type == 'missed') {
+            $run->no_time = true;
         }
 
         if ($run->heeler_penalty_type == 'leg') {
@@ -132,9 +136,9 @@ class TeamropingController extends Controller
 
         $run->total_time = $run->raw_time + $run->heeler_penalty_time + $run->header_penalty_time + $run->header_barrier_penalty + $run->heeler_barrier_penalty;
         
-        // DB::beginTransaction();
+        DB::beginTransaction();
 
-        // try {
+        try {
             $run->save();
 
             // Video linking
@@ -144,11 +148,11 @@ class TeamropingController extends Controller
                 $video->run_id = $run->id;
                 $video->save();
             }
-        // } catch (\Exception $e) {
-        //     DB::rollback();
-        // }
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
         
-        // DB::commit();
+        DB::commit();
        
         return $run;
     }
