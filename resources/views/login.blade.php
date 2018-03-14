@@ -21,7 +21,7 @@
           <a href="/login/google" class="login-button google waves-effect waves-light btn">Login with Google</a>
           <!-- We have some code in place to start adding facebook authentication, but we need to do checks to make sure that
           if users have signed in with google we link the accounts instead of creating a new one -->
-          <!-- <a href="/login/facebook" class="login-button facebook waves-effect waves-light btn">Login with Facebook</a> -->
+          <a href="/login/facebook" class="login-button facebook waves-effect waves-light btn">Login with Facebook</a>
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ class TeamropingController extends Controller
     {
         $user = Auth::user();
         $events = Event::all();
-        $humans = Human::all();
+        $humans = Human::orderBy('first_name')->get();
         $run = TeamropingRun::find($id);
         return view('runeditor', [
             'events' => $events,
