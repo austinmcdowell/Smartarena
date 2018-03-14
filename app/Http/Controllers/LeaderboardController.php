@@ -17,7 +17,7 @@ class LeaderboardController extends Controller
     {   
         $user = Auth::user();
         $isLoggedIn = Auth::check();
-        $humans = Human::all();
+        $humans = Human::orderBy('first_name')->get();
 
         $most_runs_badge = null;
         $most_efficient_badge = null;

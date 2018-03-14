@@ -19,7 +19,7 @@ class TeamropingController extends Controller
     {
         $user = Auth::user();
         $events = Event::all();
-        $humans = Human::all();
+        $humans = Human::orderBy('first_name')->get();
         return view('runeditor', [
             'events' => $events,
             'humans' => $humans,

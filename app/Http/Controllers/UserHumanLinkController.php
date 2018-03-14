@@ -11,8 +11,8 @@ class UserHumanLinkController extends Controller
 {
     public function get()
     {
-        $users = User::all();
-        $humans = Human::all();
+        $users = User::orderBy('name')->get();
+        $humans = Human::orderBy('first_name')->get();
 
         return view('userhumanlinker', [
           'users' => $users,
