@@ -180,7 +180,7 @@ $(document).ready(function () {
               return xhr;
             },
             success: function success(data) {
-              $('<li>' + filename + ' was uploaded successful!</li>').appendTo('#successfully-uploaded');
+              $('<li>' + filename + ' was uploaded successfully!</li>').appendTo('#successfully-uploaded');
             }
           });
         });
