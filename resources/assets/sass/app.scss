@@ -15,6 +15,12 @@
   margin-top: -36px;
 }
 
+.dropdown-button {
+  &:focus {
+    outline: 0;
+  }
+}
+
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 

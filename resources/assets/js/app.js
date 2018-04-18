@@ -27,5 +27,9 @@ $(document).ready(function() {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-});
 
+  $('.sidenav').sidenav();
+
+  let elem = document.querySelector('.dropdown-button');
+  let instance = M.Dropdown.init(elem, {});
+});

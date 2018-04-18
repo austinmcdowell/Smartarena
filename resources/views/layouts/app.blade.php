@@ -11,7 +11,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link rel="stylesheet" href="/css/app.css" text="text/css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         @yield('css')
@@ -81,16 +81,20 @@
         </ul>
         <nav>
             <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left">
+            @if (isset($isLoggedIn) && $isLoggedIn)
+            <a href="#!" class="hide-on-med-and-up">SMART ARENA</a>
+            <a href="#" data-target="mobile-demo" class="hide-on-med-and-up sidenav-trigger"><i class="material-icons">menu</i></a>
+            @endif
+            <ul id="nav-mobile" class="hide-on-small-only left">
                 <li class="hide-on-med-and-down"><a href="/">SMART ARENA</a></li>
                 <li><a href="/">LEADERBOARDS</a></li>
             </ul>
             @if (isset($isLoggedIn) && $isLoggedIn) 
-                <ul id="nav-mobile" class="right">
+                <ul id="nav-mobile" class=" right">
                     @if ($user->human)
                     <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
                     @endif
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{ $user->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="hide-on-small-only dropdown-button" href="#" data-target="dropdown1">{{ $user->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             @else
                 <ul id="nav-mobile" class="right">
@@ -99,11 +103,24 @@
             @endif
             </div>
         </nav>
+        @if (isset($isLoggedIn) && $isLoggedIn) 
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
+            @if (isset($user) && $user->role == "admin")
+            <li><a href="/massupload/humans">Mass Upload Humans</a></li>
+            <li><a href="/massupload/runs">Mass Upload Runs</a></li>
+            <li><a href="/userhumanlinker">User Human Linker</a></li>
+            <li><a href="/createhuman">Create Human</a></li>
+            @endif
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        @endif
             @yield('content')
     </body>
     <!-- <script src="/js/manifest.js"></script>
     <script src="/js/vendor.js"></script> -->
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="/js/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     @yield('javascript')
 </html>
