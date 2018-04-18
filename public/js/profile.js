@@ -79,7 +79,8 @@ module.exports = __webpack_require__(51);
 $(document).ready(function () {
   var player = videojs('my-video');
 
-  $('#video-modal').modal({
+  var elem = document.querySelector('.modal');
+  var instance = M.Modal.init(elem, {
     ready: function ready() {
       player.play();
     },
@@ -91,7 +92,7 @@ $(document).ready(function () {
   $('.play-button').on('click', function (e) {
     e.preventDefault();
     var videoUrl = $(this).data('video-url');
-    $('#video-modal').modal('open');
+    instance.open();
     player.src({ type: 'video/mp4', src: videoUrl });
   });
 });
