@@ -20,4 +20,34 @@ class Human extends Model
     {
         return $this->hasMany('App\TeamropingRun', 'heeler_human_id');
     }
+
+    public function videos()
+    {
+        return $this->hasMany('App\Video');
+    }
+
+    public function getFirstVideoAttribute()
+    {
+        $video = $this->videos()->first();
+
+        if ($video) {
+            return $video;
+        }
+
+        $run = $this->teamropingHeaderRuns()->first();
+        if ($run) {
+            $video = $run->videos()->first();
+            if ($video) {
+                return $video;
+            }
+        }
+
+        $run = $this->teamropingHeelerRuns()->first();
+        if ($run) {
+            $video = $run->videos()->first();
+            if ($video) {
+                return $video;
+            }
+        }
+    }
 }

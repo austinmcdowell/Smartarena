@@ -37,6 +37,9 @@ class LeaderboardController extends Controller
             $catch_percentage = 0;
             $sum_of_average_time = 0;
 
+            // Attach first video
+            $human['video'] = $human->first_video;
+
             foreach ($human->teamropingHeaderRuns as $run) {
                 $run_count++;
 

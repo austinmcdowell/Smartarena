@@ -4,6 +4,12 @@
 <link href="/css/leaderboard.css" rel="stylesheet" type="text/css">
 @endsection
 
+@section('javascript')
+<script>
+    window.test = @json($humans);
+</script>
+@endsection
+
 @section('content')
     <br />
     <div class="row">
@@ -40,6 +46,9 @@
             @foreach ($humans as $human)
                 <div class="card">
                     <div class="card-content">
+                        @if (isset($human['video']) && isset($human['video']->thumbnail_url))
+                            <img src="{{ $human['video']->thumbnail_url }}" alt="">
+                        @endif
                         <h4><a href="/profile/{{ $human->id }}">{{ ucfirst($human->first_name) . ' ' . ucfirst($human->last_name) }}</a></h4>
                         <p>Classification: {{ $human->classification }}</p>
                         <p>Catch count: {{ $stats[$human->id]['catch_count'] }}</p>
