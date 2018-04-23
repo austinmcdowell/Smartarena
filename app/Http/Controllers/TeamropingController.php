@@ -157,39 +157,39 @@ class TeamropingController extends Controller
         return $run;
     }
 
-    public function upload(Request $request)
-    {
-        $user = Auth::user();
-        $run_id = $request->input('runId');
-        $original_file = $request->file('video');
-        $tmp_dir = sys_get_temp_dir();
-        $mime_type = $original_file->getClientMimeType();
-        $date = new DateTime;
-        $original_filename = $original_file->getClientOriginalName();
-        $filename = $user->id . "-" . $date->getTimestamp() . "-". str_replace([' ', '(', ')', '%'], '', $original_filename);
+    // public function upload(Request $request)
+    // {
+    //     $user = Auth::user();
+    //     $run_id = $request->input('runId');
+    //     $original_file = $request->file('video');
+    //     $tmp_dir = sys_get_temp_dir();
+    //     $mime_type = $original_file->getClientMimeType();
+    //     $date = new DateTime;
+    //     $original_filename = $original_file->getClientOriginalName();
+    //     $filename = $user->id . "-" . $date->getTimestamp() . "-". str_replace([' ', '(', ')', '%'], '', $original_filename);
     
-        if ($run_id) {
-            Video::where('run_id', $run_id)->delete();
-        }
+    //     if ($run_id) {
+    //         Video::where('run_id', $run_id)->delete();
+    //     }
 
-        // move the file to tmp so we can start processing
-        $moved_file = $original_file->move($tmp_dir, $filename);
+    //     // move the file to tmp so we can start processing
+    //     $moved_file = $original_file->move($tmp_dir, $filename);
 
-        // Create video data on table
-        $video = new Video;
-        $video->file_name = $filename;
-        $video->run_type = "teamroping";
-        $video->processing_complete = false;
+    //     // Create video data on table
+    //     $video = new Video;
+    //     $video->file_name = $filename;
+    //     $video->run_type = "teamroping";
+    //     $video->processing_complete = false;
 
-        if ($run_id) {
-            $video->run_id = $run_id;
-        }
+    //     if ($run_id) {
+    //         $video->run_id = $run_id;
+    //     }
 
-        $video->save();
+    //     $video->save();
 
-        // Let's queue it up
-        $this->dispatch(new \App\Jobs\ProcessVideo($video));
+    //     // Let's queue it up
+    //     $this->dispatch(new \App\Jobs\ProcessVideo($video));
         
-        return $video;
-    }
+    //     return $video;
+    // }
 }

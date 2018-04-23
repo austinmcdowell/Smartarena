@@ -1,5 +1,14 @@
-#video-player {
-  display: none;
+// #video-player {
+//   display: none;
+// }
+
+.upload-action-buttons {
+  margin-top: 10px;
+  text-align: center;
+
+  p {
+    margin-top: 10px !important; 
+  }
 }
 
 .control-button {
@@ -8,6 +17,7 @@
 
 .upload-card {
   overflow: auto;
+  margin-top: 40px;
 
   .file-upload {
     margin-bottom: 50px;
@@ -18,9 +28,9 @@
   }
 }
 
-.upload-progress {
-  display: none;
-}
+// .upload-progress {
+//   display: none;
+// }
 
 .catch-type-button {
   display:table;

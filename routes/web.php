@@ -35,7 +35,9 @@ Route::post('/userhumanlinker', 'UserHumanLinkController@post')->middleware('aut
 
 Route::get('/profile/{id}', 'ProfileController@get');
 
-Route::get('/teamroping/new', 'TeamropingController@new')->middleware('auth');
+Route::get('/teamroping/new/{videoId}', 'TeamropingController@new')->middleware('auth');
 Route::get('/teamroping/{id}/edit', 'TeamropingController@edit')->middleware('auth');
 Route::post('/teamroping/save', 'TeamropingController@save')->middleware('auth');
-Route::post('/teamroping/upload', 'TeamropingController@upload')->middleware('auth');
+
+Route::get('/videos/new', 'VideoController@new')->middleware('auth');
+Route::post('/videos/upload', 'VideoController@upload')->middleware('auth');

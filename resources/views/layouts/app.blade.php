@@ -70,57 +70,60 @@
         </style>
     </head>
     <body>
-        <ul id="dropdown1" class="dropdown-content">
-            @if (isset($user) && $user->role == "admin")
-            <li><a href="/massupload/humans">Mass Upload Humans</a></li>
-            <li><a href="/massupload/runs">Mass Upload Runs</a></li>
-            <li><a href="/userhumanlinker">User Human Linker</a></li>
-            <li><a href="/createhuman">Create Human</a></li>
-            @endif
-            <li><a href="/logout">Logout</a></li>
-        </ul>
-        <nav>
-            <div class="nav-wrapper">
-            @if (isset($isLoggedIn) && $isLoggedIn)
-            <a href="#!" class="hide-on-med-and-up">SMART ARENA</a>
-            <a href="#" data-target="mobile-demo" class="hide-on-med-and-up sidenav-trigger"><i class="material-icons">menu</i></a>
-            @endif
-            <ul id="nav-mobile" class="hide-on-small-only left">
-                <li class="hide-on-med-and-down"><a href="/">SMART ARENA</a></li>
-                <li><a href="/">LEADERBOARDS</a></li>
+        <div id="app">
+            <ul id="dropdown1" class="dropdown-content">
+                @if (isset($user) && $user->role == "admin")
+                <li><a href="/massupload/humans">Mass Upload Humans</a></li>
+                <li><a href="/massupload/runs">Mass Upload Runs</a></li>
+                <li><a href="/userhumanlinker">User Human Linker</a></li>
+                <li><a href="/createhuman">Create Human</a></li>
+                @endif
+                <li><a href="/logout">Logout</a></li>
             </ul>
+            <nav>
+                <div class="nav-wrapper">
+                @if (isset($isLoggedIn) && $isLoggedIn)
+                <a href="#!" class="hide-on-med-and-up">SMART ARENA</a>
+                <a href="#" data-target="mobile-demo" class="hide-on-med-and-up sidenav-trigger"><i class="material-icons">menu</i></a>
+                @endif
+                <ul id="nav-mobile" class="hide-on-small-only left">
+                    <li class="hide-on-med-and-down"><a href="/">SMART ARENA</a></li>
+                    <li><a href="/">LEADERBOARDS</a></li>
+                </ul>
+                @if (isset($isLoggedIn) && $isLoggedIn) 
+                    <ul id="nav-mobile" class=" right">
+                        @if ($user->human)
+                        <li><a href="/videos/new">Upload Video</a></li>
+                        <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
+                        @endif
+                        <li><a class="hide-on-small-only dropdown-button" href="#" data-target="dropdown1">{{ $user->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                @else
+                    <ul id="nav-mobile" class="right">
+                        <li><a href="/login">Log in</a></li>
+                    </ul>
+                @endif
+                </div>
+            </nav>
             @if (isset($isLoggedIn) && $isLoggedIn) 
-                <ul id="nav-mobile" class=" right">
-                    @if ($user->human)
-                    <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
-                    @endif
-                    <li><a class="hide-on-small-only dropdown-button" href="#" data-target="dropdown1">{{ $user->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-            @else
-                <ul id="nav-mobile" class="right">
-                    <li><a href="/login">Log in</a></li>
-                </ul>
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
+                @if (isset($user) && $user->role == "admin")
+                <li><a href="/massupload/humans">Mass Upload Humans</a></li>
+                <li><a href="/massupload/runs">Mass Upload Runs</a></li>
+                <li><a href="/userhumanlinker">User Human Linker</a></li>
+                <li><a href="/createhuman">Create Human</a></li>
+                @endif
+                <li><a href="/logout">Logout</a></li>
+            </ul>
             @endif
-            </div>
-        </nav>
-        @if (isset($isLoggedIn) && $isLoggedIn) 
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
-            @if (isset($user) && $user->role == "admin")
-            <li><a href="/massupload/humans">Mass Upload Humans</a></li>
-            <li><a href="/massupload/runs">Mass Upload Runs</a></li>
-            <li><a href="/userhumanlinker">User Human Linker</a></li>
-            <li><a href="/createhuman">Create Human</a></li>
-            @endif
-            <li><a href="/logout">Logout</a></li>
-        </ul>
-        @endif
             @yield('content')
+        </div>
     </body>
     <!-- <script src="/js/manifest.js"></script>
     <script src="/js/vendor.js"></script> -->
     <script src="/js/lib/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="/js/app.js"></script>
     @yield('javascript')
+    <script src="/js/app.js"></script>
 </html>

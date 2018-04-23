@@ -1,5 +1,10 @@
-#video-player {
-  display: none;
+.upload-action-buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.upload-action-buttons p {
+  margin-top: 10px !important;
 }
 
 .control-button {
@@ -8,6 +13,7 @@
 
 .upload-card {
   overflow: auto;
+  margin-top: 40px;
 }
 
 .upload-card .file-upload {
@@ -16,10 +22,6 @@
 
 .upload-card .file-upload label {
   margin-top: 10px;
-}
-
-.upload-progress {
-  display: none;
 }
 
 .catch-type-button {
