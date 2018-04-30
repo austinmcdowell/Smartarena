@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use DateTime;
+
 use App\User;
 use App\Human;
+use App\Video;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller

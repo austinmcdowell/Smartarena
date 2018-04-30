@@ -48,6 +48,80 @@
       </div>
       @endif
   </div>
+  <!-- Recently Uploaded -->
+  @if (!$uploaded_videos->isEmpty())
+  <div class="row hide-on-large-only center-align">
+    <div class="col s10 offset-s1">
+      <h4>Recently Uploaded</h4>
+    </div>
+  </div>
+  <div class="row hide-on-large-only">
+    @foreach ($uploaded_videos as $video)
+    <div class="col s10 offset-s1">
+      <div class="card">
+        <div class="card-content">
+          <div class="row">
+            <div class="col s12">
+              <p>Filename: {{ $video->file_name }}</p>
+            </div>
+          </div>
+          @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
+          <div class="row">
+            <div class="col s12 center-align">
+              <a href="/teamroping/create/{{ $video->id }}" class="waves-effect waves-light btn">Add Statistics</a>
+            </div>
+          </div>
+          @endif
+          <div class="row">
+            <div class="col s12 center-align">
+              @if ($video->processing_complete)
+              <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$video->file_url}}">Play Video</a>
+              @else
+              <a class="waves-effect waves-light btn disabled" href="#">Processing...</a>
+              @endif
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    @endforeach
+  </div>
+  <div class="row hide-on-med-and-down">
+    <div class="col s10 offset-s1">
+      <div class="card">
+        <div class="card-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Add Statistics</th>
+                <th>Play Video</th>
+                <th>File Name</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              @foreach ($uploaded_videos as $video)
+                <tr>
+                  @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
+                  <td><a href="/teamroping/create/{{ $video->id }}"><i class="material-icons">edit</i></a></td>
+                  @endif
+                  @if ($video->processing_complete)
+                  <td><a class="play-button" href="#" data-video-url="{{$video->file_url}}"><i class="material-icons">play_arrow</i></a></td>
+                  @elseif (!$video->processing_complete)
+                  <td><i class="material-icons">alarm</i></td>
+                  @endif
+                  <td>{{ $video->file_name }}</td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endif
+
+  
   <!-- Header Runs -->
   @if (!$header_runs->isEmpty())
   <div class="row hide-on-large-only center-align">
@@ -100,7 +174,6 @@
     <div class="col s10 offset-s1">
       <div class="card">
         <div class="card-content">
-          
           <table>
             <thead>
               <tr>
@@ -285,7 +358,7 @@
     </div>
   </div>
 
-  @if ($header_runs->isEmpty() && $heeler_runs->isEmpty())
+  @if ($uploaded_videos->isEmpty() && $header_runs->isEmpty() && $heeler_runs->isEmpty())
   <div class="row center-align">
     <div class="col s10 offset-s1">
       <h5>This person doesn't have any runs yet!</h5>

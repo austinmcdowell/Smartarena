@@ -13,8 +13,8 @@
             </div>
             <div v-show="uploadedVideo.id" class="row">
               <div class="col s12 upload-action-buttons">
-                <a @click.prevent="save()" href="#" class="waves-effect waves-light btn">Save</a>
-                <p><a :href="`/teamroping/create/{uploadedVideo.id}`">...or add statistics</a></p>
+                <a :href="`/teamroping/create/${uploadedVideo.human_id}`" class="waves-effect waves-light btn">Continue</a>
+                <p><a :href="`/teamroping/create/${uploadedVideo.id}`">...or add statistics</a></p>
               </div>
             </div>
           </div>

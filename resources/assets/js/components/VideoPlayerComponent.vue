@@ -81,11 +81,6 @@
         e.preventDefault();
         $this.resetScrobbling();
       });
-
-      EventBus.$on('videoLoaded', function (video) {
-        $this.player.src(video);
-        $this.showPlayer = true;
-      });
     },
     data() {
       return {
