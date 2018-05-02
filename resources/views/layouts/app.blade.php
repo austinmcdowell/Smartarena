@@ -107,7 +107,9 @@
             </nav>
             @if (isset($isLoggedIn) && $isLoggedIn) 
             <ul class="sidenav" id="mobile-demo">
+                @if ($user->human)
                 <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
+                @endif
                 @if (isset($user) && $user->role == "admin")
                 <li><a href="/massupload/humans">Mass Upload Humans</a></li>
                 <li><a href="/massupload/runs">Mass Upload Runs</a></li>

@@ -1,21 +1,11 @@
 @extends('layouts.app')
 
-@section('css')
-<style>
-  .login-button {
-    display:block;
-  }
 
-  .facebook {
-    margin-top:20px;
-  }
-</style>
-@endsection
 
 @section('content')
   <br />
   <div class="row">
-    <div class="col s10 offset-s1 l4 offset-l4">
+    <div class="col s10 offset-s1 m12">
       <div class="card">
         <div class="card-content">
           <a href="/login/google" class="login-button google waves-effect waves-light btn">Login with Google</a>

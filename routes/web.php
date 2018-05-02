@@ -11,9 +11,11 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', 'LeaderboardController');
 
-Route::get('/login', 'AuthController@login');
+// Route::get('/login', 'AuthController@login');
 Route::get('/logout', 'AuthController@logout');
 Route::get('login/google', 'AuthController@redirectToGoogle');
 Route::get('login/google/callback', 'AuthController@handleGoogleCallback');
