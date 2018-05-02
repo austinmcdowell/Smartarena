@@ -56,8 +56,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col hide-on-med-and-down s12">
-      <h4>Recently Uploaded</h4>
+    <div class="col hide-on-med-and-down s10 offset-s1">
+      <h5>Recently Uploaded</h5>
     </div>
   </div>
   <div class="row hide-on-large-only">
