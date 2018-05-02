@@ -80,6 +80,7 @@
           <div class="row">
             <div class="col s12 center-align">
               @if ($video->processing_complete)
+              <img style="width: 100%" src="{{ $video->thumbnail_url }}" alt="">
               <a class="waves-effect waves-light btn play-button" href="#" data-video-url="{{$video->file_url}}">Play Video</a>
               @else
               <a class="waves-effect waves-light btn disabled" href="#">Processing...</a>

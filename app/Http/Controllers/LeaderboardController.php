@@ -37,7 +37,7 @@ class LeaderboardController extends Controller
             $time_with_penalties = 0;
             $catch_percentage = 0;
             $sum_of_average_time = 0;
-            $total_videos_count = 0;
+            $total_videos_count = $human->videos->count();
 
             // Attach first video
             $human['video'] = $human->first_video;
@@ -110,7 +110,6 @@ class LeaderboardController extends Controller
                 $time_with_penalties = $total_raw_time + $total_penalties;
                 $catch_percentage = $catch_count / $run_count;
                 $sum_of_average_time = $time_with_penalties / $run_count;
-                $total_videos_count = $human->videos->count();
             }
 
             if ($shortest_average_time_badge) {
