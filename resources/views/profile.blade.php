@@ -201,6 +201,8 @@
                 <tr>
                   @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
                   <td><a href="/teamroping/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
+                  @else
+                  <td></td>
                   @endif
                   @if ($run->videos->first() && $run->videos->first()->processing_complete)
                   <td><a class="play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}"><i class="material-icons">play_arrow</i></a></td>
@@ -301,6 +303,8 @@
                 <tr>
                   @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
                   <td><a href="/teamroping/{{ $run->id }}/edit"><i class="material-icons">edit</i></a></td>
+                  @else
+                  <td></td>
                   @endif
                   @if ($run->videos->first() && $run->videos->first()->processing_complete)
                   <td><a class="play-button" href="#" data-video-url="{{$run->videos->first()->file_url}}"><i class="material-icons">play_arrow</i></a></td>
