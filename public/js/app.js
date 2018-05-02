@@ -33207,7 +33207,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       run: {
         heelerId: 0,
-        headerId: 0
+        headerId: 0,
+        eventId: 0
       },
       header: { barrierPenalty: 0 },
       heeler: { barrierPenalty: 0 },
