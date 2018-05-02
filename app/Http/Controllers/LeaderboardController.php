@@ -22,6 +22,7 @@ class LeaderboardController extends Controller
         $most_runs_badge = null;
         $most_efficient_badge = null;
         $shortest_average_time_badge = null;
+        $most_videos_uploaded_badge = null;
 
         $stats = [];
 
@@ -36,6 +37,7 @@ class LeaderboardController extends Controller
             $time_with_penalties = 0;
             $catch_percentage = 0;
             $sum_of_average_time = 0;
+            $total_videos_count = 0;
 
             // Attach first video
             $human['video'] = $human->first_video;
@@ -108,6 +110,7 @@ class LeaderboardController extends Controller
                 $time_with_penalties = $total_raw_time + $total_penalties;
                 $catch_percentage = $catch_count / $run_count;
                 $sum_of_average_time = $time_with_penalties / $run_count;
+                $total_videos_count = $human->videos->count();
             }
 
             if ($shortest_average_time_badge) {
@@ -152,6 +155,20 @@ class LeaderboardController extends Controller
                 ];
             }
 
+            if ($most_videos_uploaded_badge) {
+                if ($total_videos_count > $most_videos_uploaded_badge['count']) {
+                    $most_videos_uploaded_badge = [
+                        'human_name' => $human->first_name . ' ' . $human->last_name,
+                        'count' => $total_videos_count
+                    ];
+                }
+            } else {
+                $most_videos_uploaded_badge = [
+                    'human_name' => $human->first_name . ' ' . $human->last_name,
+                    'count' => $total_videos_count
+                ];
+            }
+
             $stats[$human->id] = [
                 'catch_count' => $catch_count, 
                 'run_count' => $run_count,
@@ -171,7 +188,8 @@ class LeaderboardController extends Controller
             'stats' => $stats,
             'most_runs_badge' => $most_runs_badge,
             'most_efficient_badge' => $most_efficient_badge,
-            'shortest_average_time_badge' => $shortest_average_time_badge
+            'shortest_average_time_badge' => $shortest_average_time_badge,
+            'most_videos_uploaded_badge' => $most_videos_uploaded_badge
         ]);
     }
 }

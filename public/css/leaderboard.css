@@ -42,3 +42,11 @@
   background-position: center center;
 }
 
+.awards .most-videos-uploaded .circle {
+  background-color: #aedfff;
+  background-image: url("/img/mostvideosuploaded.png");
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+

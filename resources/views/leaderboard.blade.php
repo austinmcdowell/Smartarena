@@ -13,7 +13,7 @@
 @section('content')
     <br />
     <div class="row">
-        <div class="col s6 offset-s3 awards center-align">
+        <div class="col s8 offset-s2 awards center-align">
 
             @if (isset($most_runs_badge))
             <div class="award most-runs">
@@ -36,6 +36,14 @@
                 <div class="circle"></div>
                 <div class='full-name'>{{ $shortest_average_time_badge['human_name'] }}</div>
                 <div class='description'>Best Average Time: {{ $shortest_average_time_badge['count'] }}</div>
+            </div>
+            @endif
+
+            @if (isset($most_videos_uploaded_badge))
+            <div class="award most-videos-uploaded">
+                <div class="circle"></div>
+                <div class='full-name'>{{ $most_videos_uploaded_badge['human_name'] }}</div>
+                <div class='description'>Most uploads: {{ $most_videos_uploaded_badge['count'] }}</div>
             </div>
             @endif
 
