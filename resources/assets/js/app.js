@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('video-uploader', require('./components/VideoUploaderComponent.vue'));
+Vue.component('run-editor', require('./components/RunEditorComponent.vue'));
 
 const app = new Vue({
     el: '#app'

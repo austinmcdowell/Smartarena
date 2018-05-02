@@ -28,7 +28,7 @@
   <div class="row hide-on-large-only">
     @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
     <div class="col offset-s2 s8 actions">
-      <a href="/teamroping/new" class="waves-effect waves-light btn">Add Run</a>
+      <a href="/videos/new" class="waves-effect waves-light btn">Upload Video</a>
     </div>
     @endif
   </div>
@@ -44,7 +44,7 @@
       </div>
       @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
       <div class="col offset-s2 s2 actions">
-        <a href="/teamroping/new" class="waves-effect waves-light btn">Add Run</a>
+        <a href="/videos/new" class="waves-effect waves-light btn">Upload Video</a>
       </div>
       @endif
   </div>
@@ -52,6 +52,11 @@
   @if (!$uploaded_videos->isEmpty())
   <div class="row hide-on-large-only center-align">
     <div class="col s10 offset-s1">
+      <h4>Recently Uploaded</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col hide-on-med-and-down s12">
       <h4>Recently Uploaded</h4>
     </div>
   </div>
@@ -68,7 +73,7 @@
           @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
           <div class="row">
             <div class="col s12 center-align">
-              <a href="/teamroping/create/{{ $video->id }}" class="waves-effect waves-light btn">Add Statistics</a>
+              <a href="/teamroping/new/{{ $video->id }}" class="waves-effect waves-light btn">Add Statistics</a>
             </div>
           </div>
           @endif
@@ -103,7 +108,7 @@
               @foreach ($uploaded_videos as $video)
                 <tr>
                   @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
-                  <td><a href="/teamroping/create/{{ $video->id }}"><i class="material-icons">edit</i></a></td>
+                  <td><a href="/teamroping/new/{{ $video->id }}"><i class="material-icons">edit</i></a></td>
                   @endif
                   @if ($video->processing_complete)
                   <td><a class="play-button" href="#" data-video-url="{{$video->file_url}}"><i class="material-icons">play_arrow</i></a></td>

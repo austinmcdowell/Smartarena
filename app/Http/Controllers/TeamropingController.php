@@ -15,15 +15,16 @@ use Illuminate\Support\Facades\DB;
 
 class TeamropingController extends Controller
 {
-    public function new()
+    public function new($video_id)
     {
         $user = Auth::user();
         $events = Event::all();
         $humans = Human::orderBy('first_name')->get();
+        $video  = Video::find($video_id);
         return view('runeditor', [
             'events' => $events,
             'humans' => $humans,
-            'videos' => [],
+            'videos' => [$video],
             'human_id' => $user->human->id
         ]);
     }
@@ -47,6 +48,12 @@ class TeamropingController extends Controller
     {
         $user = Auth::user();
         $runId = $request->input('runId');
+        $video_id = $request->input('videoId');
+        $video = Video::find($video_id);
+
+        if (!$video) {
+            return response()->json(['success' => false, 'message' => 'Something went wrong, please contact support.'], 401);
+        }
         
         if ($runId) {
             $run = TeamropingRun::find($runId);
@@ -81,29 +88,31 @@ class TeamropingController extends Controller
         }
 
         if ($request->input('header.catchType')) {
-            $run->header_did_catch = true;
-            $run->header_catch_type = $request->input('header.catchType');
-        } else {
-            $run->header_did_catch = false;
-            $run->header_catch_type = null;
-        }
+            $catch_type = $request->input('header.catchType');
 
-        if ($request->input('header.penaltyType')) {
-            $run->header_did_catch = false;
-            $run->header_penalty_type = $request->input('header.penaltyType');
+            if ($catch_type == "missed") {
+                $run->header_did_catch = false;
+                $run->header_catch_type = null;
+                $run->header_penalty_type = $catch_type;
+            } else {
+                $run->header_did_catch = true;
+                $run->header_penalty_type = null;
+                $run->header_catch_type = $catch_type;
+            }
         }
 
         if ($request->input('heeler.catchType')) {
-            $run->heeler_did_catch = true;
-            $run->heeler_catch_type = $request->input('heeler.catchType');
-        } else {
-            $run->heeler_did_catch = false;
-            $run->heeler_catch_type = null;
-        }
+            $catch_type = $request->input('heeler.catchType');
 
-        if ($request->input('heeler.penaltyType')) {
-            $run->heeler_did_catch = false;
-            $run->heeler_penalty_type = $request->input('heeler.penaltyType');
+            if ($catch_type == 'leg' || $catch_type == 'missed') {
+                $run->heeler_did_catch = false;
+                $run->heeler_catch_type = null;
+                $run->heeler_penalty_type = $catch_type;
+            } else {
+                $run->heeler_did_catch = true;
+                $run->heeler_penalty_type = null;
+                $run->heeler_catch_type = $catch_type;
+            }
         }
 
         $run->header_barrier_penalty = (int)$request->input('header.barrierPenalty');
@@ -142,12 +151,8 @@ class TeamropingController extends Controller
             $run->save();
 
             // Video linking
-            $video_id = (int)$request->input('currentVideo.id');
-            if ($video_id) {
-                $video = Video::find($video_id);
-                $video->run_id = $run->id;
-                $video->save();
-            }
+            $video->run_id = $run->id;
+            $video->save();
         } catch (\Exception $e) {
             DB::rollback();
         }
@@ -157,39 +162,4 @@ class TeamropingController extends Controller
         return $run;
     }
 
-    // public function upload(Request $request)
-    // {
-    //     $user = Auth::user();
-    //     $run_id = $request->input('runId');
-    //     $original_file = $request->file('video');
-    //     $tmp_dir = sys_get_temp_dir();
-    //     $mime_type = $original_file->getClientMimeType();
-    //     $date = new DateTime;
-    //     $original_filename = $original_file->getClientOriginalName();
-    //     $filename = $user->id . "-" . $date->getTimestamp() . "-". str_replace([' ', '(', ')', '%'], '', $original_filename);
-    
-    //     if ($run_id) {
-    //         Video::where('run_id', $run_id)->delete();
-    //     }
-
-    //     // move the file to tmp so we can start processing
-    //     $moved_file = $original_file->move($tmp_dir, $filename);
-
-    //     // Create video data on table
-    //     $video = new Video;
-    //     $video->file_name = $filename;
-    //     $video->run_type = "teamroping";
-    //     $video->processing_complete = false;
-
-    //     if ($run_id) {
-    //         $video->run_id = $run_id;
-    //     }
-
-    //     $video->save();
-
-    //     // Let's queue it up
-    //     $this->dispatch(new \App\Jobs\ProcessVideo($video));
-        
-    //     return $video;
-    // }
 }

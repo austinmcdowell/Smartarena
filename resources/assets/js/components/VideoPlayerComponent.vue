@@ -1,5 +1,5 @@
 <template>
-  <div v-show="showPlayer" id="video-player">
+  <div id="video-player">
     <div id="protection">
       <video id="my-video" class="video-js" autoplay controls data-setup="{}" playsinline>
         <p class="vjs-no-js">
@@ -81,11 +81,18 @@
         e.preventDefault();
         $this.resetScrobbling();
       });
+
+      EventBus.$on('videoSourceChange', function(data) {
+        $this.setSource(data);
+      });
+
+      this.player.on('timeupdate', function() {
+        $this.currentScrobbleTime = $this.player.currentTime();
+      });
     },
     data() {
       return {
         player: null,
-        showPlayer: false,
         videoSource: {},
         videoHeight: null,
         videoWidth: null,
@@ -94,7 +101,8 @@
         currentScale: 1,
         isZoomed: false,
         playbackInterval: null,
-        isIntervalSet: false
+        isIntervalSet: false,
+        currentScrobbleTime: 0
       }
     },
     watch: {
@@ -111,7 +119,7 @@
       rewind: function(rate, ms) {
         if (!this.isIntervalSet) {
           this.player.pause();
-          this.player.currentTime(player.currentTime() - rate);
+          this.player.currentTime(this.player.currentTime() - rate);
           this.playbackInterval = setInterval(function() {
              this.player.currentTime(this.player.currentTime() - rate);
           }, ms);
@@ -148,6 +156,13 @@
       resetScrobbling() {
         clearInterval(this.playbackInterval);
         this.isIntervalSet = false;
+      },
+      setSource: function(videoData) {
+        this.player.src({ type: 'video/mp4', src: videoData.file_url });
+        this.player.play();
+      },
+      getCurrentScrobbleTime() {
+        return this.currentScrobbleTime;
       }
     }
   }

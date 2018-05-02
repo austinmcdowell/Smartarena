@@ -44,3 +44,18 @@
   overflow: auto;
 }
 
+.activeCatch {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.activeCatchPenalty {
+  background-color: red;
+  color: #fff;
+}
+
+.disabled .catch-type-button {
+  background-color: #ccc;
+  color: #fff;
+}
+
