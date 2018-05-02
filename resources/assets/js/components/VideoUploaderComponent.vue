@@ -13,8 +13,8 @@
             </div>
             <div v-show="uploadedVideo.id" class="row">
               <div class="col s12 upload-action-buttons">
-                <a :href="`/teamroping/create/${uploadedVideo.human_id}`" class="waves-effect waves-light btn">Continue</a>
-                <p><a :href="`/teamroping/create/${uploadedVideo.id}`">...or add statistics</a></p>
+                <a :href="'/profile/' + humanId" class="waves-effect waves-light btn">Continue</a>
+                <p><a :href="`/teamroping/new/${uploadedVideo.id}`">...or add statistics</a></p>
               </div>
             </div>
           </div>
@@ -38,11 +38,14 @@
         e.preventDefault();
         e.stopPropagation();
       });
+
+      this.humanId = window.SA.humanId;
     },
     data() {
       return {
         percentageUploaded: 0,
-        uploadedVideo: {}
+        uploadedVideo: {},
+        humanId: null
       }
     },
     watch: {

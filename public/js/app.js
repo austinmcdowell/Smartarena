@@ -32756,11 +32756,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       e.preventDefault();
       e.stopPropagation();
     });
+
+    this.humanId = window.SA.humanId;
   },
   data: function data() {
     return {
       percentageUploaded: 0,
-      uploadedVideo: {}
+      uploadedVideo: {},
+      humanId: null
     };
   },
 
@@ -32862,10 +32865,7 @@ var render = function() {
                       "a",
                       {
                         staticClass: "waves-effect waves-light btn",
-                        attrs: {
-                          href:
-                            "/teamroping/create/" + _vm.uploadedVideo.human_id
-                        }
+                        attrs: { href: "/profile/" + _vm.humanId }
                       },
                       [_vm._v("Continue")]
                     ),
@@ -32875,7 +32875,7 @@ var render = function() {
                         "a",
                         {
                           attrs: {
-                            href: "/teamroping/create/" + _vm.uploadedVideo.id
+                            href: "/teamroping/new/" + _vm.uploadedVideo.id
                           }
                         },
                         [_vm._v("...or add statistics")]

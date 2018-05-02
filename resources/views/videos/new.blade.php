@@ -8,3 +8,12 @@
 @section('content')
 <video-uploader></video-uploader>
 @endsection
+
+@section('javascript')
+<script>
+
+  window.SA = {};
+  SA.humanId = @json($human_id);
+
+</script>
+@endsection
