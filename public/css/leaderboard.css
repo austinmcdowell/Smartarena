@@ -50,3 +50,7 @@
   background-position: center center;
 }
 
+.card-content img {
+  width: 100%;
+}
+
