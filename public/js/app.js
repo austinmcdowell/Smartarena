@@ -33536,7 +33536,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     pan: function pan(ev) {
-      console.log('stuff is happening');
+      if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
+        console.log(ev.srcEvent.srcElement.className);
+        return;
+      }
+
+      var currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
+      var currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
+
+      var top = currentTop + (ev.deltaY - this.lastDeltaY);
+      var left = currentLeft + (ev.deltaX - this.lastDeltaX);
+
+      this.lastDeltaY = ev.deltaY;
+      this.lastDeltaX = ev.deltaX;
+
+      var currentWidth = $('#my-video_html5_api').width() * this.currentScale;
+      var currentHeight = $('#my-video_html5_api').height() * this.currentScale;
+
+      if (this.isZoomed) {
+        if (left <= currentWidth / 5.6 && left >= -(currentWidth / 5.6)) {
+          $('#my-video_html5_api').css({ left: left });
+        }
+
+        if (top <= currentHeight / 5.6 && top >= -(currentHeight / 5.6)) {
+          $('#my-video_html5_api').css({ top: top });
+        }
+      }
     },
     resetScrobbling: function resetScrobbling() {
       clearInterval(this.playbackInterval);

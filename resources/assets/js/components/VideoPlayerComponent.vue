@@ -151,7 +151,32 @@
         this.currentScale -= 0.1;
       },
       pan: function(ev) {
-        console.log('stuff is happening');
+        if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
+          console.log(ev.srcEvent.srcElement.className);
+          return;
+        }
+        
+        let currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
+        let currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
+        
+        let top = currentTop + (ev.deltaY - this.lastDeltaY);
+        let left = currentLeft + (ev.deltaX - this.lastDeltaX);
+        
+        this.lastDeltaY = ev.deltaY;
+        this.lastDeltaX = ev.deltaX;
+
+        let currentWidth  = ($('#my-video_html5_api').width() * this.currentScale);
+        let currentHeight = ($('#my-video_html5_api').height() * this.currentScale);
+
+        if (this.isZoomed) {
+          if (left <= (currentWidth / 5.6) && left >= -(currentWidth / 5.6)) {
+            $('#my-video_html5_api').css({ left: left });
+          }
+          
+          if (top <= (currentHeight / 5.6) && top >= -(currentHeight / 5.6)) {
+            $('#my-video_html5_api').css({ top: top });
+          }
+        }
       },
       resetScrobbling() {
         clearInterval(this.playbackInterval);
