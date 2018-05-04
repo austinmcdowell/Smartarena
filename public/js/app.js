@@ -32823,7 +32823,21 @@ var render = function() {
           { staticClass: "card upload-card", on: { drop: _vm.uploadFromDrop } },
           [
             _c("div", { staticClass: "card-content" }, [
-              _vm._m(0),
+              _c("div", { staticClass: "input-field col s12 file-upload" }, [
+                _c("input", {
+                  attrs: { id: "file", name: "file", type: "file" },
+                  on: {
+                    change: function($event) {
+                      $event.preventDefault()
+                      _vm.uploadFromForm($event)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "file" } }, [
+                  _vm._v("Upload Your Video")
+                ])
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -32891,18 +32905,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-field col s12 file-upload" }, [
-      _c("input", { attrs: { id: "file", name: "file", type: "file" } }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "file" } }, [_vm._v("Upload Your Video")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

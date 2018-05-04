@@ -5,7 +5,7 @@
         <div @drop="uploadFromDrop" class="card upload-card">
           <div class="card-content">
             <div class="input-field col s12 file-upload">
-              <input id="file" name="file" type="file">
+              <input @change.prevent="uploadFromForm" id="file" name="file" type="file">
               <label for="file">Upload Your Video</label>
             </div>
             <div v-show="percentageUploaded > 0" class="progress upload-progress">
