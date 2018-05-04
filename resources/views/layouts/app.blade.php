@@ -100,6 +100,7 @@
                     </ul>
                 @else
                     <ul id="nav-mobile" class="right">
+                        <li><a href="/register">Create Your Account</a></li>
                         <li><a href="/login">Log in</a></li>
                     </ul>
                 @endif

@@ -68,9 +68,9 @@
           <div class="row">
             <div class="col s12">
               <p>Filename: {{ $video->file_name }}</p>
+              <p>Uploaded at: {{ date('d-m-Y', strtotime($video->created_at)) }}</p>
             </div>
           </div>
-          @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
           @if ($video->processing_complete)
           <div class="row">
             <div class="col s12 center-align">
@@ -78,6 +78,7 @@
             </div>
           </div>
           @endif
+          @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
           <div class="row">
             <div class="col s12 center-align">
               <a href="/teamroping/new/{{ $video->id }}" class="waves-effect waves-light btn">Add Statistics</a>
@@ -105,8 +106,11 @@
           <table>
             <thead>
               <tr>
+                @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
                 <th>Add Statistics</th>
+                @endif
                 <th>Play Video</th>
+                <th>Uploaded At</th>
                 <th>File Name</th>
               </tr>
             </thead>
@@ -122,6 +126,7 @@
                   @elseif (!$video->processing_complete)
                   <td><i class="material-icons">alarm</i></td>
                   @endif
+                  <td>{{ date('d-m-Y', strtotime($video->created_at)) }}</td>
                   <td>{{ $video->file_name }}</td>
                 </tr>
               @endforeach
@@ -146,6 +151,13 @@
     <div class="col s10 offset-s1">
       <div class="card">
         <div class="card-content">
+          @if ($run->videos->first() && $run->videos->first()->processing_complete)
+          <div class="row">
+            <div class="col s12 center-align">
+              <img style="width: 100%" src="{{ $run->videos->first()->thumbnail_url }}" alt="">
+            </div>
+          </div>
+          @endif
           <div class="row">
             <div class="col s12">
               <p>Date: {{ $run->date }}</p>
@@ -186,6 +198,7 @@
     <div class="col s10 offset-s1">
       <div class="card">
         <div class="card-content">
+          <h4>Header Runs</h4>
           <table>
             <thead>
               <tr>
@@ -247,6 +260,13 @@
     <div class="col s10 offset-s1">
       <div class="card">
         <div class="card-content">
+          @if ($run->videos->first() && $run->videos->first()->processing_complete)
+          <div class="row">
+            <div class="col s12 center-align">
+              <img style="width: 100%" src="{{ $run->videos->first()->thumbnail_url }}" alt="">
+            </div>
+          </div>
+          @endif
           <div class="row">
             <div class="col s12">
               <p>Date: {{ $run->date }}</p>

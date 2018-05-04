@@ -81,7 +81,7 @@
                             </div>
                         </div>
                     </form>
-                    <p>Don't have an account? <a href="/register">Register</a></p>
+                    <p>Don't have an account? <a href="/register">Create one here.</a></p>
                 </div>
             </div>
         </div>

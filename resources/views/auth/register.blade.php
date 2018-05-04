@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col m8 offset-m2">
             <div class="card">
-                <span class="card-title">{{ __('Register') }}</span>
+                <span class="card-title">Create Your Account</span>
 
                 <div class="card-content">
                     <form method="POST" action="{{ route('register') }}">
