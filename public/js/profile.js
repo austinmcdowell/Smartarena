@@ -81,9 +81,6 @@ $(document).ready(function () {
 
   var elem = document.querySelector('.modal');
   var instance = M.Modal.init(elem, {
-    ready: function ready() {
-      player.play();
-    },
     complete: function complete() {
       player.pause();
     }
@@ -92,8 +89,9 @@ $(document).ready(function () {
   $('.play-button').on('click', function (e) {
     e.preventDefault();
     var videoUrl = $(this).data('video-url');
-    instance.open();
     player.src({ type: 'video/mp4', src: videoUrl });
+    player.play();
+    instance.open();
   });
 });
 

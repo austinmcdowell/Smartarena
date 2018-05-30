@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2ed6fc785b549ca59a5b737998f7911",
+    "content-hash": "54b99a590316b1aa5e218104d63d34c6",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -3426,16 +3426,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v7.1.2",
+            "version": "v7.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "4ee5e98e22a6e5625392e48c82095ec257debcf1"
+                "reference": "848a4f6abbb3ac64c84691867d30d5f6f765889c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/4ee5e98e22a6e5625392e48c82095ec257debcf1",
-                "reference": "4ee5e98e22a6e5625392e48c82095ec257debcf1",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/848a4f6abbb3ac64c84691867d30d5f6f765889c",
+                "reference": "848a4f6abbb3ac64c84691867d30d5f6f765889c",
                 "shasum": ""
             },
             "require": {
@@ -3472,7 +3472,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2018-02-07T22:03:46+00:00"
+            "time": "2018-05-26T14:25:04+00:00"
         },
         {
             "name": "mockery/mockery",
