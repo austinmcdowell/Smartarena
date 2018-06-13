@@ -19,10 +19,10 @@ class LeaderboardController extends Controller
         $isLoggedIn = Auth::check();
         $humans = Human::orderBy('first_name')->get();
 
-        $most_runs_badge = null;
-        $most_efficient_badge = null;
-        $shortest_average_time_badge = null;
-        $most_videos_uploaded_badge = null;
+        $most_runs_badge = [];
+        $most_efficient_badge = [];
+        $shortest_average_time_badge = [];
+        $most_videos_uploaded_badge = [];
 
         $stats = [];
 

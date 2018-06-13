@@ -101,7 +101,6 @@ export default {
             $this.mostEfficientBadge = data.mostEfficientBadge;
             $this.shortestAverageTimeBadge = data.shortestAverageTimeBadge;
             $this.mostVideosUploadedBadge = data.mostVideosUploadedBadge;
-            console.log(data);
         }).catch(e => {
             alert('There was an error. Please contact support.');
         })

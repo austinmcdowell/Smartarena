@@ -35464,7 +35464,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             $this.mostEfficientBadge = data.mostEfficientBadge;
             $this.shortestAverageTimeBadge = data.shortestAverageTimeBadge;
             $this.mostVideosUploadedBadge = data.mostVideosUploadedBadge;
-            console.log(data);
         }).catch(function (e) {
             alert('There was an error. Please contact support.');
         });
