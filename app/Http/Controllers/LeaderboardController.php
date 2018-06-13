@@ -180,15 +180,13 @@ class LeaderboardController extends Controller
             ];
         }
         
-        return view('leaderboard', [
-            'isLoggedIn' => $isLoggedIn,
-            'user' => $user,
+        return [
             'humans' => $humans,
             'stats' => $stats,
-            'most_runs_badge' => $most_runs_badge,
-            'most_efficient_badge' => $most_efficient_badge,
-            'shortest_average_time_badge' => $shortest_average_time_badge,
-            'most_videos_uploaded_badge' => $most_videos_uploaded_badge
-        ]);
+            'mostRunsBadge' => $most_runs_badge,
+            'mostEfficientBadge' => $most_efficient_badge,
+            'shortestAverageTimeBadge' => $shortest_average_time_badge,
+            'mostVideosUploadedBadge' => $most_videos_uploaded_badge
+        ];
     }
 }

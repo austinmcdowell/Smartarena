@@ -13,7 +13,8 @@
 
 Auth::routes();
 
-Route::get('/', 'LeaderboardController');
+Route::get('/', 'SPAController');
+Route::get('/leaderboard', 'LeaderboardController');
 
 // Route::get('/login', 'AuthController@login');
 Route::get('/logout', 'AuthController@logout');
