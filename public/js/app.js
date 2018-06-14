@@ -70,7 +70,7 @@
 "use strict";
 
 
-var bind = __webpack_require__(5);
+var bind = __webpack_require__(4);
 var isBuffer = __webpack_require__(20);
 
 /*global toString:true*/
@@ -533,10 +533,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(7);
+    adapter = __webpack_require__(6);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(7);
+    adapter = __webpack_require__(6);
   }
   return adapter;
 }
@@ -607,20 +607,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue___default.a());
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -638,7 +628,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -828,7 +818,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -839,7 +829,7 @@ var settle = __webpack_require__(23);
 var buildURL = __webpack_require__(25);
 var parseHeaders = __webpack_require__(26);
 var isURLSameOrigin = __webpack_require__(27);
-var createError = __webpack_require__(8);
+var createError = __webpack_require__(7);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(28);
 
 module.exports = function xhrAdapter(config) {
@@ -1015,7 +1005,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1040,7 +1030,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1052,7 +1042,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1078,7 +1068,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11895,6 +11885,16 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(37).setImmediate))
 
 /***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue___default.a());
+
+/***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11914,15 +11914,17 @@ module.exports = __webpack_require__(58);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_VideoUploaderComponent_vue__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_VideoUploaderComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_VideoUploaderComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_RunEditorComponent_vue__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_RunEditorComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_RunEditorComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ProfileComponent_vue__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ProfileComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_ProfileComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_VideoPlayerComponent_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_VideoPlayerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_VideoPlayerComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_RunEditorComponent_vue__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_RunEditorComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_RunEditorComponent_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -11941,9 +11943,10 @@ __webpack_require__(14);
 
 
 
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_VideoUploaderComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_4__components_RunEditorComponent_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_RunEditorComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_4__components_VideoPlayerComponent_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({ routes: routes });
 
@@ -31542,7 +31545,7 @@ module.exports = __webpack_require__(19);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(5);
+var bind = __webpack_require__(4);
 var Axios = __webpack_require__(21);
 var defaults = __webpack_require__(3);
 
@@ -31577,9 +31580,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(10);
+axios.Cancel = __webpack_require__(9);
 axios.CancelToken = __webpack_require__(35);
-axios.isCancel = __webpack_require__(9);
+axios.isCancel = __webpack_require__(8);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -31732,7 +31735,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(8);
+var createError = __webpack_require__(7);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -32167,7 +32170,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(32);
-var isCancel = __webpack_require__(9);
+var isCancel = __webpack_require__(8);
 var defaults = __webpack_require__(3);
 var isAbsoluteURL = __webpack_require__(33);
 var combineURLs = __webpack_require__(34);
@@ -32327,7 +32330,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(10);
+var Cancel = __webpack_require__(9);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -32676,7 +32679,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(5)))
 
 /***/ }),
 /* 39 */
@@ -35841,7 +35844,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/VideoUploaderComponent.vue"
+Component.options.__file = "resources/assets/js/components/ProfileComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -35850,9 +35853,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7019a7eb", Component.options)
+    hotAPI.createRecord("data-v-1891bcea", Component.options)
   } else {
-    hotAPI.reload("data-v-7019a7eb", Component.options)
+    hotAPI.reload("data-v-1891bcea", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -35868,7 +35871,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(4);
 //
 //
 //
@@ -35894,70 +35896,354 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    // keep browser from leaving page
-    $(window).on('drop', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    });
+    mounted: function mounted() {
+        var $this = this;
+        var profileId = this.$route.params.id;
 
-    $(window).on('dragover', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    });
-
-    this.humanId = window.SA.humanId;
-  },
-  data: function data() {
-    return {
-      percentageUploaded: 0,
-      uploadedVideo: {},
-      humanId: null
-    };
-  },
-
-  watch: {
-    percentageUploaded: function percentageUploaded(_percentageUploaded) {
-      $('.upload-progress .determinate').css('width', _percentageUploaded + '%');
-    }
-  },
-  methods: {
-    uploadFromDrop: function uploadFromDrop(e) {
-      var file = e.dataTransfer.files[0];
-      this.uploadVideo(file);
-    },
-    uploadFromForm: function uploadFromForm(e) {
-      e.preventDefault();
-      var file = e.srcElement.files[0];
-      this.uploadVideo(file);
-    },
-    uploadVideo: function uploadVideo(file) {
-      var $this = this;
-      var form = new FormData();
-      form.append('video', file);
-
-      // check for video id so we can overwrite
-
-      if (['video/mp4', 'video/quicktime'].indexOf(file.type) === -1) {
-        alert('The only file type we currently accept is MP4. This file type is ' + file.type);
-        return;
-      }
-
-      this.percentageUploaded = 0;
-
-      axios.post('/videos/upload', form, {
-        onUploadProgress: function onUploadProgress(progressEvent) {
-          $this.percentageUploaded = Math.round(progressEvent.loaded / progressEvent.total * 100);
+        if (!profileId) {
+            alert('There has been an error. Please contact support.');
+            return;
         }
-      }).then(function (response) {
-        $this.uploadedVideo = response.data;
-      });
+
+        if (window.user) {
+            this.user = window.user;
+        }
+
+        axios.get('/profile/' + this.$route.params.id).then(function (response) {
+            var data = response.data;
+
+            $this.headerRuns = data.headerRuns;
+            $this.heelerRuns = data.heelerRuns;
+            $this.human = data.human;
+            $this.uploadedVideos = data.uploadedVideos;
+        }).catch(function (e) {
+            alert('There has been an error. Please contact support.');
+        });
+    },
+    data: function data() {
+        return {
+            user: {},
+            human: {},
+            uploadedVideos: [],
+            headerRuns: [],
+            heelerRuns: []
+        };
     }
-  }
 });
 
 /***/ }),
@@ -35969,102 +36255,948 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "row video-uploader" }, [
-      _c("div", { staticClass: "col s12 offset-l3 l6" }, [
-        _c(
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("div", { staticClass: "row hide-on-large-only" }, [
+      _c("div", { staticClass: "col s12 center-align" }, [
+        _c("h1", {
+          staticClass: "human-name",
+          domProps: {
+            textContent: _vm._s(
+              _vm.human.first_name + " " + _vm.human.last_name
+            )
+          }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sport-title" }, [
+          _vm._v("Sport: Team Roping")
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "location" }, [
+          _vm._v("Location: " + _vm._s(_vm.human.location))
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row hide-on-large-only" }, [
+      _vm.user && _vm.human.user_id === _vm.user.id
+        ? _c("div", { staticClass: "col offset-s2 s8 actions" }, [
+            _c(
+              "a",
+              {
+                staticClass: "waves-effect waves-light btn",
+                attrs: { href: "/videos/new" }
+              },
+              [_vm._v("Upload Video")]
+            )
+          ])
+        : _vm._e()
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row hide-on-med-and-down" }, [
+      _vm._m(2),
+      _vm._v(" "),
+      _c("div", { staticClass: "col s4" }, [
+        _c("h1", { staticClass: "human-name" }, [
+          _vm._v(
+            _vm._s(_vm.human.first_name) + " " + _vm._s(_vm.human.last_name)
+          )
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "sport-title" }, [
+          _vm._v("Sport: Team Roping")
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "location" }, [
+          _vm._v("Location: " + _vm._s(_vm.human.location))
+        ])
+      ]),
+      _vm._v(" "),
+      _vm.user && _vm.human.user_id === _vm.user.id
+        ? _c("div", { staticClass: "col offset-s2 s2 actions" }, [
+            _c(
+              "a",
+              {
+                staticClass: "waves-effect waves-light btn",
+                attrs: { href: "/videos/new" }
+              },
+              [_vm._v("Upload Video")]
+            )
+          ])
+        : _vm._e()
+    ]),
+    _vm._v(" "),
+    _vm.uploadedVideos.length
+      ? _c(
           "div",
-          { staticClass: "card upload-card", on: { drop: _vm.uploadFromDrop } },
           [
-            _c("div", { staticClass: "card-content" }, [
-              _c("div", { staticClass: "input-field col s12 file-upload" }, [
-                _c("input", {
-                  attrs: { id: "file", name: "file", type: "file" },
-                  on: {
-                    change: function($event) {
-                      $event.preventDefault()
-                      _vm.uploadFromForm($event)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "file" } }, [
-                  _vm._v("Upload Your Video")
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
+            _vm._m(3),
+            _vm._v(" "),
+            _vm._m(4),
+            _vm._v(" "),
+            _vm._l(_vm.uploadedVideos, function(video) {
+              return _c(
                 "div",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.percentageUploaded > 0,
-                      expression: "percentageUploaded > 0"
-                    }
-                  ],
-                  staticClass: "progress upload-progress"
-                },
+                { key: video.id, staticClass: "row hide-on-large-only" },
                 [
-                  _c("div", {
-                    staticClass: "determinate",
-                    staticStyle: { width: "0%" }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.uploadedVideo.id,
-                      expression: "uploadedVideo.id"
-                    }
-                  ],
-                  staticClass: "row"
-                },
-                [
-                  _c("div", { staticClass: "col s12 upload-action-buttons" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "waves-effect waves-light btn",
-                        attrs: { href: "/profile/" + _vm.humanId }
-                      },
-                      [_vm._v("Continue")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "/teamroping/new/" + _vm.uploadedVideo.id
-                          }
-                        },
-                        [_vm._v("...or add statistics")]
-                      )
+                  _c("div", { staticClass: "col s10 offset-s1" }, [
+                    _c("div", { staticClass: "card" }, [
+                      _c("div", { staticClass: "card-content" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col s12" }, [
+                            _c("p", [
+                              _vm._v("Filename: " + _vm._s(video.file_name))
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v("Uploaded at: " + _vm._s(video.created_at))
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        video.processing_complete
+                          ? _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col s12 center-align" },
+                                [
+                                  _c("img", {
+                                    staticStyle: { width: "100%" },
+                                    attrs: { src: video.thumbnail_url, alt: "" }
+                                  })
+                                ]
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.user && _vm.human.user_id === _vm.user.id
+                          ? _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col s12 center-align" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      staticClass:
+                                        "waves-effect waves-light btn",
+                                      attrs: {
+                                        to: "/teamroping/new/" + video.id
+                                      }
+                                    },
+                                    [_vm._v("Add Statistics")]
+                                  )
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col s12 center-align" },
+                            [
+                              video.processing_complete
+                                ? _c(
+                                    "router-link",
+                                    {
+                                      staticClass:
+                                        "waves-effect waves-light btn play-button",
+                                      attrs: { to: "/video/" + video.id }
+                                    },
+                                    [_vm._v("Play Video")]
+                                  )
+                                : _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "waves-effect waves-light btn disabled",
+                                      attrs: { href: "#" }
+                                    },
+                                    [_vm._v("Processing...")]
+                                  )
+                            ],
+                            1
+                          )
+                        ])
+                      ])
                     ])
                   ])
                 ]
               )
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "row hide-on-med-and-down" }, [
+              _c("div", { staticClass: "col s10 offset-s1" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card-content" }, [
+                    _c("table", [
+                      _c("thead", [
+                        _c("tr", [
+                          _vm.user && _vm.human.user_id === _vm.user.id
+                            ? _c("th", [_vm._v("Add Statistics")])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Play Video")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Uploaded At")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("File Name")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.uploadedVideos, function(video) {
+                          return _c("tr", { key: video.id }, [
+                            _vm.user && _vm.human.user_id === _vm.user.id
+                              ? _c(
+                                  "td",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        attrs: {
+                                          to: "/teamroping/new/" + video.id
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "material-icons" },
+                                          [_vm._v("edit")]
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            video.processing_complete
+                              ? _c(
+                                  "td",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        staticClass: "play-button",
+                                        attrs: { to: "/video/" + video.id }
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "material-icons" },
+                                          [_vm._v("play_arrow")]
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : !video.processing_complete
+                                ? _c("td", [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("alarm")
+                                    ])
+                                  ])
+                                : _vm._e(),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(video.created_at))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(video.file_name))])
+                          ])
+                        })
+                      )
+                    ])
+                  ])
+                ])
+              ])
             ])
-          ]
+          ],
+          2
         )
-      ])
-    ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.headerRuns.length
+      ? _c("div", { staticClass: "row hide-on-large-only center-align" }, [
+          _vm._m(5)
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row hide-on-large-only" },
+      _vm._l(_vm.headerRuns, function(run) {
+        return _c("div", { key: run.id, staticClass: "col s10 offset-s1" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-content" }, [
+              run.videos.length && run.videos[0].processing_complete
+                ? _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col s12 center-align" }, [
+                      _c("img", {
+                        staticStyle: { width: "100%" },
+                        attrs: {
+                          src: "" + run.videos[0].thumbnail_url,
+                          alt: ""
+                        }
+                      })
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s12" }, [
+                  _c("p", [_vm._v("Date: " + _vm._s(run.date))]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Event: " + _vm._s(run.event.location) + " ")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Header Catch: " + _vm._s(run.header_catch_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Heeler Catch: " + _vm._s(run.heeler_catch_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Header Penalty: " + _vm._s(run.header_penalty_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Penalties: " + _vm._s(run.header_penalty_time))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Total Run Penalties: " +
+                        _vm._s(
+                          run.header_penalty_time + run.heeler_penalty_time
+                        )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.raw_time))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Time: " + _vm._s(run.total_time))])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm.user && _vm.human.user_id === _vm.user.id
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col s12 center-align" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "waves-effect waves-light btn",
+                            attrs: { to: "/teamroping/" + run.id + "/edit" }
+                          },
+                          [_vm._v("Edit Run")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              run.videos.length
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col s12 center-align" },
+                      [
+                        run.videos[0].processing_complete
+                          ? _c(
+                              "router-link",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn play-button",
+                                attrs: { to: "/videos/" + run.videos[0].id }
+                              },
+                              [_vm._v("Play Video")]
+                            )
+                          : _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn disabled",
+                                attrs: { href: "#" }
+                              },
+                              [_vm._v("Processing...")]
+                            )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e()
+            ])
+          ])
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _vm.headerRuns.length
+      ? _c("div", { staticClass: "row hide-on-med-and-down" }, [
+          _c("div", { staticClass: "col s10 offset-s1" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-content" }, [
+                _c("h4", [_vm._v("Header Runs")]),
+                _vm._v(" "),
+                _c("table", [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.headerRuns, function(run) {
+                      return _c("tr", { key: run.id }, [
+                        _vm.user && _vm.human.user_id === _vm.user.id
+                          ? _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    attrs: {
+                                      to: "/teamroping/" + run.id + "/edit"
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("edit")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        run.videos.length && run.videos[0].processing_complete
+                          ? _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "play-button",
+                                    attrs: { to: "/videos/" + run.videos[0].id }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("play_arrow")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : run.videos.length &&
+                            !run.videos[0].processing_complete
+                            ? _c("td", [
+                                _c("i", { staticClass: "material-icons" }, [
+                                  _vm._v("alarm")
+                                ])
+                              ])
+                            : _vm._e(),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.date))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.event.location) + " ")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.header_catch_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.heeler_catch_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.header_penalty_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.header_penalty_time))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(
+                              run.header_penalty_time + run.heeler_penalty_time
+                            )
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.raw_time))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.total_time))])
+                      ])
+                    })
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.heelerRuns.length
+      ? _c("div", { staticClass: "row hide-on-large-only center-align" }, [
+          _vm._m(7)
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row hide-on-large-only" },
+      _vm._l(_vm.heelerRuns, function(run) {
+        return _c("div", { key: run.id, staticClass: "col s10 offset-s1" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-content" }, [
+              run.videos.length && run.videos[0].processing_complete
+                ? _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col s12 center-align" }, [
+                      _c("img", {
+                        staticStyle: { width: "100%" },
+                        attrs: {
+                          src: "" + run.videos[0].thumbnail_url,
+                          alt: ""
+                        }
+                      })
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s12" }, [
+                  _c("p", [_vm._v("Date: " + _vm._s(run.date))]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Event: " + _vm._s(run.event.location) + " ")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Header Catch: " + _vm._s(run.header_catch_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Heeler Catch: " + _vm._s(run.heeler_catch_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Header Penalty: " + _vm._s(run.heeler_penalty_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Penalties: " + _vm._s(run.heeler_penalty_time))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Total Run Penalties: " +
+                        _vm._s(
+                          run.header_penalty_time + run.heeler_penalty_time
+                        )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.raw_time))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Time: " + _vm._s(run.total_time))])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm.user && _vm.human.user_id === _vm.user.id
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col s12 center-align" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "waves-effect waves-light btn",
+                            attrs: { to: "/teamroping/" + run.id + "/edit" }
+                          },
+                          [_vm._v("Edit Run")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              run.videos.length && run.videos[0].processing_complete
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col s12 center-align" },
+                      [
+                        run.videos[0].processing_complete
+                          ? _c(
+                              "router-link",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn play-button",
+                                attrs: { to: "/videos/" + run.videos[0].id }
+                              },
+                              [_vm._v("Play Video")]
+                            )
+                          : _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn disabled",
+                                attrs: { href: "#" }
+                              },
+                              [_vm._v("Processing...")]
+                            )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e()
+            ])
+          ])
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _vm.heelerRuns.length
+      ? _c("div", { staticClass: "row hide-on-med-and-down" }, [
+          _c("div", { staticClass: "col s10 offset-s1" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-content" }, [
+                _c("h4", [_vm._v("Heeler Runs")]),
+                _vm._v(" "),
+                _c("table", [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.heelerRuns, function(run) {
+                      return _c("tr", { key: run.id }, [
+                        _vm.user && _vm.human.user_id === _vm.user.id
+                          ? _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    attrs: {
+                                      to: "/teamroping/" + run.id + "/edit"
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("edit")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : _c("td"),
+                        _vm._v(" "),
+                        run.videos.length && run.videos[0].processing_complete
+                          ? _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "play-button",
+                                    attrs: { to: "/videos/" + run.videos[0].id }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("play_arrow")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : run.videos.length &&
+                            !run.videos[0].processing_complete
+                            ? _c("td", [
+                                _c("i", { staticClass: "material-icons" }, [
+                                  _vm._v("alarm")
+                                ])
+                              ])
+                            : _vm._e(),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.date))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.event.location) + " ")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.header_catch_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.heeler_catch_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.heeler_penalty_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.heeler_penalty_time))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(
+                              run.header_penalty_time + run.heeler_penalty_time
+                            )
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.raw_time))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.total_time))])
+                      ])
+                    })
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm._m(9),
+    _vm._v(" "),
+    !_vm.uploadedVideos.length &&
+    !_vm.headerRuns.length &&
+    !_vm.heelerRuns.length
+      ? _c("div", { staticClass: "row center-align" }, [_vm._m(10)])
+      : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col s12 banner" }, [
+        _c("div", { staticClass: "teamroping-header" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row hide-on-large-only" }, [
+      _c("div", { staticClass: "col s12" }, [
+        _c("div", { staticClass: "user-image" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col offset-s1 s2" }, [
+      _c("div", { staticClass: "user-image" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row hide-on-large-only center-align" }, [
+      _c("div", { staticClass: "col s10 offset-s1" }, [
+        _c("h4", [_vm._v("Recently Uploaded")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col hide-on-med-and-down s10 offset-s1" }, [
+        _c("h5", [_vm._v("Recently Uploaded")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c("h4", [_vm._v("Header Runs")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th"),
+        _vm._v(" "),
+        _c("th"),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Event")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Header Catch")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Heeler Catch")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Header Penalty")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Penalties")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Run Penalties")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Raw Time")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Time")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c("h4", [_vm._v("Heeler Runs")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th"),
+        _vm._v(" "),
+        _c("th"),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Event")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Header Catch")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Heeler Catch")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Heeler Penalty")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Penalties")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Run Penalties")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Raw Time")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Time")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal", attrs: { id: "video-modal" } }, [
+      _c("div", { staticClass: "modal-content" }, [
+        _c("div", { attrs: { id: "video-player" } }, [
+          _c("div", { attrs: { id: "protection" } }, [
+            _c(
+              "video",
+              {
+                staticClass: "video-js",
+                attrs: {
+                  id: "my-video",
+                  autoplay: "",
+                  controls: "",
+                  "data-setup": "{}",
+                  playsinline: ""
+                }
+              },
+              [
+                _c("p", { staticClass: "vjs-no-js" }, [
+                  _vm._v(
+                    "\n                            To view this video please enable JavaScript, and consider upgrading to a web browser that\n                            "
+                  ),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "http://videojs.com/html5-video-support/",
+                        target: "_blank"
+                      }
+                    },
+                    [_vm._v("supports HTML5 video")]
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row zoom-panel" }, [
+            _c("div", { staticClass: "col s6 zoom-button center-align" }, [
+              _c("span", { staticClass: "zoom-in" }, [_vm._v("+")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col s6 zoom-button center-align" }, [
+              _c("span", { staticClass: "zoom-out" }, [_vm._v("-")])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col s3 control-button center-align double-rewind" },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col s3 control-button center-align single-rewind" },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col s3 control-button center-align single-forward"
+            },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col s3 control-button center-align double-forward"
+            },
+            [
+              _c("span", [
+                _c("i", { staticClass: "fas fa-angle-double-right" })
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c("h5", [_vm._v("This person doesn't have any runs yet!")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7019a7eb", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1891bcea", module.exports)
   }
 }
 
@@ -36123,7 +37255,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EventBus__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EventBus__ = __webpack_require__(11);
 //
 //
 //
@@ -36531,7 +37663,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(11);
 //
 //
 //
@@ -36620,6 +37752,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     $('.control-button').on('mouseup touchend', function (e) {
       e.preventDefault();
       $this.resetScrobbling();
+    });
+
+    axios.get('/video/' + this.$route.params.id).then(function (response) {
+      var data = response.data;
+      $this.player.src({ type: 'video/mp4', src: data.file_url });
+      $this.player.play();
+    }).catch(function (e) {
+      alert('There has been an error, please contact support.');
     });
 
     __WEBPACK_IMPORTED_MODULE_0__EventBus__["a" /* default */].$on('videoSourceChange', function (data) {

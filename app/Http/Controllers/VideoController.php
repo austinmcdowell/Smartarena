@@ -12,11 +12,6 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function new()
     {
         $user = Auth::user();
@@ -29,6 +24,17 @@ class VideoController extends Controller
         return view('videos.new', [
             'human_id' => $human->id
         ]);
+    }
+
+    public function get($id)
+    {
+        $video = Video::find($id);
+
+        if (!$video) {
+            return response()->json(['success' => false, 'message' => 'Something went wrong, please contact support.'], 401);
+        }
+
+        return $video;
     }
 
     public function upload(Request $request)
