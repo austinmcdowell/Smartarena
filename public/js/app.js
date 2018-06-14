@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,8 +70,8 @@
 "use strict";
 
 
-var bind = __webpack_require__(5);
-var isBuffer = __webpack_require__(20);
+var bind = __webpack_require__(4);
+var isBuffer = __webpack_require__(21);
 
 /*global toString:true*/
 
@@ -517,7 +517,7 @@ module.exports = function normalizeComponent (
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(22);
+var normalizeHeaderName = __webpack_require__(23);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -533,10 +533,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(7);
+    adapter = __webpack_require__(6);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(7);
+    adapter = __webpack_require__(6);
   }
   return adapter;
 }
@@ -607,20 +607,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue___default.a());
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -638,7 +628,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -828,19 +818,19 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var settle = __webpack_require__(23);
-var buildURL = __webpack_require__(25);
-var parseHeaders = __webpack_require__(26);
-var isURLSameOrigin = __webpack_require__(27);
-var createError = __webpack_require__(8);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(28);
+var settle = __webpack_require__(24);
+var buildURL = __webpack_require__(26);
+var parseHeaders = __webpack_require__(27);
+var isURLSameOrigin = __webpack_require__(28);
+var createError = __webpack_require__(7);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(29);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -937,7 +927,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(29);
+      var cookies = __webpack_require__(30);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -1015,13 +1005,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(24);
+var enhanceError = __webpack_require__(25);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -1040,7 +1030,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1052,7 +1042,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1078,7 +1068,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11892,31 +11882,90 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(37).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(38).setImmediate))
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(47)
+/* template */
+var __vue_template__ = __webpack_require__(48)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/VideoPlayerComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-36011758", Component.options)
+  } else {
+    hotAPI.reload("data-v-36011758", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 /* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue___default.a());
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(13);
+__webpack_require__(14);
 module.exports = __webpack_require__(52);
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_VideoUploaderComponent_vue__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_VideoUploaderComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_VideoUploaderComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_RunEditorComponent_vue__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_RunEditorComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_RunEditorComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ProfileComponent_vue__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ProfileComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_ProfileComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_VideoPlayerComponent_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_VideoPlayerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_VideoPlayerComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_RunEditorComponent_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_RunEditorComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_RunEditorComponent_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -11924,7 +11973,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(14);
+__webpack_require__(15);
 
 
 
@@ -11935,9 +11984,10 @@ __webpack_require__(14);
 
 
 
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_VideoUploaderComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_4__components_RunEditorComponent_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__components_LeaderboardComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_RunEditorComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_4__components_VideoPlayerComponent_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({ routes: routes });
 
@@ -11960,11 +12010,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 // });
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(15);
+window._ = __webpack_require__(16);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -11975,7 +12025,7 @@ window._ = __webpack_require__(15);
 try {
   //window.$ = window.jQuery = require('jquery');
 
-  __webpack_require__(17);
+  __webpack_require__(18);
 } catch (e) {}
 
 /**
@@ -11984,7 +12034,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(18);
+window.axios = __webpack_require__(19);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -12020,7 +12070,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -29109,10 +29159,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(16)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(17)(module)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -29140,7 +29190,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 /*!
@@ -31523,21 +31573,21 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(19);
+module.exports = __webpack_require__(20);
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(5);
-var Axios = __webpack_require__(21);
+var bind = __webpack_require__(4);
+var Axios = __webpack_require__(22);
 var defaults = __webpack_require__(3);
 
 /**
@@ -31571,15 +31621,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(10);
-axios.CancelToken = __webpack_require__(35);
-axios.isCancel = __webpack_require__(9);
+axios.Cancel = __webpack_require__(9);
+axios.CancelToken = __webpack_require__(36);
+axios.isCancel = __webpack_require__(8);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(36);
+axios.spread = __webpack_require__(37);
 
 module.exports = axios;
 
@@ -31588,7 +31638,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports) {
 
 /*!
@@ -31615,7 +31665,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31623,8 +31673,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(3);
 var utils = __webpack_require__(0);
-var InterceptorManager = __webpack_require__(30);
-var dispatchRequest = __webpack_require__(31);
+var InterceptorManager = __webpack_require__(31);
+var dispatchRequest = __webpack_require__(32);
 
 /**
  * Create a new instance of Axios
@@ -31701,7 +31751,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31720,13 +31770,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(8);
+var createError = __webpack_require__(7);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -31753,7 +31803,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31781,7 +31831,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31856,7 +31906,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31916,7 +31966,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31991,7 +32041,7 @@ module.exports = (
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32034,7 +32084,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32094,7 +32144,7 @@ module.exports = (
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32153,18 +32203,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var transformData = __webpack_require__(32);
-var isCancel = __webpack_require__(9);
+var transformData = __webpack_require__(33);
+var isCancel = __webpack_require__(8);
 var defaults = __webpack_require__(3);
-var isAbsoluteURL = __webpack_require__(33);
-var combineURLs = __webpack_require__(34);
+var isAbsoluteURL = __webpack_require__(34);
+var combineURLs = __webpack_require__(35);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -32246,7 +32296,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32273,7 +32323,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32294,7 +32344,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32315,13 +32365,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(10);
+var Cancel = __webpack_require__(9);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -32379,7 +32429,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32413,7 +32463,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
@@ -32466,7 +32516,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(38);
+__webpack_require__(39);
 // On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -32480,7 +32530,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -32670,10 +32720,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(5)))
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35303,15 +35353,15 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(41)
+var __vue_script__ = __webpack_require__(42)
 /* template */
-var __vue_template__ = __webpack_require__(42)
+var __vue_template__ = __webpack_require__(43)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -35350,7 +35400,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35531,7 +35581,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -35779,15 +35829,15 @@ if (false) {
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(44)
+var __vue_script__ = __webpack_require__(45)
 /* template */
-var __vue_template__ = __webpack_require__(45)
+var __vue_template__ = __webpack_require__(46)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -35804,7 +35854,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/VideoUploaderComponent.vue"
+Component.options.__file = "resources/assets/js/components/ProfileComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -35813,9 +35863,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7019a7eb", Component.options)
+    hotAPI.createRecord("data-v-1891bcea", Component.options)
   } else {
-    hotAPI.reload("data-v-7019a7eb", Component.options)
+    hotAPI.reload("data-v-1891bcea", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -35826,12 +35876,1356 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(4);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        var $this = this;
+        var profileId = this.$route.params.id;
+
+        if (!profileId) {
+            alert('There has been an error. Please contact support.');
+            return;
+        }
+
+        if (window.user) {
+            this.user = window.user;
+        }
+
+        axios.get('/profile/' + this.$route.params.id).then(function (response) {
+            var data = response.data;
+
+            $this.headerRuns = data.headerRuns;
+            $this.heelerRuns = data.heelerRuns;
+            $this.human = data.human;
+            $this.uploadedVideos = data.uploadedVideos;
+        }).catch(function (e) {
+            alert('There has been an error. Please contact support.');
+        });
+    },
+    data: function data() {
+        return {
+            user: {},
+            human: {},
+            uploadedVideos: [],
+            headerRuns: [],
+            heelerRuns: []
+        };
+    }
+});
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("div", { staticClass: "row hide-on-large-only" }, [
+      _c("div", { staticClass: "col s12 center-align" }, [
+        _c("h1", {
+          staticClass: "human-name",
+          domProps: {
+            textContent: _vm._s(
+              _vm.human.first_name + " " + _vm.human.last_name
+            )
+          }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sport-title" }, [
+          _vm._v("Sport: Team Roping")
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "location" }, [
+          _vm._v("Location: " + _vm._s(_vm.human.location))
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row hide-on-large-only" }, [
+      _vm.user && _vm.human.user_id === _vm.user.id
+        ? _c("div", { staticClass: "col offset-s2 s8 actions" }, [
+            _c(
+              "a",
+              {
+                staticClass: "waves-effect waves-light btn",
+                attrs: { href: "/videos/new" }
+              },
+              [_vm._v("Upload Video")]
+            )
+          ])
+        : _vm._e()
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row hide-on-med-and-down" }, [
+      _vm._m(2),
+      _vm._v(" "),
+      _c("div", { staticClass: "col s4" }, [
+        _c("h1", { staticClass: "human-name" }, [
+          _vm._v(
+            _vm._s(_vm.human.first_name) + " " + _vm._s(_vm.human.last_name)
+          )
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "sport-title" }, [
+          _vm._v("Sport: Team Roping")
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "location" }, [
+          _vm._v("Location: " + _vm._s(_vm.human.location))
+        ])
+      ]),
+      _vm._v(" "),
+      _vm.user && _vm.human.user_id === _vm.user.id
+        ? _c("div", { staticClass: "col offset-s2 s2 actions" }, [
+            _c(
+              "a",
+              {
+                staticClass: "waves-effect waves-light btn",
+                attrs: { href: "/videos/new" }
+              },
+              [_vm._v("Upload Video")]
+            )
+          ])
+        : _vm._e()
+    ]),
+    _vm._v(" "),
+    _vm.uploadedVideos.length
+      ? _c(
+          "div",
+          [
+            _vm._m(3),
+            _vm._v(" "),
+            _vm._m(4),
+            _vm._v(" "),
+            _vm._l(_vm.uploadedVideos, function(video) {
+              return _c(
+                "div",
+                { key: video.id, staticClass: "row hide-on-large-only" },
+                [
+                  _c("div", { staticClass: "col s10 offset-s1" }, [
+                    _c("div", { staticClass: "card" }, [
+                      _c("div", { staticClass: "card-content" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col s12" }, [
+                            _c("p", [
+                              _vm._v("Filename: " + _vm._s(video.file_name))
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v("Uploaded at: " + _vm._s(video.created_at))
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        video.processing_complete
+                          ? _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col s12 center-align" },
+                                [
+                                  _c("img", {
+                                    staticStyle: { width: "100%" },
+                                    attrs: { src: video.thumbnail_url, alt: "" }
+                                  })
+                                ]
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.user && _vm.human.user_id === _vm.user.id
+                          ? _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col s12 center-align" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      staticClass:
+                                        "waves-effect waves-light btn",
+                                      attrs: {
+                                        to: "/teamroping/new/" + video.id
+                                      }
+                                    },
+                                    [_vm._v("Add Statistics")]
+                                  )
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col s12 center-align" },
+                            [
+                              video.processing_complete
+                                ? _c(
+                                    "router-link",
+                                    {
+                                      staticClass:
+                                        "waves-effect waves-light btn play-button",
+                                      attrs: { to: "/video/" + video.id }
+                                    },
+                                    [_vm._v("Play Video")]
+                                  )
+                                : _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "waves-effect waves-light btn disabled",
+                                      attrs: { href: "#" }
+                                    },
+                                    [_vm._v("Processing...")]
+                                  )
+                            ],
+                            1
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "row hide-on-med-and-down" }, [
+              _c("div", { staticClass: "col s10 offset-s1" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card-content" }, [
+                    _c("table", [
+                      _c("thead", [
+                        _c("tr", [
+                          _vm.user && _vm.human.user_id === _vm.user.id
+                            ? _c("th", [_vm._v("Add Statistics")])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Play Video")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Uploaded At")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("File Name")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.uploadedVideos, function(video) {
+                          return _c("tr", { key: video.id }, [
+                            _vm.user && _vm.human.user_id === _vm.user.id
+                              ? _c(
+                                  "td",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        attrs: {
+                                          to: "/teamroping/new/" + video.id
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "material-icons" },
+                                          [_vm._v("edit")]
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            video.processing_complete
+                              ? _c(
+                                  "td",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        staticClass: "play-button",
+                                        attrs: { to: "/video/" + video.id }
+                                      },
+                                      [
+                                        _c(
+                                          "i",
+                                          { staticClass: "material-icons" },
+                                          [_vm._v("play_arrow")]
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : !video.processing_complete
+                                ? _c("td", [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("alarm")
+                                    ])
+                                  ])
+                                : _vm._e(),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(video.created_at))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(video.file_name))])
+                          ])
+                        })
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ],
+          2
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.headerRuns.length
+      ? _c("div", { staticClass: "row hide-on-large-only center-align" }, [
+          _vm._m(5)
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row hide-on-large-only" },
+      _vm._l(_vm.headerRuns, function(run) {
+        return _c("div", { key: run.id, staticClass: "col s10 offset-s1" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-content" }, [
+              run.videos.length && run.videos[0].processing_complete
+                ? _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col s12 center-align" }, [
+                      _c("img", {
+                        staticStyle: { width: "100%" },
+                        attrs: {
+                          src: "" + run.videos[0].thumbnail_url,
+                          alt: ""
+                        }
+                      })
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s12" }, [
+                  _c("p", [_vm._v("Date: " + _vm._s(run.date))]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Event: " + _vm._s(run.event.location) + " ")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Header Catch: " + _vm._s(run.header_catch_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Heeler Catch: " + _vm._s(run.heeler_catch_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Header Penalty: " + _vm._s(run.header_penalty_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Penalties: " + _vm._s(run.header_penalty_time))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Total Run Penalties: " +
+                        _vm._s(
+                          run.header_penalty_time + run.heeler_penalty_time
+                        )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.raw_time))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Time: " + _vm._s(run.total_time))])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm.user && _vm.human.user_id === _vm.user.id
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col s12 center-align" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "waves-effect waves-light btn",
+                            attrs: { to: "/teamroping/" + run.id + "/edit" }
+                          },
+                          [_vm._v("Edit Run")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              run.videos.length
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col s12 center-align" },
+                      [
+                        run.videos[0].processing_complete
+                          ? _c(
+                              "router-link",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn play-button",
+                                attrs: { to: "/videos/" + run.videos[0].id }
+                              },
+                              [_vm._v("Play Video")]
+                            )
+                          : _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn disabled",
+                                attrs: { href: "#" }
+                              },
+                              [_vm._v("Processing...")]
+                            )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e()
+            ])
+          ])
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _vm.headerRuns.length
+      ? _c("div", { staticClass: "row hide-on-med-and-down" }, [
+          _c("div", { staticClass: "col s10 offset-s1" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-content" }, [
+                _c("h4", [_vm._v("Header Runs")]),
+                _vm._v(" "),
+                _c("table", [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.headerRuns, function(run) {
+                      return _c("tr", { key: run.id }, [
+                        _vm.user && _vm.human.user_id === _vm.user.id
+                          ? _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    attrs: {
+                                      to: "/teamroping/" + run.id + "/edit"
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("edit")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        run.videos.length && run.videos[0].processing_complete
+                          ? _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "play-button",
+                                    attrs: { to: "/videos/" + run.videos[0].id }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("play_arrow")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : run.videos.length &&
+                            !run.videos[0].processing_complete
+                            ? _c("td", [
+                                _c("i", { staticClass: "material-icons" }, [
+                                  _vm._v("alarm")
+                                ])
+                              ])
+                            : _vm._e(),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.date))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.event.location) + " ")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.header_catch_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.heeler_catch_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.header_penalty_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.header_penalty_time))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(
+                              run.header_penalty_time + run.heeler_penalty_time
+                            )
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.raw_time))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.total_time))])
+                      ])
+                    })
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.heelerRuns.length
+      ? _c("div", { staticClass: "row hide-on-large-only center-align" }, [
+          _vm._m(7)
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row hide-on-large-only" },
+      _vm._l(_vm.heelerRuns, function(run) {
+        return _c("div", { key: run.id, staticClass: "col s10 offset-s1" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-content" }, [
+              run.videos.length && run.videos[0].processing_complete
+                ? _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col s12 center-align" }, [
+                      _c("img", {
+                        staticStyle: { width: "100%" },
+                        attrs: {
+                          src: "" + run.videos[0].thumbnail_url,
+                          alt: ""
+                        }
+                      })
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s12" }, [
+                  _c("p", [_vm._v("Date: " + _vm._s(run.date))]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Event: " + _vm._s(run.event.location) + " ")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Header Catch: " + _vm._s(run.header_catch_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Heeler Catch: " + _vm._s(run.heeler_catch_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Header Penalty: " + _vm._s(run.heeler_penalty_type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("Penalties: " + _vm._s(run.heeler_penalty_time))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Total Run Penalties: " +
+                        _vm._s(
+                          run.header_penalty_time + run.heeler_penalty_time
+                        )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.raw_time))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Time: " + _vm._s(run.total_time))])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm.user && _vm.human.user_id === _vm.user.id
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col s12 center-align" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "waves-effect waves-light btn",
+                            attrs: { to: "/teamroping/" + run.id + "/edit" }
+                          },
+                          [_vm._v("Edit Run")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              run.videos.length && run.videos[0].processing_complete
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col s12 center-align" },
+                      [
+                        run.videos[0].processing_complete
+                          ? _c(
+                              "router-link",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn play-button",
+                                attrs: { to: "/videos/" + run.videos[0].id }
+                              },
+                              [_vm._v("Play Video")]
+                            )
+                          : _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn disabled",
+                                attrs: { href: "#" }
+                              },
+                              [_vm._v("Processing...")]
+                            )
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e()
+            ])
+          ])
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _vm.heelerRuns.length
+      ? _c("div", { staticClass: "row hide-on-med-and-down" }, [
+          _c("div", { staticClass: "col s10 offset-s1" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-content" }, [
+                _c("h4", [_vm._v("Heeler Runs")]),
+                _vm._v(" "),
+                _c("table", [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.heelerRuns, function(run) {
+                      return _c("tr", { key: run.id }, [
+                        _vm.user && _vm.human.user_id === _vm.user.id
+                          ? _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    attrs: {
+                                      to: "/teamroping/" + run.id + "/edit"
+                                    }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("edit")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : _c("td"),
+                        _vm._v(" "),
+                        run.videos.length && run.videos[0].processing_complete
+                          ? _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "play-button",
+                                    attrs: { to: "/videos/" + run.videos[0].id }
+                                  },
+                                  [
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("play_arrow")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          : run.videos.length &&
+                            !run.videos[0].processing_complete
+                            ? _c("td", [
+                                _c("i", { staticClass: "material-icons" }, [
+                                  _vm._v("alarm")
+                                ])
+                              ])
+                            : _vm._e(),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.date))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.event.location) + " ")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.header_catch_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.heeler_catch_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.heeler_penalty_type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.heeler_penalty_time))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(
+                              run.header_penalty_time + run.heeler_penalty_time
+                            )
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.raw_time))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(run.total_time))])
+                      ])
+                    })
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm._m(9),
+    _vm._v(" "),
+    !_vm.uploadedVideos.length &&
+    !_vm.headerRuns.length &&
+    !_vm.heelerRuns.length
+      ? _c("div", { staticClass: "row center-align" }, [_vm._m(10)])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col s12 banner" }, [
+        _c("div", { staticClass: "teamroping-header" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row hide-on-large-only" }, [
+      _c("div", { staticClass: "col s12" }, [
+        _c("div", { staticClass: "user-image" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col offset-s1 s2" }, [
+      _c("div", { staticClass: "user-image" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row hide-on-large-only center-align" }, [
+      _c("div", { staticClass: "col s10 offset-s1" }, [
+        _c("h4", [_vm._v("Recently Uploaded")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col hide-on-med-and-down s10 offset-s1" }, [
+        _c("h5", [_vm._v("Recently Uploaded")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c("h4", [_vm._v("Header Runs")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th"),
+        _vm._v(" "),
+        _c("th"),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Event")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Header Catch")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Heeler Catch")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Header Penalty")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Penalties")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Run Penalties")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Raw Time")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Time")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c("h4", [_vm._v("Heeler Runs")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th"),
+        _vm._v(" "),
+        _c("th"),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Event")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Header Catch")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Heeler Catch")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Heeler Penalty")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Penalties")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Run Penalties")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Raw Time")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Time")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal", attrs: { id: "video-modal" } }, [
+      _c("div", { staticClass: "modal-content" }, [
+        _c("div", { attrs: { id: "video-player" } }, [
+          _c("div", { attrs: { id: "protection" } }, [
+            _c(
+              "video",
+              {
+                staticClass: "video-js",
+                attrs: {
+                  id: "my-video",
+                  autoplay: "",
+                  controls: "",
+                  "data-setup": "{}",
+                  playsinline: ""
+                }
+              },
+              [
+                _c("p", { staticClass: "vjs-no-js" }, [
+                  _vm._v(
+                    "\n                            To view this video please enable JavaScript, and consider upgrading to a web browser that\n                            "
+                  ),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "http://videojs.com/html5-video-support/",
+                        target: "_blank"
+                      }
+                    },
+                    [_vm._v("supports HTML5 video")]
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row zoom-panel" }, [
+            _c("div", { staticClass: "col s6 zoom-button center-align" }, [
+              _c("span", { staticClass: "zoom-in" }, [_vm._v("+")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col s6 zoom-button center-align" }, [
+              _c("span", { staticClass: "zoom-out" }, [_vm._v("-")])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col s3 control-button center-align double-rewind" },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col s3 control-button center-align single-rewind" },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col s3 control-button center-align single-forward"
+            },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col s3 control-button center-align double-forward"
+            },
+            [
+              _c("span", [
+                _c("i", { staticClass: "fas fa-angle-double-right" })
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c("h5", [_vm._v("This person doesn't have any runs yet!")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1891bcea", module.exports)
+  }
+}
+
+/***/ }),
+/* 47 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(12);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -35862,183 +37256,282 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    // keep browser from leaving page
-    $(window).on('drop', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+    this.player = videojs('my-video');
+    this.videoHeight = $('#my-video').height();
+    this.videoWidth = $('#my-video').width();
+
+    var $this = this;
+    var el = document.getElementById('protection');
+    var hammertime = new Hammer.Manager(el);
+    var panGesture = new Hammer.Pan();
+    hammertime.add([panGesture]);
+
+    hammertime.on('pan', function (ev) {
+      $this.pan(ev);
     });
 
-    $(window).on('dragover', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+    hammertime.on('panend', function (ev) {
+      $this.lastDeltaX = 0;
+      $this.lastDeltaY = 0;
     });
 
-    this.humanId = window.SA.humanId;
+    $('.zoom-in').on('click tap', function (e) {
+      $this.zoomIn();
+    });
+    $('.zoom-out').on('click tap', function (e) {
+      $this.zoomOut();
+    });
+
+    $('.double-rewind').on('mousedown touchstart', function (e) {
+      e.preventDefault();
+      $this.rewind(0.2, 125);
+    });
+
+    $('.single-rewind').on('mousedown touchstart', function (e) {
+      e.preventDefault();
+      $this.rewind(0.1, 125);
+    });
+
+    $('.single-forward').on('mousedown touchstart', function (e) {
+      e.preventDefault();
+      $this.forward(0.1, 125);
+    });
+
+    $('.double-forward').on('mousedown touchstart', function (e) {
+      e.preventDefault();
+      $this.forward(0.2, 125);
+    });
+
+    $('.control-button').on('mouseup touchend', function (e) {
+      e.preventDefault();
+      $this.resetScrobbling();
+    });
+
+    axios.get('/video/' + this.$route.params.id).then(function (response) {
+      var data = response.data;
+      $this.player.src({ type: 'video/mp4', src: data.file_url });
+      $this.player.play();
+    }).catch(function (e) {
+      alert('There has been an error, please contact support.');
+    });
+
+    __WEBPACK_IMPORTED_MODULE_0__EventBus__["a" /* default */].$on('videoSourceChange', function (data) {
+      $this.setSource(data);
+    });
+
+    this.player.on('timeupdate', function () {
+      $this.currentScrobbleTime = $this.player.currentTime();
+    });
   },
   data: function data() {
     return {
-      percentageUploaded: 0,
-      uploadedVideo: {},
-      humanId: null
+      player: null,
+      videoSource: {},
+      videoHeight: null,
+      videoWidth: null,
+      lastDeltaX: 0,
+      lastDeltaY: 0,
+      currentScale: 1,
+      isZoomed: false,
+      playbackInterval: null,
+      isIntervalSet: false,
+      currentScrobbleTime: 0
     };
   },
 
   watch: {
-    percentageUploaded: function percentageUploaded(_percentageUploaded) {
-      $('.upload-progress .determinate').css('width', _percentageUploaded + '%');
+    currentScale: function currentScale(_currentScale) {
+      if (_currentScale > 1) {
+        $('#my-video_html5_api').css({ transform: 'scale(' + _currentScale + ')' });
+      } else {
+        this.isZoomed = false;
+        $('#my-video_html5_api').css({ top: "0", left: "0" });
+      }
     }
   },
   methods: {
-    uploadFromDrop: function uploadFromDrop(e) {
-      var file = e.dataTransfer.files[0];
-      this.uploadVideo(file);
+    rewind: function rewind(rate, ms) {
+      if (!this.isIntervalSet) {
+        this.player.pause();
+        this.player.currentTime(this.player.currentTime() - rate);
+        this.playbackInterval = setInterval(function () {
+          this.player.currentTime(this.player.currentTime() - rate);
+        }, ms);
+        this.isIntervalSet = true;
+      }
     },
-    uploadFromForm: function uploadFromForm(e) {
-      e.preventDefault();
-      var file = e.srcElement.files[0];
-      this.uploadVideo(file);
+    forward: function forward(rate, ms) {
+      if (!this.isIntervalSet) {
+        this.player.pause();
+        this.player.currentTime(this.player.currentTime() + rate);
+        this.playbackInterval = setInterval(function () {
+          this.player.currentTime(this.player.currentTime() + rate);
+        }, ms);
+        this.isIntervalSet = true;
+      }
     },
-    uploadVideo: function uploadVideo(file) {
-      var $this = this;
-      var form = new FormData();
-      form.append('video', file);
-
-      // check for video id so we can overwrite
-
-      if (['video/mp4', 'video/quicktime'].indexOf(file.type) === -1) {
-        alert('The only file type we currently accept is MP4. This file type is ' + file.type);
+    zoomIn: function zoomIn() {
+      if (this.currentScale < 1) {
+        return;
+      }
+      this.currentScale += 0.1;
+      this.isZoomed = true;
+    },
+    zoomOut: function zoomOut() {
+      if (this.currentScale === 1) {
         return;
       }
 
-      this.percentageUploaded = 0;
+      this.currentScale -= 0.1;
+    },
 
-      axios.post('/videos/upload', form, {
-        onUploadProgress: function onUploadProgress(progressEvent) {
-          $this.percentageUploaded = Math.round(progressEvent.loaded / progressEvent.total * 100);
+    pan: function pan(ev) {
+      if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
+        console.log(ev.srcEvent.srcElement.className);
+        return;
+      }
+
+      var currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
+      var currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
+
+      var top = currentTop + (ev.deltaY - this.lastDeltaY);
+      var left = currentLeft + (ev.deltaX - this.lastDeltaX);
+
+      this.lastDeltaY = ev.deltaY;
+      this.lastDeltaX = ev.deltaX;
+
+      var currentWidth = $('#my-video_html5_api').width() * this.currentScale;
+      var currentHeight = $('#my-video_html5_api').height() * this.currentScale;
+
+      if (this.isZoomed) {
+        if (left <= currentWidth / 5.6 && left >= -(currentWidth / 5.6)) {
+          $('#my-video_html5_api').css({ left: left });
         }
-      }).then(function (response) {
-        $this.uploadedVideo = response.data;
-      });
+
+        if (top <= currentHeight / 5.6 && top >= -(currentHeight / 5.6)) {
+          $('#my-video_html5_api').css({ top: top });
+        }
+      }
+    },
+    resetScrobbling: function resetScrobbling() {
+      clearInterval(this.playbackInterval);
+      this.isIntervalSet = false;
+    },
+
+    setSource: function setSource(videoData) {
+      this.player.src({ type: 'video/mp4', src: videoData.file_url });
+      this.player.play();
+    },
+    getCurrentScrobbleTime: function getCurrentScrobbleTime() {
+      return this.currentScrobbleTime;
     }
   }
 });
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row video-uploader" }, [
-      _c("div", { staticClass: "col s12 offset-l3 l6" }, [
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "video-player" } }, [
+      _c("div", { attrs: { id: "protection" } }, [
         _c(
-          "div",
-          { staticClass: "card upload-card", on: { drop: _vm.uploadFromDrop } },
+          "video",
+          {
+            staticClass: "video-js",
+            attrs: {
+              id: "my-video",
+              autoplay: "",
+              controls: "",
+              "data-setup": "{}",
+              playsinline: ""
+            }
+          },
           [
-            _c("div", { staticClass: "card-content" }, [
-              _c("div", { staticClass: "input-field col s12 file-upload" }, [
-                _c("input", {
-                  attrs: { id: "file", name: "file", type: "file" },
-                  on: {
-                    change: function($event) {
-                      $event.preventDefault()
-                      _vm.uploadFromForm($event)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "file" } }, [
-                  _vm._v("Upload Your Video")
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.percentageUploaded > 0,
-                      expression: "percentageUploaded > 0"
-                    }
-                  ],
-                  staticClass: "progress upload-progress"
-                },
-                [
-                  _c("div", {
-                    staticClass: "determinate",
-                    staticStyle: { width: "0%" }
-                  })
-                ]
+            _c("p", { staticClass: "vjs-no-js" }, [
+              _vm._v(
+                "\n        To view this video please enable JavaScript, and consider upgrading to a web browser that\n        "
               ),
-              _vm._v(" "),
               _c(
-                "div",
+                "a",
                 {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.uploadedVideo.id,
-                      expression: "uploadedVideo.id"
-                    }
-                  ],
-                  staticClass: "row"
+                  attrs: {
+                    href: "http://videojs.com/html5-video-support/",
+                    target: "_blank"
+                  }
                 },
-                [
-                  _c("div", { staticClass: "col s12 upload-action-buttons" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "waves-effect waves-light btn",
-                        attrs: { href: "/profile/" + _vm.humanId }
-                      },
-                      [_vm._v("Continue")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "/teamroping/new/" + _vm.uploadedVideo.id
-                          }
-                        },
-                        [_vm._v("...or add statistics")]
-                      )
-                    ])
-                  ])
-                ]
+                [_vm._v("supports HTML5 video")]
               )
             ])
           ]
         )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row zoom-panel" }, [
+        _c("div", { staticClass: "col s6 zoom-button center-align" }, [
+          _c("span", { staticClass: "zoom-in" }, [_vm._v("+")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col s6 zoom-button center-align" }, [
+          _c("span", { staticClass: "zoom-out" }, [_vm._v("-")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col s3 control-button center-align double-rewind" },
+          [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col s3 control-button center-align single-rewind" },
+          [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col s3 control-button center-align single-forward" },
+          [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col s3 control-button center-align double-forward" },
+          [_c("span", [_c("i", { staticClass: "fas fa-angle-double-right" })])]
+        )
       ])
     ])
-  ])
-}
-var staticRenderFns = []
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7019a7eb", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-36011758", module.exports)
   }
 }
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(47)
+var __vue_script__ = __webpack_require__(50)
 /* template */
 var __vue_template__ = __webpack_require__(51)
 /* template functional */
@@ -36079,14 +37572,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EventBus__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EventBus__ = __webpack_require__(12);
 //
 //
 //
@@ -36440,359 +37933,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     'video-player': __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent___default.a
   }
 });
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(49)
-/* template */
-var __vue_template__ = __webpack_require__(50)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/VideoPlayerComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-36011758", Component.options)
-  } else {
-    hotAPI.reload("data-v-36011758", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 49 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(4);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    this.player = videojs('my-video');
-    this.videoHeight = $('#my-video').height();
-    this.videoWidth = $('#my-video').width();
-
-    var $this = this;
-    var el = document.getElementById('protection');
-    var hammertime = new Hammer.Manager(el);
-    var panGesture = new Hammer.Pan();
-    hammertime.add([panGesture]);
-
-    hammertime.on('pan', function (ev) {
-      $this.pan(ev);
-    });
-
-    hammertime.on('panend', function (ev) {
-      $this.lastDeltaX = 0;
-      $this.lastDeltaY = 0;
-    });
-
-    $('.zoom-in').on('click tap', function (e) {
-      $this.zoomIn();
-    });
-    $('.zoom-out').on('click tap', function (e) {
-      $this.zoomOut();
-    });
-
-    $('.double-rewind').on('mousedown touchstart', function (e) {
-      e.preventDefault();
-      $this.rewind(0.2, 125);
-    });
-
-    $('.single-rewind').on('mousedown touchstart', function (e) {
-      e.preventDefault();
-      $this.rewind(0.1, 125);
-    });
-
-    $('.single-forward').on('mousedown touchstart', function (e) {
-      e.preventDefault();
-      $this.forward(0.1, 125);
-    });
-
-    $('.double-forward').on('mousedown touchstart', function (e) {
-      e.preventDefault();
-      $this.forward(0.2, 125);
-    });
-
-    $('.control-button').on('mouseup touchend', function (e) {
-      e.preventDefault();
-      $this.resetScrobbling();
-    });
-
-    __WEBPACK_IMPORTED_MODULE_0__EventBus__["a" /* default */].$on('videoSourceChange', function (data) {
-      $this.setSource(data);
-    });
-
-    this.player.on('timeupdate', function () {
-      $this.currentScrobbleTime = $this.player.currentTime();
-    });
-  },
-  data: function data() {
-    return {
-      player: null,
-      videoSource: {},
-      videoHeight: null,
-      videoWidth: null,
-      lastDeltaX: 0,
-      lastDeltaY: 0,
-      currentScale: 1,
-      isZoomed: false,
-      playbackInterval: null,
-      isIntervalSet: false,
-      currentScrobbleTime: 0
-    };
-  },
-
-  watch: {
-    currentScale: function currentScale(_currentScale) {
-      if (_currentScale > 1) {
-        $('#my-video_html5_api').css({ transform: 'scale(' + _currentScale + ')' });
-      } else {
-        this.isZoomed = false;
-        $('#my-video_html5_api').css({ top: "0", left: "0" });
-      }
-    }
-  },
-  methods: {
-    rewind: function rewind(rate, ms) {
-      if (!this.isIntervalSet) {
-        this.player.pause();
-        this.player.currentTime(this.player.currentTime() - rate);
-        this.playbackInterval = setInterval(function () {
-          this.player.currentTime(this.player.currentTime() - rate);
-        }, ms);
-        this.isIntervalSet = true;
-      }
-    },
-    forward: function forward(rate, ms) {
-      if (!this.isIntervalSet) {
-        this.player.pause();
-        this.player.currentTime(this.player.currentTime() + rate);
-        this.playbackInterval = setInterval(function () {
-          this.player.currentTime(this.player.currentTime() + rate);
-        }, ms);
-        this.isIntervalSet = true;
-      }
-    },
-    zoomIn: function zoomIn() {
-      if (this.currentScale < 1) {
-        return;
-      }
-      this.currentScale += 0.1;
-      this.isZoomed = true;
-    },
-    zoomOut: function zoomOut() {
-      if (this.currentScale === 1) {
-        return;
-      }
-
-      this.currentScale -= 0.1;
-    },
-
-    pan: function pan(ev) {
-      if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
-        console.log(ev.srcEvent.srcElement.className);
-        return;
-      }
-
-      var currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
-      var currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
-
-      var top = currentTop + (ev.deltaY - this.lastDeltaY);
-      var left = currentLeft + (ev.deltaX - this.lastDeltaX);
-
-      this.lastDeltaY = ev.deltaY;
-      this.lastDeltaX = ev.deltaX;
-
-      var currentWidth = $('#my-video_html5_api').width() * this.currentScale;
-      var currentHeight = $('#my-video_html5_api').height() * this.currentScale;
-
-      if (this.isZoomed) {
-        if (left <= currentWidth / 5.6 && left >= -(currentWidth / 5.6)) {
-          $('#my-video_html5_api').css({ left: left });
-        }
-
-        if (top <= currentHeight / 5.6 && top >= -(currentHeight / 5.6)) {
-          $('#my-video_html5_api').css({ top: top });
-        }
-      }
-    },
-    resetScrobbling: function resetScrobbling() {
-      clearInterval(this.playbackInterval);
-      this.isIntervalSet = false;
-    },
-
-    setSource: function setSource(videoData) {
-      this.player.src({ type: 'video/mp4', src: videoData.file_url });
-      this.player.play();
-    },
-    getCurrentScrobbleTime: function getCurrentScrobbleTime() {
-      return this.currentScrobbleTime;
-    }
-  }
-});
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "video-player" } }, [
-      _c("div", { attrs: { id: "protection" } }, [
-        _c(
-          "video",
-          {
-            staticClass: "video-js",
-            attrs: {
-              id: "my-video",
-              autoplay: "",
-              controls: "",
-              "data-setup": "{}",
-              playsinline: ""
-            }
-          },
-          [
-            _c("p", { staticClass: "vjs-no-js" }, [
-              _vm._v(
-                "\n        To view this video please enable JavaScript, and consider upgrading to a web browser that\n        "
-              ),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "http://videojs.com/html5-video-support/",
-                    target: "_blank"
-                  }
-                },
-                [_vm._v("supports HTML5 video")]
-              )
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row zoom-panel" }, [
-        _c("div", { staticClass: "col s6 zoom-button center-align" }, [
-          _c("span", { staticClass: "zoom-in" }, [_vm._v("+")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col s6 zoom-button center-align" }, [
-          _c("span", { staticClass: "zoom-out" }, [_vm._v("-")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col s3 control-button center-align double-rewind" },
-          [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col s3 control-button center-align single-rewind" },
-          [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col s3 control-button center-align single-forward" },
-          [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col s3 control-button center-align double-forward" },
-          [_c("span", [_c("i", { staticClass: "fas fa-angle-double-right" })])]
-        )
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-36011758", module.exports)
-  }
-}
 
 /***/ }),
 /* 51 */

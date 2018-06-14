@@ -13,10 +13,10 @@
 
 Auth::routes();
 
+
 Route::get('/', 'SPAController');
 Route::get('/leaderboard', 'LeaderboardController');
 
-// Route::get('/login', 'AuthController@login');
 Route::get('/logout', 'AuthController@logout');
 Route::get('login/google', 'AuthController@redirectToGoogle');
 Route::get('login/google/callback', 'AuthController@handleGoogleCallback');
@@ -43,4 +43,5 @@ Route::get('/teamroping/{id}/edit', 'TeamropingController@edit')->middleware('au
 Route::post('/teamroping/save', 'TeamropingController@save')->middleware('auth');
 
 Route::get('/videos/new', 'VideoController@new')->middleware('auth');
+Route::get('/video/{id}', 'VideoController@get');
 Route::post('/videos/upload', 'VideoController@upload')->middleware('auth');

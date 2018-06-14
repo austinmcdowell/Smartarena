@@ -18,11 +18,11 @@ class ProfileController extends Controller
         $uploaded_videos = Video::orderBy('created_at')->where('human_id', $id)->whereNull('run_id')->get();
         $header_runs = TeamropingRun::where('header_human_id', $id)->with('videos')->get();
         $heeler_runs = TeamropingRun::where('heeler_human_id', $id)->with('videos')->get();
-        return view('profile', [
+        return [
             'human'       => $human,
-            'header_runs' => $header_runs,
-            'heeler_runs' => $heeler_runs,
-            'uploaded_videos' => $uploaded_videos
-        ]);
+            'headerRuns' => $header_runs,
+            'heelerRuns' => $heeler_runs,
+            'uploadedVideos' => $uploaded_videos
+        ];
     }
 }

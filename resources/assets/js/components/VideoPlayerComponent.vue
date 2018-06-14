@@ -82,6 +82,14 @@
         $this.resetScrobbling();
       });
 
+      axios.get(`/video/${this.$route.params.id}`).then(response => {
+        let data = response.data;
+        $this.player.src({ type: 'video/mp4', src: data.file_url });
+        $this.player.play();
+      }).catch(e => {
+        alert('There has been an error, please contact support.');
+      })
+
       EventBus.$on('videoSourceChange', function(data) {
         $this.setSource(data);
       });

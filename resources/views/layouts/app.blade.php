@@ -170,8 +170,9 @@
     </body>
     <!-- <script src="/js/manifest.js"></script>
     <script src="/js/vendor.js"></script> -->
-    <!-- <script src="/js/lib/jquery.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="https://vjs.zencdn.net/6.6.3/video.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     @yield('javascript')
     <script src="/js/app.js"></script>
 </html>

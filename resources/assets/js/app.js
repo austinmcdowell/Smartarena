@@ -13,15 +13,17 @@ import VueRouter from 'vue-router';
 // Components
 
 import LeaderboardComponent from './components/LeaderboardComponent.vue';
-import VideoUploaderComponent from './components/VideoUploaderComponent.vue';
+import ProfileComponent from './components/ProfileComponent.vue';
+import VideoPlayerComponent from './components/VideoPlayerComponent.vue';
 import RunEditor from './components/RunEditorComponent.vue';
 
 Vue.use(VueRouter);
 
 let routes = [
   { path: '/', component: LeaderboardComponent },
-  { path: '/profile/:id', component: VideoUploaderComponent },
-  { path: '/run/edit/:id', component: RunEditor }
+  { path: '/profile/:id', component: ProfileComponent },
+  { path: '/run/edit/:id', component: RunEditor },
+  { path: '/video/:id', component: VideoPlayerComponent }
 ];
 
 const router = new VueRouter({ routes });
