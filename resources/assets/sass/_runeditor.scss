@@ -1,0 +1,70 @@
+// #video-player {
+//   display: none;
+// }
+
+.upload-action-buttons {
+  margin-top: 10px;
+  text-align: center;
+
+  p {
+    margin-top: 10px !important; 
+  }
+}
+
+.control-button {
+  font-size: 20pt;
+}
+
+.upload-card {
+  overflow: auto;
+  margin-top: 40px;
+
+  .file-upload {
+    margin-bottom: 50px;
+    
+    label {
+      margin-top: 10px;
+    }
+  }
+}
+
+// .upload-progress {
+//   display: none;
+// }
+
+.catch-type-button {
+  display:table;
+  border:1px solid #000;
+  border-radius: 100%;
+  width: 66px;
+  height: 66px;
+  text-align: center;
+  margin: 0 auto;
+
+  span {
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+
+.details {
+  overflow:auto;
+}
+
+.activeCatch {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.activeCatchPenalty {
+  background-color: red;
+  color: #fff;
+}
+
+.disabled {
+  .catch-type-button {
+    background-color: #ccc;
+    color: #fff
+  }
+}

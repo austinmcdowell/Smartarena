@@ -1,4 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.nav-wrapper {
+h1 {
+  font-family: 'Arial Black';
+}
+
+h2 {
+  font-family: 'Arial Black';
+}
+
+.nav-wrapper {
   background-color: #28a745;
 }
 
@@ -18,5 +26,315 @@
 
 .dropdown-button:focus {
   outline: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: #f6f7f8 !important;
+  min-height: 100%;
+}
+
+#leaderboard .awards {
+  margin-bottom: 5%;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#leaderboard .award {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#leaderboard .awards .circle {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 350px;
+  border-radius: 3px;
+}
+
+#leaderboard .awards .award {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+#leaderboard .awards .most-runs .circle {
+  background-color: #4f8f64;
+  background-image: url("/img/austin-light.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#leaderboard .awards .most-efficient .circle {
+  background-color: #ffdb8c;
+  background-image: url("/img/austin-light.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#leaderboard .awards .shortest-average-time .circle {
+  background-color: #ffaeae;
+  background-image: url("/img/austin-light.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#leaderboard .awards .most-videos-uploaded .circle {
+  background-color: #aedfff;
+  background-image: url("/img/austin-light.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#leaderboard .award .award-background {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+#leaderboard .award .full-name {
+  padding: 6% 0 0 5%;
+  color: white;
+  font-family: 'Arial Black' !important;
+}
+
+#leaderboard .award .description {
+  padding: 1% 0 0 5%;
+  color: white;
+  font-family: 'Arial';
+  font-weight: lighter;
+}
+
+#leaderboard .award .accolade {
+  margin: 30% 0 0 0;
+  color: #81b48c;
+  font-family: 'Arial Black';
+  font-size: 30px;
+}
+
+#leaderboard .card-content {
+  margin: 10% 0 0 0;
+}
+
+#leaderboard .card-content img {
+  width: 100%;
+}
+
+#leaderboard .professionals {
+  padding: 0;
+  margin-bottom: 5%;
+  height: 350px;
+  background: white !important;
+}
+
+#leaderboard .professionals .pro-image {
+  height: inherit;
+  background-image: url("/img/mustache.jpg");
+  background-size: cover;
+}
+
+#leaderboard .professionals .pro-content {
+  height: 300px;
+}
+
+#leaderboard .professionals .pro-content h2 {
+  margin: 3% 0 3% 5%;
+}
+
+#leaderboard .pro-content .sport-btn {
+  width: 70px;
+  padding: 0 2%;
+  margin: 0 0 0 5%;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+#leaderboard .pro-content .sport-btn p {
+  margin: 0;
+}
+
+#leaderboard .pro-content .pro-description {
+  margin: 3% 0 0 5%;
+}
+
+#leaderboard .roping-videos .vid-thumbnail {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+}
+
+#leaderboard .roping-videos .vid-description {
+  background: white;
+}
+
+.input-field > select {
+  position: inherit;
+  width: 100%;
+  opacity: 1;
+  height: 44px;
+  pointer-events: all;
+}
+
+.upload-card {
+  overflow: auto;
+}
+
+.upload-card .file-upload {
+  margin-bottom: 50px;
+}
+
+.upload-card .file-upload label {
+  margin-top: 10px;
+}
+
+.banner {
+  padding: 0 !important;
+}
+
+.teamroping-header {
+  background-size: cover;
+  background-image: url("/img/header.png");
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.user-image {
+  background-size: cover;
+  background-image: url("/img/profile.jpg");
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border-color: #28a745;
+  border-width: 0px;
+  border-style: solid;
+  margin: 0 auto;
+}
+
+.human-name {
+  margin: 0;
+  font-size: 28pt;
+}
+
+.sport-title,
+.location {
+  display: block;
+  font-size: 12pt;
+}
+
+.actions a {
+  width: 100%;
+}
+
+.upload-action-buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.upload-action-buttons p {
+  margin-top: 10px !important;
+}
+
+.control-button {
+  font-size: 20pt;
+}
+
+.upload-card {
+  overflow: auto;
+  margin-top: 40px;
+}
+
+.upload-card .file-upload {
+  margin-bottom: 50px;
+}
+
+.upload-card .file-upload label {
+  margin-top: 10px;
+}
+
+.catch-type-button {
+  display: table;
+  border: 1px solid #000;
+  border-radius: 100%;
+  width: 66px;
+  height: 66px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.catch-type-button span {
+  display: table-cell;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.details {
+  overflow: auto;
+}
+
+.activeCatch {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.activeCatchPenalty {
+  background-color: red;
+  color: #fff;
+}
+
+.disabled .catch-type-button {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.card-content {
+  overflow: auto;
+}
+
+.link-button {
+  margin-top: 20px;
+}
+
+#my-video {
+  width: 100% !important;
+  height: 300px !important;
+  pointer-events: none;
+}
+
+#protection {
+  overflow: hidden;
+}
+
+.vjs-control-bar {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+.zoom-panel {
+  margin-bottom: 0;
+}
+
+.zoom-button,
+.control-button {
+  background-color: #2b333f;
+  color: #fff;
+  font-size: 28pt;
+}
+
+.control-button {
+  font-size: 20pt;
 }
 

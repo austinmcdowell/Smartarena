@@ -1,0 +1,19 @@
+.input-field>select {
+  position: inherit;
+  width: 100%;
+  opacity: 1;
+  height: 44px;
+  pointer-events: all;
+}
+
+.upload-card {
+  overflow: auto;
+
+  .file-upload {
+    margin-bottom: 50px;
+    
+    label {
+      margin-top: 10px;
+    }
+  }
+}

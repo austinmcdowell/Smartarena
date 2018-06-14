@@ -1,36 +1,90 @@
 <template>
-    <div>
+    <div id="leaderboard">
         <br />
-        <div class="row">
-            <div class="col s8 offset-s2 awards center-align">
+        <div class="row justify-content-center">
+            <div class="col-lg-10  awards justify-content-space-between">
+                <div class="row">
+                    <div v-show="mostRunsBadge.human_name" class="col-lg-3 award most-runs">
+                        <div class="circle">
+                            <div class="award-background">
+                                <div class='full-name' align="left">{{ mostRunsBadge.human_name }}</div>
+                                <div class='description' align="left"> Most Runs</div>
+                                <div class="accolade">{{ mostRunsBadge.count }}</div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div v-show="mostRunsBadge.human_name" class="award most-runs">
-                    <div class="circle"></div>
-                    <div class='full-name'>{{ mostRunsBadge.human_name }}</div>
-                    <div class='description'>({{ mostRunsBadge.count }}) Most Runs</div>
+                    <div v-show="mostEfficientBadge.human_name" class="col-lg-3 award most-efficient">
+                        <div class="circle">
+                            <div class="award-background">
+                                <div class='full-name' align="left">{{ mostEfficientBadge.human_name }}</div>
+                                <div class='description' align="left">Most Efficient</div>
+                                <div class="accolade">Most Efficient</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div v-show="shortestAverageTimeBadge.human_name" class="col-lg-3 award shortest-average-time">
+                        <div class="circle">
+                            <div class="award-background">
+                                <div class='full-name' align="left">{{ shortestAverageTimeBadge.human_name }}</div>
+                                <div class='description' align="left">Best Average Time</div>
+                                <div class="accolade"> {{ shortestAverageTimeBadge.count }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div v-show="mostVideosUploadedBadge.human_name" class="col-lg-3 award most-videos-uploaded">
+                        <div class="circle">
+                            <div class="award-background">
+                                <div class='full-name' align="left">{{ mostVideosUploadedBadge.human_name }}</div>
+                                <div class='description' align="left">Most uploads</div>
+                                <div class="accolade">{{ mostVideosUploadedBadge.count }}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div v-show="mostEfficientBadge.human_name" class="award most-efficient">
-                    <div class="circle"></div>
-                    <div class='full-name'>{{ mostEfficientBadge.human_name }}</div>
-                    <div class='description'>Most Efficient</div>
-                </div>
-
-                <div v-show="shortestAverageTimeBadge.human_name" class="award shortest-average-time">
-                    <div class="circle"></div>
-                    <div class='full-name'>{{ shortestAverageTimeBadge.human_name }}</div>
-                    <div class='description'>Best Average Time: {{ shortestAverageTimeBadge.count }}</div>
-                </div>
-
-                <div v-show="mostVideosUploadedBadge.human_name" class="award most-videos-uploaded">
-                    <div class="circle"></div>
-                    <div class='full-name'>{{ mostVideosUploadedBadge.human_name }}</div>
-                    <div class='description'>Most uploads: {{ mostVideosUploadedBadge.count }}</div>
-                </div>
-
             </div>
         </div>
-        <div class="row hide-on-large-only">
+
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 justify-content-center professionals">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 pro-image">
+                        <button></button>
+                    </div>
+                    <div class="col-lg-6 pro-content">
+                        <h2>Adam Evans</h2>
+                        <div class="sport-btn"><p align="center">roping</p></div>
+                        <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row roping-videos">
+            <div class="col-lg-2 offset-lg-1">
+                <div class="vid-thumbnail"></div>
+                <div class="vid-description"></div>
+            </div>
+            <div class="col-lg-2 offset-lg-1">
+                <div class="vid-thumbnail"></div>
+                <div class="vid-description"></div>
+            </div>
+            <div class="col-lg-2 offset-lg-1">
+                <div class="vid-thumbnail"></div>
+                <div class="vid-description"></div>
+            </div>
+            <div class="col-lg-2 offset-lg-1">
+                <div class="vid-thumbnail"></div>
+                <div class="vid-description"></div>
+            </div>
+            <div class="col-lg-2 offset-lg-1">
+                <div class="vid-thumbnail"></div>
+                <div class="vid-description"></div>
+            </div>
+        </div>
+        <!-- <div class="row hide-on-large-only">
             <div class="col s10 offset-s1">
                 <div class="card" v-for="human in humans" :key="human.id">
                     <div v-if="stats[human.id]" class="card-content">
@@ -47,8 +101,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row hide-on-med-and-down">
+        </div> -->
+
+        <!-- <div class="row">
             <div class="col l10 offset-l1">
                 <div class="card">
                     <div class="card-content">
@@ -86,7 +141,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>

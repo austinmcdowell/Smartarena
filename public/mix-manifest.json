@@ -1,12 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/leaderboard.css": "/css/leaderboard.css",
-    "/css/massrunuploader.css": "/css/massrunuploader.css",
-    "/css/profile.css": "/css/profile.css",
-    "/css/userhumanlinker.css": "/css/userhumanlinker.css",
-    "/css/runeditor.css": "/css/runeditor.css",
-    "/css/videoplayer.css": "/css/videoplayer.css",
     "/js/videoplayer.js": "/js/videoplayer.js",
     "/js/userhumanlinker.js": "/js/userhumanlinker.js",
     "/js/runeditor.js": "/js/runeditor.js",

@@ -20,9 +20,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/videoplayer.js', 'public/js')
    .js('resources/assets/js/createhuman.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
-   .sass('resources/assets/sass/leaderboard.scss', 'public/css')
-   .sass('resources/assets/sass/massrunuploader.scss', 'public/css')
-   .sass('resources/assets/sass/profile.scss', 'public/css')
-   .sass('resources/assets/sass/userhumanlinker.scss', 'public/css')
-   .sass('resources/assets/sass/runeditor.scss', 'public/css')
-   .sass('resources/assets/sass/videoplayer.scss', 'public/css');
+
