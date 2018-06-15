@@ -115,12 +115,14 @@ class LeaderboardController extends Controller
             if ($shortest_average_time_badge) {
                 if ($sum_of_average_time < $shortest_average_time_badge['count']) {
                     $shortest_average_time_badge = [
+                        'human_id' => $human->id,
                         'human_name' => $human->first_name . ' ' . $human->last_name,
                         'count' => $sum_of_average_time
                     ];
                 }
             } else {
                 $shortest_average_time_badge = [
+                    'human_id' => $human->id,
                     'human_name' => $human->first_name . ' ' . $human->last_name,
                     'count' => $sum_of_average_time
                 ];
@@ -129,12 +131,14 @@ class LeaderboardController extends Controller
             if ($most_efficient_badge) {
                 if ($penalties < $most_efficient_badge['count']) {
                     $most_efficient_badge = [
+                        'human_id' => $human->id,
                         'human_name' => $human->first_name . ' ' . $human->last_name,
                         'count' => $penalties
                     ];
                 }
             } else {
                 $most_efficient_badge = [
+                    'human_id' => $human->id,
                     'human_name' => $human->first_name . ' ' . $human->last_name,
                     'count' => $penalties
                 ];
@@ -143,12 +147,14 @@ class LeaderboardController extends Controller
             if ($most_runs_badge) {
                 if ($run_count > $most_runs_badge['count']) {
                     $most_runs_badge = [
+                        'human_id' => $human->id,
                         'human_name' => $human->first_name . ' ' . $human->last_name,
                         'count' => $run_count
                     ];
                 }
             } else {
                 $most_runs_badge = [
+                    'human_id' => $human->id,
                     'human_name' => $human->first_name . ' ' . $human->last_name,
                     'count' => $run_count
                 ];
@@ -157,12 +163,14 @@ class LeaderboardController extends Controller
             if ($most_videos_uploaded_badge) {
                 if ($total_videos_count > $most_videos_uploaded_badge['count']) {
                     $most_videos_uploaded_badge = [
+                        'human_id' => $human->id,
                         'human_name' => $human->first_name . ' ' . $human->last_name,
                         'count' => $total_videos_count
                     ];
                 }
             } else {
                 $most_videos_uploaded_badge = [
+                    'human_id' => $human->id,
                     'human_name' => $human->first_name . ' ' . $human->last_name,
                     'count' => $total_videos_count
                 ];
