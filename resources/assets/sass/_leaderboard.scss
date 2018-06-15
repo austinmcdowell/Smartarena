@@ -10,9 +10,15 @@ body {
 
 #leaderboard {
   .sec-title {
-    margin: 10% 0 .5% 7.5%;
+    margin: 4% 0 .5% 5%;
     font-family: 'Arial Black';
     font-size: 20px;
+  }
+
+  .award-center {
+    width: 90%;
+    margin: 0 0 0 5%;
+    padding: 0;
   }
 
   .awards {
@@ -22,8 +28,8 @@ body {
   }
   
   .awards .circle {
-    margin-left:auto;
-    margin-right:auto;
+    // margin-left:auto;
+    // margin-right:auto;
   
     // border-radius: 50px;
     width: 94% !important;
@@ -112,10 +118,10 @@ body {
     }
   }
 
-  .sec-title {
-    margin: 0 0 .5% 7.5%;
-    font-family: 'Arial Black';
-    font-size: 20px;
+  .coaches {
+    width: 90%;
+    margin: 0 0 0 5%;
+    padding: 0;
   }
 
   .professionals {
@@ -168,19 +174,40 @@ body {
     margin: 3% 0 0 5%;
   }
 
+  .pro-content .coach-vid {
+    width: 150px;
+    height: 150px;
+    background: cover;
+  }
+
 
   .roping-videos {
+    width: 90%;
+    padding: 0;
+    margin: 0 0 5% 5%;
+  }
+
+  .roping-videos .rope-vid {
+    padding: 0;
   }
 
   .roping-videos .vid-thumbnail {
-    width: 100%;
+    width: 96%;
     height: 100px;
 
+    padding: 0;
+    margin: 0;
+
     background-size: cover;
+    background-image: url('/img/cow.jpg');
   }
 
   .roping-videos .vid-description {
+    width: 96%;
+    padding: 0;
+    margin: 0;
     background: white;
+    font-family: 'Arial Black';
   }
 
 }

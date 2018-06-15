@@ -2,8 +2,8 @@
     <div id="leaderboard" class="container-fluid">
         <br />
         <h3 class="sec-title">Best of</h3>
-        <div class="row justify-content-center">
-            <div class="col-lg-10  awards justify-content-space-between">
+        <div class="row award-center justify-content-between">
+            <div class="col-lg-12 awards">
                 <div class="container-fluid">
                     <div class="row">
                         <div v-show="mostRunsBadge.human_name" class="col-lg-3 award most-runs">
@@ -51,8 +51,8 @@
         </div>
 
         <h3 class="sec-title">Coaches</h3>
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 justify-content-center professionals">
+        <div class="row coaches">
+            <div class="col-lg-12 justify-content-center professionals">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-lg-6 pro-image">
@@ -62,32 +62,53 @@
                             <h2>Adam Evans</h2>
                             <div class="sport-btn"><p align="center">roping</p></div>
                             <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
+                            <div class="container-fluid">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4">
+                                        <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
+                                        <div class="coach-vid"></div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="coach-vid"></div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="coach-vid"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row roping-videos">
-            <div class="col-lg-2 offset-lg-1">
+
+        <h3 class="sec-title">Roping</h3>
+        <div class="row roping-videos justify-content-between">
+            <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
+            <div class="col-lg-2 rope-vid">
                 <div class="vid-thumbnail"></div>
-                <div class="vid-description"></div>
+                <div class="vid-description">Vid Title</div>
             </div>
-            <div class="col-lg-2 offset-lg-1">
+            <div class="col-lg-2 rope-vid">
                 <div class="vid-thumbnail"></div>
-                <div class="vid-description"></div>
+                <div class="vid-description">Vid Title</div>
             </div>
-            <div class="col-lg-2 offset-lg-1">
+            <div class="col-lg-2 rope-vid">
                 <div class="vid-thumbnail"></div>
-                <div class="vid-description"></div>
+                <div class="vid-description">Vid Title</div>
             </div>
-            <div class="col-lg-2 offset-lg-1">
+            <div class="col-lg-2 rope-vid">
                 <div class="vid-thumbnail"></div>
-                <div class="vid-description"></div>
+                <div class="vid-description">Vid Title</div>
             </div>
-            <div class="col-lg-2 offset-lg-1">
+            <div class="col-lg-2 rope-vid">
                 <div class="vid-thumbnail"></div>
-                <div class="vid-description"></div>
+                <div class="vid-description">Vid Title</div>
+            </div>
+            <div class="col-lg-2 rope-vid">
+                <div class="vid-thumbnail"></div>
+                <div class="vid-description">Vid Title</div>
             </div>
         </div>
         <!-- <div class="row hide-on-large-only">

@@ -35557,6 +35557,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -35602,199 +35623,179 @@ var render = function() {
       _vm._v(" "),
       _c("h3", { staticClass: "sec-title" }, [_vm._v("Best of")]),
       _vm._v(" "),
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c(
-          "div",
-          { staticClass: "col-lg-10  awards justify-content-space-between" },
-          [
-            _c("div", { staticClass: "container-fluid" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostRunsBadge.human_name,
-                        expression: "mostRunsBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-runs"
-                  },
-                  [
-                    _c("div", { staticClass: "circle" }, [
-                      _c("div", { staticClass: "award-background" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "full-name",
-                            attrs: { align: "left" }
-                          },
-                          [_vm._v(_vm._s(_vm.mostRunsBadge.human_name))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "description",
-                            attrs: { align: "left" }
-                          },
-                          [_vm._v(" Most Runs")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "accolade" }, [
-                          _vm._v(_vm._s(_vm.mostRunsBadge.count))
-                        ])
+      _c("div", { staticClass: "row award-center justify-content-between" }, [
+        _c("div", { staticClass: "col-lg-12 awards" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.mostRunsBadge.human_name,
+                      expression: "mostRunsBadge.human_name"
+                    }
+                  ],
+                  staticClass: "col-lg-3 award most-runs"
+                },
+                [
+                  _c("div", { staticClass: "circle" }, [
+                    _c("div", { staticClass: "award-background" }, [
+                      _c(
+                        "div",
+                        { staticClass: "full-name", attrs: { align: "left" } },
+                        [_vm._v(_vm._s(_vm.mostRunsBadge.human_name))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "description",
+                          attrs: { align: "left" }
+                        },
+                        [_vm._v(" Most Runs")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "accolade" }, [
+                        _vm._v(_vm._s(_vm.mostRunsBadge.count))
                       ])
                     ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostEfficientBadge.human_name,
-                        expression: "mostEfficientBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-efficient"
-                  },
-                  [
-                    _c("div", { staticClass: "circle" }, [
-                      _c("div", { staticClass: "award-background" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "full-name",
-                            attrs: { align: "left" }
-                          },
-                          [_vm._v(_vm._s(_vm.mostEfficientBadge.human_name))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "description",
-                            attrs: { align: "left" }
-                          },
-                          [_vm._v("Most Efficient")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "accolade" }, [
-                          _vm._v("Most Efficient")
-                        ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.mostEfficientBadge.human_name,
+                      expression: "mostEfficientBadge.human_name"
+                    }
+                  ],
+                  staticClass: "col-lg-3 award most-efficient"
+                },
+                [
+                  _c("div", { staticClass: "circle" }, [
+                    _c("div", { staticClass: "award-background" }, [
+                      _c(
+                        "div",
+                        { staticClass: "full-name", attrs: { align: "left" } },
+                        [_vm._v(_vm._s(_vm.mostEfficientBadge.human_name))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "description",
+                          attrs: { align: "left" }
+                        },
+                        [_vm._v("Most Efficient")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "accolade" }, [
+                        _vm._v("Most Efficient")
                       ])
                     ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.shortestAverageTimeBadge.human_name,
-                        expression: "shortestAverageTimeBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award shortest-average-time"
-                  },
-                  [
-                    _c("div", { staticClass: "circle" }, [
-                      _c("div", { staticClass: "award-background" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "full-name",
-                            attrs: { align: "left" }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(_vm.shortestAverageTimeBadge.human_name)
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "description",
-                            attrs: { align: "left" }
-                          },
-                          [_vm._v("Best Average Time")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "accolade" }, [
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.shortestAverageTimeBadge.human_name,
+                      expression: "shortestAverageTimeBadge.human_name"
+                    }
+                  ],
+                  staticClass: "col-lg-3 award shortest-average-time"
+                },
+                [
+                  _c("div", { staticClass: "circle" }, [
+                    _c("div", { staticClass: "award-background" }, [
+                      _c(
+                        "div",
+                        { staticClass: "full-name", attrs: { align: "left" } },
+                        [
                           _vm._v(
-                            " " + _vm._s(_vm.shortestAverageTimeBadge.count)
+                            _vm._s(_vm.shortestAverageTimeBadge.human_name)
                           )
-                        ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "description",
+                          attrs: { align: "left" }
+                        },
+                        [_vm._v("Best Average Time")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "accolade" }, [
+                        _vm._v(" " + _vm._s(_vm.shortestAverageTimeBadge.count))
                       ])
                     ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostVideosUploadedBadge.human_name,
-                        expression: "mostVideosUploadedBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-videos-uploaded"
-                  },
-                  [
-                    _c("div", { staticClass: "circle" }, [
-                      _c("div", { staticClass: "award-background" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "full-name",
-                            attrs: { align: "left" }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(_vm.mostVideosUploadedBadge.human_name)
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "description",
-                            attrs: { align: "left" }
-                          },
-                          [_vm._v("Most uploads")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "accolade" }, [
-                          _vm._v(_vm._s(_vm.mostVideosUploadedBadge.count))
-                        ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.mostVideosUploadedBadge.human_name,
+                      expression: "mostVideosUploadedBadge.human_name"
+                    }
+                  ],
+                  staticClass: "col-lg-3 award most-videos-uploaded"
+                },
+                [
+                  _c("div", { staticClass: "circle" }, [
+                    _c("div", { staticClass: "award-background" }, [
+                      _c(
+                        "div",
+                        { staticClass: "full-name", attrs: { align: "left" } },
+                        [_vm._v(_vm._s(_vm.mostVideosUploadedBadge.human_name))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "description",
+                          attrs: { align: "left" }
+                        },
+                        [_vm._v("Most uploads")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "accolade" }, [
+                        _vm._v(_vm._s(_vm.mostVideosUploadedBadge.count))
                       ])
                     ])
-                  ]
-                )
-              ])
+                  ])
+                ]
+              )
             ])
-          ]
-        )
+          ])
+        ])
       ]),
       _vm._v(" "),
       _c("h3", { staticClass: "sec-title" }, [_vm._v("Coaches")]),
       _vm._v(" "),
       _vm._m(0),
+      _vm._v(" "),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Roping")]),
       _vm._v(" "),
       _vm._m(1)
     ]
@@ -35805,13 +35806,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "row coaches" }, [
       _c(
         "div",
-        {
-          staticClass:
-            "col-lg-10 offset-lg-1 justify-content-center professionals"
-        },
+        { staticClass: "col-lg-12 justify-content-center professionals" },
         [
           _c("div", { staticClass: "container-fluid" }, [
             _c("div", { staticClass: "row justify-content-center" }, [
@@ -35832,6 +35830,22 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", { staticClass: "pro-description" }, [
                   _vm._v("Lorem ipsum ana init elo tu reinay")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "container-fluid" }, [
+                  _c("div", { staticClass: "row justify-content-center" }, [
+                    _c("div", { staticClass: "col-lg-4" }, [
+                      _c("div", { staticClass: "coach-vid" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-4" }, [
+                      _c("div", { staticClass: "coach-vid" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-4" }, [
+                      _c("div", { staticClass: "coach-vid" })
+                    ])
+                  ])
                 ])
               ])
             ])
@@ -35844,37 +35858,47 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row roping-videos" }, [
-      _c("div", { staticClass: "col-lg-2 offset-lg-1" }, [
-        _c("div", { staticClass: "vid-thumbnail" }),
+    return _c(
+      "div",
+      { staticClass: "row roping-videos justify-content-between" },
+      [
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "vid-description" })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-2 offset-lg-1" }, [
-        _c("div", { staticClass: "vid-thumbnail" }),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "vid-description" })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-2 offset-lg-1" }, [
-        _c("div", { staticClass: "vid-thumbnail" }),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "vid-description" })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-2 offset-lg-1" }, [
-        _c("div", { staticClass: "vid-thumbnail" }),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "vid-description" })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-2 offset-lg-1" }, [
-        _c("div", { staticClass: "vid-thumbnail" }),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "vid-description" })
-      ])
-    ])
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
