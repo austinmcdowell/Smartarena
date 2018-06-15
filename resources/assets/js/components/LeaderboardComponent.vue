@@ -7,16 +7,20 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div v-show="mostRunsBadge.human_name" class="col-lg-3 award most-runs">
-                            <div class="circle">
-                                <div class="award-background">
-                                    <div class='full-name' align="left">{{ mostRunsBadge.human_name }}</div>
-                                    <div class='description' align="left"> Most Runs</div>
-                                    <div class="accolade">{{ mostRunsBadge.count }}</div>
+                            <router-link :to="`/profile/${mostRunsBadge.human_id}`">
+                                <div class="circle">
+                                    <div class="award-background">
+                                        <div class='full-name' align="left">{{ mostRunsBadge.human_name }}</div>
+                                        <div class='description' align="left"> Most Runs</div>
+                                        <div class="accolade">{{ mostRunsBadge.count }}</div>
+                                    </div>
                                 </div>
-                            </div>
+                            </router-link>
                         </div>
+                    </div>
 
-                        <div v-show="mostEfficientBadge.human_name" class="col-lg-3 award most-efficient">
+                    <div v-show="mostEfficientBadge.human_name" class="col-lg-3 award most-efficient">
+                        <router-link :to="`/profile/${mostEfficientBadge.human_id}`">
                             <div class="circle">
                                 <div class="award-background">
                                     <div class='full-name' align="left">{{ mostEfficientBadge.human_name }}</div>
@@ -24,9 +28,11 @@
                                     <div class="accolade">Most Efficient</div>
                                 </div>
                             </div>
-                        </div>
+                        </router-link>
+                    </div>
 
-                        <div v-show="shortestAverageTimeBadge.human_name" class="col-lg-3 award shortest-average-time">
+                    <div v-show="shortestAverageTimeBadge.human_name" class="col-lg-3 award shortest-average-time">
+                        <router-link :to="`/profile/${shortestAverageTimeBadge.human_id}`">
                             <div class="circle">
                                 <div class="award-background">
                                     <div class='full-name' align="left">{{ shortestAverageTimeBadge.human_name }}</div>
@@ -34,9 +40,11 @@
                                     <div class="accolade"> {{ shortestAverageTimeBadge.count }}</div>
                                 </div>
                             </div>
-                        </div>
+                        </router-link>
+                    </div>
 
-                        <div v-show="mostVideosUploadedBadge.human_name" class="col-lg-3 award most-videos-uploaded">
+                    <div v-show="mostVideosUploadedBadge.human_name" class="col-lg-3 award most-videos-uploaded">
+                        <router-link :to="`/profile/${mostVideosUploadedBadge.human_id}`">
                             <div class="circle">
                                 <div class="award-background">
                                     <div class='full-name' align="left">{{ mostVideosUploadedBadge.human_name }}</div>
@@ -44,7 +52,7 @@
                                     <div class="accolade">{{ mostVideosUploadedBadge.count }}</div>
                                 </div>
                             </div>
-                        </div>
+                        </router-link>
                     </div>
                 </div>
             </div>
