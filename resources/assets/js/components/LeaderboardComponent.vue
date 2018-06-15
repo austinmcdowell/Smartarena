@@ -1,19 +1,22 @@
 <template>
-    <div id="leaderboard">
+    <div id="leaderboard" class="container-fluid">
         <br />
+        <h3 class="sec-title">Best of</h3>
         <div class="row justify-content-center">
             <div class="col-lg-10  awards justify-content-space-between">
-                <div class="row">
-                    <div v-show="mostRunsBadge.human_name" class="col-lg-3 award most-runs">
-                        <router-link :to="`/profile/${mostRunsBadge.human_id}`">
-                            <div class="circle">
-                                <div class="award-background">
-                                    <div class='full-name' align="left">{{ mostRunsBadge.human_name }}</div>
-                                    <div class='description' align="left"> Most Runs</div>
-                                    <div class="accolade">{{ mostRunsBadge.count }}</div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div v-show="mostRunsBadge.human_name" class="col-lg-3 award most-runs">
+                            <router-link :to="`/profile/${mostRunsBadge.human_id}`">
+                                <div class="circle">
+                                    <div class="award-background">
+                                        <div class='full-name' align="left">{{ mostRunsBadge.human_name }}</div>
+                                        <div class='description' align="left"> Most Runs</div>
+                                        <div class="accolade">{{ mostRunsBadge.count }}</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </router-link>
+                            </router-link>
+                        </div>
                     </div>
 
                     <div v-show="mostEfficientBadge.human_name" class="col-lg-3 award most-efficient">
@@ -55,16 +58,19 @@
             </div>
         </div>
 
+        <h3 class="sec-title">Coaches</h3>
         <div class="row">
             <div class="col-lg-10 offset-lg-1 justify-content-center professionals">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 pro-image">
-                        <button></button>
-                    </div>
-                    <div class="col-lg-6 pro-content">
-                        <h2>Adam Evans</h2>
-                        <div class="sport-btn"><p align="center">roping</p></div>
-                        <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 pro-image">
+                            <button class="hire-btn" align="center">Hire Adam</button>
+                        </div>
+                        <div class="col-lg-6 pro-content">
+                            <h2>Adam Evans</h2>
+                            <div class="sport-btn"><p align="center">roping</p></div>
+                            <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
+                        </div>
                     </div>
                 </div>
             </div>
