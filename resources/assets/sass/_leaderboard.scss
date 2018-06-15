@@ -1,23 +1,24 @@
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100% !important;
 }
 body {
   background: rgb(246, 247, 248) !important;
-  min-height: 100%;
+  min-height: 100% !important;
 }
 
 #leaderboard {
-  .awards {
-    margin-bottom: 5%;
-    transition: all .3s;
+  .sec-title {
+    margin: 10% 0 .5% 7.5%;
+    font-family: 'Arial Black';
+    font-size: 20px;
   }
 
-  .award {
-    padding-left:20px;
-    padding-right:20px;
-    // font-family: Roboto,"Helvetica Neue",sans-serif;
+  .awards {
+    padding: 0;
+    margin-bottom: 5%;
+    transition: all .3s;
   }
   
   .awards .circle {
@@ -25,13 +26,14 @@ body {
     margin-right:auto;
   
     // border-radius: 50px;
-    width: 100%;
+    width: 94% !important;
     height: 350px;
 
     border-radius: 3px;
   }
   
   .awards .award {
+    padding: 0;
     display: inline-block;
     text-align: center;
     cursor: pointer;
@@ -110,6 +112,12 @@ body {
     }
   }
 
+  .sec-title {
+    margin: 0 0 .5% 7.5%;
+    font-family: 'Arial Black';
+    font-size: 20px;
+  }
+
   .professionals {
     padding: 0;
     margin-bottom: 5%;
@@ -125,8 +133,18 @@ body {
     background-size: cover;
   }
 
+  .professionals .hire-btn {
+    margin: 2% 0 0 82%;
+    color: white;
+    background: rgb(129, 180, 140);
+    width: 100px;
+    height: 40px;
+    border: 1px solid rgb(129, 180, 140);
+    border-radius: 3px;
+  }
+
   .professionals .pro-content {
-    height: 300px;
+    height: 350px;
   }
 
   .professionals .pro-content h2 {
