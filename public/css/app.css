@@ -39,39 +39,130 @@ body {
   min-height: 100% !important;
 }
 
-#leaderboard .sec-title {
-  margin: 4% 0 .5% 5%;
+#leaderboard .leaderboard-table {
+  width: 90%;
+  margin: 5% 0 5% 5%;
+  padding: 1%;
+  -webkit-box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
+          box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
+}
+
+#leaderboard .leaderboard-table th {
+  border: 1px solid white !important;
+}
+
+#leaderboard .leaderboard-table td {
+  border: 1px solid white !important;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100% !important;
+}
+
+body {
+  background: white !important;
+  min-height: 100% !important;
+}
+
+@media (min-width: 300px) {
+  .awards {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  #home .sec-title {
+    margin: 4% 0 .5% 5%;
+  }
+
+  #home .award-center {
+    width: 90%;
+    margin: 0 0 0 5%;
+    padding: 0;
+  }
+
+  #home .awards {
+    padding: 0;
+    margin-bottom: 5%;
+    display: block;
+  }
+
+  #home .awards .circle {
+    width: 94% !important;
+    height: 350px;
+  }
+
+  #home .awards .award {
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+  }
+
+  #home .award .accolade {
+    margin: 30% 0 0 0;
+  }
+
+  #home .mobile-awards-carousel {
+    display: none;
+  }
+
+  #home .card-content {
+    margin: 10% 0 0 0;
+  }
+
+  #home .card-content img {
+    width: 100%;
+  }
+
+  #home .roping-videos {
+    width: 90%;
+    padding: 0;
+    margin: 0 0 5% 5%;
+  }
+
+  #home .roping-videos .rope-vid {
+    padding: 0;
+    margin: 0 0 3% 0;
+  }
+
+  #home .roping-videos .vid-thumbnail {
+    width: 96%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+  }
+
+  #home .roping-videos .vid-description {
+    width: 96%;
+    padding: 2% 0 5% 3%;
+    margin: 0;
+  }
+}
+
+#home .sec-title {
   font-family: 'Arial Black';
   font-size: 20px;
 }
 
-#leaderboard .award-center {
-  width: 90%;
-  margin: 0 0 0 5%;
-  padding: 0;
-}
-
-#leaderboard .awards {
-  padding: 0;
-  margin-bottom: 5%;
+#home .awards {
   -webkit-transition: all .3s;
   transition: all .3s;
+  display: block;
 }
 
-#leaderboard .awards .circle {
-  width: 94% !important;
-  height: 350px;
+#home .awards .circle {
   border-radius: 3px;
 }
 
-#leaderboard .awards .award {
-  padding: 0;
+#home .awards .award {
   display: inline-block;
   text-align: center;
   cursor: pointer;
 }
 
-#leaderboard .awards .most-runs .circle {
+#home .awards .most-runs .circle {
   background-color: #4f8f64;
   background-image: url("/img/austin-light.jpg");
   background-size: cover;
@@ -79,7 +170,7 @@ body {
   background-position: center center;
 }
 
-#leaderboard .awards .most-efficient .circle {
+#home .awards .most-efficient .circle {
   background-color: #ffdb8c;
   background-image: url("/img/austin-light.jpg");
   background-size: cover;
@@ -87,7 +178,7 @@ body {
   background-position: center center;
 }
 
-#leaderboard .awards .shortest-average-time .circle {
+#home .awards .shortest-average-time .circle {
   background-color: #ffaeae;
   background-image: url("/img/austin-light.jpg");
   background-size: cover;
@@ -95,7 +186,7 @@ body {
   background-position: center center;
 }
 
-#leaderboard .awards .most-videos-uploaded .circle {
+#home .awards .most-videos-uploaded .circle {
   background-color: #aedfff;
   background-image: url("/img/austin-light.jpg");
   background-size: cover;
@@ -103,129 +194,43 @@ body {
   background-position: center center;
 }
 
-#leaderboard .award .award-background {
+#home .award .award-background {
   height: 100%;
-  width: 100%;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
 }
 
-#leaderboard .award .full-name {
-  padding: 6% 0 0 5%;
+#home .award .full-name {
   color: white;
   font-family: 'Arial Black' !important;
 }
 
-#leaderboard .award .description {
-  padding: 1% 0 0 5%;
+#home .award .description {
   color: white;
   font-family: 'Arial';
   font-weight: lighter;
 }
 
-#leaderboard .award .accolade {
-  margin: 30% 0 0 0;
+#home .award .accolade {
   color: #81b48c;
   font-family: 'Arial Black';
   font-size: 30px;
 }
 
-#leaderboard .card-content {
-  margin: 10% 0 0 0;
+#home .mobile-awards-carousel {
+  display: none;
 }
 
-#leaderboard .card-content img {
-  width: 100%;
-}
-
-#leaderboard .coaches {
-  width: 90%;
-  margin: 1% 0 1% 5%;
-  padding: 0;
-  -webkit-box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
-          box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
-}
-
-#leaderboard .professionals {
-  padding: 0;
-  margin-bottom: 5%;
-  height: 350px;
-  background: white !important;
-}
-
-#leaderboard .professionals .pro-image {
-  height: inherit;
-  background-image: url("/img/mustache.jpg");
-  background-size: cover;
-}
-
-#leaderboard .professionals .hire-btn {
-  margin: 2% 0 0 82%;
-  color: white;
-  background: #81b48c;
-  width: 100px;
-  height: 40px;
-  border: 1px solid #81b48c;
-  border-radius: 3px;
-}
-
-#leaderboard .professionals .pro-content {
-  height: 350px;
-}
-
-#leaderboard .professionals .pro-content h2 {
-  margin: 3% 0 3% 5%;
-}
-
-#leaderboard .pro-content .sport-btn {
-  width: 70px;
-  padding: 0 2%;
-  margin: 0 0 0 5%;
-  border: 1px solid gray;
-  border-radius: 3px;
-}
-
-#leaderboard .pro-content .sport-btn p {
-  margin: 0;
-}
-
-#leaderboard .pro-content .pro-description {
-  margin: 3% 0 0 5%;
-}
-
-#leaderboard .pro-content .coach-vid {
-  width: 150px;
-  height: 150px;
-  margin: 10% 0 0 10%;
-  background-size: cover;
-  background-image: url("/img/cow.jpg");
-}
-
-#leaderboard .roping-videos {
-  width: 90%;
-  padding: 0;
-  margin: 0 0 5% 5%;
+#home .roping-videos {
   border-bottom: 1px solid #f0f0f0;
 }
 
-#leaderboard .roping-videos .rope-vid {
-  padding: 0;
-  margin: 0 0 3% 0;
-}
-
-#leaderboard .roping-videos .vid-thumbnail {
-  width: 96%;
-  height: 100px;
-  padding: 0;
-  margin: 0;
+#home .roping-videos .vid-thumbnail {
   background-size: cover;
   background-image: url("/img/cow.jpg");
 }
 
-#leaderboard .roping-videos .vid-description {
-  width: 96%;
-  padding: 2% 0 5% 3%;
-  margin: 0;
+#home .roping-videos .vid-description {
   background: white;
   font-family: 'Arial Black';
 }
@@ -388,5 +393,67 @@ body {
 
 .control-button {
   font-size: 20pt;
+}
+
+.coaches {
+  width: 90%;
+  margin: 1% 0 1% 5%;
+  padding: 0;
+  -webkit-box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
+          box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
+}
+
+.professionals {
+  padding: 0;
+  margin-bottom: 5%;
+  height: 350px;
+  background: white !important;
+}
+
+.professionals .pro-image {
+  background-image: url("/img/mustache.jpg");
+  background-size: cover;
+}
+
+.professionals .hire-btn {
+  margin: 2% 0 0 82%;
+  width: 100px;
+  height: 40px;
+  color: white;
+  background: #81b48c;
+  border: 1px solid #81b48c;
+  border-radius: 3px;
+}
+
+.professionals .pro-content {
+  height: 350px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.professionals .pro-content h2 {
+  margin: 3% 0 3% 5%;
+}
+
+.pro-content .sport-btn {
+  width: 70px;
+  padding: 0 2%;
+  margin: 0 0 0 5%;
+}
+
+.pro-content .sport-btn p {
+  margin: 0;
+}
+
+.pro-content .pro-description {
+  margin: 3% 0 0 5%;
+}
+
+.pro-content .coach-vid {
+  width: 150px;
+  height: 150px;
+  margin: 10% 0 0 10%;
+  background-size: cover;
+  background-image: url("/img/cow.jpg");
 }
 

@@ -9,214 +9,36 @@ body {
   min-height: 100% !important;
 }
 
-#leaderboard {
-  .sec-title {
-    margin: 4% 0 .5% 5%;
-    font-family: 'Arial Black';
-    font-size: 20px;
-  }
-
-  .award-center {
-    width: 90%;
-    margin: 0 0 0 5%;
-    padding: 0;
-  }
-
-  .awards {
-    padding: 0;
-    margin-bottom: 5%;
-    transition: all .3s;
-  }
-  
-  .awards .circle {
-    // margin-left:auto;
-    // margin-right:auto;
-  
-    // border-radius: 50px;
-    width: 94% !important;
-    height: 350px;
-
-    border-radius: 3px;
-  }
-  
-  .awards .award {
-    padding: 0;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  // .awards .award:hover {
-  //   transform: scale(1.02, 1.02);
-  // }
-  
-  .awards .most-runs .circle {
-    background-color: rgb(79, 143, 100);
-    background-image: url('/img/austin-light.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  
-  .awards .most-efficient .circle {
-    background-color: rgb(255, 219, 140);
-    background-image: url('/img/austin-light.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  
-  .awards .shortest-average-time .circle {
-    background-color: rgb(255, 174, 174);
-    background-image: url('/img/austin-light.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  
-  .awards .most-videos-uploaded .circle {
-    background-color: rgb(174, 223, 255);
-    background-image: url('/img/austin-light.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-
-  .award .award-background {
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, .4);
-    border-radius: 3px;
-  }
-
-  .award .full-name {
-    padding: 6% 0 0 5%;
-    color: white;
-
-    font-family: 'Arial Black' !important;
-  }
-
-  .award .description {
-    padding: 1% 0 0 5%;
-    color: white;
-
-    font-family: 'Arial'; 
-    font-weight: lighter;
-  }
-
-  .award .accolade {
-    margin: 30% 0 0 0;
-
-    color: rgb(129, 180, 140);
-    font-family: 'Arial Black';
-    font-size: 30px;
-  }
-  
-  .card-content {
-    margin: 10% 0 0 0;
-    img {
-      width:100%
-    }
-  }
-
-  .coaches {
-    width: 90%;
-    margin: 1% 0 1% 5%;
-    padding: 0;
-    box-shadow: 0px 1px 30px rgba(100, 140, 230, .15);
-  }
-
-  .professionals {
-    padding: 0;
-    margin-bottom: 5%;
-    height: 350px;
-
-    background: white !important;
-    // box-shadow: 5px 12px 20px rgba(0, 0, 0, .15);
-  }
-
-  .professionals .pro-image {
-    height: inherit;
-    background-image: url('/img/mustache.jpg');
-    background-size: cover;
-  }
-
-  .professionals .hire-btn {
-    margin: 2% 0 0 82%;
-    color: white;
-    background: rgb(129, 180, 140);
-    width: 100px;
-    height: 40px;
-    border: 1px solid rgb(129, 180, 140);
-    border-radius: 3px;
-  }
-
-  .professionals .pro-content {
-    height: 350px;
-  }
-
-  .professionals .pro-content h2 {
-    margin: 3% 0 3% 5%;
-  }
-
-  .pro-content .sport-btn {
-    width: 70px;
-    padding: 0 2%;
-    margin: 0 0 0 5%;
-
-    border: 1px solid gray;
-    border-radius: 3px;
-  }
-
-  .pro-content .sport-btn p {
-    margin: 0;
-  }
-
-  .pro-content .pro-description {
-    margin: 3% 0 0 5%;
-  }
-
-  .pro-content .coach-vid {
-    width: 150px;
-    height: 150px;
-
-    margin: 10% 0 0 10%;
-
-    background-size: cover;
-    background-image: url('/img/cow.jpg');
-  }
-
-
-  .roping-videos {
-    width: 90%;
-    padding: 0;
-    margin: 0 0 5% 5%;
-    border-bottom: 1px solid rgb(240, 240, 240);
-  }
-
-  .roping-videos .rope-vid {
-    padding: 0;
-    margin: 0 0 3% 0;
-  }
-
-  .roping-videos .vid-thumbnail {
-    width: 96%;
-    height: 100px;
-
-    padding: 0;
-    margin: 0;
-
-    background-size: cover;
-    background-image: url('/img/cow.jpg');
-  }
-
-  .roping-videos .vid-description {
-    width: 96%;
-    padding: 2% 0 5% 3%;
-    margin: 0;
-    background: white;
-    font-family: 'Arial Black';
-  }
+@media (min-width: 300px) {
 
 }
 
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+  #leaderboard{
+
+  }
+}
+
+#leaderboard{
+  .leaderboard-table {
+    width: 90%;
+    margin: 5% 0 5% 5%;
+    padding: 1%;
+
+    box-shadow: 0px 1px 30px rgba(100, 140, 230, .15);
+  }
+
+  .leaderboard-table th {
+    border: 1px solid white !important;
+  }
+
+  .leaderboard-table td {
+    border: 1px solid white !important;
+  }
+}

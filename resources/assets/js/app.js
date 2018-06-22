@@ -14,6 +14,7 @@ Vue.use(VueCarousel);
 
 // Components
 
+import HomeComponent from './components/HomeComponent.vue';
 import LeaderboardComponent from './components/LeaderboardComponent.vue';
 import ProfileComponent from './components/ProfileComponent.vue';
 import VideoPlayerComponent from './components/VideoPlayerComponent.vue';
@@ -22,9 +23,10 @@ import RunEditor from './components/RunEditorComponent.vue';
 Vue.use(VueRouter);
 
 let routes = [
-  { path: '/', component: LeaderboardComponent },
+  { path: '/', component: HomeComponent },
   { path: '/profile/:id', component: ProfileComponent },
   { path: '/run/edit/:id', component: RunEditor },
+  { path: '/leaderboard/:type', component: LeaderboardComponent },
   { path: '/video/:id', component: VideoPlayerComponent }
 ];
 
