@@ -4,7 +4,8 @@ html {
   min-height: 100% !important;
 }
 body {
-  background: rgb(246, 247, 248) !important;
+  // background: rgb(246, 247, 248) !important;
+  background: white !important;
   min-height: 100% !important;
 }
 
@@ -120,8 +121,9 @@ body {
 
   .coaches {
     width: 90%;
-    margin: 0 0 0 5%;
+    margin: 1% 0 1% 5%;
     padding: 0;
+    box-shadow: 0px 1px 30px rgba(100, 140, 230, .15);
   }
 
   .professionals {
@@ -177,7 +179,11 @@ body {
   .pro-content .coach-vid {
     width: 150px;
     height: 150px;
-    background: cover;
+
+    margin: 10% 0 0 10%;
+
+    background-size: cover;
+    background-image: url('/img/cow.jpg');
   }
 
 
@@ -185,10 +191,12 @@ body {
     width: 90%;
     padding: 0;
     margin: 0 0 5% 5%;
+    border-bottom: 1px solid rgb(240, 240, 240);
   }
 
   .roping-videos .rope-vid {
     padding: 0;
+    margin: 0 0 3% 0;
   }
 
   .roping-videos .vid-thumbnail {
@@ -204,7 +212,7 @@ body {
 
   .roping-videos .vid-description {
     width: 96%;
-    padding: 0;
+    padding: 2% 0 5% 3%;
     margin: 0;
     background: white;
     font-family: 'Arial Black';
