@@ -8,7 +8,7 @@ use DateTime;
 use App\User;
 use App\Http\Controllers\Controller;
 use App\Event;
-use App\TeamropingRun;
+use App\Run;
 use App\Human;
 use App\Video;
 
@@ -24,12 +24,10 @@ class MassRunUploader extends Controller
      *
      * @return Response
      */
-    public function get()
+    public function events()
     {
         $events = Event::all();
-        return view('massrunuploader', [
-          'events' => $events
-        ]);
+        return $events;
     }
 
     public function process(Request $request)
@@ -40,15 +38,21 @@ class MassRunUploader extends Controller
         DB::beginTransaction();
 
         foreach ($input as $runData) {
-            $run = new TeamropingRun;
+            $run = new Run;
 
             $run->date = $runData['date'];
-            $run->event_id = $runData['eventId']; 
+            $run->event_id = $runData['eventId'];
+            $run->type = 'teamroping';
+
+            $stats = [
+                'header' => [],
+                'heeler' => []
+            ];
 
             if ($runData['headerSaid']) {
                 try {
                     $human = Human::where('import_id', $runData['headerSaid'])->firstOrFail();
-                    $run->header_human_id = $human->id;
+                    $stats['header']['human_id'] = $human->id;
                 } catch (ModelNotFoundException $e) {
                     report($e);
 
@@ -58,37 +62,37 @@ class MassRunUploader extends Controller
                 }    
             }
 
-            $run->header_did_catch = $runData['headerCatch'];
+            $stats['header']['did_catch'] = $runData['headerCatch'];
 
-            if (!$run->header_did_catch) {
-                $run->no_time = true;
+            if (!$stats['header']['did_catch']) {
+                $stats['no_time'] = true;
             }
 
             $header_catch_type = $runData['headerCatchType'];
             if ($header_catch_type) {
                 if ($header_catch_type == 'missed') {
-                    $run->no_time = true;
-                    $run->header_catch_type = null;
+                    $stats['no_time'] = true;
+                    $stats['header']['catch_type'] = null;
                 } else {
-                    $run->header_catch_type = $header_catch_type;
+                    $stats['header']['catch_type'] = $header_catch_type;
                 }    
             } else {
-                $run->header_catch_type = null;
+                $stats['header']['catch_type'] = null;
             }
-            $run->header_penalty_time = $runData['headerPenaltyTime'];
+            $stats['header']['penalty_time'] = $runData['headerPenaltyTime'];
             
             if ($runData['headerPenaltyType']) {
                 if ($runData['headerPenaltyType'] == 'barrier') {
-                    $run->header_barrier_penalty = 5;
+                    $stats['header']['barrier_penalty'] = 5;
                 } else if ($runData['headerPenaltyType'] != 'none'){
-                    $run->header_penalty_type = $runData['headerPenaltyType'];
+                    $stats['header']['penalty_type'] = $runData['headerPenaltyType'];
                 }
             }
 
             if ($runData['heelerSaid']) {
                 try {
                     $human = Human::where('import_id', $runData['heelerSaid'])->firstOrFail();
-                    $run->heeler_human_id = $human->id;
+                    $stats['heeler']['human_id'] = $human->id;
                 } catch (ModelNotFoundException $e) {
                     report($e);
    
@@ -98,44 +102,45 @@ class MassRunUploader extends Controller
                 }
             }
 
-            $run->heeler_did_catch = $runData['heelerCatch'];
+            $stats['heeler']['did_catch'] = $runData['heelerCatch'];
 
-            if (!$run->heeler_did_catch) {
-                $run->no_time = true;
+            if (!$stats['heeler']['did_catch']) {
+                $stats['no_time'] = true;
             }
 
             $heeler_catch_type = $runData['heelerCatchType'];
 
             if ($heeler_catch_type) {
                 if ($heeler_catch_type == 'missed') {
-                    $run->no_time = true;
-                    $run->heeler_catch_type = null;
+                    $stats['no_time'] = true;
+                    $stats['heeler']['catch_type'] = null;
                 } else {
-                    $run->heeler_catch_type = $heeler_catch_type;
+                    $stats['heeler']['catch_type'] = $heeler_catch_type;
                 }
             } else {
-                $run->heeler_catch_type = null;
+                $stats['heeler']['catch_type'] = null;
             }
             
-            $run->heeler_penalty_time = $runData['heelerPenaltyTime'];
+            $stats['heeler']['penalty_time'] = $runData['heelerPenaltyTime'];
 
             if ($runData['heelerPenaltyType']) {
                 if ($runData['heelerPenaltyType'] == 'barrier') {
-                    $run->heeler_barrier_penalty = 5;
+                    $stats['heeler']['barrier_penalty'] = 5;
                 } else if ($runData['heelerPenaltyType'] != 'none') {
-                    $run->heeler_penalty_type = $runData['heelerPenaltyType'];
+                    $stats['heeler']['penalty_type'] = $runData['heelerPenaltyType'];
                 }
             }
 
-            $run->raw_time = $runData['rawTime'];
-            $run->total_time = ($run->raw_time - $run->header_penalty_time - $run->heeler_penalty_time);
+            $stats['raw_time'] = $runData['rawTime'];
+            $stats['total_time'] = ($stats['raw_time'] - $stats['header']['penalty_time'] - $stats['heeler']['penalty_time']);
             
             if ($runData['file']) {
                 $video = new Video;
                 $video->file_name = $runData['file'];
                 $video->processing_complete = false;
-                $video->run_type = "teamroping";
             }
+
+            $run->stats = json_encode($stats);
 
             try {
                 $run->save();

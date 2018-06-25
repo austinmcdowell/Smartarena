@@ -26,6 +26,7 @@ Route::get('login/facebook/callback', 'AuthController@handleFacebookCallback');
 Route::get('/massupload/humans', 'MassHumanUploader@get')->middleware('auth', 'admin');
 Route::post('/massupload/humans/process', 'MassHumanUploader@process')->middleware('auth', 'admin');
 
+Route::get('/massupload/runs/events', 'MassRunUploader@events')->middleware('auth', 'admin');
 Route::post('/massupload/runs/process', 'MassRunUploader@process')->middleware('auth', 'admin');
 Route::post('/massupload/runs/uploadVideo', 'MassRunUploader@uploadVideo')->middleware('auth', 'admin');
 

@@ -75,6 +75,8 @@
 <script>
 export default {
     mounted() {
+        const $this = this;
+
         $(window).on('drop', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -84,10 +86,17 @@ export default {
             e.preventDefault();
             e.stopPropagation();
         });
+
+        axios.get('/massupload/runs/events').then(response => {
+            $this.events = response.data;
+        }).catch(e => {
+            alert('Something went wrong, please contact support.');
+        })
     },
     data() {
         return {
             queue: [],
+            events: [],
             selectedEventId: null,
             csvText: '',
             successfullyUploaded: [],
@@ -109,7 +118,7 @@ export default {
         parseRun(run, eventId) {
             return {
                 file: run[0].trim(),
-                date: parseDate(run[1]),
+                date: this.parseDate(run[1]),
                 eventId: eventId,
                 roping: run[2].trim(),
                 round: run[3].trim(),
@@ -120,20 +129,22 @@ export default {
                 heelerSaid: run[8].trim(),
                 heelerName: run[9].trim().toLowerCase(),
                 heelerLocation: run[10].trim().toLowerCase(),
-                headerCatch: (parseBool(run[11])),
+                headerCatch: (this.parseBool(run[11])),
                 headerCatchType: run[12].trim(),
                 headerPenaltyType: run[13].trim(),
                 headerPenaltyTime: parseFloat(run[14]),
-                heelerCatch: (parseBool(run[15])),
+                heelerCatch: (this.parseBool(run[15])),
                 heelerCatchType: run[16].trim(),
                 heelerPenaltyType: run[17].trim(),
                 heelerPenaltyTime: parseFloat(run[18])
             };
         },
         parseContentsOf(entry) {
+            const $this = this;
+
             if (entry.isFile) {
                 if (entry.name !== '.DS_Store') {
-                    return prepareForUpload(entry);
+                    return this.prepareForUpload(entry);
                 }
             } else {
                 const entryReader = entry.createReader();
@@ -143,13 +154,13 @@ export default {
                         entryReader.readEntries(entryNodes => {
                             const childPromises = [];
                             entryNodes.forEach(node => {
-                            if (node.name !== '.DS_Store') {
-                                if (node.isDirectory) {
-                                childPromises.push(parseContentsOf(node));
-                                } else {
-                                childPromises.push(prepareForUpload(node));
+                                if (node.name !== '.DS_Store') {
+                                    if (node.isDirectory) {
+                                        childPromises.push($this.parseContentsOf(node));
+                                    } else {
+                                        childPromises.push($this.prepareForUpload(node));
+                                    }
                                 }
-                            }
                             });
                             resolveEntry(Promise.all(childPromises));
                         });
@@ -185,6 +196,7 @@ export default {
                             alert('There has been an error, please contact support.');
                         });
                     });
+                    resolve();
                 });
             });
         },
@@ -193,15 +205,16 @@ export default {
         },
         uploadFromDrop(e) {
             const $this = this;
-            const length = e.originalEvent.dataTransfer.items.length;
+            const length = e.dataTransfer.items.length;
             const parentPromises = [];
 
             for (let i = 0; i < length; i++) {
-                const entry = e.originalEvent.dataTransfer.items[i].webkitGetAsEntry();
+                const entry = e.dataTransfer.items[i].webkitGetAsEntry();
                 parentPromises.push(this.parseContentsOf(entry));
             }
 
             Promise.all(parentPromises).then(function() {
+                console.log('here 3');
                 if ($this.queue.length === 1) {
                     return $this.queue[0]();
                 } else {
@@ -217,7 +230,7 @@ export default {
                 }
             });
         },
-        uploadCsv() {
+        uploadCSV() {
             const $this = this;
             const csvData = this.csvText.split('\n');
             const eventId = this.selectedEventId;

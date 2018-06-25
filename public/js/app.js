@@ -40997,6 +40997,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
+        var $this = this;
+
         $(window).on('drop', function (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -41006,10 +41008,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             e.preventDefault();
             e.stopPropagation();
         });
+
+        axios.get('/massupload/runs/events').then(function (response) {
+            $this.events = response.data;
+        }).catch(function (e) {
+            alert('Something went wrong, please contact support.');
+        });
     },
     data: function data() {
         return {
             queue: [],
+            events: [],
             selectedEventId: null,
             csvText: '',
             successfullyUploaded: [],
@@ -41032,7 +41041,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         parseRun: function parseRun(run, eventId) {
             return {
                 file: run[0].trim(),
-                date: parseDate(run[1]),
+                date: this.parseDate(run[1]),
                 eventId: eventId,
                 roping: run[2].trim(),
                 round: run[3].trim(),
@@ -41043,30 +41052,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 heelerSaid: run[8].trim(),
                 heelerName: run[9].trim().toLowerCase(),
                 heelerLocation: run[10].trim().toLowerCase(),
-                headerCatch: parseBool(run[11]),
+                headerCatch: this.parseBool(run[11]),
                 headerCatchType: run[12].trim(),
                 headerPenaltyType: run[13].trim(),
                 headerPenaltyTime: parseFloat(run[14]),
-                heelerCatch: parseBool(run[15]),
+                heelerCatch: this.parseBool(run[15]),
                 heelerCatchType: run[16].trim(),
                 heelerPenaltyType: run[17].trim(),
                 heelerPenaltyTime: parseFloat(run[18])
             };
         },
-        parseContentsOf: function (_parseContentsOf) {
-            function parseContentsOf(_x) {
-                return _parseContentsOf.apply(this, arguments);
-            }
+        parseContentsOf: function parseContentsOf(entry) {
+            var $this = this;
 
-            parseContentsOf.toString = function () {
-                return _parseContentsOf.toString();
-            };
-
-            return parseContentsOf;
-        }(function (entry) {
             if (entry.isFile) {
                 if (entry.name !== '.DS_Store') {
-                    return prepareForUpload(entry);
+                    return this.prepareForUpload(entry);
                 }
             } else {
                 var entryReader = entry.createReader();
@@ -41078,9 +41079,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             entryNodes.forEach(function (node) {
                                 if (node.name !== '.DS_Store') {
                                     if (node.isDirectory) {
-                                        childPromises.push(parseContentsOf(node));
+                                        childPromises.push($this.parseContentsOf(node));
                                     } else {
-                                        childPromises.push(prepareForUpload(node));
+                                        childPromises.push($this.prepareForUpload(node));
                                     }
                                 }
                             });
@@ -41090,7 +41091,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     resolve(Promise.all(promises));
                 });
             }
-        }),
+        },
         prepareForUpload: function prepareForUpload(fileEntry) {
             var $this = this;
 
@@ -41118,21 +41119,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             alert('There has been an error, please contact support.');
                         });
                     });
+                    resolve();
                 });
             });
         },
         uploadFromForm: function uploadFromForm(e) {},
         uploadFromDrop: function uploadFromDrop(e) {
             var $this = this;
-            var length = e.originalEvent.dataTransfer.items.length;
+            var length = e.dataTransfer.items.length;
             var parentPromises = [];
 
             for (var i = 0; i < length; i++) {
-                var entry = e.originalEvent.dataTransfer.items[i].webkitGetAsEntry();
+                var entry = e.dataTransfer.items[i].webkitGetAsEntry();
                 parentPromises.push(this.parseContentsOf(entry));
             }
 
             Promise.all(parentPromises).then(function () {
+                console.log('here 3');
                 if ($this.queue.length === 1) {
                     return $this.queue[0]();
                 } else {
@@ -41152,7 +41155,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             });
         },
-        uploadCsv: function uploadCsv() {
+        uploadCSV: function uploadCSV() {
             var $this = this;
             var csvData = this.csvText.split('\n');
             var eventId = this.selectedEventId;
