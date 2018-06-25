@@ -41,69 +41,61 @@ class LeaderboardController extends Controller
 
             // Attach first video
             $human['video'] = $human->first_video;
-
-            foreach ($human->teamropingHeaderRuns as $run) {
+            
+            foreach($human->runs as $run) {
                 $run_count++;
+                
+                $stats = $run->stats;
 
-                if ($run->header_did_catch) {
-                    $catch_count++;
-                }
-
-                $total_raw_time += $run->raw_time;
-
+                $total_raw_time += $stats['raw_time'];
                 $penalties_for_run = 0;
 
-                if ($run->header_penalty_time) {
-                    $penalties += $run->header_penalty_time;
-                    $penalties_for_run += $run->header_penalty_time;
+                if ($stats['header']['human_id'] === $human->id) {
+                    if ($stats['header']['did_catch']) {
+                        $catch_count++;
+                    }
+                    
+                    if (isset($stats['header']['penalty_time'])) {
+                        $penalties += $stats['header']['penalty_time'];
+                        $penalties_for_run += $stats['header']['penalty_time'];
+                    }
+
+                    if (isset($stats['heeler']['penalty_time'])) {
+                        $penalties_for_run += $stats['heeler']['penalty_time'];
+                    }
+
+                    if (isset($stats['header']['barrier_penalty'])) {
+                        $penalties += $stats['header']['barrier_penalty'];
+                        $penalties_for_run += $stats['header']['barrier_penalty'];
+                    }
+    
+                    if (isset($stats['heeler']['barrier_penalty'])) {
+                        $penalties_for_run += $stats['heeler']['barrier_penalty'];
+                    }
                 }
 
-                if ($run->heeler_penalty_time) {
-                    $penalties_for_run += $run->heeler_penalty_time;
-                }
+                if ($stats['heeler']['human_id'] === $human->id) {
+                    if ($stats['heeler']['did_catch']) {
+                        $catch_count++;
+                    }
+                    
+                    if (isset($stats['heeler']['penalty_time'])) {
+                        $penalties += $stats['heeler']['penalty_time'];
+                        $penalties_for_run += $stats['heeler']['penalty_time'];
+                    }
 
-                if ($run->header_barrier_penalty) {
-                    $penalties += $run->header_barrier_penalty;
-                    $penalties_for_run += $run->header_barrier_penalty;
-                }
+                    if (isset($stats['header']['penalty_time'])) {
+                        $penalties_for_run += $stats['header']['penalty_time'];
+                    }
 
-                if ($run->heeler_barrier_penalty) {
-                    $penalties_for_run += $run->heeler_barrier_penalty;
-                }
-
-                $total_penalties += $penalties_for_run;
-                $time_with_penalties = $total_raw_time + $total_penalties;
-                $catch_percentage = $catch_count / $run_count;
-                $sum_of_average_time = $time_with_penalties / $run_count;
-            }
-
-            foreach ($human->teamropingHeelerRuns as $run) {
-                $run_count++;
-
-                if ($run->header_did_catch) {
-                    $catch_count++;
-                }
-
-                $total_raw_time += $run->raw_time;
-
-                $penalties_for_run = 0;
-
-                if ($run->header_penalty_time) {
-                    $penalties_for_run += $run->header_penalty_time;
-                }
-
-                if ($run->heeler_penalty_time) {
-                    $penalties += $run->heeler_penalty_time;
-                    $penalties_for_run += $run->heeler_penalty_time;
-                }
-
-                if ($run->header_barrier_penalty) {
-                    $penalties_for_run += $run->header_barrier_penalty;
-                }
-
-                if ($run->heeler_barrier_penalty) {
-                    $penalties += $run->heeler_barrier_penalty;
-                    $penalties_for_run += $run->heeler_barrier_penalty;
+                    if (isset($stats['heeler']['barrier_penalty'])) {
+                        $penalties += $stats['heeler']['barrier_penalty'];
+                        $penalties_for_run += $stats['heeler']['barrier_penalty'];
+                    }
+    
+                    if (isset($stats['header']['barrier_penalty'])) {
+                        $penalties_for_run += $stats['header']['barrier_penalty'];
+                    }
                 }
 
                 $total_penalties += $penalties_for_run;

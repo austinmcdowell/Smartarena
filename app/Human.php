@@ -11,14 +11,9 @@ class Human extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function teamropingHeaderRuns()
+    public function runs()
     {
-        return $this->hasMany('App\TeamropingRun', 'header_human_id');
-    }
-
-    public function teamropingHeelerRuns()
-    {
-        return $this->hasMany('App\TeamropingRun', 'heeler_human_id');
+        return $this->belongsToMany('App\Run');
     }
 
     public function videos()
@@ -34,15 +29,7 @@ class Human extends Model
             return $video;
         }
 
-        $run = $this->teamropingHeaderRuns()->first();
-        if ($run) {
-            $video = $run->videos()->first();
-            if ($video) {
-                return $video;
-            }
-        }
-
-        $run = $this->teamropingHeelerRuns()->first();
+        $run = $this->runs()->first();
         if ($run) {
             $video = $run->videos()->first();
             if ($video) {
