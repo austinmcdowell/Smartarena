@@ -377,33 +377,6 @@ module.exports = {
 /* 1 */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
 /* globals __VUE_SSR_CONTEXT__ */
 
 // IMPORTANT: Do NOT use ES2015 features in this file.
@@ -507,6 +480,33 @@ module.exports = function normalizeComponent (
     options: options
   }
 }
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ }),
@@ -11882,18 +11882,18 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(38).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(38).setImmediate))
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(48)
+var __vue_script__ = __webpack_require__(51)
 /* template */
-var __vue_template__ = __webpack_require__(49)
+var __vue_template__ = __webpack_require__(52)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -11946,7 +11946,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-module.exports = __webpack_require__(53);
+module.exports = __webpack_require__(68);
 
 
 /***/ }),
@@ -11960,16 +11960,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_carousel__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_carousel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -11992,9 +12000,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 
 
+
+
+
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default.a }, { path: '/leaderboard/:type', component: __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default.a }, { path: '/leaderboard/:type', component: __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue___default.a }, { path: '/admin/create-human', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default.a }, { path: '/admin/user-human-linker', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default.a }, { path: '/admin/mass-upload-runs', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default.a }, { path: '/admin/mass-upload-humans', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({ routes: routes });
 
@@ -12002,19 +12014,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
   router: router
 });
-
-// $(document).ready(function() {
-//   $.ajaxSetup({
-//     headers: {
-//         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//     }
-//   });
-
-//   $('.sidenav').sidenav();
-
-//   let elem = document.querySelector('.dropdown-button');
-//   let instance = M.Dropdown.init(elem, {});
-// });
 
 /***/ }),
 /* 15 */
@@ -29166,7 +29165,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(17)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(17)(module)))
 
 /***/ }),
 /* 17 */
@@ -32534,7 +32533,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 39 */
@@ -32727,7 +32726,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(5)))
 
 /***/ }),
 /* 40 */
@@ -35375,11 +35374,1294 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(43)
 /* template */
 var __vue_template__ = __webpack_require__(44)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/HomeComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-41daeb37", Component.options)
+  } else {
+    hotAPI.reload("data-v-41daeb37", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        var $this = this;
+        axios.get('/leaderboard').then(function (response) {
+            var data = response.data;
+            $this.humans = data.humans;
+            $this.stats = data.stats;
+            $this.mostRunsBadge = data.mostRunsBadge;
+            $this.mostEfficientBadge = data.mostEfficientBadge;
+            $this.shortestAverageTimeBadge = data.shortestAverageTimeBadge;
+            $this.mostVideosUploadedBadge = data.mostVideosUploadedBadge;
+        }).catch(function (e) {
+            alert('There was an error. Please contact support.');
+        });
+    },
+    data: function data() {
+        return {
+            user: {},
+            humans: [],
+            stats: {},
+            mostRunsBadge: {},
+            mostEfficientBadge: {},
+            shortestAverageTimeBadge: {},
+            mostVideosUploadedBadge: {}
+        };
+    }
+});
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container-fluid", attrs: { id: "home" } },
+    [
+      _c("br"),
+      _vm._v(" "),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Best of")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row award-center justify-content-between" },
+        [
+          _c("div", { staticClass: "col-lg-12 awards" }, [
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostRunsBadge.human_name,
+                        expression: "mostRunsBadge.human_name"
+                      }
+                    ],
+                    staticClass: "col-lg-3 award most-runs"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: { to: "/profile/" + _vm.mostRunsBadge.human_id }
+                      },
+                      [
+                        _c("div", { staticClass: "circle" }, [
+                          _c("div", { staticClass: "award-background" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "full-name",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v(_vm._s(_vm.mostRunsBadge.human_name))]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "description",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v(" Most Runs")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "accolade" }, [
+                              _vm._v(_vm._s(_vm.mostRunsBadge.count))
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostEfficientBadge.human_name,
+                        expression: "mostEfficientBadge.human_name"
+                      }
+                    ],
+                    staticClass: "col-lg-3 award most-efficient"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: "/profile/" + _vm.mostEfficientBadge.human_id
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "circle" }, [
+                          _c("div", { staticClass: "award-background" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "full-name",
+                                attrs: { align: "left" }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.mostEfficientBadge.human_name)
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "description",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v("Most Efficient")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "accolade" }, [
+                              _vm._v("Most Efficient")
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.shortestAverageTimeBadge.human_name,
+                        expression: "shortestAverageTimeBadge.human_name"
+                      }
+                    ],
+                    staticClass: "col-lg-3 award shortest-average-time"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to:
+                            "/profile/" + _vm.shortestAverageTimeBadge.human_id
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "circle" }, [
+                          _c("div", { staticClass: "award-background" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "full-name",
+                                attrs: { align: "left" }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.shortestAverageTimeBadge.human_name
+                                  )
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "description",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v("Best Average Time")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "accolade" }, [
+                              _vm._v(
+                                " " + _vm._s(_vm.shortestAverageTimeBadge.count)
+                              )
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostVideosUploadedBadge.human_name,
+                        expression: "mostVideosUploadedBadge.human_name"
+                      }
+                    ],
+                    staticClass: "col-lg-3 award most-videos-uploaded"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: "/profile/" + _vm.mostVideosUploadedBadge.human_id
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "circle" }, [
+                          _c("div", { staticClass: "award-background" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "full-name",
+                                attrs: { align: "left" }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.mostVideosUploadedBadge.human_name)
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "description",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v("Most uploads")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "accolade" }, [
+                              _vm._v(_vm._s(_vm.mostVideosUploadedBadge.count))
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "carousel",
+            {
+              staticClass: "mobile-awards-carousel",
+              attrs: {
+                "per-page": 1,
+                autoplay: true,
+                autoplayTimeout: 2500,
+                loop: true,
+                "mouse-drag": false
+              }
+            },
+            [
+              _c("slide", [
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostRunsBadge.human_name,
+                        expression: "mostRunsBadge.human_name"
+                      }
+                    ],
+                    staticClass: "col-lg-3 award most-runs"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: { to: "/profile/" + _vm.mostRunsBadge.human_id }
+                      },
+                      [
+                        _c("div", { staticClass: "circle" }, [
+                          _c("div", { staticClass: "award-background" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "full-name",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v(_vm._s(_vm.mostRunsBadge.human_name))]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "description",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v(" Most Runs")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "accolade" }, [
+                              _vm._v(_vm._s(_vm.mostRunsBadge.count))
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("slide", [
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostEfficientBadge.human_name,
+                        expression: "mostEfficientBadge.human_name"
+                      }
+                    ],
+                    staticClass: "col-lg-3 award most-efficient"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: "/profile/" + _vm.mostEfficientBadge.human_id
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "circle" }, [
+                          _c("div", { staticClass: "award-background" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "full-name",
+                                attrs: { align: "left" }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.mostEfficientBadge.human_name)
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "description",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v("Most Efficient")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "accolade" }, [
+                              _vm._v("Most Efficient")
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("slide", [
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.shortestAverageTimeBadge.human_name,
+                        expression: "shortestAverageTimeBadge.human_name"
+                      }
+                    ],
+                    staticClass: "col-lg-3 award shortest-average-time"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to:
+                            "/profile/" + _vm.shortestAverageTimeBadge.human_id
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "circle" }, [
+                          _c("div", { staticClass: "award-background" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "full-name",
+                                attrs: { align: "left" }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.shortestAverageTimeBadge.human_name
+                                  )
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "description",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v("Best Average Time")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "accolade" }, [
+                              _vm._v(
+                                " " + _vm._s(_vm.shortestAverageTimeBadge.count)
+                              )
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("slide", [
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.mostVideosUploadedBadge.human_name,
+                        expression: "mostVideosUploadedBadge.human_name"
+                      }
+                    ],
+                    staticClass: "col-lg-3 award most-videos-uploaded"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: {
+                          to: "/profile/" + _vm.mostVideosUploadedBadge.human_id
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "circle" }, [
+                          _c("div", { staticClass: "award-background" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "full-name",
+                                attrs: { align: "left" }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.mostVideosUploadedBadge.human_name)
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "description",
+                                attrs: { align: "left" }
+                              },
+                              [_vm._v("Most uploads")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "accolade" }, [
+                              _vm._v(_vm._s(_vm.mostVideosUploadedBadge.count))
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Coaches")]),
+      _vm._v(" "),
+      _c(
+        "carousel",
+        {
+          attrs: {
+            "per-page": 1,
+            autoplay: true,
+            autoplayTimeout: 2500,
+            loop: true,
+            "mouse-drag": false
+          }
+        },
+        [
+          _c("slide", [
+            _c("div", { staticClass: "row coaches" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col-lg-12 justify-content-center professionals"
+                },
+                [
+                  _c("div", { staticClass: "container-fluid" }, [
+                    _c("div", { staticClass: "row justify-content-center" }, [
+                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "hire-btn",
+                            attrs: { align: "center" }
+                          },
+                          [_vm._v("Hire Adam")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
+                        _c("h2", [_vm._v("Adam Evans")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "sport-btn" }, [
+                          _c("p", { attrs: { align: "center" } }, [
+                            _vm._v("roping")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "pro-description" }, [
+                          _vm._v("Lorem ipsum ana init elo tu reinay")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "container-fluid" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center" },
+                            [
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ])
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("slide", [
+            _c("div", { staticClass: "row coaches" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col-lg-12 justify-content-center professionals"
+                },
+                [
+                  _c("div", { staticClass: "container-fluid" }, [
+                    _c("div", { staticClass: "row justify-content-center" }, [
+                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "hire-btn",
+                            attrs: { align: "center" }
+                          },
+                          [_vm._v("Hire Adam")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
+                        _c("h2", [_vm._v("Adam Evans")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "sport-btn" }, [
+                          _c("p", { attrs: { align: "center" } }, [
+                            _vm._v("roping")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "pro-description" }, [
+                          _vm._v("Lorem ipsum ana init elo tu reinay")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "container-fluid" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center" },
+                            [
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ])
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("slide", [
+            _c("div", { staticClass: "row coaches" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col-lg-12 justify-content-center professionals"
+                },
+                [
+                  _c("div", { staticClass: "container-fluid" }, [
+                    _c("div", { staticClass: "row justify-content-center" }, [
+                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "hire-btn",
+                            attrs: { align: "center" }
+                          },
+                          [_vm._v("Hire Adam")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
+                        _c("h2", [_vm._v("Adam Evans")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "sport-btn" }, [
+                          _c("p", { attrs: { align: "center" } }, [
+                            _vm._v("roping")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "pro-description" }, [
+                          _vm._v("Lorem ipsum ana init elo tu reinay")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "container-fluid" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center" },
+                            [
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ])
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("slide", [
+            _c("div", { staticClass: "row coaches" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col-lg-12 justify-content-center professionals"
+                },
+                [
+                  _c("div", { staticClass: "container-fluid" }, [
+                    _c("div", { staticClass: "row justify-content-center" }, [
+                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "hire-btn",
+                            attrs: { align: "center" }
+                          },
+                          [_vm._v("Hire Adam")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
+                        _c("h2", [_vm._v("Adam Evans")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "sport-btn" }, [
+                          _c("p", { attrs: { align: "center" } }, [
+                            _vm._v("roping")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "pro-description" }, [
+                          _vm._v("Lorem ipsum ana init elo tu reinay")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "container-fluid" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center" },
+                            [
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-4" }, [
+                                _c("div", { staticClass: "coach-vid" })
+                              ])
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-lg-2" },
+          [
+            _c("router-link", { attrs: { to: "/leaderboard/teamroping" } }, [
+              _vm._v("visit leaderboard")
+            ])
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-10" }, [
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Roping")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row roping-videos justify-content-between" },
+      [
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-41daeb37", module.exports)
+  }
+}
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(46)
+/* template */
+var __vue_template__ = __webpack_require__(47)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -35418,7 +36700,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35623,7 +36905,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -35962,15 +37244,15 @@ if (false) {
 }
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(46)
+var __vue_script__ = __webpack_require__(49)
 /* template */
-var __vue_template__ = __webpack_require__(47)
+var __vue_template__ = __webpack_require__(50)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -36009,7 +37291,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36390,7 +37672,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -37344,7 +38626,7 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37562,7 +38844,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -37658,15 +38940,15 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(51)
+var __vue_script__ = __webpack_require__(54)
 /* template */
-var __vue_template__ = __webpack_require__(52)
+var __vue_template__ = __webpack_require__(55)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -37705,7 +38987,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38068,7 +39350,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 52 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -38819,39 +40101,15 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(73)
+var __vue_script__ = __webpack_require__(57)
 /* template */
-var __vue_template__ = __webpack_require__(74)
+var __vue_template__ = __webpack_require__(58)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -38868,7 +40126,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/HomeComponent.vue"
+Component.options.__file = "resources/assets/js/components/admin/CreateHumanComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38877,9 +40135,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-41daeb37", Component.options)
+    hotAPI.createRecord("data-v-79b83aa3", Component.options)
   } else {
-    hotAPI.reload("data-v-41daeb37", Component.options)
+    hotAPI.reload("data-v-79b83aa3", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -38890,7 +40148,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 73 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38977,198 +40235,691 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            type: 'standard',
+            classification: '',
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            location: ''
+        };
+    },
+
+    methods: {
+        saveHuman: function saveHuman() {
+            var payload = {
+                type: this.type,
+                classification: this.classification,
+                firstName: this.firstName,
+                lastName: this.lastName,
+                email: this.email,
+                phone: this.phone,
+                location: this.location
+            };
+
+            axios.post('/createhuman', payload).then(function (response) {
+                alert('Human successfully created.');
+            }).catch(function (e) {
+                alert('There was an error, please contact support.');
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-8 offset-sm-2" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v("Create Human Record")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.type,
+                            expression: "type"
+                          }
+                        ],
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.type = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "option",
+                          { attrs: { selected: "", value: "standard" } },
+                          [_vm._v("Standard")]
+                        ),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "pro" } }, [
+                          _vm._v("Pro")
+                        ])
+                      ]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.classification,
+                          expression: "classification"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        placeholder: "Classification",
+                        id: "classification",
+                        type: "number"
+                      },
+                      domProps: { value: _vm.classification },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.classification = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "classification" } }, [
+                      _vm._v("Classification")
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.firstName,
+                          expression: "firstName"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        placeholder: "First Name",
+                        id: "first_name",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.firstName },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.firstName = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "first_name" } }, [
+                      _vm._v("First Name")
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.lastName,
+                          expression: "lastName"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        placeholder: "Last Name",
+                        id: "last_name",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.lastName },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.lastName = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "last_name" } }, [
+                      _vm._v("Last Name")
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.email,
+                          expression: "email"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        placeholder: "Email",
+                        id: "email",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.email = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "email" } }, [_vm._v("Email")])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.phone,
+                          expression: "phone"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        placeholder: "Phone",
+                        id: "phone",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.phone = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "phone" } }, [_vm._v("Phone")])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.location,
+                          expression: "location"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        placeholder: "Location",
+                        id: "location",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.location },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.location = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "location" } }, [
+                      _vm._v("Location")
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                on: {
+                  click: function($event) {
+                    _vm.saveHuman()
+                  }
+                }
+              },
+              [_vm._v("Save Human")]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-79b83aa3", module.exports)
+  }
+}
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(60)
+/* template */
+var __vue_template__ = __webpack_require__(61)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/admin/UserHumanLinkerComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-19ea72cb", Component.options)
+  } else {
+    hotAPI.reload("data-v-19ea72cb", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        var $this = this;
+
+        axios.get('/user-human-linker-data').then(function (response) {
+            var data = response.data;
+            $this.users = data.users;
+            $this.humans = data.humans;
+        }).catch(function (e) {
+            alert('Something went wrong, please contact support.');
+        });
+    },
+    data: function data() {
+        return {
+            selectedUserId: null,
+            selectedHumanId: null,
+            users: [],
+            humans: []
+        };
+    },
+
+    methods: {
+        link: function link() {
+            if (this.selectedUserId && this.selectedHumanId) {
+                axios.post('/link-user-human', { userId: this.selectedUserId, humanId: this.selectedHumanId }).then(function (response) {
+                    alert('User and human linked successfully!');
+                }).catch(function (e) {
+                    alert('Something went wrong, please contact support!');
+                });
+            }
+        }
+    }
+});
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-8 offset-sm-2" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v("User Human Linker")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.selectedUserId,
+                            expression: "selectedUserId"
+                          }
+                        ],
+                        attrs: { id: "user-select" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.selectedUserId = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "option",
+                          { attrs: { value: "", disabled: "", selected: "" } },
+                          [_vm._v("Choose user")]
+                        ),
+                        _vm._v(" "),
+                        _vm._l(_vm.users, function(user) {
+                          return _c(
+                            "option",
+                            { key: user.id, domProps: { value: user.id } },
+                            [_vm._v(_vm._s(user.name))]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.selectedHumanId,
+                            expression: "selectedHumanId"
+                          }
+                        ],
+                        attrs: { id: "user-select" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.selectedHumanId = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "option",
+                          { attrs: { value: "", disabled: "", selected: "" } },
+                          [_vm._v("Choose human")]
+                        ),
+                        _vm._v(" "),
+                        _vm._l(_vm.humans, function(human) {
+                          return _c(
+                            "option",
+                            { key: human.id, domProps: { value: human.id } },
+                            [
+                              _vm._v(
+                                _vm._s(human.first_name) +
+                                  " " +
+                                  _vm._s(human.last_name)
+                              )
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-4 offset-sm-4" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function($event) {
+                          _vm.link()
+                        }
+                      }
+                    },
+                    [_vm._v("Link User and Human")]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-19ea72cb", module.exports)
+  }
+}
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(63)
+/* template */
+var __vue_template__ = __webpack_require__(64)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/admin/MassUploadRunsComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-22bd7519", Component.options)
+  } else {
+    hotAPI.reload("data-v-22bd7519", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -39246,884 +40997,574 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        var $this = this;
-        axios.get('/leaderboard').then(function (response) {
-            var data = response.data;
-            $this.humans = data.humans;
-            $this.stats = data.stats;
-            $this.mostRunsBadge = data.mostRunsBadge;
-            $this.mostEfficientBadge = data.mostEfficientBadge;
-            $this.shortestAverageTimeBadge = data.shortestAverageTimeBadge;
-            $this.mostVideosUploadedBadge = data.mostVideosUploadedBadge;
-        }).catch(function (e) {
-            alert('There was an error. Please contact support.');
+        $(window).on('drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        $(window).on('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
         });
     },
     data: function data() {
         return {
-            user: {},
-            humans: [],
-            stats: {},
-            mostRunsBadge: {},
-            mostEfficientBadge: {},
-            shortestAverageTimeBadge: {},
-            mostVideosUploadedBadge: {}
+            queue: [],
+            selectedEventId: null,
+            csvText: '',
+            successfullyUploaded: [],
+            uploadPercentage: 0
         };
+    },
+
+    methods: {
+        parseDate: function parseDate(string) {
+            var newDate = new Date(string);
+            if (newDate.toJSON === null) {
+                return new Date(0);
+            } else {
+                return newDate;
+            }
+        },
+        parseBool: function parseBool(string) {
+            return string.toString().trim().toLowerCase() === 'true';
+        },
+        parseRun: function parseRun(run, eventId) {
+            return {
+                file: run[0].trim(),
+                date: parseDate(run[1]),
+                eventId: eventId,
+                roping: run[2].trim(),
+                round: run[3].trim(),
+                rawTime: parseFloat(run[4]),
+                headerSaid: run[5].trim(),
+                headerName: run[6].trim().toLowerCase(),
+                headerLocation: run[7].trim().toLowerCase(),
+                heelerSaid: run[8].trim(),
+                heelerName: run[9].trim().toLowerCase(),
+                heelerLocation: run[10].trim().toLowerCase(),
+                headerCatch: parseBool(run[11]),
+                headerCatchType: run[12].trim(),
+                headerPenaltyType: run[13].trim(),
+                headerPenaltyTime: parseFloat(run[14]),
+                heelerCatch: parseBool(run[15]),
+                heelerCatchType: run[16].trim(),
+                heelerPenaltyType: run[17].trim(),
+                heelerPenaltyTime: parseFloat(run[18])
+            };
+        },
+        parseContentsOf: function (_parseContentsOf) {
+            function parseContentsOf(_x) {
+                return _parseContentsOf.apply(this, arguments);
+            }
+
+            parseContentsOf.toString = function () {
+                return _parseContentsOf.toString();
+            };
+
+            return parseContentsOf;
+        }(function (entry) {
+            if (entry.isFile) {
+                if (entry.name !== '.DS_Store') {
+                    return prepareForUpload(entry);
+                }
+            } else {
+                var entryReader = entry.createReader();
+                var promises = [];
+                return new Promise(function (resolve, reject) {
+                    promises.push(new Promise(function (resolveEntry, rejectEntry) {
+                        entryReader.readEntries(function (entryNodes) {
+                            var childPromises = [];
+                            entryNodes.forEach(function (node) {
+                                if (node.name !== '.DS_Store') {
+                                    if (node.isDirectory) {
+                                        childPromises.push(parseContentsOf(node));
+                                    } else {
+                                        childPromises.push(prepareForUpload(node));
+                                    }
+                                }
+                            });
+                            resolveEntry(Promise.all(childPromises));
+                        });
+                    }));
+                    resolve(Promise.all(promises));
+                });
+            }
+        }),
+        prepareForUpload: function prepareForUpload(fileEntry) {
+            var $this = this;
+
+            return new Promise(function (resolve, reject) {
+                fileEntry.file(function (file) {
+                    var filename = fileEntry.name;
+
+                    $this.queue.push(function () {
+                        var form = new FormData();
+                        form.append('video', file);
+
+                        if (file.type !== 'video/mp4') {
+                            alert('The only file type we currently accept is MP4.');
+                            return Promise.reject();
+                        }
+
+                        $this.uploadPercentage = 0;
+                        return axios.post('/massupload/runs/uploadVideo', form, {
+                            onUploadProgress: function onUploadProgress(progressEvent) {
+                                $this.uploadPercentage = Math.round(progressEvent.loaded / progressEvent.total * 100);
+                            }
+                        }).then(function (response) {
+                            $this.successfullyUploaded.push(filename);
+                        }).catch(function (e) {
+                            alert('There has been an error, please contact support.');
+                        });
+                    });
+                });
+            });
+        },
+        uploadFromForm: function uploadFromForm(e) {},
+        uploadFromDrop: function uploadFromDrop(e) {
+            var $this = this;
+            var length = e.originalEvent.dataTransfer.items.length;
+            var parentPromises = [];
+
+            for (var i = 0; i < length; i++) {
+                var entry = e.originalEvent.dataTransfer.items[i].webkitGetAsEntry();
+                parentPromises.push(this.parseContentsOf(entry));
+            }
+
+            Promise.all(parentPromises).then(function () {
+                if ($this.queue.length === 1) {
+                    return $this.queue[0]();
+                } else {
+                    $this.queue.reduce(function (promiseChain, nextPromise) {
+                        // All of the items in the queue are functions, but the only way this can run is if we run .then against a promise
+                        // We first check if promiseChain is a function and if so we call it. After that iteration it'll be a promise object.
+                        if (typeof promiseChain === 'function') {
+                            return promiseChain().then(function (result) {
+                                return nextPromise().then(Array.prototype.concat.bind(result));
+                            }, Promise.resolve([]));
+                        } else {
+                            return promiseChain.then(function (result) {
+                                return nextPromise().then(Array.prototype.concat.bind(result));
+                            }, Promise.resolve([]));
+                        }
+                    });
+                }
+            });
+        },
+        uploadCsv: function uploadCsv() {
+            var $this = this;
+            var csvData = this.csvText.split('\n');
+            var eventId = this.selectedEventId;
+
+            if (!eventId) {
+                alert("You must select an event.");
+                return;
+            }
+
+            var parsedCSVData = [];
+
+            for (var i = 1; i < csvData.length; i++) {
+                var run = csvData[i].split(',');
+                if (run.length !== 19) {
+                    alert('Invalid data. Records do not contain enough data.');
+                    break;
+                }
+                parsedCSVData.push($this.parseRun(run, eventId));
+            }
+
+            axios.post('/massupload/runs/process', parsedCSVData).then(function (response) {
+                alert('Runs imported successfully!');
+            }).catch(function (e) {
+                alert('There was an error.');
+            });
+        }
     }
 });
 
 /***/ }),
-/* 74 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-fluid", attrs: { id: "home" } },
-    [
-      _c("br"),
-      _vm._v(" "),
-      _c("h3", { staticClass: "sec-title" }, [_vm._v("Best of")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "row award-center justify-content-between" },
-        [
-          _c("div", { staticClass: "col-lg-12 awards" }, [
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-8 offset-sm-2" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v("Mass Run Uploader")
+            ]),
+            _vm._v(" "),
             _c("div", { staticClass: "container-fluid" }, [
               _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostRunsBadge.human_name,
-                        expression: "mostRunsBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-runs"
-                  },
-                  [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-field" }, [
                     _c(
-                      "router-link",
+                      "select",
                       {
-                        attrs: { to: "/profile/" + _vm.mostRunsBadge.human_id }
-                      },
-                      [
-                        _c("div", { staticClass: "circle" }, [
-                          _c("div", { staticClass: "award-background" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "full-name",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v(_vm._s(_vm.mostRunsBadge.human_name))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "description",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v(" Most Runs")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(_vm._s(_vm.mostRunsBadge.count))
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostEfficientBadge.human_name,
-                        expression: "mostEfficientBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-efficient"
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: "/profile/" + _vm.mostEfficientBadge.human_id
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.selectedEventId,
+                            expression: "selectedEventId"
+                          }
+                        ],
+                        attrs: { id: "event-select" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.selectedEventId = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
                         }
                       },
                       [
-                        _c("div", { staticClass: "circle" }, [
-                          _c("div", { staticClass: "award-background" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "full-name",
-                                attrs: { align: "left" }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(_vm.mostEfficientBadge.human_name)
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "description",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v("Most Efficient")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v("Most Efficient")
-                            ])
-                          ])
-                        ])
-                      ]
+                        _c(
+                          "option",
+                          { attrs: { value: "", disabled: "", selected: "" } },
+                          [_vm._v("Choose your option")]
+                        ),
+                        _vm._v(" "),
+                        _vm._l(_vm.events, function(event) {
+                          return _c(
+                            "option",
+                            { key: event.id, domProps: { value: event.id } },
+                            [_vm._v(_vm._s(event.location))]
+                          )
+                        })
+                      ],
+                      2
                     )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.shortestAverageTimeBadge.human_name,
-                        expression: "shortestAverageTimeBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award shortest-average-time"
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to:
-                            "/profile/" + _vm.shortestAverageTimeBadge.human_id
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "circle" }, [
-                          _c("div", { staticClass: "award-background" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "full-name",
-                                attrs: { align: "left" }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(
-                                    _vm.shortestAverageTimeBadge.human_name
-                                  )
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "description",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v("Best Average Time")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(
-                                " " + _vm._s(_vm.shortestAverageTimeBadge.count)
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostVideosUploadedBadge.human_name,
-                        expression: "mostVideosUploadedBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-videos-uploaded"
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: "/profile/" + _vm.mostVideosUploadedBadge.human_id
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "circle" }, [
-                          _c("div", { staticClass: "award-background" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "full-name",
-                                attrs: { align: "left" }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(_vm.mostVideosUploadedBadge.human_name)
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "description",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v("Most uploads")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(_vm._s(_vm.mostVideosUploadedBadge.count))
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "carousel",
-            {
-              staticClass: "mobile-awards-carousel",
-              attrs: {
-                "per-page": 1,
-                autoplay: true,
-                autoplayTimeout: 2500,
-                loop: true,
-                "mouse-drag": false
-              }
-            },
-            [
-              _c("slide", [
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostRunsBadge.human_name,
-                        expression: "mostRunsBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-runs"
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: { to: "/profile/" + _vm.mostRunsBadge.human_id }
-                      },
-                      [
-                        _c("div", { staticClass: "circle" }, [
-                          _c("div", { staticClass: "award-background" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "full-name",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v(_vm._s(_vm.mostRunsBadge.human_name))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "description",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v(" Most Runs")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(_vm._s(_vm.mostRunsBadge.count))
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
+                  ])
+                ])
               ]),
               _vm._v(" "),
-              _c("slide", [
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostEfficientBadge.human_name,
-                        expression: "mostEfficientBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-efficient"
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: "/profile/" + _vm.mostEfficientBadge.human_id
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-field" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.csvText,
+                          expression: "csvText"
                         }
-                      },
-                      [
-                        _c("div", { staticClass: "circle" }, [
-                          _c("div", { staticClass: "award-background" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "full-name",
-                                attrs: { align: "left" }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(_vm.mostEfficientBadge.human_name)
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "description",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v("Most Efficient")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v("Most Efficient")
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
+                      ],
+                      staticClass: "csv-textarea form-control",
+                      attrs: { id: "textarea1" },
+                      domProps: { value: _vm.csvText },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.csvText = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "textarea1" } }, [
+                      _vm._v("Paste Your Roping Data Here")
+                    ])
+                  ])
+                ])
               ]),
               _vm._v(" "),
-              _c("slide", [
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.shortestAverageTimeBadge.human_name,
-                        expression: "shortestAverageTimeBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award shortest-average-time"
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to:
-                            "/profile/" + _vm.shortestAverageTimeBadge.human_id
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "circle" }, [
-                          _c("div", { staticClass: "award-background" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "full-name",
-                                attrs: { align: "left" }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(
-                                    _vm.shortestAverageTimeBadge.human_name
-                                  )
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "description",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v("Best Average Time")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(
-                                " " + _vm._s(_vm.shortestAverageTimeBadge.count)
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("slide", [
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.mostVideosUploadedBadge.human_name,
-                        expression: "mostVideosUploadedBadge.human_name"
-                      }
-                    ],
-                    staticClass: "col-lg-3 award most-videos-uploaded"
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: "/profile/" + _vm.mostVideosUploadedBadge.human_id
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "circle" }, [
-                          _c("div", { staticClass: "award-background" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "full-name",
-                                attrs: { align: "left" }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(_vm.mostVideosUploadedBadge.human_name)
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "description",
-                                attrs: { align: "left" }
-                              },
-                              [_vm._v("Most uploads")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(_vm._s(_vm.mostVideosUploadedBadge.count))
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("h3", { staticClass: "sec-title" }, [_vm._v("Coaches")]),
-      _vm._v(" "),
-      _c(
-        "carousel",
-        {
-          attrs: {
-            "per-page": 1,
-            autoplay: true,
-            autoplayTimeout: 2500,
-            loop: true,
-            "mouse-drag": false
-          }
-        },
-        [
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
               _c(
-                "div",
+                "button",
                 {
-                  staticClass: "col-lg-12 justify-content-center professionals"
+                  staticClass: "btn btn-primary",
+                  on: { click: _vm.uploadCSV }
                 },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
+                [_vm._v("Upload CSV")]
               )
             ])
           ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-lg-2" },
-          [
-            _c("router-link", { attrs: { to: "/leaderboard/teamroping" } }, [
-              _vm._v("visit leaderboard")
-            ])
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(1)
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-10" }, [
-      _c("h3", { staticClass: "sec-title" }, [_vm._v("Roping")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row roping-videos justify-content-between" },
-      [
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
         ])
-      ]
-    )
-  }
-]
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-8 offset-sm-2" }, [
+        _c("div", { staticClass: "card", on: { drop: _vm.uploadFromDrop } }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [_vm._v("Upload Videos")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-field" }, [
+                    _c("input", {
+                      attrs: { id: "file", name: "file", type: "file" },
+                      on: {
+                        change: function($event) {
+                          $event.preventDefault()
+                          _vm.uploadFromForm($event)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "file" } }, [
+                      _vm._v("Upload Your Video (not required)")
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "progress" }, [
+                    _c("div", {
+                      staticClass: "progress-bar",
+                      style: "width: " + _vm.uploadPercentage + "%",
+                      attrs: { role: "progressbar" }
+                    })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c(
+                    "ul",
+                    { attrs: { id: "successfully-uploaded" } },
+                    _vm._l(_vm.successfullyUploaded, function(fileName) {
+                      return _c("li", { key: fileName }, [
+                        _vm._v(_vm._s(fileName) + " was uploaded successfully!")
+                      ])
+                    })
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-41daeb37", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-22bd7519", module.exports)
   }
 }
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(66)
+/* template */
+var __vue_template__ = __webpack_require__(67)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/admin/MassUploadHumansComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f296258a", Component.options)
+  } else {
+    hotAPI.reload("data-v-f296258a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 66 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            csvText: null
+        };
+    },
+
+    methods: {
+        uploadCsv: function uploadCsv() {
+            var csvData = this.csvText.split('\n');
+            var parsedCSVData = [];
+
+            for (var i = 1; i < csvData.length; i++) {
+                var record = csvData[i].split(',');
+                parsedCSVData.push({
+                    importId: record[0],
+                    classification: parseInt(record[1], 10),
+                    firstName: record[2],
+                    lastName: record[3],
+                    location: record[4],
+                    type: 'standard'
+                });
+            }
+
+            axios.post('/massupload/humans/process', parsedCSVData).then(function (response) {
+                alert('Humans imported successfully!');
+            }).catch(function (e) {
+                alert('There was an error.');
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-8 offset-sm-2" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v("Mass Upload Human Records")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.csvText,
+                          expression: "csvText"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { id: "textarea1" },
+                      domProps: { value: _vm.csvText },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.csvText = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "textarea1" } }, [
+                      _vm._v("Paste your human records here")
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                on: {
+                  click: function($event) {
+                    _vm.uploadCsv()
+                  }
+                }
+              },
+              [_vm._v("Upload CSV")]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-f296258a", module.exports)
+  }
+}
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

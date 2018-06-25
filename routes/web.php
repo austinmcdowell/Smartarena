@@ -26,15 +26,13 @@ Route::get('login/facebook/callback', 'AuthController@handleFacebookCallback');
 Route::get('/massupload/humans', 'MassHumanUploader@get')->middleware('auth', 'admin');
 Route::post('/massupload/humans/process', 'MassHumanUploader@process')->middleware('auth', 'admin');
 
-Route::get('/massupload/runs', 'MassRunUploader@get')->middleware('auth', 'admin');
 Route::post('/massupload/runs/process', 'MassRunUploader@process')->middleware('auth', 'admin');
 Route::post('/massupload/runs/uploadVideo', 'MassRunUploader@uploadVideo')->middleware('auth', 'admin');
 
-Route::get('/createhuman', 'CreateHumanController@get')->middleware('auth', 'admin');
 Route::post('/createhuman', 'CreateHumanController@post')->middleware('auth', 'admin');
 
-Route::get('/userhumanlinker', 'UserHumanLinkController@get')->middleware('auth', 'admin');
-Route::post('/userhumanlinker', 'UserHumanLinkController@post')->middleware('auth', 'admin');
+Route::get('/user-human-linker-data', 'UserHumanLinkController@get')->middleware('auth', 'admin');
+Route::post('/link-user-human', 'UserHumanLinkController@post')->middleware('auth', 'admin');
 
 Route::get('/profile/{id}', 'ProfileController@get');
 

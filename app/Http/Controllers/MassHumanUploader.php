@@ -12,16 +12,6 @@ use Illuminate\Support\Facades\DB;
 
 class MassHumanUploader extends Controller
 {
-    /**
-     * Mass Run Uploader
-     *
-     * @return Response
-     */
-    public function get()
-    {
-        return view('masshumanuploader');
-    }
-
     public function process(Request $request)
     {
         $input = json_decode($request->getContent(), true);
@@ -37,7 +27,7 @@ class MassHumanUploader extends Controller
             $human->first_name     = ucfirst(strtolower($humanData['firstName']));
             $human->last_name      = ucfirst(strtolower($humanData['lastName']));
             $human->location       = ucwords(strtolower($humanData['location']));
-
+            $human->type           = 'standard';
             try {
                 $human->save();
             } catch (QueryException $e) {

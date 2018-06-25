@@ -14,10 +14,10 @@ class UserHumanLinkController extends Controller
         $users = User::orderBy('name')->get();
         $humans = Human::orderBy('first_name')->get();
 
-        return view('userhumanlinker', [
+        return [
           'users' => $users,
           'humans' => $humans
-        ]);
+        ];
     }
 
     public function post(Request $request) {
