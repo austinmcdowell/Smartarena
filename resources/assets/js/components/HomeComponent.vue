@@ -120,115 +120,16 @@
 
         <h3 class="sec-title">Coaches</h3>
         <carousel :per-page="1" :autoplay="true" :autoplayTimeout="2500" :loop="true" :mouse-drag="false">
-            <slide>
+            <slide v-for="coach in coaches" :key="coach.id">
                 <div class="row coaches">
                     <div class="col-lg-12 justify-content-center professionals">
                         <div class="container-fluid">
                             <div class="row justify-content-center">
                                 <div class="col-lg-6 pro-image">
-                                    <button class="hire-btn" align="center">Hire Adam</button>
+                                    <button class="hire-btn" align="center">Hire {{ coach.first_name }}</button>
                                 </div>
                                 <div class="col-lg-6 pro-content">
-                                    <h2>Adam Evans</h2>
-                                    <div class="sport-btn"><p align="center">roping</p></div>
-                                    <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
-                                    <div class="container-fluid">
-                                        <div class="row justify-content-center">
-                                            <div class="col-lg-4">
-                                                <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </slide>
-
-
-            <slide>
-                <div class="row coaches">
-                    <div class="col-lg-12 justify-content-center professionals">
-                        <div class="container-fluid">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 pro-image">
-                                    <button class="hire-btn" align="center">Hire Adam</button>
-                                </div>
-                                <div class="col-lg-6 pro-content">
-                                    <h2>Adam Evans</h2>
-                                    <div class="sport-btn"><p align="center">roping</p></div>
-                                    <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
-                                    <div class="container-fluid">
-                                        <div class="row justify-content-center">
-                                            <div class="col-lg-4">
-                                                <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </slide>
-            <slide>
-                <div class="row coaches">
-                    <div class="col-lg-12 justify-content-center professionals">
-                        <div class="container-fluid">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 pro-image">
-                                    <button class="hire-btn" align="center">Hire Adam</button>
-                                </div>
-                                <div class="col-lg-6 pro-content">
-                                    <h2>Adam Evans</h2>
-                                    <div class="sport-btn"><p align="center">roping</p></div>
-                                    <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
-                                    <div class="container-fluid">
-                                        <div class="row justify-content-center">
-                                            <div class="col-lg-4">
-                                                <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </slide>
-
-            <slide>
-                <div class="row coaches">
-                    <div class="col-lg-12 justify-content-center professionals">
-                        <div class="container-fluid">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 pro-image">
-                                    <button class="hire-btn" align="center">Hire Adam</button>
-                                </div>
-                                <div class="col-lg-6 pro-content">
-                                    <h2>Adam Evans</h2>
+                                    <h2>{{ coach.first_name }} {{ coach.last_name }}</h2>
                                     <div class="sport-btn"><p align="center">roping</p></div>
                                     <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
                                     <div class="container-fluid">
@@ -350,7 +251,7 @@
 export default {    
     mounted() {
         let $this = this;
-        axios.get('/leaderboard').then(response => {
+        axios.get('/home').then(response => {
             let data = response.data;
             $this.humans = data.humans;
             $this.stats  = data.stats;
@@ -358,6 +259,7 @@ export default {
             $this.mostEfficientBadge = data.mostEfficientBadge;
             $this.shortestAverageTimeBadge = data.shortestAverageTimeBadge;
             $this.mostVideosUploadedBadge = data.mostVideosUploadedBadge;
+            $this.coaches = data.coaches;
         }).catch(e => {
             alert('There was an error. Please contact support.');
         })
@@ -366,6 +268,7 @@ export default {
         return {
             user: {},
             humans: [],
+            coaches: [],
             stats: {},
             mostRunsBadge: {},
             mostEfficientBadge: {},

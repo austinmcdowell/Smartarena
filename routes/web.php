@@ -15,7 +15,8 @@ Auth::routes();
 
 
 Route::get('/', 'SPAController');
-Route::get('/leaderboard', 'LeaderboardController');
+Route::get('/home', 'HomeController');
+Route::get('/leaderboard/teamroping', 'LeaderboardController@teamroping');
 
 Route::get('/logout', 'AuthController@logout');
 Route::get('login/google', 'AuthController@redirectToGoogle');

@@ -35671,110 +35671,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
         var $this = this;
-        axios.get('/leaderboard').then(function (response) {
+        axios.get('/home').then(function (response) {
             var data = response.data;
             $this.humans = data.humans;
             $this.stats = data.stats;
@@ -35782,6 +35683,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             $this.mostEfficientBadge = data.mostEfficientBadge;
             $this.shortestAverageTimeBadge = data.shortestAverageTimeBadge;
             $this.mostVideosUploadedBadge = data.mostVideosUploadedBadge;
+            $this.coaches = data.coaches;
         }).catch(function (e) {
             alert('There was an error. Please contact support.');
         });
@@ -35790,6 +35692,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             user: {},
             humans: [],
+            coaches: [],
             stats: {},
             mostRunsBadge: {},
             mostEfficientBadge: {},
@@ -36319,8 +36222,8 @@ var render = function() {
             "mouse-drag": false
           }
         },
-        [
-          _c("slide", [
+        _vm._l(_vm.coaches, function(coach) {
+          return _c("slide", { key: coach.id }, [
             _c("div", { staticClass: "row coaches" }, [
               _c(
                 "div",
@@ -36337,195 +36240,18 @@ var render = function() {
                             staticClass: "hire-btn",
                             attrs: { align: "center" }
                           },
-                          [_vm._v("Hire Adam")]
+                          [_vm._v("Hire " + _vm._s(coach.first_name))]
                         )
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
+                        _c("h2", [
+                          _vm._v(
+                            _vm._s(coach.first_name) +
+                              " " +
+                              _vm._s(coach.last_name)
                           )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
                         ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
                         _vm._v(" "),
                         _c("div", { staticClass: "sport-btn" }, [
                           _c("p", { attrs: { align: "center" } }, [
@@ -36563,8 +36289,7 @@ var render = function() {
               )
             ])
           ])
-        ],
-        1
+        })
       ),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
@@ -36762,131 +36487,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
         var $this = this;
-        axios.get('/leaderboard').then(function (response) {
+        axios.get('/leaderboard/teamroping').then(function (response) {
             var data = response.data;
             $this.humans = data.humans;
-            $this.stats = data.stats;
-            $this.mostRunsBadge = data.mostRunsBadge;
-            $this.mostEfficientBadge = data.mostEfficientBadge;
-            $this.shortestAverageTimeBadge = data.shortestAverageTimeBadge;
-            $this.mostVideosUploadedBadge = data.mostVideosUploadedBadge;
+            $this.coaches = data.coaches;
         }).catch(function (e) {
             alert('There was an error. Please contact support.');
         });
@@ -36895,12 +36503,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             user: {},
             humans: [],
-            stats: {},
-            mostRunsBadge: {},
-            mostEfficientBadge: {},
-            shortestAverageTimeBadge: {},
-            mostVideosUploadedBadge: {}
+            coaches: []
         };
+    },
+
+    methods: {
+        showProfile: function showProfile(humanId) {
+            this.$router.push('/profile/' + humanId);
+        }
     }
 });
 
@@ -36929,8 +36539,8 @@ var render = function() {
             "mouse-drag": false
           }
         },
-        [
-          _c("slide", [
+        _vm._l(_vm.coaches, function(coach) {
+          return _c("slide", { key: coach.id }, [
             _c("div", { staticClass: "row coaches" }, [
               _c(
                 "div",
@@ -36947,195 +36557,18 @@ var render = function() {
                             staticClass: "hire-btn",
                             attrs: { align: "center" }
                           },
-                          [_vm._v("Hire Adam")]
+                          [_vm._v("Hire " + _vm._s(coach.first_name))]
                         )
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
+                        _c("h2", [
+                          _vm._v(
+                            _vm._s(coach.first_name) +
+                              " " +
+                              _vm._s(coach.last_name)
                           )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
                         ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("slide", [
-            _c("div", { staticClass: "row coaches" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-lg-12 justify-content-center professionals"
-                },
-                [
-                  _c("div", { staticClass: "container-fluid" }, [
-                    _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire Adam")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [_vm._v("Adam Evans")]),
                         _vm._v(" "),
                         _c("div", { staticClass: "sport-btn" }, [
                           _c("p", { attrs: { align: "center" } }, [
@@ -37173,11 +36606,38 @@ var render = function() {
               )
             ])
           ])
-        ],
-        1
+        })
       ),
       _vm._v(" "),
-      _vm._m(0)
+      _c("table", { staticClass: "table leaderboard-table" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.humans, function(human) {
+            return _c(
+              "tr",
+              {
+                key: human.id,
+                on: {
+                  click: function($event) {
+                    _vm.showProfile(human.id)
+                  }
+                }
+              },
+              [
+                _c("td", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(human.classification))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(human.first_name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(human.last_name))])
+              ]
+            )
+          })
+        )
+      ])
     ],
     1
   )
@@ -37187,49 +36647,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("table", { staticClass: "table leaderboard-table" }, [
-      _c("thead", [
-        _c("tr", [
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("First")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Last")]),
-          _vm._v(" "),
-          _c("th", { attrs: { scope: "col" } }, [_vm._v("Handle")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("tbody", [
-        _c("tr", [
-          _c("th", { attrs: { scope: "row" } }, [_vm._v("1")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Mark")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Otto")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("@mdo")])
-        ]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Classification")]),
         _vm._v(" "),
-        _c("tr", [
-          _c("th", { attrs: { scope: "row" } }, [_vm._v("2")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Jacob")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Thornton")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("@fat")])
-        ]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("First")]),
         _vm._v(" "),
-        _c("tr", [
-          _c("th", { attrs: { scope: "row" } }, [_vm._v("3")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Larry")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("the Bird")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("@twitter")])
-        ])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Last")])
       ])
     ])
   }
@@ -41135,7 +40559,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
 
             Promise.all(parentPromises).then(function () {
-                console.log('here 3');
                 if ($this.queue.length === 1) {
                     return $this.queue[0]();
                 } else {
