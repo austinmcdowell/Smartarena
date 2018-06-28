@@ -35671,6 +35671,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -36307,7 +36324,76 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(1)
+      _c(
+        "div",
+        { staticClass: "row roping-videos justify-content-between" },
+        [
+          _c(
+            "router-link",
+            { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+            [
+              _c("div", { staticClass: "col-lg-12 rope-vid" }, [
+                _c("div", { staticClass: "vid-thumbnail" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Vid Title")
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/video/:id" } }, [
+            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
+              _c("div", { staticClass: "vid-thumbnail" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "vid-description" }, [
+                _vm._v("Vid Title")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/video/:id" } }, [
+            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
+              _c("div", { staticClass: "vid-thumbnail" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "vid-description" }, [
+                _vm._v("Vid Title")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/video/:id" } }, [
+            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
+              _c("div", { staticClass: "vid-thumbnail" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "vid-description" }, [
+                _vm._v("Vid Title")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/video/:id" } }, [
+            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
+              _c("div", { staticClass: "vid-thumbnail" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "vid-description" }, [
+                _vm._v("Vid Title")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/video/:id" } }, [
+            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
+              _c("div", { staticClass: "vid-thumbnail" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "vid-description" }, [
+                _vm._v("Vid Title")
+              ])
+            ])
+          ])
+        ],
+        1
+      )
     ],
     1
   )
@@ -36320,52 +36406,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-lg-10" }, [
       _c("h3", { staticClass: "sec-title" }, [_vm._v("Roping")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row roping-videos justify-content-between" },
-      [
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
-          _c("div", { staticClass: "vid-thumbnail" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true
@@ -36430,6 +36470,110 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -36614,30 +36758,61 @@ var render = function() {
         _vm._v(" "),
         _c(
           "tbody",
-          _vm._l(_vm.humans, function(human) {
-            return _c(
-              "tr",
-              {
-                key: human.id,
-                on: {
-                  click: function($event) {
-                    _vm.showProfile(human.id)
+          [
+            _vm._l(_vm.humans, function(human) {
+              return _c(
+                "tr",
+                {
+                  key: human.id,
+                  on: {
+                    click: function($event) {
+                      _vm.showProfile(human.id)
+                    }
                   }
-                }
-              },
-              [
-                _c("td", { attrs: { scope: "row" } }, [
-                  _vm._v(_vm._s(human.classification))
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(human.first_name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(human.last_name))])
-              ]
-            )
-          })
+                },
+                [
+                  _c("td", { attrs: { scope: "row" } }, [
+                    _vm._v(_vm._s(human.classification))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(human.first_name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(human.last_name))])
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _vm._m(4),
+            _vm._v(" "),
+            _vm._m(5),
+            _vm._v(" "),
+            _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7),
+            _vm._v(" "),
+            _vm._m(8),
+            _vm._v(" "),
+            _vm._m(9),
+            _vm._v(" "),
+            _vm._m(10),
+            _vm._v(" "),
+            _vm._m(11),
+            _vm._v(" "),
+            _vm._m(12)
+          ],
+          2
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _vm._m(13),
+      _vm._v(" "),
+      _vm._m(14)
     ],
     1
   )
@@ -36656,6 +36831,233 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Last")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("4")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Mark")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Otto")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@mdo")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("5")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Jacob")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Thornton")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@fat")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("6")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Larry")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("the Bird")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@twitter")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("7")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Mark")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Otto")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@mdo")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("8")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Jacob")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Thornton")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@fat")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("9")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Larry")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("the Bird")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@twitter")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("10")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Mark")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Otto")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@mdo")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("11")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Jacob")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Thornton")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@fat")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("12")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Larry")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("the Bird")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@twitter")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("13")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Mark")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Otto")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@mdo")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("14")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Jacob")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Thornton")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@fat")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("15")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Larry")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("the Bird")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("@twitter")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-10" }, [
+        _c("h3", { staticClass: "sec-title" }, [_vm._v("Latest Roping Videos")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row leaderboards-videos justify-content-between" },
+      [
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", {
+            staticClass: "vid-thumbnail",
+            staticStyle: { "background-image": "url('/img/cow.jpg')" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-2 rope-vid" }, [
+          _c("div", { staticClass: "vid-thumbnail" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "vid-description" }, [_vm._v("Vid Title")])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -36921,143 +37323,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -37104,27 +37369,31 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _c("div", { staticClass: "row hide-on-large-only" }, [
-      _c("div", { staticClass: "col s12 center-align" }, [
-        _c("h1", {
-          staticClass: "human-name",
-          domProps: {
-            textContent: _vm._s(
-              _vm.human.first_name + " " + _vm.human.last_name
-            )
-          }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "sport-title" }, [
-          _vm._v("Sport: Team Roping")
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "location" }, [
-          _vm._v("Location: " + _vm._s(_vm.human.location))
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col s12 banner" }, [
+        _c("div", { staticClass: "teamroping-header" }, [
+          _c("div", { staticClass: "col s12 center-align profile-info" }, [
+            _c("h1", {
+              staticClass: "human-name",
+              domProps: {
+                textContent: _vm._s(
+                  _vm.human.first_name + " " + _vm.human.last_name
+                )
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "sport-title" }, [_vm._v("Team Roping")]),
+            _vm._v(" "),
+            _c("span", { staticClass: "location" }, [
+              _vm._v(_vm._s(_vm.human.location))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "hire-btn" }, [
+              _c("h5", { attrs: { align: "center" } }, [
+                _c("b", [_vm._v("Hire " + _vm._s(_vm.human.first_name))])
+              ])
+            ])
+          ])
         ])
       ])
     ]),
@@ -37144,46 +37413,11 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row hide-on-med-and-down" }, [
-      _vm._m(2),
-      _vm._v(" "),
-      _c("div", { staticClass: "col s4" }, [
-        _c("h1", { staticClass: "human-name" }, [
-          _vm._v(
-            _vm._s(_vm.human.first_name) + " " + _vm._s(_vm.human.last_name)
-          )
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "sport-title" }, [
-          _vm._v("Sport: Team Roping")
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "location" }, [
-          _vm._v("Location: " + _vm._s(_vm.human.location))
-        ])
-      ]),
-      _vm._v(" "),
-      _vm.user && _vm.human.user_id === _vm.user.id
-        ? _c("div", { staticClass: "col offset-s2 s2 actions" }, [
-            _c(
-              "a",
-              {
-                staticClass: "waves-effect waves-light btn",
-                attrs: { href: "/videos/new" }
-              },
-              [_vm._v("Upload Video")]
-            )
-          ])
-        : _vm._e()
-    ]),
-    _vm._v(" "),
     _vm.uploadedVideos.length
       ? _c(
           "div",
           [
-            _vm._m(3),
-            _vm._v(" "),
-            _vm._m(4),
+            _vm._m(0),
             _vm._v(" "),
             _vm._l(_vm.uploadedVideos, function(video) {
               return _c(
@@ -37276,95 +37510,7 @@ var render = function() {
                   ])
                 ]
               )
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "row hide-on-med-and-down" }, [
-              _c("div", { staticClass: "col s10 offset-s1" }, [
-                _c("div", { staticClass: "card" }, [
-                  _c("div", { staticClass: "card-content" }, [
-                    _c("table", [
-                      _c("thead", [
-                        _c("tr", [
-                          _vm.user && _vm.human.user_id === _vm.user.id
-                            ? _c("th", [_vm._v("Add Statistics")])
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("Play Video")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("Uploaded At")]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v("File Name")])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "tbody",
-                        _vm._l(_vm.uploadedVideos, function(video) {
-                          return _c("tr", { key: video.id }, [
-                            _vm.user && _vm.human.user_id === _vm.user.id
-                              ? _c(
-                                  "td",
-                                  [
-                                    _c(
-                                      "router-link",
-                                      {
-                                        attrs: {
-                                          to: "/teamroping/new/" + video.id
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          { staticClass: "material-icons" },
-                                          [_vm._v("edit")]
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
-                            video.processing_complete
-                              ? _c(
-                                  "td",
-                                  [
-                                    _c(
-                                      "router-link",
-                                      {
-                                        staticClass: "play-button",
-                                        attrs: { to: "/video/" + video.id }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          { staticClass: "material-icons" },
-                                          [_vm._v("play_arrow")]
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              : !video.processing_complete
-                                ? _c("td", [
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("alarm")
-                                    ])
-                                  ])
-                                : _vm._e(),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(video.created_at))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(video.file_name))])
-                          ])
-                        })
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ])
+            })
           ],
           2
         )
@@ -37372,7 +37518,7 @@ var render = function() {
     _vm._v(" "),
     _vm.headerRuns.length
       ? _c("div", { staticClass: "row hide-on-large-only center-align" }, [
-          _vm._m(5)
+          _vm._m(1)
         ])
       : _vm._e(),
     _vm._v(" "),
@@ -37492,108 +37638,9 @@ var render = function() {
       })
     ),
     _vm._v(" "),
-    _vm.headerRuns.length
-      ? _c("div", { staticClass: "row hide-on-med-and-down" }, [
-          _c("div", { staticClass: "col s10 offset-s1" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-content" }, [
-                _c("h4", [_vm._v("Header Runs")]),
-                _vm._v(" "),
-                _c("table", [
-                  _vm._m(6),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.headerRuns, function(run) {
-                      return _c("tr", { key: run.id }, [
-                        _vm.user && _vm.human.user_id === _vm.user.id
-                          ? _c(
-                              "td",
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    attrs: {
-                                      to: "/teamroping/" + run.id + "/edit"
-                                    }
-                                  },
-                                  [
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("edit")
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _c("td"),
-                        _vm._v(" "),
-                        run.videos.length && run.videos[0].processing_complete
-                          ? _c(
-                              "td",
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "play-button",
-                                    attrs: { to: "/videos/" + run.videos[0].id }
-                                  },
-                                  [
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("play_arrow")
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          : run.videos.length &&
-                            !run.videos[0].processing_complete
-                            ? _c("td", [
-                                _c("i", { staticClass: "material-icons" }, [
-                                  _vm._v("alarm")
-                                ])
-                              ])
-                            : _vm._e(),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.date))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.event.location) + " ")]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.header_catch_type))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.heeler_catch_type))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.header_penalty_type))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.header_penalty_time))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            _vm._s(
-                              run.header_penalty_time + run.heeler_penalty_time
-                            )
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.raw_time))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.total_time))])
-                      ])
-                    })
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
     _vm.heelerRuns.length
       ? _c("div", { staticClass: "row hide-on-large-only center-align" }, [
-          _vm._m(7)
+          _vm._m(2)
         ])
       : _vm._e(),
     _vm._v(" "),
@@ -37713,109 +37760,12 @@ var render = function() {
       })
     ),
     _vm._v(" "),
-    _vm.heelerRuns.length
-      ? _c("div", { staticClass: "row hide-on-med-and-down" }, [
-          _c("div", { staticClass: "col s10 offset-s1" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-content" }, [
-                _c("h4", [_vm._v("Heeler Runs")]),
-                _vm._v(" "),
-                _c("table", [
-                  _vm._m(8),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.heelerRuns, function(run) {
-                      return _c("tr", { key: run.id }, [
-                        _vm.user && _vm.human.user_id === _vm.user.id
-                          ? _c(
-                              "td",
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    attrs: {
-                                      to: "/teamroping/" + run.id + "/edit"
-                                    }
-                                  },
-                                  [
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("edit")
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          : _c("td"),
-                        _vm._v(" "),
-                        run.videos.length && run.videos[0].processing_complete
-                          ? _c(
-                              "td",
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "play-button",
-                                    attrs: { to: "/videos/" + run.videos[0].id }
-                                  },
-                                  [
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("play_arrow")
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          : run.videos.length &&
-                            !run.videos[0].processing_complete
-                            ? _c("td", [
-                                _c("i", { staticClass: "material-icons" }, [
-                                  _vm._v("alarm")
-                                ])
-                              ])
-                            : _vm._e(),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.date))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.event.location) + " ")]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.header_catch_type))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.heeler_catch_type))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.heeler_penalty_type))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.heeler_penalty_time))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            _vm._s(
-                              run.header_penalty_time + run.heeler_penalty_time
-                            )
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.raw_time))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(run.total_time))])
-                      ])
-                    })
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm._m(9),
+    _vm._m(3),
     _vm._v(" "),
     !_vm.uploadedVideos.length &&
     !_vm.headerRuns.length &&
     !_vm.heelerRuns.length
-      ? _c("div", { staticClass: "row center-align" }, [_vm._m(10)])
+      ? _c("div", { staticClass: "row center-align" }, [_vm._m(4)])
       : _vm._e()
   ])
 }
@@ -37824,47 +37774,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12 banner" }, [
-        _c("div", { staticClass: "teamroping-header" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row hide-on-large-only" }, [
-      _c("div", { staticClass: "col s12" }, [
-        _c("div", { staticClass: "user-image" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col offset-s1 s2" }, [
-      _c("div", { staticClass: "user-image" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row hide-on-large-only center-align" }, [
       _c("div", { staticClass: "col s10 offset-s1" }, [
         _c("h4", [_vm._v("Recently Uploaded")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col hide-on-med-and-down s10 offset-s1" }, [
-        _c("h5", [_vm._v("Recently Uploaded")])
       ])
     ])
   },
@@ -37880,68 +37792,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th"),
-        _vm._v(" "),
-        _c("th"),
-        _vm._v(" "),
-        _c("th", [_vm._v("Date")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Event")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Header Catch")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Heeler Catch")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Header Penalty")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Penalties")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Total Run Penalties")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Raw Time")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Total Time")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s10 offset-s1" }, [
       _c("h4", [_vm._v("Heeler Runs")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th"),
-        _vm._v(" "),
-        _c("th"),
-        _vm._v(" "),
-        _c("th", [_vm._v("Date")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Event")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Header Catch")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Heeler Catch")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Heeler Penalty")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Penalties")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Total Run Penalties")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Raw Time")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Total Time")])
-      ])
     ])
   },
   function() {

@@ -162,30 +162,47 @@
         
         <div class="row roping-videos justify-content-between">
             <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-            <div class="col-lg-2 rope-vid">
-                <div class="vid-thumbnail"></div>
-                <div class="vid-description">Vid Title</div>
-            </div>
-            <div class="col-lg-2 rope-vid">
-                <div class="vid-thumbnail"></div>
-                <div class="vid-description">Vid Title</div>
-            </div>
-            <div class="col-lg-2 rope-vid">
-                <div class="vid-thumbnail"></div>
-                <div class="vid-description">Vid Title</div>
-            </div>
-            <div class="col-lg-2 rope-vid">
-                <div class="vid-thumbnail"></div>
-                <div class="vid-description">Vid Title</div>
-            </div>
-            <div class="col-lg-2 rope-vid">
-                <div class="vid-thumbnail"></div>
-                <div class="vid-description">Vid Title</div>
-            </div>
-            <div class="col-lg-2 rope-vid">
-                <div class="vid-thumbnail"></div>
-                <div class="vid-description">Vid Title</div>
-            </div>
+            <router-link :to="`/video/:id`" class="video-wrapper">
+                <div class="col-lg-12 rope-vid">
+                    <div class="vid-thumbnail"></div>
+                    <div class="vid-description">Vid Title</div>
+                </div>
+            </router-link>
+
+            <router-link :to="`/video/:id`">
+                <div class="col-lg-12 rope-vid">
+                    <div class="vid-thumbnail"></div>
+                    <div class="vid-description">Vid Title</div>
+                </div>
+            </router-link>
+
+            <router-link :to="`/video/:id`">
+                <div class="col-lg-12 rope-vid">
+                    <div class="vid-thumbnail"></div>
+                    <div class="vid-description">Vid Title</div>
+                </div>
+            </router-link>
+
+            <router-link :to="`/video/:id`">
+                <div class="col-lg-12 rope-vid">
+                    <div class="vid-thumbnail"></div>
+                    <div class="vid-description">Vid Title</div>
+                </div>
+            </router-link>
+
+            <router-link :to="`/video/:id`">
+                <div class="col-lg-12 rope-vid">
+                    <div class="vid-thumbnail"></div>
+                    <div class="vid-description">Vid Title</div>
+                </div>
+            </router-link>
+
+            <router-link :to="`/video/:id`">
+                <div class="col-lg-12 rope-vid">
+                    <div class="vid-thumbnail"></div>
+                    <div class="vid-description">Vid Title</div>
+                </div>
+            </router-link>
         </div>
         <!-- <div class="row hide-on-large-only">
             <div class="col s10 offset-s1">

@@ -21,7 +21,30 @@ body {
 
 @media (min-width: 1200px) {
   #leaderboard{
-
+    .leaderboards-videos {
+      width: 90%;
+      margin: 5% 0 5% 5%;
+      padding: 1%;
+    }
+  
+    .leaderboards-videos .rope-vid {
+      padding: 0;
+      margin: 0 0 3% 0;
+    }
+  
+    .leaderboards-videos .vid-thumbnail {
+      width: 96%;
+      height: 100px;
+  
+      padding: 0;
+      margin: 0;
+    }
+  
+    .leaderboards-videos .vid-description {
+      width: 96%;
+      padding: 2% 0 5% 3%;
+      margin: 0;
+    }
   }
 }
 
@@ -40,5 +63,20 @@ body {
 
   .leaderboard-table td {
     border: 1px solid white !important;
+  }
+
+  .leaderboards-videos {
+    width: 90%;
+    margin: 5% 0 5% 5%;
+    padding: 1%;
+  }
+
+  .leaderboards-videos .vid-thumbnail {
+    background-size: cover;
+    background-image: url('/img/cow.jpg');
+  }
+  .leaderboards-videos .vid-description {
+    background: white;
+    font-family: 'Arial Black';
   }
 }
