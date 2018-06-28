@@ -19,6 +19,10 @@ import LeaderboardComponent from './components/LeaderboardComponent.vue';
 import ProfileComponent from './components/ProfileComponent.vue';
 import VideoPlayerComponent from './components/VideoPlayerComponent.vue';
 import RunEditor from './components/RunEditorComponent.vue';
+import CreateHumanComponent from './components/admin/CreateHumanComponent.vue';
+import UserHumanLinkerComponent from './components/admin/UserHumanLinkerComponent.vue';
+import MassUploadRunsComponent from './components/admin/MassUploadRunsComponent.vue';
+import MassUploadHumansComponent from './components/admin/MassUploadHumansComponent.vue';
 
 Vue.use(VueRouter);
 
@@ -27,7 +31,11 @@ let routes = [
   { path: '/profile/:id', component: ProfileComponent },
   { path: '/run/edit/:id', component: RunEditor },
   { path: '/leaderboard/:type', component: LeaderboardComponent },
-  { path: '/video/:id', component: VideoPlayerComponent }
+  { path: '/video/:id', component: VideoPlayerComponent },
+  { path: '/admin/create-human', component: CreateHumanComponent },
+  { path: '/admin/user-human-linker', component: UserHumanLinkerComponent },
+  { path: '/admin/mass-upload-runs', component: MassUploadRunsComponent },
+  { path: '/admin/mass-upload-humans', component:  MassUploadHumansComponent },
 ];
 
 const router = new VueRouter({ routes });
@@ -36,16 +44,3 @@ const app = new Vue({
     el: '#app',
     router
 });
-
-// $(document).ready(function() {
-//   $.ajaxSetup({
-//     headers: {
-//         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//     }
-//   });
-
-//   $('.sidenav').sidenav();
-
-//   let elem = document.querySelector('.dropdown-button');
-//   let instance = M.Dropdown.init(elem, {});
-// });

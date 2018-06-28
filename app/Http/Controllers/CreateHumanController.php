@@ -11,20 +11,11 @@ use Illuminate\Support\Facades\DB;
 
 class CreateHumanController extends Controller
 {
-    /**
-     * Mass Run Uploader
-     *
-     * @return Response
-     */
-    public function get()
-    {
-        return view('createhuman');
-    }
-
     public function post(Request $request)
     {        
         $human = new Human;
 
+        $human->type           = $request->input('type');
         $human->classification = $request->input('classification');
         $human->first_name     = $request->input('firstName');
         $human->last_name      = $request->input('lastName');
