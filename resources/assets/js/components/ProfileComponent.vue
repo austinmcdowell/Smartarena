@@ -2,40 +2,23 @@
     <div>
         <div class="row">
             <div class="col s12 banner">
-                <div class="teamroping-header"></div>
+                <div class="teamroping-header">
+                    <div class="col s12 center-align profile-info">
+                        <h1 class="human-name" v-text="`${human.first_name} ${human.last_name}`"></h1>
+                        <span class="sport-title">Team Roping</span>
+                        <span class="location">{{ human.location }}</span>
+                        <div class="hire-btn"><h5 align="center"><b>Hire {{ human.first_name }}</b></h5></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row hide-on-large-only">
-            <div class="col s12">
-            <div class="user-image"></div>
-            </div>
-        </div>
-        <div class="row hide-on-large-only">
-            <div class="col s12 center-align">
-            <h1 class="human-name" v-text="`${human.first_name} ${human.last_name}`"></h1>
-            <span class="sport-title">Sport: Team Roping</span>
-            <span class="location">Location: {{ human.location }}</span>
-            </div>
-        </div>
+
         <div class="row hide-on-large-only">
             <div class="col offset-s2 s8 actions" v-if="user && human.user_id === user.id">
                 <a href="/videos/new" class="waves-effect waves-light btn">Upload Video</a>
             </div>
         </div>
 
-        <div class="row hide-on-med-and-down">
-            <div class="col offset-s1 s2">
-                <div class="user-image"></div>
-            </div>
-            <div class="col s4">
-                <h1 class="human-name">{{ human.first_name }} {{ human.last_name }}</h1>
-                <span class="sport-title">Sport: Team Roping</span>
-                <span class="location">Location: {{ human.location }}</span>
-            </div>
-            <div class="col offset-s2 s2 actions" v-if="user && human.user_id === user.id">
-                <a href="/videos/new" class="waves-effect waves-light btn">Upload Video</a>
-            </div>
-        </div>
         <!-- Recently Uploaded -->
         <div v-if="uploadedVideos.length">
             <div class="row hide-on-large-only center-align">
@@ -43,11 +26,7 @@
                     <h4>Recently Uploaded</h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="col hide-on-med-and-down s10 offset-s1">
-                    <h5>Recently Uploaded</h5>
-                </div>
-            </div>
+
             <div class="row hide-on-large-only" v-for="video in uploadedVideos" :key="video.id">
                 <div class="col s10 offset-s1">
                     <div class="card">
@@ -76,34 +55,6 @@
                                     <a v-else class="waves-effect waves-light btn disabled" href="#">Processing...</a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row hide-on-med-and-down">
-                <div class="col s10 offset-s1">
-                    <div class="card">
-                        <div class="card-content">
-                            <table>
-                                <thead>
-                                    <tr>
-                                    <th v-if="user && human.user_id === user.id">Add Statistics</th>
-                                    <th>Play Video</th>
-                                    <th>Uploaded At</th>
-                                    <th>File Name</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr v-for="video in uploadedVideos" :key="video.id">
-                                        <td v-if="user && human.user_id === user.id"><router-link :to="`/teamroping/new/${video.id}`"><i class="material-icons">edit</i></router-link></td>
-                                        <td v-if="video.processing_complete"><router-link class="play-button" :to="`/video/${video.id}`"><i class="material-icons">play_arrow</i></router-link></td>
-                                        <td v-else-if="!video.processing_complete"><i class="material-icons">alarm</i></td>
-                                        <td>{{ video.created_at }}</td>
-                                        <td>{{ video.file_name }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
@@ -157,50 +108,6 @@
                 </div>
             </div>
         </div>
-        <div v-if="headerRuns.length" class="row hide-on-med-and-down">
-            <div class="col s10 offset-s1">
-                <div class="card">
-                    <div class="card-content">
-                        <h4>Header Runs</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th>Date</th>
-                                    <th>Event</th>
-                                    <th>Header Catch</th>
-                                    <th>Heeler Catch</th>
-                                    <th>Header Penalty</th>
-                                    <th>Penalties</th>
-                                    <th>Total Run Penalties</th>
-                                    <th>Raw Time</th>
-                                    <th>Total Time</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr v-for="run in headerRuns" :key="run.id">
-                                    <td v-if="user && human.user_id === user.id"><router-link :to="`/teamroping/${run.id}/edit`"><i class="material-icons">edit</i></router-link></td>
-                                    <td></td>
-                                    <td v-if="run.videos.length && run.videos[0].processing_complete"><router-link class="play-button" :to="`/videos/${run.videos[0].id}`"><i class="material-icons">play_arrow</i></router-link></td>
-                                    <td v-else-if="run.videos.length && !run.videos[0].processing_complete"><i class="material-icons">alarm</i></td>
-                                    <td>{{ run.date }}</td>
-                                    <td>{{ run.event.location }} </td>
-                                    <td>{{ run.header_catch_type }}</td>
-                                    <td>{{ run.heeler_catch_type }}</td>
-                                    <td>{{ run.header_penalty_type }}</td>
-                                    <td>{{ run.header_penalty_time }}</td>
-                                    <td>{{ run.header_penalty_time + run.heeler_penalty_time }}</td>
-                                    <td>{{ run.raw_time }}</td>
-                                    <td>{{ run.total_time }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Heeler Runs -->
         <div v-if="heelerRuns.length" class="row hide-on-large-only center-align">
@@ -243,50 +150,6 @@
                                 <a v-else class="waves-effect waves-light btn disabled" href="#">Processing...</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div v-if="heelerRuns.length" class="row hide-on-med-and-down">
-            <div class="col s10 offset-s1">
-                <div class="card">
-                    <div class="card-content">
-                        <h4>Heeler Runs</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th>Date</th>
-                                    <th>Event</th>
-                                    <th>Header Catch</th>
-                                    <th>Heeler Catch</th>
-                                    <th>Heeler Penalty</th>
-                                    <th>Penalties</th>
-                                    <th>Total Run Penalties</th>
-                                    <th>Raw Time</th>
-                                    <th>Total Time</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr v-for="run in heelerRuns" :key="run.id">
-                                    <td v-if="user && human.user_id === user.id"><router-link :to="`/teamroping/${run.id}/edit`"><i class="material-icons">edit</i></router-link></td>
-                                    <td v-else></td>
-                                    <td v-if="run.videos.length && run.videos[0].processing_complete"><router-link class="play-button" :to="`/videos/${run.videos[0].id}`"><i class="material-icons">play_arrow</i></router-link></td>
-                                    <td v-else-if="run.videos.length && !run.videos[0].processing_complete"><i class="material-icons">alarm</i></td>
-                                    <td>{{ run.date }}</td>
-                                    <td>{{ run.event.location }} </td>
-                                    <td>{{ run.header_catch_type }}</td>
-                                    <td>{{ run.heeler_catch_type }}</td>
-                                    <td>{{ run.heeler_penalty_type }}</td>
-                                    <td>{{ run.heeler_penalty_time }}</td>
-                                    <td>{{ run.header_penalty_time + run.heeler_penalty_time }}</td>
-                                    <td>{{ run.raw_time }}</td>
-                                    <td>{{ run.total_time }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
