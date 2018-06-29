@@ -214,7 +214,6 @@ export default {
             }
 
             Promise.all(parentPromises).then(function() {
-                console.log('here 3');
                 if ($this.queue.length === 1) {
                     return $this.queue[0]();
                 } else {

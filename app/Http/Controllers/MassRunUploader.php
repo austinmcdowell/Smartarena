@@ -40,6 +40,8 @@ class MassRunUploader extends Controller
         foreach ($input as $runData) {
             $run = new Run;
 
+            $header;
+            $heeler;
             $run->date = $runData['date'];
             $run->event_id = $runData['eventId'];
             $run->type = 'teamroping';
@@ -51,8 +53,8 @@ class MassRunUploader extends Controller
 
             if ($runData['headerSaid']) {
                 try {
-                    $human = Human::where('import_id', $runData['headerSaid'])->firstOrFail();
-                    $stats['header']['human_id'] = $human->id;
+                    $header = Human::where('import_id', $runData['headerSaid'])->firstOrFail();
+                    $stats['header']['human_id'] = $header->id;
                 } catch (ModelNotFoundException $e) {
                     report($e);
 
@@ -91,8 +93,8 @@ class MassRunUploader extends Controller
 
             if ($runData['heelerSaid']) {
                 try {
-                    $human = Human::where('import_id', $runData['heelerSaid'])->firstOrFail();
-                    $stats['heeler']['human_id'] = $human->id;
+                    $heeler = Human::where('import_id', $runData['heelerSaid'])->firstOrFail();
+                    $stats['heeler']['human_id'] = $heeler->id;
                 } catch (ModelNotFoundException $e) {
                     report($e);
    
@@ -144,6 +146,15 @@ class MassRunUploader extends Controller
 
             try {
                 $run->save();
+
+                if ($header) {
+                    $run->humans()->attach($header->id);
+                }
+
+                if ($heeler) {
+                    $run->humans()->attach($heeler->id);
+                }
+
                 $video->run_id = $run->id;
                 $video->save();
             } catch (QueryException $e) {
