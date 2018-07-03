@@ -12006,13 +12006,25 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default.a }, { path: '/leaderboard/:type', component: __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue___default.a }, { path: '/admin/create-human', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default.a }, { path: '/admin/user-human-linker', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default.a }, { path: '/admin/mass-upload-runs', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default.a }, { path: '/admin/mass-upload-humans', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default.a, meta: { requireSubscription: true } }, { path: '/leaderboard/:type', component: __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue___default.a }, { path: '/admin/create-human', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default.a }, { path: '/admin/user-human-linker', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default.a }, { path: '/admin/mass-upload-runs', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default.a }, { path: '/admin/mass-upload-humans', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({ routes: routes });
 
+router.beforeEach(function (to, from, next) {
+    if (to.matched.some(function (record) {
+        return record.meta.requireSubscription;
+    })) {
+        if (!window.user.stripeid) {
+            window.location = '/choose-plan';
+            return;
+        }
+    }
+    next();
+});
+
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-  el: '#app',
-  router: router
+    el: '#app',
+    router: router
 });
 
 /***/ }),

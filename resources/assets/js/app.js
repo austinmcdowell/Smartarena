@@ -29,7 +29,7 @@ Vue.use(VueRouter);
 let routes = [
   { path: '/', component: HomeComponent },
   { path: '/profile/:id', component: ProfileComponent },
-  { path: '/run/edit/:id', component: RunEditor },
+  { path: '/run/edit/:id', component: RunEditor, meta: { requireSubscription: true } },
   { path: '/leaderboard/:type', component: LeaderboardComponent },
   { path: '/video/:id', component: VideoPlayerComponent },
   { path: '/admin/create-human', component: CreateHumanComponent },
@@ -40,7 +40,19 @@ let routes = [
 
 const router = new VueRouter({ routes });
 
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireSubscription)) {                
+      if (!window.user.stripeid) {
+          window.location = '/choose-plan';
+          return;
+      }
+  }
+  next();
+});
+
 const app = new Vue({
     el: '#app',
     router
 });
+
+

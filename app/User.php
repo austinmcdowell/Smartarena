@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -26,6 +28,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $dates = ['trail_ends_at'];
 
     public function human() {
         return $this->hasOne('\App\Human');
