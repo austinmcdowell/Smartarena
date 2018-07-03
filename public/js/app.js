@@ -36559,78 +36559,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -36758,61 +36686,34 @@ var render = function() {
         _vm._v(" "),
         _c(
           "tbody",
-          [
-            _vm._l(_vm.humans, function(human) {
-              return _c(
-                "tr",
-                {
-                  key: human.id,
-                  on: {
-                    click: function($event) {
-                      _vm.showProfile(human.id)
-                    }
+          _vm._l(_vm.humans, function(human) {
+            return _c(
+              "tr",
+              {
+                key: human.id,
+                on: {
+                  click: function($event) {
+                    _vm.showProfile(human.id)
                   }
-                },
-                [
-                  _c("td", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(human.classification))
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(human.first_name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(human.last_name))])
-                ]
-              )
-            }),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _vm._m(4),
-            _vm._v(" "),
-            _vm._m(5),
-            _vm._v(" "),
-            _vm._m(6),
-            _vm._v(" "),
-            _vm._m(7),
-            _vm._v(" "),
-            _vm._m(8),
-            _vm._v(" "),
-            _vm._m(9),
-            _vm._v(" "),
-            _vm._m(10),
-            _vm._v(" "),
-            _vm._m(11),
-            _vm._v(" "),
-            _vm._m(12)
-          ],
-          2
+                }
+              },
+              [
+                _c("td", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(human.classification))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(human.first_name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(human.last_name))])
+              ]
+            )
+          })
         )
       ]),
       _vm._v(" "),
-      _vm._m(13),
+      _vm._m(1),
       _vm._v(" "),
-      _vm._m(14)
+      _vm._m(2)
     ],
     1
   )
@@ -36830,174 +36731,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Last")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("4")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Mark")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Otto")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@mdo")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("5")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Jacob")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Thornton")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@fat")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("6")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Larry")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("the Bird")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@twitter")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("7")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Mark")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Otto")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@mdo")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("8")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Jacob")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Thornton")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@fat")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("9")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Larry")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("the Bird")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@twitter")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("10")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Mark")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Otto")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@mdo")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("11")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Jacob")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Thornton")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@fat")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("12")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Larry")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("the Bird")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@twitter")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("13")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Mark")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Otto")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@mdo")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("14")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Jacob")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Thornton")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@fat")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { scope: "row" } }, [_vm._v("15")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Larry")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("the Bird")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("@twitter")])
     ])
   },
   function() {
@@ -37552,33 +37285,44 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Header Catch: " + _vm._s(run.header_catch_type))
+                    _vm._v(
+                      "Header Catch: " + _vm._s(run.stats.header.catch_type)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Heeler Catch: " + _vm._s(run.heeler_catch_type))
+                    _vm._v(
+                      "Heeler Catch: " + _vm._s(run.stats.heeler.catch_type)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Header Penalty: " + _vm._s(run.header_penalty_type))
+                    _vm._v(
+                      "Header Penalty: " + _vm._s(run.stats.header.penalty_type)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Penalties: " + _vm._s(run.header_penalty_time))
+                    _vm._v(
+                      "Penalties: " + _vm._s(run.stats.header.penalty_time)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
                       "Total Run Penalties: " +
                         _vm._s(
-                          run.header_penalty_time + run.heeler_penalty_time
+                          run.stats.header.penalty_time +
+                            run.stats.heeler.penalty_time
                         )
                     )
                   ]),
                   _vm._v(" "),
-                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.raw_time))]),
+                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.stats.raw_time))]),
                   _vm._v(" "),
-                  _c("p", [_vm._v("Total Time: " + _vm._s(run.total_time))])
+                  _c("p", [
+                    _vm._v("Total Time: " + _vm._s(run.stats.total_time))
+                  ])
                 ])
               ]),
               _vm._v(" "),
@@ -37674,33 +37418,44 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Header Catch: " + _vm._s(run.header_catch_type))
+                    _vm._v(
+                      "Header Catch: " + _vm._s(run.stats.header.catch_type)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Heeler Catch: " + _vm._s(run.heeler_catch_type))
+                    _vm._v(
+                      "Heeler Catch: " + _vm._s(run.stats.heeler.catch_type)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Header Penalty: " + _vm._s(run.heeler_penalty_type))
+                    _vm._v(
+                      "Header Penalty: " + _vm._s(run.stats.heeler.penalty_type)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", [
-                    _vm._v("Penalties: " + _vm._s(run.heeler_penalty_time))
+                    _vm._v(
+                      "Penalties: " + _vm._s(run.stats.heeler.penalty_time)
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
                       "Total Run Penalties: " +
                         _vm._s(
-                          run.header_penalty_time + run.heeler_penalty_time
+                          run.stats.header.penalty_time +
+                            run.stats.heeler.penalty_time
                         )
                     )
                   ]),
                   _vm._v(" "),
-                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.raw_time))]),
+                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.stats.raw_time))]),
                   _vm._v(" "),
-                  _c("p", [_vm._v("Total Time: " + _vm._s(run.total_time))])
+                  _c("p", [
+                    _vm._v("Total Time: " + _vm._s(run.stats.total_time))
+                  ])
                 ])
               ]),
               _vm._v(" "),

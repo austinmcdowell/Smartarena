@@ -82,13 +82,13 @@
                             <div class="col s12">
                                 <p>Date: {{ run.date }}</p>
                                 <p>Event: {{ run.event.location }} </p>
-                                <p>Header Catch: {{ run.header_catch_type }}</p>
-                                <p>Heeler Catch: {{ run.heeler_catch_type }}</p>
-                                <p>Header Penalty: {{ run.header_penalty_type }}</p>
-                                <p>Penalties: {{ run.header_penalty_time }}</p>
-                                <p>Total Run Penalties: {{ run.header_penalty_time + run.heeler_penalty_time }}</p>
-                                <p>Raw Time: {{ run.raw_time }}</p>
-                                <p>Total Time: {{ run.total_time }}</p>
+                                <p>Header Catch: {{ run.stats.header.catch_type }}</p>
+                                <p>Heeler Catch: {{ run.stats.heeler.catch_type }}</p>
+                                <p>Header Penalty: {{ run.stats.header.penalty_type }}</p>
+                                <p>Penalties: {{ run.stats.header.penalty_time }}</p>
+                                <p>Total Run Penalties: {{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</p>
+                                <p>Raw Time: {{ run.stats.raw_time }}</p>
+                                <p>Total Time: {{ run.stats.total_time }}</p>
                             </div>
                         </div>
                     
@@ -128,13 +128,13 @@
                             <div class="col s12">
                                 <p>Date: {{ run.date }}</p>
                                 <p>Event: {{ run.event.location }} </p>
-                                <p>Header Catch: {{ run.header_catch_type }}</p>
-                                <p>Heeler Catch: {{ run.heeler_catch_type }}</p>
-                                <p>Header Penalty: {{ run.heeler_penalty_type }}</p>
-                                <p>Penalties: {{ run.heeler_penalty_time }}</p>
-                                <p>Total Run Penalties: {{ run.header_penalty_time + run.heeler_penalty_time }}</p>
-                                <p>Raw Time: {{ run.raw_time }}</p>
-                                <p>Total Time: {{ run.total_time }}</p>
+                                <p>Header Catch: {{ run.stats.header.catch_type }}</p>
+                                <p>Heeler Catch: {{ run.stats.heeler.catch_type }}</p>
+                                <p>Header Penalty: {{ run.stats.heeler.penalty_type }}</p>
+                                <p>Penalties: {{ run.stats.heeler.penalty_time }}</p>
+                                <p>Total Run Penalties: {{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</p>
+                                <p>Raw Time: {{ run.stats.raw_time }}</p>
+                                <p>Total Time: {{ run.stats.total_time }}</p>
                             </div>
                         </div>
                         
