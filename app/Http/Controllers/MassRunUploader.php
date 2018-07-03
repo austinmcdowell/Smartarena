@@ -142,7 +142,7 @@ class MassRunUploader extends Controller
                 $video->processing_complete = false;
             }
 
-            $run->stats = json_encode($stats);
+            $run->stats = $stats;
 
             try {
                 $run->save();
