@@ -32,21 +32,30 @@ let routes = [
   { path: '/run/edit/:id', component: RunEditor, meta: { requireSubscription: true } },
   { path: '/leaderboard/:type', component: LeaderboardComponent },
   { path: '/video/:id', component: VideoPlayerComponent },
-  { path: '/admin/create-human', component: CreateHumanComponent },
-  { path: '/admin/user-human-linker', component: UserHumanLinkerComponent },
-  { path: '/admin/mass-upload-runs', component: MassUploadRunsComponent },
-  { path: '/admin/mass-upload-humans', component:  MassUploadHumansComponent },
+  { path: '/admin/create-human', component: CreateHumanComponent, meta: { requireAdmin: true } },
+  { path: '/admin/user-human-linker', component: UserHumanLinkerComponent, meta: { requireAdmin: true } },
+  { path: '/admin/mass-upload-runs', component: MassUploadRunsComponent, meta: { requireAdmin: true } },
+  { path: '/admin/mass-upload-humans', component:  MassUploadHumansComponent, meta: { requireAdmin: true } },
 ];
 
 const router = new VueRouter({ routes });
 
 router.beforeEach((to, from, next) => {
+
   if (to.matched.some(record => record.meta.requireSubscription)) {                
-      if (!window.user.stripeid) {
+      if (!window.user || !window.user.stripeid) {
           window.location = '/choose-plan';
           return;
       }
   }
+
+  if (to.matched.some(record => record.meta.requireAdmin)) {                
+    if (!window.user || !window.user.type !== 'admin') {
+        window.location = '/';
+        return;
+    }
+}
+
   next();
 });
 
