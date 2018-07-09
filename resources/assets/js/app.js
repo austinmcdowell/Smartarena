@@ -17,7 +17,7 @@ Vue.use(VueCarousel);
 import HomeComponent from './components/HomeComponent.vue';
 import LeaderboardComponent from './components/LeaderboardComponent.vue';
 import ProfileComponent from './components/ProfileComponent.vue';
-import VideoPlayerComponent from './components/VideoPlayerComponent.vue';
+import VideoComponent from './components/VideoComponent.vue';
 import RunEditor from './components/RunEditorComponent.vue';
 import CreateHumanComponent from './components/admin/CreateHumanComponent.vue';
 import UserHumanLinkerComponent from './components/admin/UserHumanLinkerComponent.vue';
@@ -31,7 +31,7 @@ let routes = [
   { path: '/profile/:id', component: ProfileComponent },
   { path: '/run/edit/:id', component: RunEditor, meta: { requireSubscription: true } },
   { path: '/leaderboard/:type', component: LeaderboardComponent },
-  { path: '/video/:id', component: VideoPlayerComponent },
+  { path: '/video/:id', component: VideoComponent },
   { path: '/admin/create-human', component: CreateHumanComponent, meta: { requireAdmin: true } },
   { path: '/admin/user-human-linker', component: UserHumanLinkerComponent, meta: { requireAdmin: true } },
   { path: '/admin/mass-upload-runs', component: MassUploadRunsComponent, meta: { requireAdmin: true } },

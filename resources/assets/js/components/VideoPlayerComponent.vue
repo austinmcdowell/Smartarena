@@ -9,24 +9,27 @@
       </video>
     </div>
     <div class="row zoom-panel">
-      <div class="col s6 zoom-button center-align">
-        <span class="zoom-in">+</span>
+      <div @click="togglePlay()" class="col-sm-4 video-control-button text-center">
+        <span><i v-show="!isPlaying" class="fas fa-play"></i><i v-show="isPlaying" class="fas fa-pause"></i></span>
       </div>
-      <div class="col s6 zoom-button center-align">
-        <span class="zoom-out">-</span>
+      <div class="col-sm-4 zoom-button text-center">
+        <span class="zoom-out"><i class="fas fa-minus"></i></span>
+      </div>
+      <div class="col-sm-4 zoom-button text-center">
+        <span class="zoom-in"><i class="fas fa-plus"></i></span>
       </div>
     </div>
     <div class="row">
-      <div class="col s3 control-button center-align double-rewind">
+      <div class="col-sm-3 control-button text-center double-rewind">
         <span><i class="fas fa-angle-double-left"></i></span>
       </div>
-      <div class="col s3 control-button center-align single-rewind">
+      <div class="col-sm-3 control-button text-center single-rewind">
         <span><i class="fas fa-angle-left"></i></span>
       </div>
-      <div class="col s3 control-button center-align single-forward">
+      <div class="col-sm-3 control-button text-center single-forward">
         <span><i class="fas fa-angle-right"></i></span>
       </div>
-      <div class="col s3 control-button center-align double-forward">
+      <div class="col-sm-3 control-button text-center double-forward">
         <span><i class="fas fa-angle-double-right"></i></span>
       </div>
     </div>
@@ -94,6 +97,14 @@
         $this.setSource(data);
       });
 
+      this.player.on('pause', function() {
+        $this.isPlaying = false;
+      });
+
+      this.player.on('play', function() {
+        $this.isPlaying = true;
+      })
+
       this.player.on('timeupdate', function() {
         $this.currentScrobbleTime = $this.player.currentTime();
       });
@@ -108,6 +119,7 @@
         lastDeltaY: 0,
         currentScale: 1,
         isZoomed: false,
+        isPlaying: true,
         playbackInterval: null,
         isIntervalSet: false,
         currentScrobbleTime: 0
@@ -124,6 +136,13 @@
       }
     },
     methods: {
+      togglePlay() {
+        if (this.isPlaying) {
+          this.player.pause();
+        } else {
+          this.player.play();
+        }
+      },
       rewind: function(rate, ms) {
         if (!this.isIntervalSet) {
           this.player.pause();
