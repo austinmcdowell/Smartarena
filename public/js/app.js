@@ -35688,6 +35688,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -35729,7 +35753,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid", attrs: { id: "home" } },
+    { staticClass: "container", attrs: { id: "home" } },
     [
       _c("br"),
       _vm._v(" "),
@@ -36278,26 +36302,6 @@ var render = function() {
                         _vm._v(" "),
                         _c("p", { staticClass: "pro-description" }, [
                           _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
                         ])
                       ])
                     ])
@@ -36309,105 +36313,270 @@ var render = function() {
         })
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _vm._m(0),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Team Roping")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row roping-videos justify-content-between" }, [
+        _c(
+          "div",
+          { staticClass: "col-lg-3 rope-vid" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+              [
+                _c("div", { staticClass: "vid-thumbnail" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vid-time", attrs: { align: "center" } },
+                    [_c("p", [_vm._v("0:30")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Austin McDowell 7/11/2018 3.23s")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-views" }, [
+                  _vm._v("Austin McDowell | "),
+                  _c("span", { staticClass: "light-green" }, [
+                    _vm._v("1,001 views")
+                  ])
+                ])
+              ]
+            )
+          ],
+          1
+        ),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-lg-2" },
+          { staticClass: "col-lg-3 rope-vid" },
           [
-            _c("router-link", { attrs: { to: "/leaderboard/teamroping" } }, [
-              _vm._v("visit leaderboard")
-            ])
+            _c(
+              "router-link",
+              { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+              [
+                _c("div", { staticClass: "vid-thumbnail" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vid-time", attrs: { align: "center" } },
+                    [_c("p", [_vm._v("0:30")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Austin McDowell 7/11/2018 3.23s")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-views" }, [
+                  _vm._v("Austin McDowell | "),
+                  _c("span", { staticClass: "light-green" }, [
+                    _vm._v("1,001 views")
+                  ])
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-lg-3 rope-vid" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+              [
+                _c("div", { staticClass: "vid-thumbnail" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vid-time", attrs: { align: "center" } },
+                    [_c("p", [_vm._v("0:30")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Austin McDowell 7/11/2018 3.23s")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-views" }, [
+                  _vm._v("Austin McDowell | "),
+                  _c("span", { staticClass: "light-green" }, [
+                    _vm._v("1,001 views")
+                  ])
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-lg-3 rope-vid" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+              [
+                _c("div", { staticClass: "vid-thumbnail" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vid-time", attrs: { align: "center" } },
+                    [_c("p", [_vm._v("0:30")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Austin McDowell 7/11/2018 3.23s")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-views" }, [
+                  _vm._v("Austin McDowell | "),
+                  _c("span", { staticClass: "light-green" }, [
+                    _vm._v("1,001 views")
+                  ])
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-lg-3 rope-vid" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+              [
+                _c("div", { staticClass: "vid-thumbnail" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vid-time", attrs: { align: "center" } },
+                    [_c("p", [_vm._v("0:30")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Austin McDowell 7/11/2018 3.23s")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-views" }, [
+                  _vm._v("Austin McDowell | "),
+                  _c("span", { staticClass: "light-green" }, [
+                    _vm._v("1,001 views")
+                  ])
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-lg-3 rope-vid" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+              [
+                _c("div", { staticClass: "vid-thumbnail" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vid-time", attrs: { align: "center" } },
+                    [_c("p", [_vm._v("0:30")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Austin McDowell 7/11/2018 3.23s")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-views" }, [
+                  _vm._v("Austin McDowell | "),
+                  _c("span", { staticClass: "light-green" }, [
+                    _vm._v("1,001 views")
+                  ])
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-lg-3 rope-vid" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+              [
+                _c("div", { staticClass: "vid-thumbnail" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vid-time", attrs: { align: "center" } },
+                    [_c("p", [_vm._v("0:30")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Austin McDowell 7/11/2018 3.23s")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-views" }, [
+                  _vm._v("Austin McDowell | "),
+                  _c("span", { staticClass: "light-green" }, [
+                    _vm._v("1,001 views")
+                  ])
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-lg-3 rope-vid" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
+              [
+                _c("div", { staticClass: "vid-thumbnail" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vid-time", attrs: { align: "center" } },
+                    [_c("p", [_vm._v("0:30")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-description" }, [
+                  _vm._v("Austin McDowell 7/11/2018 3.23s")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "vid-views" }, [
+                  _vm._v("Austin McDowell | "),
+                  _c("span", { staticClass: "light-green" }, [
+                    _vm._v("1,001 views")
+                  ])
+                ])
+              ]
+            )
           ],
           1
         )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "row roping-videos justify-content-between" },
-        [
-          _c(
-            "router-link",
-            { staticClass: "video-wrapper", attrs: { to: "/video/:id" } },
-            [
-              _c("div", { staticClass: "col-lg-12 rope-vid" }, [
-                _c("div", { staticClass: "vid-thumbnail" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "vid-description" }, [
-                  _vm._v("Vid Title")
-                ])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/video/:id" } }, [
-            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
-              _c("div", { staticClass: "vid-thumbnail" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "vid-description" }, [
-                _vm._v("Vid Title")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/video/:id" } }, [
-            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
-              _c("div", { staticClass: "vid-thumbnail" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "vid-description" }, [
-                _vm._v("Vid Title")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/video/:id" } }, [
-            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
-              _c("div", { staticClass: "vid-thumbnail" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "vid-description" }, [
-                _vm._v("Vid Title")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/video/:id" } }, [
-            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
-              _c("div", { staticClass: "vid-thumbnail" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "vid-description" }, [
-                _vm._v("Vid Title")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/video/:id" } }, [
-            _c("div", { staticClass: "col-lg-12 rope-vid" }, [
-              _c("div", { staticClass: "vid-thumbnail" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "vid-description" }, [
-                _vm._v("Vid Title")
-              ])
-            ])
-          ])
-        ],
-        1
-      )
+      ])
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-10" }, [
-      _c("h3", { staticClass: "sec-title" }, [_vm._v("Roping")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -37658,11 +37827,27 @@ if (false) {
 
 /***/ }),
 /* 51 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(12);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37698,181 +37883,172 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+// import EventBus from './EventBus';
 
+// export default {
+//   mounted() {
+//     this.player = videojs('my-video');
+//     this.videoHeight = $('#my-video').height();
+//     this.videoWidth = $('#my-video').width();
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    this.player = videojs('my-video');
-    this.videoHeight = $('#my-video').height();
-    this.videoWidth = $('#my-video').width();
+//     let $this = this;
+//     let el = document.getElementById('protection');
+//     let hammertime = new Hammer.Manager(el)
+//     let panGesture = new Hammer.Pan();
+//     hammertime.add([panGesture]);
 
-    var $this = this;
-    var el = document.getElementById('protection');
-    var hammertime = new Hammer.Manager(el);
-    var panGesture = new Hammer.Pan();
-    hammertime.add([panGesture]);
+//     hammertime.on('pan', function(ev) { $this.pan(ev); });
 
-    hammertime.on('pan', function (ev) {
-      $this.pan(ev);
-    });
+//     hammertime.on('panend', function(ev) {
+//       $this.lastDeltaX = 0;
+//       $this.lastDeltaY = 0;
+//     });
 
-    hammertime.on('panend', function (ev) {
-      $this.lastDeltaX = 0;
-      $this.lastDeltaY = 0;
-    });
+//     $('.zoom-in').on('click tap', function(e) { $this.zoomIn(); });
+//     $('.zoom-out').on('click tap', function(e) { $this.zoomOut(); });
 
-    $('.zoom-in').on('click tap', function (e) {
-      $this.zoomIn();
-    });
-    $('.zoom-out').on('click tap', function (e) {
-      $this.zoomOut();
-    });
+//     $('.double-rewind').on('mousedown touchstart', function(e) {
+//       e.preventDefault();
+//       $this.rewind(0.2, 125);
+//     });
 
-    $('.double-rewind').on('mousedown touchstart', function (e) {
-      e.preventDefault();
-      $this.rewind(0.2, 125);
-    });
+//     $('.single-rewind').on('mousedown touchstart', function(e) {
+//       e.preventDefault();
+//       $this.rewind(0.1, 125);
+//     });
 
-    $('.single-rewind').on('mousedown touchstart', function (e) {
-      e.preventDefault();
-      $this.rewind(0.1, 125);
-    });
+//     $('.single-forward').on('mousedown touchstart', function(e) {
+//       e.preventDefault();
+//       $this.forward(0.1, 125);
+//     });
 
-    $('.single-forward').on('mousedown touchstart', function (e) {
-      e.preventDefault();
-      $this.forward(0.1, 125);
-    });
+//     $('.double-forward').on('mousedown touchstart', function(e) {
+//       e.preventDefault();
+//       $this.forward(0.2, 125);
+//     });
 
-    $('.double-forward').on('mousedown touchstart', function (e) {
-      e.preventDefault();
-      $this.forward(0.2, 125);
-    });
+//     $('.control-button').on('mouseup touchend', function(e) {
+//       e.preventDefault();
+//       $this.resetScrobbling();
+//     });
 
-    $('.control-button').on('mouseup touchend', function (e) {
-      e.preventDefault();
-      $this.resetScrobbling();
-    });
+//     axios.get(`/video/${this.$route.params.id}`).then(response => {
+//       let data = response.data;
+//       $this.player.src({ type: 'video/mp4', src: data.file_url });
+//       $this.player.play();
+//     }).catch(e => {
+//       alert('There has been an error, please contact support.');
+//     })
 
-    axios.get('/video/' + this.$route.params.id).then(function (response) {
-      var data = response.data;
-      $this.player.src({ type: 'video/mp4', src: data.file_url });
-      $this.player.play();
-    }).catch(function (e) {
-      alert('There has been an error, please contact support.');
-    });
+//     EventBus.$on('videoSourceChange', function(data) {
+//       $this.setSource(data);
+//     });
 
-    __WEBPACK_IMPORTED_MODULE_0__EventBus__["a" /* default */].$on('videoSourceChange', function (data) {
-      $this.setSource(data);
-    });
+//     this.player.on('timeupdate', function() {
+//       $this.currentScrobbleTime = $this.player.currentTime();
+//     });
+//   },
+//   data() {
+//     return {
+//       player: null,
+//       videoSource: {},
+//       videoHeight: null,
+//       videoWidth: null,
+//       lastDeltaX: 0,
+//       lastDeltaY: 0,
+//       currentScale: 1,
+//       isZoomed: false,
+//       playbackInterval: null,
+//       isIntervalSet: false,
+//       currentScrobbleTime: 0
+//     }
+//   },
+//   watch: {
+//     currentScale: function(currentScale) {
+//       if (currentScale > 1) {
+//         $('#my-video_html5_api').css({ transform: 'scale(' + currentScale + ')' });
+//       } else {
+//         this.isZoomed = false;
+//         $('#my-video_html5_api').css({ top: "0", left: "0" })
+//       }
+//     }
+//   },
+//   methods: {
+//     rewind: function(rate, ms) {
+//       if (!this.isIntervalSet) {
+//         this.player.pause();
+//         this.player.currentTime(this.player.currentTime() - rate);
+//         this.playbackInterval = setInterval(function() {
+//            this.player.currentTime(this.player.currentTime() - rate);
+//         }, ms);
+//         this.isIntervalSet = true;
+//       }
+//     },
+//     forward: function(rate, ms) {
+//       if (!this.isIntervalSet) {
+//         this.player.pause();
+//         this.player.currentTime(this.player.currentTime() + rate);
+//         this.playbackInterval = setInterval(function() {
+//           this.player.currentTime(this.player.currentTime() + rate);
+//         }, ms);
+//         this.isIntervalSet = true;
+//       }
+//     },
+//     zoomIn() {
+//       if (this.currentScale < 1) {
+//         return;
+//       }
+//       this.currentScale += 0.1;
+//       this.isZoomed = true;
+//     },
+//     zoomOut() {
+//       if (this.currentScale === 1) {
+//         return;
+//       }
 
-    this.player.on('timeupdate', function () {
-      $this.currentScrobbleTime = $this.player.currentTime();
-    });
-  },
-  data: function data() {
-    return {
-      player: null,
-      videoSource: {},
-      videoHeight: null,
-      videoWidth: null,
-      lastDeltaX: 0,
-      lastDeltaY: 0,
-      currentScale: 1,
-      isZoomed: false,
-      playbackInterval: null,
-      isIntervalSet: false,
-      currentScrobbleTime: 0
-    };
-  },
+//       this.currentScale -= 0.1;
+//     },
+//     pan: function(ev) {
+//       if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
+//         console.log(ev.srcEvent.srcElement.className);
+//         return;
+//       }
 
-  watch: {
-    currentScale: function currentScale(_currentScale) {
-      if (_currentScale > 1) {
-        $('#my-video_html5_api').css({ transform: 'scale(' + _currentScale + ')' });
-      } else {
-        this.isZoomed = false;
-        $('#my-video_html5_api').css({ top: "0", left: "0" });
-      }
-    }
-  },
-  methods: {
-    rewind: function rewind(rate, ms) {
-      if (!this.isIntervalSet) {
-        this.player.pause();
-        this.player.currentTime(this.player.currentTime() - rate);
-        this.playbackInterval = setInterval(function () {
-          this.player.currentTime(this.player.currentTime() - rate);
-        }, ms);
-        this.isIntervalSet = true;
-      }
-    },
-    forward: function forward(rate, ms) {
-      if (!this.isIntervalSet) {
-        this.player.pause();
-        this.player.currentTime(this.player.currentTime() + rate);
-        this.playbackInterval = setInterval(function () {
-          this.player.currentTime(this.player.currentTime() + rate);
-        }, ms);
-        this.isIntervalSet = true;
-      }
-    },
-    zoomIn: function zoomIn() {
-      if (this.currentScale < 1) {
-        return;
-      }
-      this.currentScale += 0.1;
-      this.isZoomed = true;
-    },
-    zoomOut: function zoomOut() {
-      if (this.currentScale === 1) {
-        return;
-      }
+//       let currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
+//       let currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
 
-      this.currentScale -= 0.1;
-    },
+//       let top = currentTop + (ev.deltaY - this.lastDeltaY);
+//       let left = currentLeft + (ev.deltaX - this.lastDeltaX);
 
-    pan: function pan(ev) {
-      if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
-        console.log(ev.srcEvent.srcElement.className);
-        return;
-      }
+//       this.lastDeltaY = ev.deltaY;
+//       this.lastDeltaX = ev.deltaX;
 
-      var currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
-      var currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
+//       let currentWidth  = ($('#my-video_html5_api').width() * this.currentScale);
+//       let currentHeight = ($('#my-video_html5_api').height() * this.currentScale);
 
-      var top = currentTop + (ev.deltaY - this.lastDeltaY);
-      var left = currentLeft + (ev.deltaX - this.lastDeltaX);
+//       if (this.isZoomed) {
+//         if (left <= (currentWidth / 5.6) && left >= -(currentWidth / 5.6)) {
+//           $('#my-video_html5_api').css({ left: left });
+//         }
 
-      this.lastDeltaY = ev.deltaY;
-      this.lastDeltaX = ev.deltaX;
-
-      var currentWidth = $('#my-video_html5_api').width() * this.currentScale;
-      var currentHeight = $('#my-video_html5_api').height() * this.currentScale;
-
-      if (this.isZoomed) {
-        if (left <= currentWidth / 5.6 && left >= -(currentWidth / 5.6)) {
-          $('#my-video_html5_api').css({ left: left });
-        }
-
-        if (top <= currentHeight / 5.6 && top >= -(currentHeight / 5.6)) {
-          $('#my-video_html5_api').css({ top: top });
-        }
-      }
-    },
-    resetScrobbling: function resetScrobbling() {
-      clearInterval(this.playbackInterval);
-      this.isIntervalSet = false;
-    },
-
-    setSource: function setSource(videoData) {
-      this.player.src({ type: 'video/mp4', src: videoData.file_url });
-      this.player.play();
-    },
-    getCurrentScrobbleTime: function getCurrentScrobbleTime() {
-      return this.currentScrobbleTime;
-    }
-  }
-});
+//         if (top <= (currentHeight / 5.6) && top >= -(currentHeight / 5.6)) {
+//           $('#my-video_html5_api').css({ top: top });
+//         }
+//       }
+//     },
+//     resetScrobbling() {
+//       clearInterval(this.playbackInterval);
+//       this.isIntervalSet = false;
+//     },
+//     setSource: function(videoData) {
+//       this.player.src({ type: 'video/mp4', src: videoData.file_url });
+//       this.player.play();
+//     },
+//     getCurrentScrobbleTime() {
+//       return this.currentScrobbleTime;
+//     }
+//   }
+// }
 
 /***/ }),
 /* 52 */
@@ -37889,74 +38065,29 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "video-player" } }, [
-      _c("div", { attrs: { id: "protection" } }, [
-        _c(
-          "video",
-          {
-            staticClass: "video-js",
-            attrs: {
-              id: "my-video",
-              autoplay: "",
-              controls: "",
-              "data-setup": "{}",
-              playsinline: ""
-            }
-          },
-          [
-            _c("p", { staticClass: "vjs-no-js" }, [
-              _vm._v(
-                "\n        To view this video please enable JavaScript, and consider upgrading to a web browser that\n        "
-              ),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "http://videojs.com/html5-video-support/",
-                    target: "_blank"
-                  }
-                },
-                [_vm._v("supports HTML5 video")]
-              )
+    return _c("div", { attrs: { id: "videoDash" } }, [
+      _c("div", { staticClass: "video-container" }, [
+        _c("div", { staticClass: "video" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-12 video-spacer" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-5 watched" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-3 buffer" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-4 full" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-12 scrubber-bg" })
             ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row zoom-panel" }, [
-        _c("div", { staticClass: "col s6 zoom-button center-align" }, [
-          _c("span", { staticClass: "zoom-in" }, [_vm._v("+")])
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col s6 zoom-button center-align" }, [
-          _c("span", { staticClass: "zoom-out" }, [_vm._v("-")])
+        _c("div", { staticClass: "video-title" }, [
+          _c("h2", [
+            _vm._v("Austin McDowell breaks Heeler Record at Greely Rodeo")
+          ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col s3 control-button center-align double-rewind" },
-          [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col s3 control-button center-align single-rewind" },
-          [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col s3 control-button center-align single-forward" },
-          [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col s3 control-button center-align double-forward" },
-          [_c("span", [_c("i", { staticClass: "fas fa-angle-double-right" })])]
-        )
       ])
     ])
   }

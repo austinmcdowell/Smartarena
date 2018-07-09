@@ -1,9 +1,129 @@
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
 h1 {
   font-family: 'Arial Black';
 }
 
 h2 {
   font-family: 'Arial Black';
+}
+
+.green {
+  color: #23915e;
+}
+
+.light-green {
+  color: rgba(102, 177, 148, 0.5);
+}
+
+.sa-nav {
+  -webkit-box-shadow: 10px -20px 30px rgba(0, 0, 0, 0.2) !important;
+          box-shadow: 10px -20px 30px rgba(0, 0, 0, 0.2) !important;
+  color: white !important;
+  z-index: 1000;
+}
+
+.sa-nav li a {
+  text-decoration: none;
+  color: white;
+}
+
+.sa-brand {
+  margin: 0 0 0 .5%;
+  font-family: Arial Black;
+  color: blue;
+}
+
+.sa-brand li a {
+  text-decoration: none !important;
+}
+
+.nav-search {
+  width: 600px;
+  height: 40px;
+  margin: 0 0 0 20%;
+  padding: 0 0 0 1%;
+  border: none;
+  background: #f4f6f7;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.upload-btn {
+  color: #b6b6b6;
+  width: 40px;
+}
+
+.nav-profile-pic {
+  width: 35px;
+  height: 35px;
+  margin: 1% 0 0 0;
+  border-radius: 50px;
+  background-image: url("/img/austin-light.jpg");
+  background-size: cover;
+}
+
+.side-nav {
+  background: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  height: 200vh;
+  overflow: scroll;
+}
+
+.content {
+  height: 100vh;
+  padding: 0;
+  background: #fafafa;
+  overflow: scroll;
+}
+
+.guide {
+  margin: 30% 0 0 0;
+}
+
+.guide h6 {
+  color: #b6b6b6 !important;
+  margin: 15% 0 1% 0;
+  padding: 0 0 0 5%;
+  font-weight: lighter;
+}
+
+.guide .guide-routes {
+  height: 50px;
+  padding: 0 0 0 5%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.guide .guide-routes p {
+  color: #5e5e5e;
+  font-size: 17px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+.guide .guide-routes .guide-route-icon {
+  margin: 0 8% 0 0;
+  color: #4a9259;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+.guide .guide-routes:hover {
+  background: #eeeeee;
 }
 
 .nav-wrapper {
@@ -108,6 +228,14 @@ body {
   min-height: 100% !important;
 }
 
+.award a {
+  text-decoration: none !important;
+}
+
+.roping-videos a {
+  text-decoration: none !important;
+}
+
 @media (min-width: 300px) {
   .awards {
     display: none;
@@ -116,7 +244,7 @@ body {
 
 @media (min-width: 1200px) {
   #home .sec-title {
-    margin: 4% 0 .5% 5%;
+    margin: 10% 0 .5% 5%;
   }
 
   #home .award-center {
@@ -127,13 +255,13 @@ body {
 
   #home .awards {
     padding: 0;
-    margin-bottom: 5%;
     display: block;
+    text-decoration: none;
   }
 
   #home .awards .circle {
     width: 94% !important;
-    height: 350px;
+    height: 300px;
   }
 
   #home .awards .award {
@@ -161,15 +289,19 @@ body {
   #home .roping-videos {
     width: 90%;
     padding: 0;
-    margin: 0 0 5% 5%;
+    margin: 0 0 10% 5%;
   }
 
-  #home .video-wrapper {
-    width: 200px;
+  #home .video-wrapper:hover .vid-time {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  #home .video-wrapper:hover .light-green {
+    color: #66b194;
   }
 
   #home .rope-vid {
-    width: 200px !important;
+    margin: 0 0 50% 0;
   }
 
   #home .roping-videos a {
@@ -183,21 +315,35 @@ body {
 
   #home .roping-videos .vid-thumbnail {
     width: 96%;
-    height: 100px;
+    height: 120px;
     padding: 0;
     margin: 0;
   }
 
   #home .roping-videos .vid-description {
     width: 96%;
-    padding: 2% 0 5% 3%;
+    padding: 2% 0 5% 1.5%;
     margin: 0;
+    color: black !important;
+  }
+
+  #home .roping-videos .vid-description li a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #home .roping-videos .vid-views {
+    padding: 0 0 0 1.5%;
+    color: #c8c8c8;
+    font-size: 13px;
   }
 }
 
 #home .sec-title {
   font-family: 'Arial Black';
   font-size: 20px;
+  margin: 10% 0 2% 5%;
 }
 
 #home .awards {
@@ -252,6 +398,7 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
+  padding: 2% 0 0 5%;
 }
 
 #home .award .full-name {
@@ -266,22 +413,38 @@ body {
 }
 
 #home .award .accolade {
-  color: #81b48c;
+  color: rgba(129, 180, 140, 0.8);
   font-family: 'Arial Black';
   font-size: 30px;
+}
+
+#home .award:hover .accolade {
+  color: #6ad681;
 }
 
 #home .mobile-awards-carousel {
   display: none;
 }
 
-#home .roping-videos {
-  border-bottom: 1px solid #f0f0f0;
-}
-
 #home .roping-videos .vid-thumbnail {
+  padding: 36% 0 0 0;
   background-size: cover;
   background-image: url("/img/cow.jpg");
+}
+
+#home .roping-videos .vid-time {
+  width: 40px;
+  height: 20px;
+  margin: 0 0 0 75%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+#home .roping-videos .vid-time p {
+  color: white;
+  font-size: 10px;
+  line-height: 20px;
+  vertical-align: middle;
 }
 
 #home .roping-videos .vid-description {
@@ -427,47 +590,61 @@ body {
   margin-top: 20px;
 }
 
-#my-video {
-  width: 100% !important;
-  height: 300px !important;
-  pointer-events: none;
+#videoDash .video-container {
+  width: 100%;
+  height: 700px;
+  padding: none;
 }
 
-#protection {
-  overflow: hidden;
+#videoDash .video-container .video {
+  width: 95%;
+  height: 600px;
+  margin: 25px 0 0 2.5%;
+  background-image: url("/img/india.jpg");
+  background-size: cover;
 }
 
-.vjs-control-bar {
-  opacity: 1 !important;
-  pointer-events: all !important;
+#videoDash .video-container .video .video-spacer {
+  margin: 48% 0 0 0 !important;
 }
 
-.zoom-panel {
-  margin-bottom: 0;
+#videoDash .video-container .video .watched {
+  height: 5px;
+  background: red;
 }
 
-.zoom-button,
-.control-button {
-  background-color: #2b333f;
-  color: #fff;
-  font-size: 28pt;
+#videoDash .video-container .video .buffer {
+  height: 5px;
+  background: #f3f3f3;
 }
 
-.control-button {
-  font-size: 20pt;
+#videoDash .video-container .video .full {
+  height: 5px;
+  background: rgba(200, 200, 200, 0.5);
+}
+
+#videoDash .video-container .video .scrubber-bg {
+  height: 55px;
+  background: #232736;
+}
+
+#videoDash .video-container .video-title {
+  margin: 3% 0 2% 2.5%;
+}
+
+#videoDash .video-container .video-title h2 {
+  font-size: 30px;
+  font-family: 'Roboto';
 }
 
 .coaches {
   width: 90%;
   margin: 1% 0 1% 5%;
   padding: 0;
-  -webkit-box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
-          box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
 }
 
 .professionals {
   padding: 0;
-  margin-bottom: 5%;
   height: 350px;
   background: white !important;
 }
@@ -485,12 +662,15 @@ body {
   background: #81b48c;
   border: 1px solid #81b48c;
   border-radius: 3px;
+  cursor: pointer;
+}
+
+.coaches:hover .hire-btn {
+  background-color: #6ad681;
 }
 
 .professionals .pro-content {
   height: 350px;
-  border: 1px solid gray;
-  border-radius: 3px;
 }
 
 .professionals .pro-content h2 {

@@ -1,5 +1,5 @@
 <template>
-    <div id="home" class="container-fluid">
+    <div id="home" class="container">
         <br />
         <h3 class="sec-title">Best of</h3>
         <div class="row award-center justify-content-between">
@@ -132,20 +132,6 @@
                                     <h2>{{ coach.first_name }} {{ coach.last_name }}</h2>
                                     <div class="sport-btn"><p align="center">roping</p></div>
                                     <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
-                                    <div class="container-fluid">
-                                        <div class="row justify-content-center">
-                                            <div class="col-lg-4">
-                                                <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="coach-vid"></div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -155,54 +141,92 @@
         </carousel>
         
 
-        <div class="row">
-            <div class="col-lg-10"><h3 class="sec-title">Roping</h3></div>
-            <div class="col-lg-2"><router-link to="/leaderboard/teamroping">visit leaderboard</router-link></div>
-        </div>
+        <h3 class="sec-title">Team Roping</h3>
+            <!-- <div class="col-lg-2"><router-link to="/leaderboard/teamroping">visit leaderboard</router-link></div> -->
         
         <div class="row roping-videos justify-content-between">
             <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-            <router-link :to="`/video/:id`" class="video-wrapper">
-                <div class="col-lg-12 rope-vid">
-                    <div class="vid-thumbnail"></div>
-                    <div class="vid-description">Vid Title</div>
-                </div>
-            </router-link>
+            
+            <div class="col-lg-3 rope-vid">
+                <router-link :to="`/video/:id`" class="video-wrapper">
+                    <div class="vid-thumbnail">
+                        <div class="vid-time" align="center"><p>0:30</p></div>
+                    </div>
+                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
+                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
+                </router-link>
+            </div>
+            
 
-            <router-link :to="`/video/:id`">
-                <div class="col-lg-12 rope-vid">
-                    <div class="vid-thumbnail"></div>
-                    <div class="vid-description">Vid Title</div>
-                </div>
-            </router-link>
+            <div class="col-lg-3 rope-vid">
+                <router-link :to="`/video/:id`" class="video-wrapper">
+                    <div class="vid-thumbnail">
+                        <div class="vid-time" align="center"><p>0:30</p></div>
+                    </div>
+                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
+                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
+                </router-link>
+            </div>
 
-            <router-link :to="`/video/:id`">
-                <div class="col-lg-12 rope-vid">
-                    <div class="vid-thumbnail"></div>
-                    <div class="vid-description">Vid Title</div>
-                </div>
-            </router-link>
+            <div class="col-lg-3 rope-vid">
+                <router-link :to="`/video/:id`" class="video-wrapper">
+                    <div class="vid-thumbnail">
+                        <div class="vid-time" align="center"><p>0:30</p></div>
+                    </div>
+                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
+                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
+                </router-link>
+            </div>
 
-            <router-link :to="`/video/:id`">
-                <div class="col-lg-12 rope-vid">
-                    <div class="vid-thumbnail"></div>
-                    <div class="vid-description">Vid Title</div>
-                </div>
-            </router-link>
+            <div class="col-lg-3 rope-vid">
+                <router-link :to="`/video/:id`" class="video-wrapper">
+                    <div class="vid-thumbnail">
+                        <div class="vid-time" align="center"><p>0:30</p></div>
+                    </div>
+                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
+                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
+                </router-link>
+            </div>
 
-            <router-link :to="`/video/:id`">
-                <div class="col-lg-12 rope-vid">
-                    <div class="vid-thumbnail"></div>
-                    <div class="vid-description">Vid Title</div>
-                </div>
-            </router-link>
+            <div class="col-lg-3 rope-vid">
+                <router-link :to="`/video/:id`" class="video-wrapper">
+                    <div class="vid-thumbnail">
+                        <div class="vid-time" align="center"><p>0:30</p></div>
+                    </div>
+                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
+                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
+                </router-link>
+            </div>
 
-            <router-link :to="`/video/:id`">
-                <div class="col-lg-12 rope-vid">
-                    <div class="vid-thumbnail"></div>
-                    <div class="vid-description">Vid Title</div>
-                </div>
-            </router-link>
+            <div class="col-lg-3 rope-vid">
+                <router-link :to="`/video/:id`" class="video-wrapper">
+                    <div class="vid-thumbnail">
+                        <div class="vid-time" align="center"><p>0:30</p></div>
+                    </div>
+                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
+                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
+                </router-link>
+            </div>
+
+            <div class="col-lg-3 rope-vid">
+                <router-link :to="`/video/:id`" class="video-wrapper">
+                    <div class="vid-thumbnail">
+                        <div class="vid-time" align="center"><p>0:30</p></div>
+                    </div>
+                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
+                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
+                </router-link>
+            </div>
+
+            <div class="col-lg-3 rope-vid">
+                <router-link :to="`/video/:id`" class="video-wrapper">
+                    <div class="vid-thumbnail">
+                        <div class="vid-time" align="center"><p>0:30</p></div>
+                    </div>
+                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
+                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
+                </router-link>
+            </div>
         </div>
         <!-- <div class="row hide-on-large-only">
             <div class="col s10 offset-s1">

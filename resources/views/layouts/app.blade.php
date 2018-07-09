@@ -9,20 +9,21 @@
         <title>SmartArena</title>
 
         <!-- Fonts -->
-        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"> -->
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/app.css" text="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
         @yield('css')
         <!-- Styles -->
     </head>
     <body>
         <div id="app">
-            <div class="navbar navbar-expand-lg navbar-light bg-light sa-nav">
-                <router-link to="/" class="navbar-brand">SmartArena</router-link>
-
+            <div class="navbar navbar-expand-lg navbar-light sa-nav">
+                <router-link to="/" class="navbar-brand sa-brand green">SmartArena</router-link>
+                <input type="text" placeholder="search" class="nav-search">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <router-link to="/" class="nav-link">Leaderboards <span class="sr-only">(current)</span></router-link>
+                            <!-- <router-link to="/" class="nav-link">Leaderboards <span class="sr-only">(current)</span></router-link> -->
                         </li>
                     </ul>
 
@@ -38,16 +39,16 @@
                     @if (isset($isLoggedIn) && $isLoggedIn) 
                     <ul class="navbar-nav">
                         @if ($user->human)
-                        <li class="nav-item"><router-link to="/videos/new" class="nav-link">Upload Video</router-link></li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item"><router-link to="/videos/new" class="nav-link"><i style="font-size:24px" class="fa upload-btn">&#xf0ee;</i></router-link></li>
+                        <div class="nav-profile-pic"></div>
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $user->name }}</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <router-link class="dropdown-item" to="/profile">My Profile</a>
-                            <!-- <a class="dropdown-item" href="#">Another action</a> -->
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Log Out</a> 
                             </div>
-                        </li>
+                        </li> -->
                         @endif
                     </ul>
                     @else
@@ -61,59 +62,29 @@
 
             
 
-            <!-- @if (isset($isLoggedIn) && $isLoggedIn) 
-            <ul class="sidenav" id="mobile-demo">
-                @if ($user->human)
-                <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
-                @endif
-                @if (isset($user) && $user->role == "admin")
-                <li><a href="/massupload/humans">Mass Upload Humans</a></li>
-                <li><a href="/massupload/runs">Mass Upload Runs</a></li>
-                <li><a href="/userhumanlinker">User Human Linker</a></li>
-                <li><a href="/createhuman">Create Human</a></li>
-                @endif
-                <li><a href="/logout">Logout</a></li>
-            </ul> 
-            @endif -->
-
-            <!-- <ul id="dropdown1" class="dropdown-content">
-                @if (isset($user) && $user->role == "admin")
-                <li><a href="/massupload/humans">Mass Upload Humans</a></li>
-                <li><a href="/massupload/runs">Mass Upload Runs</a></li>
-                <li><a href="/userhumanlinker">User Human Linker</a></li>
-                <li><a href="/createhuman">Create Human</a></li>
-                @endif
-                <li><a href="/logout">Logout</a></li>
-            </ul>
-
-            <nav>
-                <div class="nav-wrapper">
-                @if (isset($isLoggedIn) && $isLoggedIn)
-                <a href="#!" class="hide-on-med-and-up">SMART ARENA</a>
-                <a href="#" data-target="mobile-demo" class="hide-on-med-and-up sidenav-trigger"><i class="material-icons">menu</i></a>
-                @endif
-                <ul id="nav-mobile" class="hide-on-small-only left">
-                    <li class="hide-on-med-and-down"><a href="/">SMART ARENA</a></li>
-                    <li><a href="/">LEADERBOARDS</a></li>
-                </ul>
-                @if (isset($isLoggedIn) && $isLoggedIn) 
-                    <ul id="nav-mobile" class=" right">
-                        @if ($user->human)
-                        <li><a href="/videos/new">Upload Video</a></li>
-                        <li><a href="/profile/{{ $user->human->id }}">My Profile</a></li>
-                        @endif
-                        <li><a class="hide-on-small-only dropdown-button" href="#" data-target="dropdown1">{{ $user->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
-                    </ul>
-                @else
-                    <ul id="nav-mobile" class="right">
-                        <li><a href="/register">Create Your Account</a></li>
-                        <li><a href="/login">Log in</a></li>
-                    </ul>
-                @endif
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 side-nav">
+                        
+                        <div class="guide">
+                            <h6>Menu</h6>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Home</p></div>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Austin</p></div>
+                            <h6>Sports</h6>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Team Roping</p></div>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Barrell Racing</p></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 content">
+                        
+                        @yield('content')
+                        
+                    </div>
                 </div>
-            </nav> -->
-
-            @yield('content')
+            </div>
+            
+            
         </div>
     </body>
     <!-- <script src="/js/manifest.js"></script>
