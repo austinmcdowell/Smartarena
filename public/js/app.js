@@ -11891,9 +11891,9 @@ module.exports = Vue$3;
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(51)
+var __vue_script__ = __webpack_require__(53)
 /* template */
-var __vue_template__ = __webpack_require__(52)
+var __vue_template__ = __webpack_require__(54)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -11946,7 +11946,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-module.exports = __webpack_require__(68);
+module.exports = __webpack_require__(71);
 
 
 /***/ }),
@@ -11966,17 +11966,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue__);
 
 /**
@@ -12006,13 +12006,36 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default.a }, { path: '/leaderboard/:type', component: __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_VideoPlayerComponent_vue___default.a }, { path: '/admin/create-human', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default.a }, { path: '/admin/user-human-linker', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default.a }, { path: '/admin/mass-upload-runs', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default.a }, { path: '/admin/mass-upload-humans', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default.a, meta: { requireSubscription: true } }, { path: '/leaderboard/:type', component: __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue___default.a }, { path: '/admin/create-human', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/user-human-linker', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/mass-upload-runs', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/mass-upload-humans', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default.a, meta: { requireAdmin: true } }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({ routes: routes });
 
+router.beforeEach(function (to, from, next) {
+
+    if (to.matched.some(function (record) {
+        return record.meta.requireSubscription;
+    })) {
+        if (!window.user || !window.user.stripeid) {
+            window.location = '/choose-plan';
+            return;
+        }
+    }
+
+    if (to.matched.some(function (record) {
+        return record.meta.requireAdmin;
+    })) {
+        if (!window.user || !window.user.type !== 'admin') {
+            window.location = '/';
+            return;
+        }
+    }
+
+    next();
+});
+
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-  el: '#app',
-  router: router
+    el: '#app',
+    router: router
 });
 
 /***/ }),
@@ -37827,268 +37850,453 @@ if (false) {
 
 /***/ }),
 /* 51 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(52)
+/* template */
+var __vue_template__ = __webpack_require__(55)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/VideoComponent.vue"
 
-// import EventBus from './EventBus';
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-588c97b9", Component.options)
+  } else {
+    hotAPI.reload("data-v-588c97b9", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
 
-// export default {
-//   mounted() {
-//     this.player = videojs('my-video');
-//     this.videoHeight = $('#my-video').height();
-//     this.videoWidth = $('#my-video').width();
+module.exports = Component.exports
 
-//     let $this = this;
-//     let el = document.getElementById('protection');
-//     let hammertime = new Hammer.Manager(el)
-//     let panGesture = new Hammer.Pan();
-//     hammertime.add([panGesture]);
-
-//     hammertime.on('pan', function(ev) { $this.pan(ev); });
-
-//     hammertime.on('panend', function(ev) {
-//       $this.lastDeltaX = 0;
-//       $this.lastDeltaY = 0;
-//     });
-
-//     $('.zoom-in').on('click tap', function(e) { $this.zoomIn(); });
-//     $('.zoom-out').on('click tap', function(e) { $this.zoomOut(); });
-
-//     $('.double-rewind').on('mousedown touchstart', function(e) {
-//       e.preventDefault();
-//       $this.rewind(0.2, 125);
-//     });
-
-//     $('.single-rewind').on('mousedown touchstart', function(e) {
-//       e.preventDefault();
-//       $this.rewind(0.1, 125);
-//     });
-
-//     $('.single-forward').on('mousedown touchstart', function(e) {
-//       e.preventDefault();
-//       $this.forward(0.1, 125);
-//     });
-
-//     $('.double-forward').on('mousedown touchstart', function(e) {
-//       e.preventDefault();
-//       $this.forward(0.2, 125);
-//     });
-
-//     $('.control-button').on('mouseup touchend', function(e) {
-//       e.preventDefault();
-//       $this.resetScrobbling();
-//     });
-
-//     axios.get(`/video/${this.$route.params.id}`).then(response => {
-//       let data = response.data;
-//       $this.player.src({ type: 'video/mp4', src: data.file_url });
-//       $this.player.play();
-//     }).catch(e => {
-//       alert('There has been an error, please contact support.');
-//     })
-
-//     EventBus.$on('videoSourceChange', function(data) {
-//       $this.setSource(data);
-//     });
-
-//     this.player.on('timeupdate', function() {
-//       $this.currentScrobbleTime = $this.player.currentTime();
-//     });
-//   },
-//   data() {
-//     return {
-//       player: null,
-//       videoSource: {},
-//       videoHeight: null,
-//       videoWidth: null,
-//       lastDeltaX: 0,
-//       lastDeltaY: 0,
-//       currentScale: 1,
-//       isZoomed: false,
-//       playbackInterval: null,
-//       isIntervalSet: false,
-//       currentScrobbleTime: 0
-//     }
-//   },
-//   watch: {
-//     currentScale: function(currentScale) {
-//       if (currentScale > 1) {
-//         $('#my-video_html5_api').css({ transform: 'scale(' + currentScale + ')' });
-//       } else {
-//         this.isZoomed = false;
-//         $('#my-video_html5_api').css({ top: "0", left: "0" })
-//       }
-//     }
-//   },
-//   methods: {
-//     rewind: function(rate, ms) {
-//       if (!this.isIntervalSet) {
-//         this.player.pause();
-//         this.player.currentTime(this.player.currentTime() - rate);
-//         this.playbackInterval = setInterval(function() {
-//            this.player.currentTime(this.player.currentTime() - rate);
-//         }, ms);
-//         this.isIntervalSet = true;
-//       }
-//     },
-//     forward: function(rate, ms) {
-//       if (!this.isIntervalSet) {
-//         this.player.pause();
-//         this.player.currentTime(this.player.currentTime() + rate);
-//         this.playbackInterval = setInterval(function() {
-//           this.player.currentTime(this.player.currentTime() + rate);
-//         }, ms);
-//         this.isIntervalSet = true;
-//       }
-//     },
-//     zoomIn() {
-//       if (this.currentScale < 1) {
-//         return;
-//       }
-//       this.currentScale += 0.1;
-//       this.isZoomed = true;
-//     },
-//     zoomOut() {
-//       if (this.currentScale === 1) {
-//         return;
-//       }
-
-//       this.currentScale -= 0.1;
-//     },
-//     pan: function(ev) {
-//       if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
-//         console.log(ev.srcEvent.srcElement.className);
-//         return;
-//       }
-
-//       let currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
-//       let currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
-
-//       let top = currentTop + (ev.deltaY - this.lastDeltaY);
-//       let left = currentLeft + (ev.deltaX - this.lastDeltaX);
-
-//       this.lastDeltaY = ev.deltaY;
-//       this.lastDeltaX = ev.deltaX;
-
-//       let currentWidth  = ($('#my-video_html5_api').width() * this.currentScale);
-//       let currentHeight = ($('#my-video_html5_api').height() * this.currentScale);
-
-//       if (this.isZoomed) {
-//         if (left <= (currentWidth / 5.6) && left >= -(currentWidth / 5.6)) {
-//           $('#my-video_html5_api').css({ left: left });
-//         }
-
-//         if (top <= (currentHeight / 5.6) && top >= -(currentHeight / 5.6)) {
-//           $('#my-video_html5_api').css({ top: top });
-//         }
-//       }
-//     },
-//     resetScrobbling() {
-//       clearInterval(this.playbackInterval);
-//       this.isIntervalSet = false;
-//     },
-//     setSource: function(videoData) {
-//       this.player.src({ type: 'video/mp4', src: videoData.file_url });
-//       this.player.play();
-//     },
-//     getCurrentScrobbleTime() {
-//       return this.currentScrobbleTime;
-//     }
-//   }
-// }
 
 /***/ }),
 /* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent_vue__);
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        'video-player': __WEBPACK_IMPORTED_MODULE_0__VideoPlayerComponent_vue___default.a
+    }
+});
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(12);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    this.player = videojs('my-video');
+    this.videoHeight = $('#my-video').height();
+    this.videoWidth = $('#my-video').width();
+
+    var $this = this;
+    var el = document.getElementById('protection');
+    var hammertime = new Hammer.Manager(el);
+    var panGesture = new Hammer.Pan();
+    hammertime.add([panGesture]);
+
+    hammertime.on('pan', function (ev) {
+      $this.pan(ev);
+    });
+
+    hammertime.on('panend', function (ev) {
+      $this.lastDeltaX = 0;
+      $this.lastDeltaY = 0;
+    });
+
+    $('.zoom-in').on('click tap', function (e) {
+      $this.zoomIn();
+    });
+    $('.zoom-out').on('click tap', function (e) {
+      $this.zoomOut();
+    });
+
+    $('.double-rewind').on('mousedown touchstart', function (e) {
+      e.preventDefault();
+      $this.rewind(0.2, 125);
+    });
+
+    $('.single-rewind').on('mousedown touchstart', function (e) {
+      e.preventDefault();
+      $this.rewind(0.1, 125);
+    });
+
+    $('.single-forward').on('mousedown touchstart', function (e) {
+      e.preventDefault();
+      $this.forward(0.1, 125);
+    });
+
+    $('.double-forward').on('mousedown touchstart', function (e) {
+      e.preventDefault();
+      $this.forward(0.2, 125);
+    });
+
+    $('.control-button').on('mouseup touchend', function (e) {
+      e.preventDefault();
+      $this.resetScrobbling();
+    });
+
+    axios.get('/video/' + this.$route.params.id).then(function (response) {
+      var data = response.data;
+      $this.player.src({ type: 'video/mp4', src: data.file_url });
+      $this.player.play();
+    }).catch(function (e) {
+      alert('There has been an error, please contact support.');
+    });
+
+    __WEBPACK_IMPORTED_MODULE_0__EventBus__["a" /* default */].$on('videoSourceChange', function (data) {
+      $this.setSource(data);
+    });
+
+    this.player.on('pause', function () {
+      $this.isPlaying = false;
+    });
+
+    this.player.on('play', function () {
+      $this.isPlaying = true;
+    });
+
+    this.player.on('timeupdate', function () {
+      $this.currentScrobbleTime = $this.player.currentTime();
+    });
+  },
+  data: function data() {
+    return {
+      player: null,
+      videoSource: {},
+      videoHeight: null,
+      videoWidth: null,
+      lastDeltaX: 0,
+      lastDeltaY: 0,
+      currentScale: 1,
+      isZoomed: false,
+      isPlaying: true,
+      playbackInterval: null,
+      isIntervalSet: false,
+      currentScrobbleTime: 0
+    };
+  },
+
+  watch: {
+    currentScale: function currentScale(_currentScale) {
+      if (_currentScale > 1) {
+        $('#my-video_html5_api').css({ transform: 'scale(' + _currentScale + ')' });
+      } else {
+        this.isZoomed = false;
+        $('#my-video_html5_api').css({ top: "0", left: "0" });
+      }
+    }
+  },
+  methods: {
+    togglePlay: function togglePlay() {
+      if (this.isPlaying) {
+        this.player.pause();
+      } else {
+        this.player.play();
+      }
+    },
+
+    rewind: function rewind(rate, ms) {
+      if (!this.isIntervalSet) {
+        this.player.pause();
+        this.player.currentTime(this.player.currentTime() - rate);
+        this.playbackInterval = setInterval(function () {
+          this.player.currentTime(this.player.currentTime() - rate);
+        }, ms);
+        this.isIntervalSet = true;
+      }
+    },
+    forward: function forward(rate, ms) {
+      if (!this.isIntervalSet) {
+        this.player.pause();
+        this.player.currentTime(this.player.currentTime() + rate);
+        this.playbackInterval = setInterval(function () {
+          this.player.currentTime(this.player.currentTime() + rate);
+        }, ms);
+        this.isIntervalSet = true;
+      }
+    },
+    zoomIn: function zoomIn() {
+      if (this.currentScale < 1) {
+        return;
+      }
+      this.currentScale += 0.1;
+      this.isZoomed = true;
+    },
+    zoomOut: function zoomOut() {
+      if (this.currentScale === 1) {
+        return;
+      }
+
+      this.currentScale -= 0.1;
+    },
+
+    pan: function pan(ev) {
+      if (ev.srcEvent.srcElement.className.split(' ').indexOf('vjs-control') !== -1) {
+        console.log(ev.srcEvent.srcElement.className);
+        return;
+      }
+
+      var currentTop = parseInt($('#my-video_html5_api').css('top'), 10);
+      var currentLeft = parseInt($('#my-video_html5_api').css('left'), 10);
+
+      var top = currentTop + (ev.deltaY - this.lastDeltaY);
+      var left = currentLeft + (ev.deltaX - this.lastDeltaX);
+
+      this.lastDeltaY = ev.deltaY;
+      this.lastDeltaX = ev.deltaX;
+
+      var currentWidth = $('#my-video_html5_api').width() * this.currentScale;
+      var currentHeight = $('#my-video_html5_api').height() * this.currentScale;
+
+      if (this.isZoomed) {
+        if (left <= currentWidth / 5.6 && left >= -(currentWidth / 5.6)) {
+          $('#my-video_html5_api').css({ left: left });
+        }
+
+        if (top <= currentHeight / 5.6 && top >= -(currentHeight / 5.6)) {
+          $('#my-video_html5_api').css({ top: top });
+        }
+      }
+    },
+    resetScrobbling: function resetScrobbling() {
+      clearInterval(this.playbackInterval);
+      this.isIntervalSet = false;
+    },
+
+    setSource: function setSource(videoData) {
+      this.player.src({ type: 'video/mp4', src: videoData.file_url });
+      this.player.play();
+    },
+    getCurrentScrobbleTime: function getCurrentScrobbleTime() {
+      return this.currentScrobbleTime;
+    }
+  }
+});
+
+/***/ }),
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "video-player" } }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row zoom-panel" }, [
+      _c(
+        "div",
+        {
+          staticClass: "col-sm-4 video-control-button text-center",
+          on: {
+            click: function($event) {
+              _vm.togglePlay()
+            }
+          }
+        },
+        [
+          _c("span", [
+            _c("i", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.isPlaying,
+                  expression: "!isPlaying"
+                }
+              ],
+              staticClass: "fas fa-play"
+            }),
+            _c("i", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isPlaying,
+                  expression: "isPlaying"
+                }
+              ],
+              staticClass: "fas fa-pause"
+            })
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2)
+    ]),
+    _vm._v(" "),
+    _vm._m(3)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "videoDash" } }, [
-      _c("div", { staticClass: "video-container" }, [
-        _c("div", { staticClass: "video" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-12 video-spacer" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-5 watched" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-3 buffer" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-4 full" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-12 scrubber-bg" })
-            ])
+    return _c("div", { attrs: { id: "protection" } }, [
+      _c(
+        "video",
+        {
+          staticClass: "video-js",
+          attrs: {
+            id: "my-video",
+            autoplay: "",
+            controls: "",
+            "data-setup": "{}",
+            playsinline: ""
+          }
+        },
+        [
+          _c("p", { staticClass: "vjs-no-js" }, [
+            _vm._v(
+              "\n        To view this video please enable JavaScript, and consider upgrading to a web browser that\n        "
+            ),
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://videojs.com/html5-video-support/",
+                  target: "_blank"
+                }
+              },
+              [_vm._v("supports HTML5 video")]
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "video-title" }, [
-          _c("h2", [
-            _vm._v("Austin McDowell breaks Heeler Record at Greely Rodeo")
-          ])
-        ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-4 zoom-button text-center" }, [
+      _c("span", { staticClass: "zoom-out" }, [
+        _c("i", { staticClass: "fas fa-minus" })
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-4 zoom-button text-center" }, [
+      _c("span", { staticClass: "zoom-in" }, [
+        _c("i", { staticClass: "fas fa-plus" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-sm-3 control-button text-center double-rewind" },
+        [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-sm-3 control-button text-center single-rewind" },
+        [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-sm-3 control-button text-center single-forward" },
+        [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-sm-3 control-button text-center double-forward" },
+        [_c("span", [_c("i", { staticClass: "fas fa-angle-double-right" })])]
+      )
     ])
   }
 ]
@@ -38102,15 +38310,35 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("video-player")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-588c97b9", module.exports)
+  }
+}
+
+/***/ }),
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(54)
+var __vue_script__ = __webpack_require__(57)
 /* template */
-var __vue_template__ = __webpack_require__(55)
+var __vue_template__ = __webpack_require__(58)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -38149,7 +38377,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 54 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38512,7 +38740,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 55 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -39263,15 +39491,15 @@ if (false) {
 }
 
 /***/ }),
-/* 56 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(57)
+var __vue_script__ = __webpack_require__(60)
 /* template */
-var __vue_template__ = __webpack_require__(58)
+var __vue_template__ = __webpack_require__(61)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -39310,7 +39538,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 57 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39433,7 +39661,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 58 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -39738,15 +39966,15 @@ if (false) {
 }
 
 /***/ }),
-/* 59 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(60)
+var __vue_script__ = __webpack_require__(63)
 /* template */
-var __vue_template__ = __webpack_require__(61)
+var __vue_template__ = __webpack_require__(64)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -39785,7 +40013,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39869,7 +40097,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 61 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -40030,15 +40258,15 @@ if (false) {
 }
 
 /***/ }),
-/* 62 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(63)
+var __vue_script__ = __webpack_require__(66)
 /* template */
-var __vue_template__ = __webpack_require__(64)
+var __vue_template__ = __webpack_require__(67)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -40077,7 +40305,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 63 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40347,7 +40575,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 64 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -40532,15 +40760,15 @@ if (false) {
 }
 
 /***/ }),
-/* 65 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(66)
+var __vue_script__ = __webpack_require__(69)
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(70)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -40579,7 +40807,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 66 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40646,7 +40874,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 67 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -40725,7 +40953,7 @@ if (false) {
 }
 
 /***/ }),
-/* 68 */
+/* 71 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

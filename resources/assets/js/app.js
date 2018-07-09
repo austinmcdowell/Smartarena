@@ -17,7 +17,7 @@ Vue.use(VueCarousel);
 import HomeComponent from './components/HomeComponent.vue';
 import LeaderboardComponent from './components/LeaderboardComponent.vue';
 import ProfileComponent from './components/ProfileComponent.vue';
-import VideoPlayerComponent from './components/VideoPlayerComponent.vue';
+import VideoComponent from './components/VideoComponent.vue';
 import RunEditor from './components/RunEditorComponent.vue';
 import CreateHumanComponent from './components/admin/CreateHumanComponent.vue';
 import UserHumanLinkerComponent from './components/admin/UserHumanLinkerComponent.vue';
@@ -29,18 +29,39 @@ Vue.use(VueRouter);
 let routes = [
   { path: '/', component: HomeComponent },
   { path: '/profile/:id', component: ProfileComponent },
-  { path: '/run/edit/:id', component: RunEditor },
+  { path: '/run/edit/:id', component: RunEditor, meta: { requireSubscription: true } },
   { path: '/leaderboard/:type', component: LeaderboardComponent },
-  { path: '/video/:id', component: VideoPlayerComponent },
-  { path: '/admin/create-human', component: CreateHumanComponent },
-  { path: '/admin/user-human-linker', component: UserHumanLinkerComponent },
-  { path: '/admin/mass-upload-runs', component: MassUploadRunsComponent },
-  { path: '/admin/mass-upload-humans', component:  MassUploadHumansComponent },
+  { path: '/video/:id', component: VideoComponent },
+  { path: '/admin/create-human', component: CreateHumanComponent, meta: { requireAdmin: true } },
+  { path: '/admin/user-human-linker', component: UserHumanLinkerComponent, meta: { requireAdmin: true } },
+  { path: '/admin/mass-upload-runs', component: MassUploadRunsComponent, meta: { requireAdmin: true } },
+  { path: '/admin/mass-upload-humans', component:  MassUploadHumansComponent, meta: { requireAdmin: true } },
 ];
 
 const router = new VueRouter({ routes });
+
+router.beforeEach((to, from, next) => {
+
+  if (to.matched.some(record => record.meta.requireSubscription)) {                
+      if (!window.user || !window.user.stripeid) {
+          window.location = '/choose-plan';
+          return;
+      }
+  }
+
+  if (to.matched.some(record => record.meta.requireAdmin)) {                
+    if (!window.user || !window.user.type !== 'admin') {
+        window.location = '/';
+        return;
+    }
+}
+
+  next();
+});
 
 const app = new Vue({
     el: '#app',
     router
 });
+
+

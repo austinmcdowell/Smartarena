@@ -590,51 +590,31 @@ body {
   margin-top: 20px;
 }
 
-#videoDash .video-container {
+#my-video {
+  width: 100% !important;
+  height: 300px !important;
+  pointer-events: none;
+}
+
+#my-video video {
   width: 100%;
-  height: 700px;
-  padding: none;
+  height: 300px;
+  top: 0;
+  left: 0;
+  position: relative;
 }
 
-#videoDash .video-container .video {
-  width: 95%;
-  height: 600px;
-  margin: 25px 0 0 2.5%;
-  background-image: url("/img/india.jpg");
-  background-size: cover;
+#protection {
+  background-color: #000;
+  overflow: hidden;
 }
 
-#videoDash .video-container .video .video-spacer {
-  margin: 48% 0 0 0 !important;
-}
-
-#videoDash .video-container .video .watched {
-  height: 5px;
-  background: red;
-}
-
-#videoDash .video-container .video .buffer {
-  height: 5px;
-  background: #f3f3f3;
-}
-
-#videoDash .video-container .video .full {
-  height: 5px;
-  background: rgba(200, 200, 200, 0.5);
-}
-
-#videoDash .video-container .video .scrubber-bg {
-  height: 55px;
-  background: #232736;
-}
-
-#videoDash .video-container .video-title {
-  margin: 3% 0 2% 2.5%;
-}
-
-#videoDash .video-container .video-title h2 {
-  font-size: 30px;
-  font-family: 'Roboto';
+.zoom-button,
+.control-button,
+.video-control-button {
+  background-color: #2b333f;
+  color: #fff;
+  font-size: 20pt;
 }
 
 .coaches {
