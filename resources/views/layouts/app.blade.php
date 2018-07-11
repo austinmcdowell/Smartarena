@@ -22,7 +22,7 @@
         <div id="app">
             <div class="navbar navbar-expand-lg navbar-light sa-nav">
                 <router-link to="/" class="navbar-brand sa-brand green">SmartArena</router-link>
-                <input type="text" placeholder="search" class="nav-search">
+                <search-bar></search-bar>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -59,9 +59,8 @@
                 </div>
             </div>
 
-            
+            <search-results></search-results>
 
-            
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2 side-nav">
