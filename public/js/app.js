@@ -38020,7 +38020,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       $this.player.src({ type: 'video/mp4', src: data.file_url });
       $this.player.play();
     }).catch(function (e) {
-      alert('There has been an error, please contact support.');
+      window.history.back();
     });
 
     __WEBPACK_IMPORTED_MODULE_0__EventBus__["a" /* default */].$on('videoSourceChange', function (data) {

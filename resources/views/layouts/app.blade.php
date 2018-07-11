@@ -14,12 +14,7 @@
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/app.css" text="text/css">
-<<<<<<< HEAD
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
-=======
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
->>>>>>> d72b4c51b78fda770a8ec797e561afc108d83ebe
         @yield('css')
         <!-- Styles -->
     </head>
@@ -43,7 +38,7 @@
                     @if (isset($isLoggedIn) && $isLoggedIn) 
                     <ul class="navbar-nav">
                         @if ($user->human)
-                        <li class="nav-item"><router-link to="/videos/new" class="nav-link"><i style="font-size:24px" class="fa upload-btn">&#xf0ee;</i></router-link></li>
+                        <li class="nav-item"><router-link to="/videos/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li>
                         <div class="nav-profile-pic"></div>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $user->name }}</a>
@@ -73,11 +68,13 @@
                         
                         <div class="guide">
                             <h6>Menu</h6>
-                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Home</p></div>
-                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Austin</p></div>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><router-link to="/"><p>Home</p></router-link></div>
+                            @if (isset($isLoggedIn) && $isLoggedIn && $user->human)
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><router-link to="/profile/{{ $user->human->id }}"><p>{{ $user->name }}</p></router-link></div>
+                            @endif
                             <h6>Sports</h6>
-                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Team Roping</p></div>
-                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Barrell Racing</p></div>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><router-link to="/leaderboard/teamroping"><p>Team Roping</p></router-link></div>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><p>Barrell Racing</p></div>
                         </div>
                     </div>
                     <div class="col-lg-10 content">
