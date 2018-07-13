@@ -90,8 +90,8 @@
         $this.player.src({ type: 'video/mp4', src: data.file_url });
         $this.player.play();
       }).catch(e => {
-        alert('There has been an error, please contact support.');
-      })
+        window.history.back();
+      });
 
       EventBus.$on('videoSourceChange', function(data) {
         $this.setSource(data);
@@ -103,7 +103,7 @@
 
       this.player.on('play', function() {
         $this.isPlaying = true;
-      })
+      });
 
       this.player.on('timeupdate', function() {
         $this.currentScrobbleTime = $this.player.currentTime();

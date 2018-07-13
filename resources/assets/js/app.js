@@ -23,6 +23,9 @@ import CreateHumanComponent from './components/admin/CreateHumanComponent.vue';
 import UserHumanLinkerComponent from './components/admin/UserHumanLinkerComponent.vue';
 import MassUploadRunsComponent from './components/admin/MassUploadRunsComponent.vue';
 import MassUploadHumansComponent from './components/admin/MassUploadHumansComponent.vue';
+import SearchBarComponent from './components/SearchBarComponent.vue';
+import SearchResultsComponent from './components/SearchResultsComponent.vue';
+
 
 Vue.use(VueRouter);
 
@@ -61,7 +64,11 @@ router.beforeEach((to, from, next) => {
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    components: {
+        'search-bar': SearchBarComponent,
+        'search-results': SearchResultsComponent
+    }
 });
 
 

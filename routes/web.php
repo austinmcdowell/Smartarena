@@ -38,6 +38,7 @@ Route::get('/choose-plan', 'SubscriptionController@get');
 Route::post('/charge', 'SubscriptionController@charge');
 
 Route::get('/', 'SPAController');
+Route::get('/search', 'SearchController');
 Route::get('/home', 'HomeController');
 Route::get('/leaderboard/teamroping', 'LeaderboardController@teamroping');
 

@@ -22,7 +22,7 @@
         <div id="app">
             <div class="navbar navbar-expand-lg navbar-light sa-nav">
                 <router-link to="/" class="navbar-brand sa-brand green">SmartArena</router-link>
-                <input type="text" placeholder="search" class="nav-search">
+                <search-bar></search-bar>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -38,7 +38,7 @@
                     @if (isset($isLoggedIn) && $isLoggedIn) 
                     <ul class="navbar-nav">
                         @if ($user->human)
-                        <li class="nav-item"><router-link to="/videos/new" class="nav-link"><i style="font-size:24px" class="fa upload-btn">&#xf0ee;</i></router-link></li>
+                        <li class="nav-item"><router-link to="/videos/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li>
                         <div class="nav-profile-pic"></div>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $user->name }}</a>
@@ -59,20 +59,21 @@
                 </div>
             </div>
 
-            
+            <search-results></search-results>
 
-            
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2 side-nav">
                         
                         <div class="guide">
                             <h6>Menu</h6>
-                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Home</p></div>
-                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Austin</p></div>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><router-link to="/"><p>Home</p></router-link></div>
+                            @if (isset($isLoggedIn) && $isLoggedIn && $user->human)
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><router-link to="/profile/{{ $user->human->id }}"><p>{{ $user->name }}</p></router-link></div>
+                            @endif
                             <h6>Sports</h6>
-                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Team Roping</p></div>
-                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon">&#xf10c;</i><p>Barrell Racing</p></div>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><router-link to="/leaderboard/teamroping"><p>Team Roping</p></router-link></div>
+                            <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><p>Barrell Racing</p></div>
                         </div>
                     </div>
                     <div class="col-lg-10 content">
