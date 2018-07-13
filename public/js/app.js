@@ -37211,43 +37211,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -37293,427 +37256,55 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12 banner" }, [
-        _c("div", { staticClass: "teamroping-header" }, [
-          _c("div", { staticClass: "col s12 center-align profile-info" }, [
-            _c("h1", {
-              staticClass: "human-name",
-              domProps: {
-                textContent: _vm._s(
-                  _vm.human.first_name + " " + _vm.human.last_name
-                )
-              }
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "sport-title" }, [_vm._v("Team Roping")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "location" }, [
-              _vm._v(_vm._s(_vm.human.location))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "hire-btn" }, [
-              _c("h5", { attrs: { align: "center" } }, [
-                _c("b", [_vm._v("Hire " + _vm._s(_vm.human.first_name))])
+  return _c("div", { attrs: { id: "profile" } }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 banner" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-9" }, [
+                _c("div", { staticClass: "profile-info" }, [
+                  _c("h1", {
+                    staticClass: "human-name",
+                    domProps: {
+                      textContent: _vm._s(
+                        _vm.human.first_name + " " + _vm.human.last_name
+                      )
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "sport-title" }, [
+                    _vm._v("Team Roping")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "location" }, [
+                    _vm._v(_vm._s(_vm.human.location))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "hire-btn" }, [
+                    _c("h5", { attrs: { align: "center" } }, [
+                      _c("b", [_vm._v("Hire " + _vm._s(_vm.human.first_name))])
+                    ])
+                  ])
+                ])
               ])
             ])
           ])
         ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row hide-on-large-only" }, [
-      _vm.user && _vm.human.user_id === _vm.user.id
-        ? _c("div", { staticClass: "col offset-s2 s8 actions" }, [
-            _c(
-              "a",
-              {
-                staticClass: "waves-effect waves-light btn",
-                attrs: { href: "/videos/new" }
-              },
-              [_vm._v("Upload Video")]
-            )
-          ])
-        : _vm._e()
-    ]),
-    _vm._v(" "),
-    _vm.uploadedVideos.length
-      ? _c(
-          "div",
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._l(_vm.uploadedVideos, function(video) {
-              return _c(
-                "div",
-                { key: video.id, staticClass: "row hide-on-large-only" },
-                [
-                  _c("div", { staticClass: "col s10 offset-s1" }, [
-                    _c("div", { staticClass: "card" }, [
-                      _c("div", { staticClass: "card-content" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col s12" }, [
-                            _c("p", [
-                              _vm._v("Filename: " + _vm._s(video.file_name))
-                            ]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _vm._v("Uploaded at: " + _vm._s(video.created_at))
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        video.processing_complete
-                          ? _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col s12 center-align" },
-                                [
-                                  _c("img", {
-                                    staticStyle: { width: "100%" },
-                                    attrs: { src: video.thumbnail_url, alt: "" }
-                                  })
-                                ]
-                              )
-                            ])
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _vm.user && _vm.human.user_id === _vm.user.id
-                          ? _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col s12 center-align" },
-                                [
-                                  _c(
-                                    "router-link",
-                                    {
-                                      staticClass:
-                                        "waves-effect waves-light btn",
-                                      attrs: {
-                                        to: "/teamroping/new/" + video.id
-                                      }
-                                    },
-                                    [_vm._v("Add Statistics")]
-                                  )
-                                ],
-                                1
-                              )
-                            ])
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "row" }, [
-                          _c(
-                            "div",
-                            { staticClass: "col s12 center-align" },
-                            [
-                              video.processing_complete
-                                ? _c(
-                                    "router-link",
-                                    {
-                                      staticClass:
-                                        "waves-effect waves-light btn play-button",
-                                      attrs: { to: "/video/" + video.id }
-                                    },
-                                    [_vm._v("Play Video")]
-                                  )
-                                : _c(
-                                    "a",
-                                    {
-                                      staticClass:
-                                        "waves-effect waves-light btn disabled",
-                                      attrs: { href: "#" }
-                                    },
-                                    [_vm._v("Processing...")]
-                                  )
-                            ],
-                            1
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            })
-          ],
-          2
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.headerRuns.length
-      ? _c("div", { staticClass: "row hide-on-large-only center-align" }, [
-          _vm._m(1)
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row hide-on-large-only" },
-      _vm._l(_vm.headerRuns, function(run) {
-        return _c("div", { key: run.id, staticClass: "col s10 offset-s1" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-content" }, [
-              run.videos.length && run.videos[0].processing_complete
-                ? _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col s12 center-align" }, [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "" + run.videos[0].thumbnail_url,
-                          alt: ""
-                        }
-                      })
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12" }, [
-                  _c("p", [_vm._v("Date: " + _vm._s(run.date))]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v("Event: " + _vm._s(run.event.location) + " ")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Header Catch: " + _vm._s(run.stats.header.catch_type)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Heeler Catch: " + _vm._s(run.stats.heeler.catch_type)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Header Penalty: " + _vm._s(run.stats.header.penalty_type)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Penalties: " + _vm._s(run.stats.header.penalty_time)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Total Run Penalties: " +
-                        _vm._s(
-                          run.stats.header.penalty_time +
-                            run.stats.heeler.penalty_time
-                        )
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.stats.raw_time))]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v("Total Time: " + _vm._s(run.stats.total_time))
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _vm.user && _vm.human.user_id === _vm.user.id
-                ? _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col s12 center-align" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "waves-effect waves-light btn",
-                            attrs: { to: "/teamroping/" + run.id + "/edit" }
-                          },
-                          [_vm._v("Edit Run")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              run.videos.length
-                ? _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col s12 center-align" },
-                      [
-                        run.videos[0].processing_complete
-                          ? _c(
-                              "router-link",
-                              {
-                                staticClass:
-                                  "waves-effect waves-light btn play-button",
-                                attrs: { to: "/videos/" + run.videos[0].id }
-                              },
-                              [_vm._v("Play Video")]
-                            )
-                          : _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "waves-effect waves-light btn disabled",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v("Processing...")]
-                            )
-                      ],
-                      1
-                    )
-                  ])
-                : _vm._e()
-            ])
-          ])
-        ])
-      })
-    ),
-    _vm._v(" "),
-    _vm.heelerRuns.length
-      ? _c("div", { staticClass: "row hide-on-large-only center-align" }, [
-          _vm._m(2)
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row hide-on-large-only" },
-      _vm._l(_vm.heelerRuns, function(run) {
-        return _c("div", { key: run.id, staticClass: "col s10 offset-s1" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-content" }, [
-              run.videos.length && run.videos[0].processing_complete
-                ? _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col s12 center-align" }, [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "" + run.videos[0].thumbnail_url,
-                          alt: ""
-                        }
-                      })
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12" }, [
-                  _c("p", [_vm._v("Date: " + _vm._s(run.date))]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v("Event: " + _vm._s(run.event.location) + " ")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Header Catch: " + _vm._s(run.stats.header.catch_type)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Heeler Catch: " + _vm._s(run.stats.heeler.catch_type)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Header Penalty: " + _vm._s(run.stats.heeler.penalty_type)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Penalties: " + _vm._s(run.stats.heeler.penalty_time)
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Total Run Penalties: " +
-                        _vm._s(
-                          run.stats.header.penalty_time +
-                            run.stats.heeler.penalty_time
-                        )
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Raw Time: " + _vm._s(run.stats.raw_time))]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v("Total Time: " + _vm._s(run.stats.total_time))
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _vm.user && _vm.human.user_id === _vm.user.id
-                ? _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col s12 center-align" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "waves-effect waves-light btn",
-                            attrs: { to: "/teamroping/" + run.id + "/edit" }
-                          },
-                          [_vm._v("Edit Run")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              run.videos.length && run.videos[0].processing_complete
-                ? _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col s12 center-align" },
-                      [
-                        run.videos[0].processing_complete
-                          ? _c(
-                              "router-link",
-                              {
-                                staticClass:
-                                  "waves-effect waves-light btn play-button",
-                                attrs: { to: "/videos/" + run.videos[0].id }
-                              },
-                              [_vm._v("Play Video")]
-                            )
-                          : _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "waves-effect waves-light btn disabled",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v("Processing...")]
-                            )
-                      ],
-                      1
-                    )
-                  ])
-                : _vm._e()
-            ])
-          ])
-        ])
-      })
-    ),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    !_vm.uploadedVideos.length &&
-    !_vm.headerRuns.length &&
-    !_vm.heelerRuns.length
-      ? _c("div", { staticClass: "row center-align" }, [_vm._m(4)])
-      : _vm._e()
+      ]),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _vm._m(5)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -37721,9 +37312,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row hide-on-large-only center-align" }, [
-      _c("div", { staticClass: "col s10 offset-s1" }, [
-        _c("h4", [_vm._v("Recently Uploaded")])
+    return _c("div", { staticClass: "col-lg-3" }, [
+      _c("div", { staticClass: "profile-pic" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row recent-upload" }, [
+      _c("div", { staticClass: "col-lg-12" }, [
+        _c("p", [_vm._v("Most Recent Upload")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-6 profile-vid" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-6" }, [
+        _c("h3", [_vm._v("Video Title")])
       ])
     ])
   },
@@ -37731,16 +37336,104 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s10 offset-s1" }, [
-      _c("h4", [_vm._v("Header Runs")])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12" }, [_c("h3", [_vm._v("Runs")])])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s10 offset-s1" }, [
-      _c("h4", [_vm._v("Heeler Runs")])
+    return _c("div", { staticClass: "row run-types" }, [
+      _c("div", { staticClass: "col-lg-2 run-active" }, [
+        _c("p", [_vm._v("Header")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-2 run" }, [
+        _c("p", { attrs: { align: "center" } }, [_vm._v("Heeler")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-2 run" }, [
+        _c("p", { attrs: { align: "center" } }, [_vm._v("Option 3")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-2 run" }, [
+        _c("p", { attrs: { align: "center" } }, [_vm._v("Option 4")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-2 run" }, [
+        _c("p", { attrs: { align: "center" } }, [_vm._v("Option 5")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-2 run" }, [
+        _c("p", { attrs: { align: "center" } }, [_vm._v("Option 6")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("table", { staticClass: "table profile-table" }, [
+      _c("thead", [
+        _c("tr", [
+          _c("th", { attrs: { scope: "col" } }, [_vm._v("Classification")]),
+          _vm._v(" "),
+          _c("th", { attrs: { scope: "col" } }, [_vm._v("First")]),
+          _vm._v(" "),
+          _c("th", { attrs: { scope: "col" } }, [_vm._v("Last")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("tbody", [
+        _c("tr", [
+          _c("td", [_vm._v("0")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("Austin")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("McDowell")])
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _c("td", [_vm._v("0")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("Austin")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("McDowell")])
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _c("td", [_vm._v("0")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("Austin")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("McDowell")])
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _c("td", [_vm._v("0")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("Austin")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("McDowell")])
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _c("td", [_vm._v("0")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("Austin")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("McDowell")])
+        ]),
+        _vm._v(" "),
+        _c("tr", [
+          _c("td", [_vm._v("0")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("Austin")]),
+          _vm._v(" "),
+          _c("td", [_vm._v("McDowell")])
+        ])
+      ])
     ])
   },
   function() {
@@ -37766,7 +37459,7 @@ var staticRenderFns = [
               [
                 _c("p", { staticClass: "vjs-no-js" }, [
                   _vm._v(
-                    "\n                            To view this video please enable JavaScript, and consider upgrading to a web browser that\n                            "
+                    "\n                                To view this video please enable JavaScript, and consider upgrading to a web browser that\n                                "
                   ),
                   _c(
                     "a",
@@ -37828,14 +37521,6 @@ var staticRenderFns = [
           )
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s10 offset-s1" }, [
-      _c("h5", [_vm._v("This person doesn't have any runs yet!")])
     ])
   }
 ]

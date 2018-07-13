@@ -1,0 +1,52 @@
+#videoDash {
+
+  .video-container {
+    width: 100%;
+    height: 700px;
+    padding: none;
+    // margin: 0 0 0 5%;
+
+    // background: black !important;
+
+    .video {
+      width: 95%;
+      height: 600px;
+      margin: 25px 0 0 2.5%;
+
+      background-image: url('/img/india.jpg');
+      background-size: cover;
+
+      .video-spacer {
+        margin: 48% 0 0 0 !important;
+      }
+
+      .watched {
+        height: 5px;
+        background: red;
+      }
+
+      .buffer {
+        height: 5px;
+        background: rgb(243, 243, 243);
+      }
+
+      .full {
+        height: 5px;
+        background: rgba(200, 200, 200, .5);
+      }
+
+      .scrubber-bg {
+        height: 55px;
+        background: rgb(35, 39, 54);
+      }
+    }
+
+    .video-title {
+      margin: 3% 0 2% 2.5%;
+
+      h2 {
+        font-size: 30px;
+        font-family: 'Roboto';
+      }
+    }
+  }

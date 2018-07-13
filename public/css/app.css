@@ -472,26 +472,33 @@ body {
   margin-top: 10px;
 }
 
-.banner {
+#profile {
+  padding: 6% 10%;
+  background: #f2f3f5 !important;
+}
+
+#profile .banner {
   padding: 0 !important;
 }
 
-.teamroping-header {
+#profile .profile-pic {
+  width: 200px;
+  height: 200px;
+  margin: 0;
   background-size: cover;
   background-image: url("/img/profile-pic.jpg");
-  width: 100%;
-  height: 650px;
+  border-radius: 100px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   color: white !important;
 }
 
-.profile-info {
+#profile .profile-info {
   padding: 8% 7%;
 }
 
-.hire-btn {
+#profile .hire-btn {
   width: 130px;
   height: 40px;
   margin: 2% 0 0 0;
@@ -500,25 +507,91 @@ body {
   border-radius: 7px;
 }
 
-.hire-btn h5 {
+#profile .hire-btn h5 {
   font-size: 15px;
   line-height: 40px;
   vertical-align: middle;
 }
 
-.human-name {
+#profile .human-name {
   margin: 0;
   font-size: 28pt;
 }
 
-.sport-title,
-.location {
+#profile .sport-title,
+#profile .location {
   display: block;
   font-size: 12pt;
 }
 
-.actions a {
+#profile .actions a {
   width: 100%;
+}
+
+#profile .run-types {
+  height: 60px;
+  margin: 0 0 5% 0;
+}
+
+#profile .run-types .run {
+  height: 60px;
+  margin: 0 0 5% 0;
+  padding: 0;
+  border-bottom: 2px solid #ececec;
+}
+
+#profile .run-types .run-active {
+  border-bottom: 2px solid #1ea87a !important;
+  padding: 0;
+}
+
+#profile .run-types .run-active p {
+  color: #167555 !important;
+}
+
+#profile .run-types p {
+  line-height: 60px;
+  vertical-align: middle;
+  color: #e0e0e0;
+}
+
+#profile .recent-upload {
+  margin: 2% 0 10% 0;
+}
+
+#profile .recent-upload h3 {
+  margin: 1% 0 0 5%;
+}
+
+#profile .profile-vid {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-image: url("/img/india.jpg");
+}
+
+#profile .profile-table {
+  width: 100%;
+  margin: 5% 0;
+  background: white;
+}
+
+#profile .profile-table table {
+  border: 1px solid #cdd6e0 !important;
+  border-radius: 3px !important;
+}
+
+#profile .profile-table thead {
+  border-radius: 3px;
+  border: 1px solid #cdd6e0 !important;
+}
+
+#profile .profile-table th {
+  border: 1px solid white !important;
+}
+
+#profile .profile-table td {
+  border: 1px solid white !important;
 }
 
 .upload-action-buttons {
