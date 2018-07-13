@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Human;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
@@ -11,12 +12,10 @@ class SearchController extends Controller
     {
         $q = $request->query('query');
         $qstr = '%' . strtolower($q) . '%';
-        
-        $results = Human::where(function($query) use ($qstr) {
-            $query->where('first_name', 'ilike', $qstr)
-                ->orWhere('last_name', 'ilike', $qstr);
-        })->select('id', 'first_name', 'last_name', 'location')->get();
 
+        $results = Human::select('id', 'first_name', 'last_name', 'location')
+            ->where(DB::raw("first_name || ' ' || last_name"), 'ilike', $qstr)->limit(10)->get();
+        
         return $results;
     }
 }
