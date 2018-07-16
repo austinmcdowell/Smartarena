@@ -11968,20 +11968,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_SearchBarComponent_vue__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_SearchBarComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_SearchBarComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_SearchResultsComponent_vue__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_SearchResultsComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_SearchResultsComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_VideoUploaderComponent_vue__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_VideoUploaderComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_VideoUploaderComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_RunEditorComponent_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_RunEditorComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_RunEditorComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_CreateHumanComponent_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_CreateHumanComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_admin_CreateHumanComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_UserHumanLinkerComponent_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_UserHumanLinkerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_UserHumanLinkerComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadRunsComponent_vue__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadRunsComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadRunsComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_MassUploadHumansComponent_vue__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_MassUploadHumansComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_admin_MassUploadHumansComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_SearchBarComponent_vue__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_SearchBarComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_SearchBarComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_SearchResultsComponent_vue__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_SearchResultsComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_SearchResultsComponent_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -12010,9 +12012,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 
 
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_7__components_RunEditorComponent_vue___default.a, meta: { requireSubscription: true } }, { path: '/leaderboard/:type', component: __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default.a }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue___default.a }, { path: '/admin/create-human', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_CreateHumanComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/user-human-linker', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_UserHumanLinkerComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/mass-upload-runs', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_MassUploadRunsComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/mass-upload-humans', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadHumansComponent_vue___default.a, meta: { requireAdmin: true } }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_HomeComponent_vue___default.a }, { path: '/profile/:id', component: __WEBPACK_IMPORTED_MODULE_5__components_ProfileComponent_vue___default.a }, { path: '/run/edit/:id', component: __WEBPACK_IMPORTED_MODULE_8__components_RunEditorComponent_vue___default.a, meta: { requireSubscription: true } }, { path: '/run/new/:videoId', component: __WEBPACK_IMPORTED_MODULE_8__components_RunEditorComponent_vue___default.a, meta: { requireSubscription: true } }, { path: '/leaderboard/:type', component: __WEBPACK_IMPORTED_MODULE_4__components_LeaderboardComponent_vue___default.a }, { path: '/video/new', component: __WEBPACK_IMPORTED_MODULE_7__components_VideoUploaderComponent_vue___default.a, meta: { requireSubscription: true } }, { path: '/video/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_VideoComponent_vue___default.a }, { path: '/admin/create-human', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_CreateHumanComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/user-human-linker', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_UserHumanLinkerComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/mass-upload-runs', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_MassUploadRunsComponent_vue___default.a, meta: { requireAdmin: true } }, { path: '/admin/mass-upload-humans', component: __WEBPACK_IMPORTED_MODULE_12__components_admin_MassUploadHumansComponent_vue___default.a, meta: { requireAdmin: true } }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({ routes: routes });
 
@@ -12021,8 +12024,8 @@ router.beforeEach(function (to, from, next) {
     if (to.matched.some(function (record) {
         return record.meta.requireSubscription;
     })) {
-        if (!window.user || !window.user.stripeid) {
-            window.location = '/choose-plan';
+        if (!window.user || !window.user.stripe_id) {
+            //window.location = '/choose-plan';
             return;
         }
     }
@@ -12043,8 +12046,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
     router: router,
     components: {
-        'search-bar': __WEBPACK_IMPORTED_MODULE_12__components_SearchBarComponent_vue___default.a,
-        'search-results': __WEBPACK_IMPORTED_MODULE_13__components_SearchResultsComponent_vue___default.a
+        'search-bar': __WEBPACK_IMPORTED_MODULE_13__components_SearchBarComponent_vue___default.a,
+        'search-results': __WEBPACK_IMPORTED_MODULE_14__components_SearchResultsComponent_vue___default.a
     }
 });
 
@@ -37762,7 +37765,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       $this.resetScrobbling();
     });
 
-    axios.get('/video/' + this.$route.params.id).then(function (response) {
+    var videoId = void 0;
+
+    if (this.$route.params.videoId) {
+      videoId = this.$route.params.videoId;
+    } else if (this.$route.params.id) {
+      videoId = this.$route.params.id;
+    }
+
+    axios.get('/video/' + videoId).then(function (response) {
       var data = response.data;
       $this.player.src({ type: 'video/mp4', src: data.file_url });
       $this.player.play();
@@ -38318,64 +38329,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    // get humans, run if we need id, etc, 
-    this.events = window.SA.events;
-    this.humans = window.SA.humans;
-
-    // Someday we'll account for multiple videos
-    this.video = window.SA.videos[0];
     var $this = this;
 
-    var elem = document.querySelector('.datepicker');
-    var instance = M.Datepicker.init(elem, {
-      autoClose: true,
-      onSelect: function onSelect(date) {
-        Vue.set($this.run, 'date', date);
-        this.close();
+    if ($this.$route.params.id) {
+      axios.get('/run/' + $this.$route.params.id).then(function (response) {
+        var run = response.data;
+      });
+    }
+
+    axios.get('/events').then(function (response) {
+      $this.events = response.data;
+      return axios.get('/humans');
+    }).then(function (response) {
+      $this.humans = response.data;
+      if ($this.$route.params.videoId) {
+        return axios.get('/video/' + $this.$route.params.videoId).then(function (response) {
+          $this.video = response.data;
+        });
+      } else {
+        Promise.resolve();
       }
+    }).catch(function (e) {
+      alert('There was an error, please contact support.');
+      window.history.back();
     });
+
+    // let elem = document.querySelector('.datepicker');
+    // let instance = M.Datepicker.init(elem, {
+    //   autoClose: true,
+    //   onSelect: function(date) {
+    //     Vue.set($this.run, 'date', date);
+    //     this.close();
+    //   }
+    // });
 
     if (this.video.processing_complete) {
       __WEBPACK_IMPORTED_MODULE_1__EventBus__["a" /* default */].$emit('videoSourceChange', this.video);
     }
 
-    if (window.SA.rawRun) {
-      var rawRun = window.SA.rawRun;
-      Vue.set(this.run, 'id', rawRun.id);
-      Vue.set(this.run, 'eventId', rawRun.event_id);
-      Vue.set(this.run, 'date', rawRun.date);
-      Vue.set(this.run, 'time', rawRun.raw_time);
-      Vue.set(this.run, 'roping', rawRun.roping);
-      Vue.set(this.run, 'round', rawRun.round);
-
-      Vue.set(this.header, 'barrierPenalty', rawRun.header_barrier_penalty);
-      Vue.set(this.run, 'headerId', rawRun.header_human_id);
-      if (rawRun.header_catch_type) {
-        Vue.set(this.header, 'catchType', rawRun.header_catch_type);
-      } else if (rawRun.header_penalty_type) {
-        Vue.set(this.header, 'catchType', rawRun.header_penalty_type);
-      }
-
-      Vue.set(this.heeler, 'barrierPenalty', rawRun.heeler_barrier_penalty);
-      Vue.set(this.run, 'heelerId', rawRun.heeler_human_id);
-      if (rawRun.heeler_catch_type) {
-        Vue.set(this.heeler, 'catchType', rawRun.heeler_catch_type);
-      } else if (rawRun.heeler_penalty_type) {
-        Vue.set(this.heeler, 'catchType', rawRun.heeler_penalty_type);
-      }
-
-      this.timeLabelText = 'Time: ' + this.run.time + 's';
+    if (this.run.id) {
+      this.timeLabelText = 'Time: ' + this.run.stats.time + 's';
     }
   },
   data: function data() {
     return {
       run: {
-        heelerId: 0,
-        headerId: 0,
-        eventId: 0
+        id: null,
+        event_id: null,
+        stats: {
+          header: {
+            human_id: null,
+            did_catch: false,
+            catch_type: null,
+            penalty_time: 0
+          },
+          heeler: {
+            human_id: null,
+            did_catch: false,
+            catch_type: null,
+            penalty_time: 0
+          },
+          no_time: false,
+          time: 0,
+          raw_time: 0,
+          total_time: 0
+        }
       },
-      header: { barrierPenalty: 0 },
-      heeler: { barrierPenalty: 0 },
       events: [],
       humans: [],
       video: {},
@@ -38387,18 +38406,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     setHeaderCatchType: function setHeaderCatchType(catchType) {
-      Vue.set(this.header, 'catchType', catchType);
+      this.run.stats.header.catch_type = catchType;
 
       if (catchType === 'missed') {
-        Vue.set(this.heeler, 'catchType', null);
+        this.run.stats.heeler.catch_type = null;
       }
     },
     setHeelerCatchType: function setHeelerCatchType(catchType) {
-      if (this.header.catchType === 'missed') {
-        Vue.set(this.heeler, 'catchType', null);
+      if (this.run.stats.header.catch_type === 'missed') {
+        this.run.stats.heeler.catch_type === null;
         return;
       }
-      Vue.set(this.heeler, 'catchType', catchType);
+      this.run.stats.heeler.catch_type = catchType;
     },
     setStartTime: function setStartTime() {
       this.startTime = this.$refs.videoPlayer.getCurrentScrobbleTime();
@@ -38427,54 +38446,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (this.startTime && this.endTime) {
         var timeValue = (this.endTime - this.startTime).toFixed(2);
         this.timeLabelText = 'Time: ' + timeValue + 's';
-        Vue.set(this.run, 'time', timeValue);
+        this.run.stats.time = timeValue;
       }
     },
     save: function save() {
-      var payload = { header: {}, heeler: {} };
+      var payload = this.run;
 
-      if (this.run.id) {
-        payload.runId = this.run.id;
-      }
-
-      payload.date = this.run.date;
-      payload.eventId = this.run.eventId;
-      payload.roping = this.run.roping;
-      payload.round = this.run.round;
-      payload.time = this.run.time;
-      payload.noTime = this.run.noTime;
-      payload.score = this.run.score;
-
-      payload.header.humanId = this.run.headerId;
-      payload.header.barrierPenalty = this.header.barrierPenalty;
-      payload.header.catchType = this.header.catchType;
-
-      payload.heeler.humanId = this.run.heelerId;
-      payload.heeler.barrierPenalty = this.heeler.barrierPenalty;
-      payload.heeler.catchType = this.heeler.catchType;
-
-      payload.videoId = this.video.id;
-
-      // take care of currentVideo
-
-      if (payload.header.humanId === payload.heeler.humanId) {
+      if (payload.stats.header.id === payload.stats.heeler.id) {
         alert('The header and heeler cannot both be the same person!');
         return;
       }
 
-      if (!payload.eventId) {
+      if (!payload.event_id) {
         alert('You must select an event!');
         return;
       }
 
-      if (!payload.header.humanId || !payload.heeler.humanId) {
+      if (!payload.stats.header.id || !payload.stats.heeler.id) {
         alert('You must select both a header and heeler.');
         return;
       }
 
-      axios.post('/teamroping/save', payload).then(function (data) {
+      axios.post('/run/save', payload).then(function (data) {
         console.log(data);
-        window.location.replace('/profile/' + window.SA.humanId);
+        window.location.replace('/profile/' + window.user.human.id);
       }).catch(function (e) {
         console.log(e);
         alert("Something went wrong. Please contact support.");
@@ -38511,7 +38506,7 @@ var render = function() {
         _c("video-player", { ref: "videoPlayer" }),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col s12 center-align" }, [
+          _c("div", { staticClass: "col-sm-12 center-align" }, [
             _c("p", {
               staticClass: "time-label",
               domProps: { textContent: _vm._s(this.timeLabelText) }
@@ -38520,7 +38515,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col s6 center-align" }, [
+          _c("div", { staticClass: "col-sm-6 center-align" }, [
             _c(
               "button",
               {
@@ -38535,7 +38530,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col s6 center-align" }, [
+          _c("div", { staticClass: "col-sm-6 center-align" }, [
             _c(
               "button",
               {
@@ -38555,19 +38550,20 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
         _c("div", { staticClass: "card header-stats" }, [
           _c("div", { staticClass: "card-content" }, [
             _c("h4", [_vm._v("Header Stats")]),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s4 center-align" }, [
+              _c("div", { staticClass: "col-sm-4 center-align" }, [
                 _c(
                   "div",
                   {
                     staticClass: "catch-type-button catch",
                     class: {
-                      activeCatch: _vm.header.catchType === "slick horns"
+                      activeCatch:
+                        _vm.run.stats.header.catch_type === "slick horns"
                     },
                     on: {
                       click: function($event) {
@@ -38579,12 +38575,14 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col s4 center-align" }, [
+              _c("div", { staticClass: "col-sm-4 center-align" }, [
                 _c(
                   "div",
                   {
                     staticClass: "catch-type-button catch",
-                    class: { activeCatch: _vm.header.catchType === "neck" },
+                    class: {
+                      activeCatch: _vm.run.stats.header.catch_type === "neck"
+                    },
                     on: {
                       click: function($event) {
                         _vm.setHeaderCatchType("neck")
@@ -38595,13 +38593,14 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col s4 center-align" }, [
+              _c("div", { staticClass: "col-sm-4 center-align" }, [
                 _c(
                   "div",
                   {
                     staticClass: "catch-type-button catch",
                     class: {
-                      activeCatch: _vm.header.catchType === "half head"
+                      activeCatch:
+                        _vm.run.stats.header.catch_type === "half head"
                     },
                     on: {
                       click: function($event) {
@@ -38615,13 +38614,14 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s12 center-align" }, [
+              _c("div", { staticClass: "col-sm-12 center-align" }, [
                 _c(
                   "div",
                   {
                     staticClass: "catch-type-button penalty",
                     class: {
-                      activeCatchPenalty: _vm.header.catchType === "missed"
+                      activeCatchPenalty:
+                        _vm.run.stats.header.catch_type === "missed"
                     },
                     on: {
                       click: function($event) {
@@ -38639,7 +38639,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
         _c("div", { staticClass: "card heeler-stats" }, [
           _c("div", { staticClass: "card-content" }, [
             _c("h4", [_vm._v("Heeler Stats")]),
@@ -38648,15 +38648,19 @@ var render = function() {
               "div",
               {
                 staticClass: "row",
-                class: { disabled: _vm.header.catchType === "missed" }
+                class: {
+                  disabled: _vm.run.stats.header.catch_type === "missed"
+                }
               },
               [
-                _c("div", { staticClass: "col s4 center-align" }, [
+                _c("div", { staticClass: "col-sm-4 center-align" }, [
                   _c(
                     "div",
                     {
                       staticClass: "catch-type-button catch",
-                      class: { activeCatch: _vm.heeler.catchType === "clean" },
+                      class: {
+                        activeCatch: _vm.run.stats.heeler.catch_type === "clean"
+                      },
                       on: {
                         click: function($event) {
                           _vm.setHeelerCatchType("clean")
@@ -38667,13 +38671,14 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col s4 center-align" }, [
+                _c("div", { staticClass: "col-sm-4 center-align" }, [
                   _c(
                     "div",
                     {
                       staticClass: "catch-type-button penalty",
                       class: {
-                        activeCatchPenalty: _vm.heeler.catchType === "leg"
+                        activeCatchPenalty:
+                          _vm.run.stats.heeler.catch_type === "leg"
                       },
                       on: {
                         click: function($event) {
@@ -38685,13 +38690,14 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col s4 center-align" }, [
+                _c("div", { staticClass: "col-sm-4 center-align" }, [
                   _c(
                     "div",
                     {
                       staticClass: "catch-type-button penalty",
                       class: {
-                        activeCatchPenalty: _vm.heeler.catchType === "missed"
+                        activeCatchPenalty:
+                          _vm.run.stats.heeler.catch_type === "missed"
                       },
                       on: {
                         click: function($event) {
@@ -38710,14 +38716,14 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
         _c("div", { staticClass: "card details" }, [
           _c("div", { staticClass: "card-content" }, [
             _c("h4", [_vm._v("Details")]),
             _vm._v(" "),
-            _c("form", { staticClass: "col s12" }, [
+            _c("form", { staticClass: "col-sm-12" }, [
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c("input", {
                     directives: [
                       {
@@ -38745,7 +38751,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c(
                     "select",
                     {
@@ -38753,8 +38759,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.run.eventId,
-                          expression: "run.eventId"
+                          value: _vm.run.event_id,
+                          expression: "run.event_id"
                         }
                       ],
                       attrs: { id: "event-select" },
@@ -38770,7 +38776,7 @@ var render = function() {
                             })
                           _vm.$set(
                             _vm.run,
-                            "eventId",
+                            "event_id",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -38799,14 +38805,14 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.run.roping,
-                        expression: "run.roping"
+                        value: _vm.run.stats.roping,
+                        expression: "run.stats.roping"
                       }
                     ],
                     staticClass: "validate",
@@ -38815,13 +38821,13 @@ var render = function() {
                       id: "roping",
                       type: "text"
                     },
-                    domProps: { value: _vm.run.roping },
+                    domProps: { value: _vm.run.stats.roping },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.run, "roping", $event.target.value)
+                        _vm.$set(_vm.run.stats, "roping", $event.target.value)
                       }
                     }
                   }),
@@ -38831,25 +38837,25 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.run.round,
-                        expression: "run.round"
+                        value: _vm.run.stats.round,
+                        expression: "run.stats.round"
                       }
                     ],
                     staticClass: "validate",
                     attrs: { placeholder: "Round", id: "round", type: "text" },
-                    domProps: { value: _vm.run.round },
+                    domProps: { value: _vm.run.stats.round },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.run, "round", $event.target.value)
+                        _vm.$set(_vm.run.stats, "round", $event.target.value)
                       }
                     }
                   }),
@@ -38859,25 +38865,25 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.run.time,
-                        expression: "run.time"
+                        value: _vm.run.stats.time,
+                        expression: "run.stats.time"
                       }
                     ],
                     staticClass: "validate",
                     attrs: { placeholder: "Time", id: "time", type: "number" },
-                    domProps: { value: _vm.run.time },
+                    domProps: { value: _vm.run.stats.time },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.run, "time", $event.target.value)
+                        _vm.$set(_vm.run.stats, "time", $event.target.value)
                       }
                     }
                   }),
@@ -38887,41 +38893,42 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s6 center-align" }, [
+                _c("div", { staticClass: "col-sm-6 center-align" }, [
                   _c("label", [
                     _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.run.noTime,
-                          expression: "run.noTime"
+                          value: _vm.run.stats.no_time,
+                          expression: "run.stats.no_time"
                         }
                       ],
                       attrs: { type: "checkbox", id: "no-time" },
                       domProps: {
-                        checked: Array.isArray(_vm.run.noTime)
-                          ? _vm._i(_vm.run.noTime, null) > -1
-                          : _vm.run.noTime
+                        checked: Array.isArray(_vm.run.stats.no_time)
+                          ? _vm._i(_vm.run.stats.no_time, null) > -1
+                          : _vm.run.stats.no_time
                       },
                       on: {
                         change: function($event) {
-                          var $$a = _vm.run.noTime,
+                          var $$a = _vm.run.stats.no_time,
                             $$el = $event.target,
                             $$c = $$el.checked ? true : false
                           if (Array.isArray($$a)) {
                             var $$v = null,
                               $$i = _vm._i($$a, $$v)
                             if ($$el.checked) {
-                              $$i < 0 && (_vm.run.noTime = $$a.concat([$$v]))
+                              $$i < 0 &&
+                                (_vm.run.stats.no_time = $$a.concat([$$v]))
                             } else {
                               $$i > -1 &&
-                                (_vm.run.noTime = $$a
+                                (_vm.run.stats.no_time = $$a
                                   .slice(0, $$i)
                                   .concat($$a.slice($$i + 1)))
                             }
                           } else {
-                            _vm.$set(_vm.run, "noTime", $$c)
+                            _vm.$set(_vm.run.stats, "no_time", $$c)
                           }
                         }
                       }
@@ -38931,41 +38938,42 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col s6 center-align" }, [
+                _c("div", { staticClass: "col-sm-6 center-align" }, [
                   _c("label", [
                     _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.run.score,
-                          expression: "run.score"
+                          value: _vm.run.stats.score,
+                          expression: "run.stats.score"
                         }
                       ],
                       attrs: { type: "checkbox", id: "score" },
                       domProps: {
-                        checked: Array.isArray(_vm.run.score)
-                          ? _vm._i(_vm.run.score, null) > -1
-                          : _vm.run.score
+                        checked: Array.isArray(_vm.run.stats.score)
+                          ? _vm._i(_vm.run.stats.score, null) > -1
+                          : _vm.run.stats.score
                       },
                       on: {
                         change: function($event) {
-                          var $$a = _vm.run.score,
+                          var $$a = _vm.run.stats.score,
                             $$el = $event.target,
                             $$c = $$el.checked ? true : false
                           if (Array.isArray($$a)) {
                             var $$v = null,
                               $$i = _vm._i($$a, $$v)
                             if ($$el.checked) {
-                              $$i < 0 && (_vm.run.score = $$a.concat([$$v]))
+                              $$i < 0 &&
+                                (_vm.run.stats.score = $$a.concat([$$v]))
                             } else {
                               $$i > -1 &&
-                                (_vm.run.score = $$a
+                                (_vm.run.stats.score = $$a
                                   .slice(0, $$i)
                                   .concat($$a.slice($$i + 1)))
                             }
                           } else {
-                            _vm.$set(_vm.run, "score", $$c)
+                            _vm.$set(_vm.run.stats, "score", $$c)
                           }
                         }
                       }
@@ -38977,7 +38985,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c("h5", [_vm._v("Header Select")]),
                   _vm._v(" "),
                   _c(
@@ -38987,8 +38995,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.run.headerId,
-                          expression: "run.headerId"
+                          value: _vm.run.stats.header.id,
+                          expression: "run.stats.header.id"
                         }
                       ],
                       attrs: { id: "header-select" },
@@ -39003,8 +39011,8 @@ var render = function() {
                               return val
                             })
                           _vm.$set(
-                            _vm.run,
-                            "headerId",
+                            _vm.run.stats.header,
+                            "id",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -39037,7 +39045,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c(
                     "select",
                     {
@@ -39045,8 +39053,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.header.barrierPenalty,
-                          expression: "header.barrierPenalty"
+                          value: _vm.run.stats.header.barrier_penalty,
+                          expression: "run.stats.header.barrier_penalty"
                         }
                       ],
                       attrs: { id: "header-barrier-penalty" },
@@ -39061,8 +39069,8 @@ var render = function() {
                               return val
                             })
                           _vm.$set(
-                            _vm.header,
-                            "barrierPenalty",
+                            _vm.run.stats.header,
+                            "barrier_penalty",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -39088,7 +39096,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c("h5", [_vm._v("Heeler Select")]),
                   _vm._v(" "),
                   _c(
@@ -39098,8 +39106,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.run.heelerId,
-                          expression: "run.heelerId"
+                          value: _vm.run.stats.heeler.id,
+                          expression: "run.stats.heeler.id"
                         }
                       ],
                       attrs: { id: "heeler-select" },
@@ -39114,8 +39122,8 @@ var render = function() {
                               return val
                             })
                           _vm.$set(
-                            _vm.run,
-                            "heelerId",
+                            _vm.run.stats.heeler,
+                            "id",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -39148,7 +39156,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12 input-field" }, [
+                _c("div", { staticClass: "col-sm-12 input-field" }, [
                   _c(
                     "select",
                     {
@@ -39156,8 +39164,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.heeler.barrierPenalty,
-                          expression: "heeler.barrierPenalty"
+                          value: _vm.run.stats.heeler.barrier_penalty,
+                          expression: "run.stats.heeler.barrier_penalty"
                         }
                       ],
                       attrs: { id: "heeler-barrier-penalty" },
@@ -39172,8 +39180,8 @@ var render = function() {
                               return val
                             })
                           _vm.$set(
-                            _vm.heeler,
-                            "barrierPenalty",
+                            _vm.run.stats.heeler,
+                            "barrier_penalty",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -39201,7 +39209,9 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c(
                   "div",
-                  { staticClass: "col s12 l4 offset-l4 center-align" },
+                  {
+                    staticClass: "col-sm-12 col-lg-4 offset-lg-4 center-align"
+                  },
                   [
                     _c(
                       "a",
@@ -40954,6 +40964,277 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(83)
+/* template */
+var __vue_template__ = __webpack_require__(84)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/VideoUploaderComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7019a7eb", Component.options)
+  } else {
+    hotAPI.reload("data-v-7019a7eb", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EventBus__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    // keep browser from leaving page
+    $(window).on('drop', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    $(window).on('dragover', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    this.humanId = window.user.human.id;
+  },
+  data: function data() {
+    return {
+      percentageUploaded: 0,
+      uploadedVideo: {},
+      humanId: null
+    };
+  },
+
+  watch: {
+    percentageUploaded: function percentageUploaded(_percentageUploaded) {
+      $('.upload-progress .progress-bar').css('width', _percentageUploaded + '%');
+    }
+  },
+  methods: {
+    uploadFromDrop: function uploadFromDrop(e) {
+      var file = e.dataTransfer.files[0];
+      this.uploadVideo(file);
+    },
+    uploadFromForm: function uploadFromForm(e) {
+      e.preventDefault();
+      var file = e.srcElement.files[0];
+      this.uploadVideo(file);
+    },
+    uploadVideo: function uploadVideo(file) {
+      var $this = this;
+      var form = new FormData();
+      form.append('video', file);
+
+      // check for video id so we can overwrite
+
+      if (['video/mp4', 'video/quicktime'].indexOf(file.type) === -1) {
+        alert('The only file type we currently accept is MP4. This file type is ' + file.type);
+        return;
+      }
+
+      this.percentageUploaded = 0;
+
+      axios.post('/videos/upload', form, {
+        onUploadProgress: function onUploadProgress(progressEvent) {
+          $this.percentageUploaded = Math.round(progressEvent.loaded / progressEvent.total * 100);
+        }
+      }).then(function (response) {
+        $this.uploadedVideo = response.data;
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "row video-uploader" }, [
+      _c("div", { staticClass: "col-sm-12 offset-lg-3 col-lg-6" }, [
+        _c(
+          "div",
+          { staticClass: "card upload-card", on: { drop: _vm.uploadFromDrop } },
+          [
+            _c("div", { staticClass: "card-content" }, [
+              _c("div", { staticClass: "input-field col-sm-12 file-upload" }, [
+                _c("input", {
+                  attrs: { id: "file", name: "file", type: "file" },
+                  on: {
+                    change: function($event) {
+                      $event.preventDefault()
+                      _vm.uploadFromForm($event)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "file" } }, [
+                  _vm._v("Upload Your Video")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.percentageUploaded > 0,
+                      expression: "percentageUploaded > 0"
+                    }
+                  ],
+                  staticClass: "progress upload-progress"
+                },
+                [
+                  _c("div", {
+                    staticClass: "progress-bar",
+                    staticStyle: { width: "0%" },
+                    attrs: {
+                      role: "progressbar",
+                      "aria-valuenow": "25",
+                      "aria-valuemin": "0",
+                      "aria-valuemax": "100"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.uploadedVideo.id,
+                      expression: "uploadedVideo.id"
+                    }
+                  ],
+                  staticClass: "row"
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "col-sm-12 upload-action-buttons" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass:
+                            "waves-effect waves-light btn btn-primary",
+                          attrs: { to: "/profile/" + _vm.humanId }
+                        },
+                        [_vm._v("Continue")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: { to: "/run/new/" + _vm.uploadedVideo.id }
+                            },
+                            [_vm._v("...or add statistics")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7019a7eb", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

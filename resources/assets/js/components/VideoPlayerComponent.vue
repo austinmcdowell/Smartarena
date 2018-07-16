@@ -85,7 +85,15 @@
         $this.resetScrobbling();
       });
 
-      axios.get(`/video/${this.$route.params.id}`).then(response => {
+      let videoId;
+
+      if (this.$route.params.videoId) {
+        videoId = this.$route.params.videoId;
+      } else if (this.$route.params.id) {
+        videoId = this.$route.params.id;
+      }
+
+      axios.get(`/video/${videoId}`).then(response => {
         let data = response.data;
         $this.player.src({ type: 'video/mp4', src: data.file_url });
         $this.player.play();

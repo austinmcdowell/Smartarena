@@ -18,7 +18,8 @@ import HomeComponent from './components/HomeComponent.vue';
 import LeaderboardComponent from './components/LeaderboardComponent.vue';
 import ProfileComponent from './components/ProfileComponent.vue';
 import VideoComponent from './components/VideoComponent.vue';
-import RunEditor from './components/RunEditorComponent.vue';
+import VideoUploaderComponent from './components/VideoUploaderComponent.vue';
+import RunEditorComponent from './components/RunEditorComponent.vue';
 import CreateHumanComponent from './components/admin/CreateHumanComponent.vue';
 import UserHumanLinkerComponent from './components/admin/UserHumanLinkerComponent.vue';
 import MassUploadRunsComponent from './components/admin/MassUploadRunsComponent.vue';
@@ -32,8 +33,10 @@ Vue.use(VueRouter);
 let routes = [
   { path: '/', component: HomeComponent },
   { path: '/profile/:id', component: ProfileComponent },
-  { path: '/run/edit/:id', component: RunEditor, meta: { requireSubscription: true } },
+  { path: '/run/edit/:id', component: RunEditorComponent, meta: { requireSubscription: true } },
+  { path: '/run/new/:videoId', component: RunEditorComponent, meta: { requireSubscription: true } },
   { path: '/leaderboard/:type', component: LeaderboardComponent },
+  { path: '/video/new', component: VideoUploaderComponent, meta: { requireSubscription: true } },
   { path: '/video/:id', component: VideoComponent },
   { path: '/admin/create-human', component: CreateHumanComponent, meta: { requireAdmin: true } },
   { path: '/admin/user-human-linker', component: UserHumanLinkerComponent, meta: { requireAdmin: true } },
@@ -46,8 +49,8 @@ const router = new VueRouter({ routes });
 router.beforeEach((to, from, next) => {
 
   if (to.matched.some(record => record.meta.requireSubscription)) {                
-      if (!window.user || !window.user.stripeid) {
-          window.location = '/choose-plan';
+      if (!window.user || !window.user.stripe_id) {
+          //window.location = '/choose-plan';
           return;
       }
   }

@@ -1,20 +1,20 @@
 <template>
   <div>
     <div class="row video-uploader">
-      <div class="col s12 offset-l3 l6">
+      <div class="col-sm-12 offset-lg-3 col-lg-6">
         <div @drop="uploadFromDrop" class="card upload-card">
           <div class="card-content">
-            <div class="input-field col s12 file-upload">
+            <div class="input-field col-sm-12 file-upload">
               <input @change.prevent="uploadFromForm" id="file" name="file" type="file">
               <label for="file">Upload Your Video</label>
             </div>
             <div v-show="percentageUploaded > 0" class="progress upload-progress">
-                <div class="determinate" style="width: 0%"></div>
+              <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div v-show="uploadedVideo.id" class="row">
-              <div class="col s12 upload-action-buttons">
-                <a :href="'/profile/' + humanId" class="waves-effect waves-light btn">Continue</a>
-                <p><a :href="`/teamroping/new/${uploadedVideo.id}`">...or add statistics</a></p>
+              <div class="col-sm-12 upload-action-buttons">
+                <router-link :to="'/profile/' + humanId" class="waves-effect waves-light btn btn-primary">Continue</router-link>
+                <p><router-link :to="`/run/new/${uploadedVideo.id}`">...or add statistics</router-link></p>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
         e.stopPropagation();
       });
 
-      this.humanId = window.SA.humanId;
+      this.humanId = window.user.human.id;
     },
     data() {
       return {
@@ -50,7 +50,7 @@
     },
     watch: {
       percentageUploaded: function(percentageUploaded) {
-        $('.upload-progress .determinate').css('width', percentageUploaded + '%');
+        $('.upload-progress .progress-bar').css('width', percentageUploaded + '%');
       }
     },
     methods: {

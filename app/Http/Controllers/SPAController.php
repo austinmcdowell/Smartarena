@@ -15,7 +15,7 @@ class SPAController extends Controller
     public function __invoke()
     {   
         $user = Auth::user();
-        
+        $user->human;
         return view('app', [
             'user' => $user
         ]);

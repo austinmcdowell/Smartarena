@@ -13,7 +13,7 @@ use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class TeamropingController extends Controller
+class RunController extends Controller
 {
     public function new($video_id)
     {
