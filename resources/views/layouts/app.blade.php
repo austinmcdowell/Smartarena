@@ -10,6 +10,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"> -->
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -63,7 +64,7 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-2 side-nav">
+                    <!-- <div class="col-lg-2 side-nav">
                         
                         <div class="guide">
                             <h6>Menu</h6>
@@ -75,8 +76,8 @@
                             <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><router-link to="/leaderboard/teamroping"><p>Team Roping</p></router-link></div>
                             <div class="guide-routes"><i style="font-size:24px" class="fa guide-route-icon fa-circle"></i><p>Barrell Racing</p></div>
                         </div>
-                    </div>
-                    <div class="col-lg-10 content">
+                    </div> -->
+                    <div class="col-lg-12 content">
                         
                         @yield('content')
                         

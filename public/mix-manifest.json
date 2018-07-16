@@ -1,11 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/videoplayer.js": "/js/videoplayer.js",
-    "/js/userhumanlinker.js": "/js/userhumanlinker.js",
-    "/js/runeditor.js": "/js/runeditor.js",
-    "/js/profile.js": "/js/profile.js",
-    "/js/massrunuploader.js": "/js/massrunuploader.js",
-    "/js/masshumanuploader.js": "/js/masshumanuploader.js",
-    "/js/createhuman.js": "/js/createhuman.js"
+    "/css/app.css": "/css/app.css"
 }

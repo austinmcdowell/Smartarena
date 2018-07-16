@@ -1,19 +1,136 @@
 <template>
     <div id="profile">
-        <div class="container">
+        <div class="container profile-container">
             <div class="row">
                 <div class="col-lg-12 banner">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-3">
-                                <div class="profile-pic"></div>
+                            <div class="col-sm-12 col-lg-3">
+                                <div class="profile">
+                                    <div class="profile-pic"></div>
+                                    <h5 class="human-name" v-text="`${human.first_name} ${human.last_name}`" align="center"></h5>
+                                    <span class="location" align="center">{{ human.location }}</span>
+                                    <div class="profile-stats">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-6 stat-vids">
+                                                    <h4 align="center">12</h4>
+                                                    <h5 align="center">videos</h5>
+                                                </div>
+                                                <div class="col-lg-6 stat-views">
+                                                    <h4 align="center">1000</h4>
+                                                    <h5 align="center">runs</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-desc">
+                                        <h5><i style="font-size:18px" class="fab fa-twitter s-media"></i>twitter.com</h5>
+                                        <h5><i style="font-size:18px" class="fab fa-facebook s-media"></i>facebook.com</h5>
+                                    </div>
+                                    
+                                    <div class="hire-btn"><h5 align="center"><b>Hire {{ human.first_name }}</b></h5></div>
+                                </div>
+                                
                             </div>
-                            <div class="col-lg-9">
-                                <div class="profile-info">
+                            <div class="col-sm-12 col-lg-9 recent-upload">
+                                <div class="upload">
+                                    <div class="video"></div>
+
+                                    <h5>Rider Name does example run for X Rodeo</h5>
+                                    <p>1,001 views | July 13</p>
+                                </div>
+
+                                
+
+                                
+                                <!-- <div class="profile-info">
                                     <h1 class="human-name" v-text="`${human.first_name} ${human.last_name}`"></h1>
                                     <span class="sport-title">Team Roping</span>
                                     <span class="location">{{ human.location }}</span>
                                     <div class="hire-btn"><h5 align="center"><b>Hire {{ human.first_name }}</b></h5></div>
+                                </div> -->
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="run-types">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-4"></div>
+                                            <div class="col-lg-1 run-active"><p align="center">Header</p></div>
+                                            <div class="col-lg-1"><p align="center">Heeler</p></div>
+                                            <div class="col-lg-1"><p align="center">3</p></div>
+                                            <div class="col-lg-1"><p align="center">4</p></div>
+                                            <div class="col-lg-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="runs">
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+
+                                    <div class="run">
+                                        <p>test</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 uploads">
+                                <h5>Recent Uploads</h5>
+                                <div class="container">
+                                    <div class="row recent-uploads justify-content-between">
+                                        <div class="col-lg-3">
+                                            <div class="rec-vid">
+                                                <div class="video"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="rec-vid">
+                                                <div class="video"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="rec-vid">
+                                                <div class="video"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="rec-vid">
+                                                <div class="video"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -23,7 +140,7 @@
 
             
 
-            <div class="row recent-upload">
+            <!-- <div class="row recent-upload">
                 <div class="col-lg-12">
                     <p>Most Recent Upload</p>
                 </div>
@@ -61,13 +178,6 @@
                     <p align="center">Option 6</p>
                 </div>
             </div>
-
-            <!-- Header Runs -->
-            <!-- <div v-if="headerRuns.length" class="row center-align">
-                <div class="col-lg-12 offset-s1">
-                    <h4>Header Runs</h4>
-                </div>
-            </div> -->
             
             <table class="table profile-table">
                 <thead>
@@ -78,11 +188,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr @click="showProfile(human.id)" v-for="human in humans" :key="human.id">
+                    <tr @click="showProfile(human.id)" v-for="human in humans" :key="human.id">
                         <td scope="row">{{ human.classification }}</td>
                         <td>{{ human.first_name }}</td>
                         <td>{{ human.last_name }}</td>
-                    </tr> -->
+                    </tr>
 
                     <tr>
                         <td>0</td>
@@ -152,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- <div v-if="!uploadedVideos.length && !headerRuns.length && !heelerRuns.length" class="row center-align">
                 <div class="col s10 offset-s1">
