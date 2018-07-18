@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-show="video.processing_complete">
-      <video-player ref="videoPlayer"></video-player>
+      <video-player :video-id="video.id" ref="videoPlayer"></video-player>
       <div class="row">
         <div class="col-sm-12 center-align">
           <p class="time-label" v-text="this.timeLabelText"></p>
@@ -81,10 +81,10 @@
         <div class="card details">
           <div class="card-content">
             <h4>Details</h4>
-            <form class="col-sm-12">
+            <form>
               <div class="row">
                 <div class="col-sm-12 input-field">
-                  <input v-model="run.date" class="datepicker" placeholder="Date" id="date" type="text">
+                  <date-picker v-model="run.date"></date-picker>
                   <label for="date">Date</label>
                 </div>
               </div>
@@ -131,7 +131,7 @@
               <div class="row">
                 <div class="col-sm-12 input-field">
                   <h5>Header Select</h5>
-                  <select v-model="run.stats.header.id" id="header-select">
+                  <select v-model="run.stats.header.human_id" id="header-select">
                     <option value="0" disabled selected>Choose Header</option>
                     <option v-for="human in humans" :key="human.id" :value="human.id">{{ human.first_name + ' ' + human.last_name }}</option>
                   </select>
@@ -149,7 +149,7 @@
               <div class="row">
                 <div class="col-sm-12 input-field">
                   <h5>Heeler Select</h5>
-                  <select v-model="run.stats.heeler.id" id="heeler-select">
+                  <select v-model="run.stats.heeler.human_id" id="heeler-select">
                     <option value="0" disabled selected>Choose Heeler</option>
                     <option v-for="human in humans" :key="human.id" :value="human.id">{{ human.first_name + ' ' + human.last_name }}</option>
                   </select>
@@ -180,6 +180,7 @@
 <script>
 
 import VideoPlayerComponent from './VideoPlayerComponent';
+import Datepicker from 'vuejs-datepicker';
 import EventBus from './EventBus';
 
 export default {
@@ -189,6 +190,8 @@ export default {
     if ($this.$route.params.id) {
       axios.get(`/run/${$this.$route.params.id}`).then(response => {
         let run = response.data;
+        $this.run = run;
+        $this.video = run.videos[0];
       });
     }
 
@@ -209,15 +212,6 @@ export default {
       window.history.back();
     })
 
-    // let elem = document.querySelector('.datepicker');
-    // let instance = M.Datepicker.init(elem, {
-    //   autoClose: true,
-    //   onSelect: function(date) {
-    //     Vue.set($this.run, 'date', date);
-    //     this.close();
-    //   }
-    // });
-
     if (this.video.processing_complete) {
       EventBus.$emit('videoSourceChange', this.video);
     }
@@ -230,19 +224,21 @@ export default {
     return {
       run: {
         id: null,
-        event_id: null,
+        event_id: 0,
         stats: {
           header: {
             human_id: null,
             did_catch: false,
             catch_type: null,
-            penalty_time: 0
+            penalty_time: null,
+            barrier_penalty: 0
           },
           heeler: {
             human_id: null,
             did_catch: false,
             catch_type: null,
-            penalty_time: 0
+            penalty_time: null,
+            barrier_penalty: 0
           },
           no_time: false,
           time: 0,
@@ -275,7 +271,6 @@ export default {
     },
     setStartTime() {
       this.startTime = this.$refs.videoPlayer.getCurrentScrobbleTime();
-      console.log(this.startTime);
       this.updateLabel();
     },
     setEndTime() {
@@ -305,8 +300,9 @@ export default {
     },
     save() {
       let payload = this.run;
+      payload.video_id = this.video.id;
 
-      if (payload.stats.header.id === payload.stats.heeler.id) {
+      if (payload.stats.header.human_id === payload.stats.heeler.human_id) {
         alert('The header and heeler cannot both be the same person!');
         return;
       }
@@ -316,14 +312,14 @@ export default {
         return;
       }
 
-      if (!payload.stats.header.id || !payload.stats.heeler.id) {
+      if (!payload.stats.header.human_id || !payload.stats.heeler.human_id) {
         alert('You must select both a header and heeler.');
         return;
       }
 
       axios.post('/run/save', payload).then(data => {
         console.log(data);
-        window.location.replace('/profile/' + window.user.human.id);
+        //window.location.replace('/profile/' + window.user.human.id);
       }).catch(e => {
         console.log(e);
         alert("Something went wrong. Please contact support.");
@@ -331,7 +327,8 @@ export default {
     }
   },
   components: {
-    'video-player': VideoPlayerComponent
+    'video-player': VideoPlayerComponent,
+    'date-picker': Datepicker
   }
 }
 </script>

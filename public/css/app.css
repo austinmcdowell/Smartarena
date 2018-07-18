@@ -1,13 +1,13 @@
 body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 html {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 h1 {
@@ -472,26 +472,10 @@ body {
   margin-top: 10px;
 }
 
-html {
-  overflow-y: hidden !important;
-}
-
-body {
-  overflow-y: hidden !important;
-}
-
 #profile {
   padding: 3% 0;
   background: #f2f3f5 !important;
   overflow: hidden !important;
-}
-
-#profile html {
-  overflow-y: hidden !important;
-}
-
-#profile body {
-  overflow-y: hidden !important;
 }
 
 #profile .col-lg-3 {

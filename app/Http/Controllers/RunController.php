@@ -6,7 +6,7 @@ use Auth;
 use DateTime;
 use App\Http\Controllers\Controller;
 use App\Human;
-use App\TeamropingRun;
+use App\Run;
 use App\Event;
 use App\Video;
 
@@ -15,55 +15,67 @@ use Illuminate\Support\Facades\DB;
 
 class RunController extends Controller
 {
-    public function new($video_id)
-    {
-        $user = Auth::user();
-        $events = Event::all();
-        $humans = Human::orderBy('first_name')->get();
-        $video  = Video::find($video_id);
-        return view('runeditor', [
-            'events' => $events,
-            'humans' => $humans,
-            'videos' => [$video],
-            'human_id' => $user->human->id
-        ]);
-    }
+    // public function new($video_id)
+    // {
+    //     $user = Auth::user();
+    //     $events = Event::all();
+    //     $humans = Human::orderBy('first_name')->get();
+    //     $video  = Video::find($video_id);
+    //     return view('runeditor', [
+    //         'events' => $events,
+    //         'humans' => $humans,
+    //         'videos' => [$video],
+    //         'human_id' => $user->human->id
+    //     ]);
+    // }
 
-    public function edit($id)
+    // public function edit($id)
+    // {
+    //     $user = Auth::user();
+    //     $events = Event::all();
+    //     $humans = Human::orderBy('first_name')->get();
+    //     $run = TeamropingRun::find($id);
+    //     return view('runeditor', [
+    //         'events' => $events,
+    //         'humans' => $humans,
+    //         'videos' => $run->videos,
+    //         'human_id' => $user->human->id,
+    //         'run' => $run
+    //     ]);
+    // }
+
+    public function get($id)
     {
-        $user = Auth::user();
-        $events = Event::all();
-        $humans = Human::orderBy('first_name')->get();
-        $run = TeamropingRun::find($id);
-        return view('runeditor', [
-            'events' => $events,
-            'humans' => $humans,
-            'videos' => $run->videos,
-            'human_id' => $user->human->id,
-            'run' => $run
-        ]);
+        $run = Run::find($id);
+
+        if ($run) {
+            $run->videos;
+        }
+
+        return $run;
     }
 
     public function save(Request $request)
     {
         $user = Auth::user();
-        $runId = $request->input('runId');
-        $video_id = $request->input('videoId');
+        $run_id = $request->json('id');
+        $video_id = $request->json('video_id');
         $video = Video::find($video_id);
 
         if (!$video) {
             return response()->json(['success' => false, 'message' => 'Something went wrong, please contact support.'], 401);
         }
         
-        if ($runId) {
-            $run = TeamropingRun::find($runId);
+        if ($run_id) {
+            $run = Run::find($run_id);
         } else {
-            $run = new TeamropingRun;
+            $run = new Run;
+            $run->type = "teamroping";
         }
         
-        $run->date = $request->input('date');
+        $run->date = $request->json('date');
 
-        $event_id = (int)$request->input('eventId');
+        $event_id = (int)$request->json('event_id');
         $event = Event::find($event_id);
 
         if (!$event) {
@@ -72,79 +84,77 @@ class RunController extends Controller
 
         $run->event_id = $event->id;
         
-        // lets take care of validations first
+        $stats = $request->json('stats');
 
-        $header_human_id = (int)$request->input('header.humanId');
-        $heeler_human_id = (int)$request->input('heeler.humanId');
+        $header_human_id = (int)$stats['header']['human_id'];
+        $heeler_human_id = (int)$stats['heeler']['human_id'];
         
-        $header = Human::find($header_human_id);
-        $run->header_human_id = $header->id;
+        if (!$header_human_id || !$heeler_human_id) {
+            abort(401, "Header and heeler must be specified.");
+        }
 
+        $header = Human::find($header_human_id);
         $heeler = Human::find($heeler_human_id);
-        $run->heeler_human_id = $heeler->id;
 
         if ($header->user_id != $user->id && $heeler->user_id != $user->id) {
             abort(401, "You must be either the header or the heeler.");
         }
 
-        if ($request->input('header.catchType')) {
-            $catch_type = $request->input('header.catchType');
+        if ($stats['header']['catch_type']) {
+            $catch_type = $stats['header']['catch_type'];
 
             if ($catch_type == "missed") {
-                $run->header_did_catch = false;
-                $run->header_catch_type = null;
-                $run->header_penalty_type = $catch_type;
+                $stats['header']['did_catch'] = false;
+                $stats['header']['catch_type'] = null;
+                $stats['header']['penalty_type'] = $catch_type;
             } else {
-                $run->header_did_catch = true;
-                $run->header_penalty_type = null;
-                $run->header_catch_type = $catch_type;
+                $stats['header']['did_catch'] = true;
+                $stats['header']['penalty_type'] = null;
+                $stats['header']['catch_type'] = $catch_type;
             }
         }
 
-        if ($request->input('heeler.catchType')) {
-            $catch_type = $request->input('heeler.catchType');
+        if ($stats['heeler']['catch_type']) {
+            $catch_type = $stats['heeler']['catch_type'];
 
-            if ($catch_type == 'leg' || $catch_type == 'missed') {
-                $run->heeler_did_catch = false;
-                $run->heeler_catch_type = null;
-                $run->heeler_penalty_type = $catch_type;
+            if ($catch_type == "missed") {
+                $stats['heeler']['did_catch'] = false;
+                $stats['heeler']['catch_type'] = null;
+                $stats['heeler']['penalty_type'] = $catch_type;
             } else {
-                $run->heeler_did_catch = true;
-                $run->heeler_penalty_type = null;
-                $run->heeler_catch_type = $catch_type;
+                $stats['heeler']['did_catch'] = true;
+                $stats['heeler']['penalty_type'] = null;
+                $stats['heeler']['catch_type'] = $catch_type;
             }
         }
 
-        $run->header_barrier_penalty = (int)$request->input('header.barrierPenalty');
-        $run->heeler_barrier_penalty = (int)$request->input('heeler.barrierPenalty');
+        $header_barrier_penalty = (int)$stats['header']['barrier_penalty'];
+        $heeler_barrier_penalty = (int)$stats['heeler']['barrier_penalty'];
 
-        $run->roping = $request->input('roping');
-        $run->round  = $request->input('round');
-        $run->raw_time = (float)$request->input('time');
+        $roping = $stats['roping'];
+        $round  = $stats['round'];
+        $raw_time = (float)$stats['time'];
 
         // penalty calculations
-        if ($run->header_penalty_type == 'missed') {
-            $run->no_time = true;
-        }
-
-        if ($run->heeler_penalty_type == 'missed') {
-            $run->no_time = true;
-        }
-
-        if ($run->heeler_penalty_type == 'leg') {
-            $run->heeler_penalty_time = 5;
-        }
-
-        if (!$run->header_penalty_time) {
-            $run->header_penalty_time = 0;
-        }
-
-        if (!$run->heeler_penalty_time) {
-            $run->heeler_penalty_time = 0;
-        }
-
-        $run->total_time = $run->raw_time + $run->heeler_penalty_time + $run->header_penalty_time + $run->header_barrier_penalty + $run->heeler_barrier_penalty;
+        $header_penalty_time = 0;
+        $heeler_penalty_time = 0;
         
+        if ($stats['header']['penalty_type'] == 'missed') {
+            $no_time = true;
+        }
+
+        if ($stats['heeler']['penalty_type'] == 'missed') {
+            $no_time = true;
+        }
+
+        if ($stats['heeler']['penalty_type'] == 'leg') {
+            $heeler_penalty_time = 5;
+        }
+
+        $stats['total_time'] = $stats['raw_time'] + $heeler_penalty_time + $header_penalty_time + $header_barrier_penalty + $heeler_barrier_penalty;
+        
+        $run->stats = $stats;
+
         DB::beginTransaction();
 
         try {
@@ -154,6 +164,7 @@ class RunController extends Controller
             $video->run_id = $run->id;
             $video->save();
         } catch (\Exception $e) {
+            return $e;
             DB::rollback();
         }
         

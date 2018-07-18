@@ -50,7 +50,7 @@ router.beforeEach((to, from, next) => {
 
   if (to.matched.some(record => record.meta.requireSubscription)) {                
       if (!window.user || !window.user.stripe_id) {
-          //window.location = '/choose-plan';
+          window.location = '/choose-plan';
           return;
       }
   }
