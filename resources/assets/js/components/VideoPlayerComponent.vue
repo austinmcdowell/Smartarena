@@ -39,6 +39,7 @@
   import EventBus from './EventBus';
 
   export default {
+    props: ['videoId'],
     mounted() {
       this.player = videojs('my-video');
       this.videoHeight = $('#my-video').height();
@@ -85,22 +86,6 @@
         $this.resetScrobbling();
       });
 
-      let videoId;
-
-      if (this.$route.params.videoId) {
-        videoId = this.$route.params.videoId;
-      } else if (this.$route.params.id) {
-        videoId = this.$route.params.id;
-      }
-
-      axios.get(`/video/${videoId}`).then(response => {
-        let data = response.data;
-        $this.player.src({ type: 'video/mp4', src: data.file_url });
-        $this.player.play();
-      }).catch(e => {
-        window.history.back();
-      });
-
       EventBus.$on('videoSourceChange', function(data) {
         $this.setSource(data);
       });
@@ -119,6 +104,7 @@
     },
     data() {
       return {
+        playingVideoId: this.videoId,
         player: null,
         videoSource: {},
         videoHeight: null,
@@ -141,6 +127,20 @@
           this.isZoomed = false;
           $('#my-video_html5_api').css({ top: "0", left: "0" })
         }
+      },
+      videoId: function(videoId) {
+        this.playingVideoId = videoId;
+      },
+      playingVideoId: function(videoId) {
+        const $this = this;
+        axios.get(`/video/${videoId}`).then(response => {
+          let data = response.data;
+          $this.player.src({ type: 'video/mp4', src: data.file_url });
+          $this.player.play();
+        }).catch(e => {
+          console.log(e);
+          // window.history.back();
+        });
       }
     },
     methods: {
