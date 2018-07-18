@@ -38753,6 +38753,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     save: function save() {
+      var $this = this;
       var payload = this.run;
       payload.video_id = this.video.id;
 
@@ -38772,8 +38773,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
 
       axios.post('/run/save', payload).then(function (data) {
-        console.log(data);
-        //window.location.replace('/profile/' + window.user.human.id);
+        $this.$router.push('/profile/' + window.user.human.id);
       }).catch(function (e) {
         console.log(e);
         alert("Something went wrong. Please contact support.");

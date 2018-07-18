@@ -318,6 +318,7 @@ export default {
       }
     },
     save() {
+      let $this = this;
       let payload = this.run;
       payload.video_id = this.video.id;
 
@@ -337,8 +338,7 @@ export default {
       }
 
       axios.post('/run/save', payload).then(data => {
-        console.log(data);
-        //window.location.replace('/profile/' + window.user.human.id);
+        $this.$router.push('/profile/' + window.user.human.id);
       }).catch(e => {
         console.log(e);
         alert("Something went wrong. Please contact support.");
