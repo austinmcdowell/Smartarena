@@ -61,7 +61,8 @@ Route::get('/profile/{id}', 'ProfileController@get');
 
 Route::get('/teamroping/new/{videoId}', 'RunController@new')->middleware('auth', 'subscribed');
 Route::get('/teamroping/{id}/edit', 'RunController@edit')->middleware('auth', 'subscribed');
-Route::post('/teamroping/save', 'RunController@save')->middleware('auth', 'subscribed');
+Route::get('/run/{id}', 'RunController@get')->middleware('auth', 'subscribed');
+Route::post('/run/save', 'RunController@save')->middleware('auth', 'subscribed');
 
 Route::get('/video/{id}', 'VideoController@get');
 Route::post('/videos/upload', 'VideoController@upload')->middleware('auth', 'subscribed');
