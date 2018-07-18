@@ -38693,16 +38693,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     setHeaderCatchType: function setHeaderCatchType(catchType) {
       this.run.stats.header.catch_type = catchType;
 
-      if (catchType === 'missed') {
-        this.run.stats.heeler.catch_type = null;
+      if (this.run.stats.header.penalty_type) {
+        this.run.stats.header.penalty_type = null;
       }
+    },
+    setHeaderPenaltyType: function setHeaderPenaltyType(penaltyType) {
+      if (this.run.stats.header.catch_type) {
+        this.run.stats.header.catch_type = null;
+      }
+
+      this.run.stats.header.penalty_type = penaltyType;
     },
     setHeelerCatchType: function setHeelerCatchType(catchType) {
       if (this.run.stats.header.catch_type === 'missed') {
         this.run.stats.heeler.catch_type === null;
         return;
       }
+
+      if (this.run.stats.heeler.penalty_type) {
+        this.run.stats.heeler.penalty_type = null;
+      }
+
       this.run.stats.heeler.catch_type = catchType;
+    },
+    setHeelerPenaltyType: function setHeelerPenaltyType(penaltyType) {
+      if (this.run.stats.heeler.catch_type) {
+        this.run.stats.heeler.catch_type = null;
+      }
+
+      this.run.stats.heeler.penalty_type = penaltyType;
     },
     setStartTime: function setStartTime() {
       this.startTime = this.$refs.videoPlayer.getCurrentScrobbleTime();
@@ -38910,11 +38929,11 @@ var render = function() {
                     staticClass: "catch-type-button penalty",
                     class: {
                       activeCatchPenalty:
-                        _vm.run.stats.header.catch_type === "missed"
+                        _vm.run.stats.header.penalty_type === "missed"
                     },
                     on: {
                       click: function($event) {
-                        _vm.setHeaderCatchType("missed")
+                        _vm.setHeaderPenaltyType("missed")
                       }
                     }
                   },
@@ -38938,7 +38957,7 @@ var render = function() {
               {
                 staticClass: "row",
                 class: {
-                  disabled: _vm.run.stats.header.catch_type === "missed"
+                  disabled: _vm.run.stats.header.penalty_type === "missed"
                 }
               },
               [
@@ -38967,11 +38986,11 @@ var render = function() {
                       staticClass: "catch-type-button penalty",
                       class: {
                         activeCatchPenalty:
-                          _vm.run.stats.heeler.catch_type === "leg"
+                          _vm.run.stats.heeler.penalty_type === "leg"
                       },
                       on: {
                         click: function($event) {
-                          _vm.setHeelerCatchType("leg")
+                          _vm.setHeelerPenaltyType("leg")
                         }
                       }
                     },
@@ -38986,11 +39005,11 @@ var render = function() {
                       staticClass: "catch-type-button penalty",
                       class: {
                         activeCatchPenalty:
-                          _vm.run.stats.heeler.catch_type === "missed"
+                          _vm.run.stats.heeler.penalty_type === "missed"
                       },
                       on: {
                         click: function($event) {
-                          _vm.setHeelerCatchType("missed")
+                          _vm.setHeelerPenaltyType("missed")
                         }
                       }
                     },

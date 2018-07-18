@@ -15,35 +15,6 @@ use Illuminate\Support\Facades\DB;
 
 class RunController extends Controller
 {
-    // public function new($video_id)
-    // {
-    //     $user = Auth::user();
-    //     $events = Event::all();
-    //     $humans = Human::orderBy('first_name')->get();
-    //     $video  = Video::find($video_id);
-    //     return view('runeditor', [
-    //         'events' => $events,
-    //         'humans' => $humans,
-    //         'videos' => [$video],
-    //         'human_id' => $user->human->id
-    //     ]);
-    // }
-
-    // public function edit($id)
-    // {
-    //     $user = Auth::user();
-    //     $events = Event::all();
-    //     $humans = Human::orderBy('first_name')->get();
-    //     $run = TeamropingRun::find($id);
-    //     return view('runeditor', [
-    //         'events' => $events,
-    //         'humans' => $humans,
-    //         'videos' => $run->videos,
-    //         'human_id' => $user->human->id,
-    //         'run' => $run
-    //     ]);
-    // }
-
     public function get($id)
     {
         $run = Run::find($id);
@@ -100,32 +71,40 @@ class RunController extends Controller
             abort(401, "You must be either the header or the heeler.");
         }
 
+        if ($stats['header']['penalty_type']) {
+            $penalty_type = $stats['header']['penalty_type'];
+
+            $stats['header']['did_catch'] = false;
+            $stats['header']['catch_type'] = null;
+            $stats['header']['penalty_type'] = $penalty_type;
+
+            $stats['heeler']['did_catch'] = false;
+            $stats['heeler']['catch_type'] = null;
+            $stats['heeler']['penalty_type'] = null;
+        }
+
         if ($stats['header']['catch_type']) {
             $catch_type = $stats['header']['catch_type'];
 
-            if ($catch_type == "missed") {
-                $stats['header']['did_catch'] = false;
-                $stats['header']['catch_type'] = null;
-                $stats['header']['penalty_type'] = $catch_type;
-            } else {
-                $stats['header']['did_catch'] = true;
-                $stats['header']['penalty_type'] = null;
-                $stats['header']['catch_type'] = $catch_type;
-            }
+            $stats['header']['did_catch'] = true;
+            $stats['header']['penalty_type'] = null;
+            $stats['header']['catch_type'] = $catch_type;
+        }
+
+        if ($stats['heeler']['penalty_type']) {
+            $penalty_type = $stats['heeler']['penalty_type'];
+
+            $stats['heeler']['did_catch'] = false;
+            $stats['heeler']['catch_type'] = null;
+            $stats['heeler']['penalty_type'] = $penalty_type;
         }
 
         if ($stats['heeler']['catch_type']) {
             $catch_type = $stats['heeler']['catch_type'];
 
-            if ($catch_type == "missed") {
-                $stats['heeler']['did_catch'] = false;
-                $stats['heeler']['catch_type'] = null;
-                $stats['heeler']['penalty_type'] = $catch_type;
-            } else {
-                $stats['heeler']['did_catch'] = true;
-                $stats['heeler']['penalty_type'] = null;
-                $stats['heeler']['catch_type'] = $catch_type;
-            }
+            $stats['heeler']['did_catch'] = true;
+            $stats['heeler']['penalty_type'] = null;
+            $stats['heeler']['catch_type'] = $catch_type;
         }
 
         $header_barrier_penalty = (int)$stats['header']['barrier_penalty'];

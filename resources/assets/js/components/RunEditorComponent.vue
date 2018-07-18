@@ -41,7 +41,7 @@
             </div>
             <div class="row">
               <div class="col-sm-12 center-align">
-                <div v-bind:class="{ activeCatchPenalty: (run.stats.header.catch_type === 'missed') }" @click="setHeaderCatchType('missed')" class="catch-type-button penalty">
+                <div v-bind:class="{ activeCatchPenalty: (run.stats.header.penalty_type === 'missed') }" @click="setHeaderPenaltyType('missed')" class="catch-type-button penalty">
                   <span>Missed</span>
                 </div>
               </div>
@@ -55,19 +55,19 @@
         <div class="card heeler-stats">
           <div class="card-content">
             <h4>Heeler Stats</h4>
-            <div v-bind:class="{ disabled: run.stats.header.catch_type === 'missed' }" class="row">
+            <div v-bind:class="{ disabled: run.stats.header.penalty_type === 'missed' }" class="row">
               <div class="col-sm-4 center-align">
                 <div v-bind:class="{ activeCatch: (run.stats.heeler.catch_type === 'clean') }" @click="setHeelerCatchType('clean')" class="catch-type-button catch">
                   <span>Clean</span>
                 </div>
               </div>
               <div class="col-sm-4 center-align">
-                <div v-bind:class="{ activeCatchPenalty: (run.stats.heeler.catch_type === 'leg') }" @click="setHeelerCatchType('leg')" class="catch-type-button penalty">
+                <div v-bind:class="{ activeCatchPenalty: (run.stats.heeler.penalty_type === 'leg') }" @click="setHeelerPenaltyType('leg')" class="catch-type-button penalty">
                   <span>Leg</span>
                 </div>
               </div>
               <div class="col-sm-4 center-align">
-                <div v-bind:class="{ activeCatchPenalty: (run.stats.heeler.catch_type === 'missed') }" @click="setHeelerCatchType('missed')" class="catch-type-button penalty">
+                <div v-bind:class="{ activeCatchPenalty: (run.stats.heeler.penalty_type === 'missed') }" @click="setHeelerPenaltyType('missed')" class="catch-type-button penalty">
                   <span>Missed</span>
                 </div>
               </div>
@@ -258,16 +258,35 @@ export default {
     setHeaderCatchType: function(catchType) {
       this.run.stats.header.catch_type = catchType;
 
-      if (catchType === 'missed') {
-        this.run.stats.heeler.catch_type = null;
+      if (this.run.stats.header.penalty_type) {
+        this.run.stats.header.penalty_type = null;
       }
+    },
+    setHeaderPenaltyType: function(penaltyType) {
+      if (this.run.stats.header.catch_type) {
+        this.run.stats.header.catch_type = null;
+      }
+
+      this.run.stats.header.penalty_type = penaltyType;
     },
     setHeelerCatchType: function(catchType) {
       if (this.run.stats.header.catch_type === 'missed') {
         this.run.stats.heeler.catch_type === null;
         return;
       }
+
+      if (this.run.stats.heeler.penalty_type) {
+        this.run.stats.heeler.penalty_type = null;
+      }
+
       this.run.stats.heeler.catch_type = catchType;
+    },
+    setHeelerPenaltyType: function(penaltyType) {
+      if (this.run.stats.heeler.catch_type) {
+        this.run.stats.heeler.catch_type = null;
+      }
+
+      this.run.stats.heeler.penalty_type = penaltyType;
     },
     setStartTime() {
       this.startTime = this.$refs.videoPlayer.getCurrentScrobbleTime();
