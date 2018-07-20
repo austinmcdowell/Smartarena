@@ -40,7 +40,7 @@
                     @if (isset($isLoggedIn) && $isLoggedIn) 
                     <ul class="navbar-nav">
                         @if ($user->human)
-                        <li class="nav-item"><router-link to="/videos/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li>
+                        <li class="nav-item"><router-link to="/video/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li>
                         <div class="nav-profile-pic"></div>
                         <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $user->name }}</a>

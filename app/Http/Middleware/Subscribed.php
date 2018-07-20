@@ -17,8 +17,8 @@ class Subscribed
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-
-        if ($user->role != "admin" && !$user->subscribed()) {
+        
+        if ($user->role != "admin" && !$user->subscribed('main')) {
             return redirect('/choose-plan');
         }
 

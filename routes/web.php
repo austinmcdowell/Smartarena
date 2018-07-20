@@ -42,6 +42,9 @@ Route::get('/search', 'SearchController');
 Route::get('/home', 'HomeController');
 Route::get('/leaderboard/teamroping', 'LeaderboardController@teamroping');
 
+Route::get('/humans', 'HumanController@get');
+Route::get('/events', 'EventController@get');
+
 Route::get('/massupload/humans', 'MassHumanUploader@get')->middleware('auth', 'admin');
 Route::post('/massupload/humans/process', 'MassHumanUploader@process')->middleware('auth', 'admin');
 
@@ -56,10 +59,10 @@ Route::post('/link-user-human', 'UserHumanLinkController@post')->middleware('aut
 
 Route::get('/profile/{id}', 'ProfileController@get');
 
-Route::get('/teamroping/new/{videoId}', 'TeamropingController@new')->middleware('auth subscribed');
-Route::get('/teamroping/{id}/edit', 'TeamropingController@edit')->middleware('auth subscribed');
-Route::post('/teamroping/save', 'TeamropingController@save')->middleware('auth subscribed');
+Route::get('/teamroping/new/{videoId}', 'RunController@new')->middleware('auth', 'subscribed');
+Route::get('/teamroping/{id}/edit', 'RunController@edit')->middleware('auth', 'subscribed');
+Route::get('/run/{id}', 'RunController@get')->middleware('auth', 'subscribed');
+Route::post('/run/save', 'RunController@save')->middleware('auth', 'subscribed');
 
-Route::get('/videos/new', 'VideoController@new')->middleware('auth subscribed');
 Route::get('/video/{id}', 'VideoController@get');
-Route::post('/videos/upload', 'VideoController@upload')->middleware('auth subscribed');
+Route::post('/videos/upload', 'VideoController@upload')->middleware('auth', 'subscribed');

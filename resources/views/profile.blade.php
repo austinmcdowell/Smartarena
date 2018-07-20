@@ -28,7 +28,7 @@
   <div class="row hide-on-large-only">
     @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
     <div class="col offset-s2 s8 actions">
-      <a href="/videos/new" class="waves-effect waves-light btn">Upload Video</a>
+      <a href="/video/new" class="waves-effect waves-light btn">Upload Video</a>
     </div>
     @endif
   </div>
@@ -44,7 +44,7 @@
       </div>
       @if (isset($isLoggedIn) && $isLoggedIn && $human->user_id == $user->id)
       <div class="col offset-s2 s2 actions">
-        <a href="/videos/new" class="waves-effect waves-light btn">Upload Video</a>
+        <a href="/video/new" class="waves-effect waves-light btn">Upload Video</a>
       </div>
       @endif
   </div>

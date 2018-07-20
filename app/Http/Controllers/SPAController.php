@@ -16,6 +16,10 @@ class SPAController extends Controller
     {   
         $user = Auth::user();
         
+        if ($user) {
+            $user->human;
+        }
+
         return view('app', [
             'user' => $user
         ]);
