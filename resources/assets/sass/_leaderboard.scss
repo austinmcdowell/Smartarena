@@ -22,8 +22,8 @@ body {
 @media (min-width: 1200px) {
   #leaderboard{
     .leaderboards-videos {
-      width: 90%;
-      margin: 5% 0 5% 5%;
+      width: 100%;
+      margin: 5% 0;
       padding: 1%;
     }
   
@@ -49,12 +49,14 @@ body {
 }
 
 #leaderboard{
+  padding: 1% 5%;
   .leaderboard-table {
-    width: 90%;
-    margin: 5% 0 5% 5%;
-    padding: 1%;
+    width: 100%;
+    margin: 5% 0;
+    padding: 1% 5%;
 
-    box-shadow: 0px 1px 30px rgba(100, 140, 230, .15);
+    background: white;
+    // box-shadow: 0px 1px 30px rgba(100, 140, 230, .15);
   }
 
   .leaderboard-table th {
