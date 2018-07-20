@@ -24,4 +24,9 @@ class Run extends Model
     {
         return $this->hasMany('\App\Video', 'run_id');
     }
+
+    public function processed_videos()
+    {
+        return $this->hasMany('\App\Video', 'run_id')->where('processing_complete', true);
+    }
 }

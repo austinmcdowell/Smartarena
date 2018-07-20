@@ -146,87 +146,8 @@
         
         <div class="row roping-videos justify-content-between">
             <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
+            <div class="col-lg-3 rope-vid" v-for="video in teamropingVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
             
-            <div class="col-lg-3 rope-vid">
-                <router-link :to="`/video/:id`" class="video-wrapper">
-                    <div class="vid-thumbnail">
-                        <div class="vid-time" align="center"><p>0:30</p></div>
-                    </div>
-                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
-                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
-                </router-link>
-            </div>
-            
-
-            <div class="col-lg-3 rope-vid">
-                <router-link :to="`/video/:id`" class="video-wrapper">
-                    <div class="vid-thumbnail">
-                        <div class="vid-time" align="center"><p>0:30</p></div>
-                    </div>
-                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
-                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
-                </router-link>
-            </div>
-
-            <div class="col-lg-3 rope-vid">
-                <router-link :to="`/video/:id`" class="video-wrapper">
-                    <div class="vid-thumbnail">
-                        <div class="vid-time" align="center"><p>0:30</p></div>
-                    </div>
-                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
-                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
-                </router-link>
-            </div>
-
-            <div class="col-lg-3 rope-vid">
-                <router-link :to="`/video/:id`" class="video-wrapper">
-                    <div class="vid-thumbnail">
-                        <div class="vid-time" align="center"><p>0:30</p></div>
-                    </div>
-                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
-                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
-                </router-link>
-            </div>
-
-            <div class="col-lg-3 rope-vid">
-                <router-link :to="`/video/:id`" class="video-wrapper">
-                    <div class="vid-thumbnail">
-                        <div class="vid-time" align="center"><p>0:30</p></div>
-                    </div>
-                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
-                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
-                </router-link>
-            </div>
-
-            <div class="col-lg-3 rope-vid">
-                <router-link :to="`/video/:id`" class="video-wrapper">
-                    <div class="vid-thumbnail">
-                        <div class="vid-time" align="center"><p>0:30</p></div>
-                    </div>
-                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
-                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
-                </router-link>
-            </div>
-
-            <div class="col-lg-3 rope-vid">
-                <router-link :to="`/video/:id`" class="video-wrapper">
-                    <div class="vid-thumbnail">
-                        <div class="vid-time" align="center"><p>0:30</p></div>
-                    </div>
-                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
-                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
-                </router-link>
-            </div>
-
-            <div class="col-lg-3 rope-vid">
-                <router-link :to="`/video/:id`" class="video-wrapper">
-                    <div class="vid-thumbnail">
-                        <div class="vid-time" align="center"><p>0:30</p></div>
-                    </div>
-                    <div class="vid-description">Austin McDowell 7/11/2018 3.23s</div>
-                    <div class="vid-views">Austin McDowell | <span class="light-green">1,001 views</span></div>
-                </router-link>
-            </div>
         </div>
         <!-- <div class="row hide-on-large-only">
             <div class="col s10 offset-s1">
@@ -289,6 +210,8 @@
     </div>
 </template>
 <script>
+import VideoCellComponent from './VideoCellComponent.vue';
+
 export default {    
     mounted() {
         let $this = this;
@@ -301,6 +224,7 @@ export default {
             $this.shortestAverageTimeBadge = data.shortestAverageTimeBadge;
             $this.mostVideosUploadedBadge = data.mostVideosUploadedBadge;
             $this.coaches = data.coaches;
+            $this.teamropingVideos = data.teamropingVideos;
         }).catch(e => {
             alert('There was an error. Please contact support.');
         })
@@ -314,8 +238,12 @@ export default {
             mostRunsBadge: {},
             mostEfficientBadge: {},
             shortestAverageTimeBadge: {},
-            mostVideosUploadedBadge: {}
+            mostVideosUploadedBadge: {},
+            teamropingVideos: []
         }
+    },
+    components: {
+        'video-cell': VideoCellComponent
     }
 }
 </script>

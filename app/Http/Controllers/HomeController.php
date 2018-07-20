@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Human;
+use App\Video;
 
 class HomeController extends Controller
 {
@@ -19,6 +20,7 @@ class HomeController extends Controller
         $isLoggedIn = Auth::check();
         $humans = Human::orderBy('first_name')->get();
         $coaches = Human::orderBy('first_name')->where('type', 'pro')->get();
+        $teamroping_videos = Video::with('human')->where('run_type', 'teamroping')->limit(8)->get();
 
         $most_runs_badge = [];
         $most_efficient_badge = [];
@@ -188,7 +190,8 @@ class HomeController extends Controller
             'mostRunsBadge' => $most_runs_badge,
             'mostEfficientBadge' => $most_efficient_badge,
             'shortestAverageTimeBadge' => $shortest_average_time_badge,
-            'mostVideosUploadedBadge' => $most_videos_uploaded_badge
+            'mostVideosUploadedBadge' => $most_videos_uploaded_badge,
+            'teamropingVideos' => $teamroping_videos
         ];
     }
 }
