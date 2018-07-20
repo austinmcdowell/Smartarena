@@ -9,6 +9,14 @@ body {
   min-height: 100% !important;
 }
 
+.col-lg-3 {
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
 .award a {
   text-decoration: none !important;
 }
@@ -21,9 +29,71 @@ body {
   .awards {
     display: none;
   }
+
+  .mobile-awards-carousel {
+    padding: 4%;
+    display: block;
+  }
+
+  .awards {
+    padding: 0;
+    // margin-bottom: 5%;
+    text-decoration: none;
+  }
+  
+  .award .circle {
+    width: 100% !important;
+    height: 400px;
+
+    background-color: rgb(79, 143, 100);
+    background-image: url('/img/austin-light.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    border-radius: 3px;
+  }
+  
+  .awards .award {
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+  }  
+
+  .award .accolade {
+    margin: 30% 0 0 0;
+  }
+
+  .hire-btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  .roping-videos {
+    padding: 4%;
+  }
+
+  .rope-vid {
+    margin: 0 0 3% 0;
+    padding: 4%;
+    border-radius: 3px;
+
+    background: white;
+
+    .vid-description {
+      padding: 2% 0 0 0;
+      color: black;
+    }
+
+    .vid-views {
+      color: rgb(196, 196, 196);
+    }
+  }
+
 }
 
 @media (min-width: 768px) {
+  
 }
 
 @media (min-width: 992px) {
@@ -32,13 +102,13 @@ body {
 @media (min-width: 1200px) {
   #home{
     .sec-title {
-      margin: 10% 0 .5% 5%;
+      margin: 10% 0 .5% 0;
     }
   
     .award-center {
-      width: 90%;
-      margin: 0 0 0 5%;
-      padding: 0;
+      width: 100%;
+      margin: 0;
+      padding: 2%;
     }
 
     .awards {
@@ -76,9 +146,9 @@ body {
   
   
     .roping-videos {
-      width: 90%;
+      width: 100%;
       padding: 0;
-      margin: 0 0 10% 5%;
+      margin: 0 0 10% 0;
     }
 
     .video-wrapper {
@@ -105,8 +175,12 @@ body {
     }
   
     .roping-videos .rope-vid {
-      padding: 0;
-      margin: 0 0 3% 0;
+      padding: 1%;
+      margin: 1% 1% 15% 1%;
+
+      background: white;
+      border-radius: 3px;
+      // border: 1px solid rgba(205, 214, 224, .5);
     }
   
     .roping-videos .vid-thumbnail {
@@ -114,7 +188,7 @@ body {
       height: 120px;
   
       padding: 0;
-      margin: 0;
+      margin: 2% 0 0 2%;
     }
   
     .roping-videos .vid-description {
@@ -147,17 +221,12 @@ body {
     font-family: 'Arial Black';
     font-size: 20px;
 
-    margin: 10% 0 2% 5%;
+    margin: 10% 0 2% 0;
   }
 
   .award-center {
   }
 
-  .awards {
-    transition: all .3s;
-    display: block;
-  }
-  
   .awards .circle {
     border-radius: 3px;
   }
@@ -200,20 +269,27 @@ body {
     background-position: center center;
   }
 
+  .award {
+    border-radius: 3px;
+  }
+
   .award .award-background {
     height: 100%;
+    padding: 2% 4% !important;
     background: rgba(0, 0, 0, .4);
     border-radius: 3px;
-    padding: 2% 0 0 5%;
+    padding: 2% 0 0 0;
   }
 
   .award .full-name {
     color: white;
+    font-size: 20px;
     font-family: 'Arial Black' !important;
   }
 
   .award .description {
     color: white;
+    font-size: 18px;
     font-family: 'Arial'; 
     font-weight: lighter;
   }
@@ -228,10 +304,6 @@ body {
     .accolade {
       color: rgb(106, 214, 129);
     }
-  }
-
-  .mobile-awards-carousel {
-    display: none;
   }
 
   .roping-videos {

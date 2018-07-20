@@ -13,11 +13,11 @@
                                     <div class="profile-stats">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-lg-6 stat-vids">
+                                                <div class="col-6 stat-vids">
                                                     <h4 align="center">12</h4>
                                                     <h5 align="center">videos</h5>
                                                 </div>
-                                                <div class="col-lg-6 stat-views">
+                                                <div class="col-6 stat-views">
                                                     <h4 align="center">1000</h4>
                                                     <h5 align="center">runs</h5>
                                                 </div>

@@ -26,6 +26,106 @@ h2 {
   color: rgba(102, 177, 148, .5);
 }
 
+.view-leaderboard {
+  font-size: 12px;
+  color: rgb(192, 192, 192);
+}
+
+@media (min-width: 300px) {
+  .sa-brand {
+    display: none;
+  }
+
+  .sa-brand-short {
+    margin: 0 0 0 .5%;
+    font-family: Arial Black;
+    color: blue;
+    // display: block;
+  
+    li a {
+      text-decoration: none !important;
+    }
+  }
+
+  .nav-search {
+    display: none;
+  }
+
+  .professionals {
+    border-radius: 3px;
+  }
+
+  .professionals .hire-btn {
+    margin: 5% 0 0 0;
+    width: 100%;
+    height: 40px;
+  
+    background-color: rgb(74, 131, 96);
+    color: white;
+    border-radius: 3px;
+  
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+  .sa-brand {
+    margin: 0 0 0 .5%;
+    font-family: Arial Black;
+    color: blue;
+    display: block;
+  
+    li a {
+      text-decoration: none !important;
+    }
+  }
+
+  .sa-brand-short {
+    margin: 0 0 0 .5%;
+    font-family: Arial Black;
+    color: blue;
+    display: none;
+  
+    li a {
+      text-decoration: none !important;
+    }
+  }
+
+  .nav-search {
+    display: inline-block;
+  }
+
+  .professionals .hire-btn {
+    margin: 2% 0 0 88%;
+    width: 100px;
+    height: 40px;
+  
+    color: rgb(74, 131, 96);
+    background: white;
+    border: 2px solid rgb(74, 131, 96);
+    border-radius: 3px;
+  
+    cursor: pointer;
+  }
+  
+  .coaches:hover {
+    .hire-btn {
+      background-color: rgb(74, 131, 96);
+      color: white;
+    }
+  }
+
+}
+
+
+
 .sa-nav {
   // background-color: #28a745 !important;
   box-shadow: 10px -20px 30px rgba(0, 0, 0, .2) !important;
@@ -48,6 +148,15 @@ h2 {
   }
 }
 
+.sa-brand-short {
+  font-family: Arial Black;
+  color: blue;
+
+  li a {
+    text-decoration: none !important;
+  }
+}
+
 .nav-search {
   width: 600px;
   height: 40px;
@@ -58,6 +167,10 @@ h2 {
   background: rgb(244, 246, 247);
   outline: none;
   box-shadow: none;  
+}
+
+.search-results {
+  display: none;
 }
 
 .upload-btn {
@@ -89,8 +202,8 @@ h2 {
 
 .content {
   height: 100vh;
-  padding: 0;
-  background: rgb(250, 250, 250);
+  padding: 6%;
+  background: rgb(242, 243, 245) !important;
   overflow: scroll;
 }
 
@@ -173,51 +286,43 @@ h2 {
 
 
 .coaches {
-  width: 90%;
-  margin: 1% 0 1% 5%;
+  width: 100%;
+  margin: 1% 0 1% 0;
   padding: 0;
+
+  border-radius: 3px;
 
   // box-shadow: 0px 1px 30px rgba(100, 140, 230, .15);
 }
 
 .professionals {
   padding: 0;
-  height: 350px;
+  border-radius: 3px !important;
+  // height: 350px;
 
   background: white !important;
 }
 
 .professionals .pro-image {
-    background-image: url('/img/mustache.jpg');
-    background-size: cover;
-}
+  height: 300px;
+  background-image: url('/img/prof.jpg');
+  background-size: cover;
 
-.professionals .hire-btn {
-  margin: 2% 0 0 82%;
-  width: 100px;
-  height: 40px;
-
-  color: white;
-  background: rgb(129, 180, 140);
-  border: 1px solid rgb(129, 180, 140);
-  border-radius: 3px;
-
-  cursor: pointer;
-}
-
-.coaches:hover {
-  .hire-btn {
-    background-color: rgb(106, 214, 129);
+  h2 {
+    margin: 12% 0 0 0;
+    font-size: 50px;
+    color: white;
   }
 }
 
 .professionals .pro-content {
-  height: 350px;
+  height: 80px;
 
   // border: 1px solid gray;
 }
 
 .professionals .pro-content h2 {
+  color: white;
   margin: 3% 0 3% 5%;
 }
 

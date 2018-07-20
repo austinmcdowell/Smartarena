@@ -23,6 +23,7 @@
         <div id="app">
             <div class="navbar navbar-expand-lg navbar-light sa-nav">
                 <router-link to="/" class="navbar-brand sa-brand green">SmartArena</router-link>
+                <router-link to="/" class="navbar-brand sa-brand-short green">SA</router-link>
                 <search-bar></search-bar>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

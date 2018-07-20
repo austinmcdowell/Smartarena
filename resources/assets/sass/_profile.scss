@@ -25,46 +25,195 @@
   }
 
   padding: 3% 0;
-  background: rgb(242, 243, 245) !important;
   overflow: hidden !important;
 
-  .banner {
-    overflow: hidden !important;
-    padding:0 !important;
-  }
 
-  .profile-container {
-    width: 100%;
-    // margin: 0 !important;
-    padding: 0 !important;
-  }
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 300px) { 
+    .profile {
+      width: 100%;
+      padding: 4% !important;
 
-  .run-types {
-    width: 100%;
-    height: 60px;
-    margin: 0 0 3% 0;
+      .profile-pic {
+        margin-bottom: 4%;
+        display: inline-block;
+      }
 
-    border-bottom: 1px solid rgba(205, 214, 224, .5);
-
-    p {
-      margin: 0;
-      line-height: 60px;
-      vertical-align: middle;
+      .hire-btn {
+        width: 90%;
+        margin: 50px 0 0 5%;
+      }
     }
 
-    .run-active {
-      color: rgb(37, 119, 64);
-      border-bottom: 2px solid rgb(37, 119, 64);
+    .recent-upload {
+      height: auto;
+      padding: 1% 6% !important; 
+    }
+
+    .upload {
+      height: auto;
+      padding: 3%;
+  
+      background: white;
+  
+      border-radius: 3px;
+      border: 1px solid rgba(205, 214, 224, .5);
+  
+      // font-family: 'Montserrat' !important;
+  
+      .video {
+        height: 200px;       
+      }
+  
+      h5 {
+        margin: 2% 0 0 0;
+        font-weight: 500;
+      }
+  
+      p {
+        margin: 1% 0 0 0;
+        font-size: 12px;
+        color: rgb(184, 184, 184);
+      }
+    }
+
+    .run-types {
+      margin: 0 0 3% 0;
+    }
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) { }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {}
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) { 
+    .profile {
+      width: 300px;
+      margin: 0 0 20% 0;
+      padding:   0 0 5% 0;
+      background: white;
+  
+      border-radius: 3px;
+      border: 1px solid rgba(205, 214, 224, .5);
+  
+      .profile-stats {
+        height: 70px;
+        margin: 25px 0 0 0;
+        border-top: 1px solid rgba(205, 214, 224, .3);
+  
+        h4 {
+          margin: 15px 0 0 0;
+          padding: 0;
+  
+          font-size: 15px;
+        }
+  
+        h5 {
+          margin: 0;
+          padding: 0;
+          color: rgb(218, 218, 218);
+        }
+  
+        .stat-vids {
+          height: 70px;
+          padding: 0;
+          border-right: 1px solid rgba(205, 214, 224, .3);
+        }
+  
+        .stat-views {
+          height: 70px;
+          padding: 0;
+        }
+      }
+  
+      .profile-desc {
+        height: 110px;
+        margin: 0;
+        padding: 5% 0;
+        border-top: 1px solid rgba(205, 214, 224, .3);
+  
+        .s-media {
+          margin: 0 25px;
+          line-height: 20px;
+          vertical-align: middle;
+          color: rgb(177, 176, 176);
+        }
+  
+        h5 {
+          line-height: 20px;
+          vertical-align: middle;
+          color: rgb(173, 173, 173);
+        }
+      }
+  
+      h5 {
+        font-size: 15px;
+        
+      }
+  
+      .location {
+        margin: 1% 0 0 0;
+        font-size: 13px;
+        color: rgb(199, 199, 199);
+      }
+  
+      .hire-btn {
+        width: 90%;
+        height: 40px;
+        margin: 5% 0 0 5%;
+  
+        border-radius: 3px;
+        background: rgb(20, 153, 87);
+        color: white !important;
+  
+        h5 {
+          line-height: 40px;
+          vertical-align: middle;
+          font-size: 15px;
+          line-height: 40px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .recent-upload {
+      padding: 0 2% !important; 
+    }
+
+    .upload {
+      height: 500px;
+      padding: 3%;
+  
+      background: white;
+  
+      border-radius: 3px;
+      border: 1px solid rgba(205, 214, 224, .5);
+  
+      // font-family: 'Montserrat' !important;
+  
+      .video {
+        height: 350px;
+      }
+  
+      h5 {
+        margin: 2% 0 0 0;
+        font-weight: 500;
+      }
+  
+      p {
+        margin: 1% 0 0 0;
+        font-size: 12px;
+        color: rgb(184, 184, 184);
+      }
     }
   }
 
   .profile {
-    width: 300px;
     height: 500px;
-    margin: 0 0 20% 0;
-    padding:   0 0 5% 0;
-    background: white;
 
+    background: white;
     border-radius: 3px;
     border: 1px solid rgba(205, 214, 224, .5);
 
@@ -130,9 +279,7 @@
     }
 
     .hire-btn {
-      width: 90%;
       height: 40px;
-      margin: 5% 0 0 5%;
 
       border-radius: 3px;
       background: rgb(20, 153, 87);
@@ -147,11 +294,45 @@
       }
     }
   }
+
+  
+
+  .banner {
+    overflow: hidden !important;
+    padding:0 !important;
+  }
+
+  .profile-container {
+    width: 100%;
+    // margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .run-types {
+    width: 100%;
+    height: 60px;
+    margin: 0 0 3% 0;
+
+    border-bottom: 1px solid rgba(205, 214, 224, .5);
+
+    p {
+      margin: 0;
+      line-height: 60px;
+      vertical-align: middle;
+    }
+
+    .run-active {
+      color: rgb(37, 119, 64);
+      border-bottom: 2px solid rgb(37, 119, 64);
+    }
+  }
+
+  
   
   .profile-pic {
     width:110px;
     height:110px;
-    margin: 50px 0 25px 95px;
+    // margin: 50px 0 25px 95px;
   
     background-size: cover;
     background-image: url('/img/profile-pic.jpg');
@@ -166,16 +347,9 @@
   .profile-info {
     padding: 8% 0;
   }
-  
-  .recent-upload {
-    height: 500px;
-    padding: 0 0 0 5%;
-
-  }
 
   .upload {
     width: 100%;
-    height: 500px;
     padding: 3%;
 
     background: white;
@@ -186,13 +360,8 @@
     // font-family: 'Montserrat' !important;
 
     .video {
-      height: 350px;
-      width: 100%;
-      margin: 0;
       background-size: cover;
-      background-image: url('/img/india.jpg');
-
-      
+      background-image: url('/img/india.jpg');      
     }
 
     h5 {

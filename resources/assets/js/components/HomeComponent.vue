@@ -12,7 +12,7 @@
                                     <div class="award-background">
                                         <div class='full-name' align="left">{{ mostRunsBadge.human_name }}</div>
                                         <div class='description' align="left"> Most Runs</div>
-                                        <div class="accolade">{{ mostRunsBadge.count }}</div>
+                                        <div class="accolade" align="center">{{ mostRunsBadge.count }}</div>
                                     </div>
                                 </div>
                             </router-link>
@@ -24,7 +24,7 @@
                                     <div class="award-background">
                                         <div class='full-name' align="left">{{ mostEfficientBadge.human_name }}</div>
                                         <div class='description' align="left">Most Efficient</div>
-                                        <div class="accolade">Most Efficient</div>
+                                        <div class="accolade" align="center">Most Efficient</div>
                                     </div>
                                 </div>
                             </router-link>
@@ -36,7 +36,7 @@
                                     <div class="award-background">
                                         <div class='full-name' align="left">{{ shortestAverageTimeBadge.human_name }}</div>
                                         <div class='description' align="left">Best Average Time</div>
-                                        <div class="accolade"> {{ shortestAverageTimeBadge.count }}</div>
+                                        <div class="accolade" align="center"> {{ shortestAverageTimeBadge.count }}</div>
                                     </div>
                                 </div>
                             </router-link>
@@ -48,7 +48,7 @@
                                     <div class="award-background">
                                         <div class='full-name' align="left">{{ mostVideosUploadedBadge.human_name }}</div>
                                         <div class='description' align="left">Most uploads</div>
-                                        <div class="accolade">{{ mostVideosUploadedBadge.count }}</div>
+                                        <div class="accolade" align="center">{{ mostVideosUploadedBadge.count }}</div>
                                     </div>
                                 </div>
                             </router-link>
@@ -125,13 +125,12 @@
                     <div class="col-lg-12 justify-content-center professionals">
                         <div class="container-fluid">
                             <div class="row justify-content-center">
-                                <div class="col-lg-6 pro-image">
-                                    <button class="hire-btn" align="center">Hire {{ coach.first_name }}</button>
+                                <div class="col-lg-12 pro-image">
+                                    <h2 align="center">{{ coach.first_name }} {{ coach.last_name }}</h2>
+                                    
                                 </div>
-                                <div class="col-lg-6 pro-content">
-                                    <h2>{{ coach.first_name }} {{ coach.last_name }}</h2>
-                                    <div class="sport-btn"><p align="center">roping</p></div>
-                                    <p class="pro-description">Lorem ipsum ana init elo tu reinay</p>
+                                <div class="col-sm-12 col-lg-12 pro-content">
+                                    <button class="hire-btn" align="center">Hire {{ coach.first_name }}</button>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +140,7 @@
         </carousel>
         
 
-        <h3 class="sec-title">Team Roping</h3>
+        <h3 class="sec-title">Team Roping | <router-link to="/leaderboard/teamroping"><span class="view-leaderboard">view leaderboard</span></router-link></h3>
             <!-- <div class="col-lg-2"><router-link to="/leaderboard/teamroping">visit leaderboard</router-link></div> -->
         
         <div class="row roping-videos justify-content-between">

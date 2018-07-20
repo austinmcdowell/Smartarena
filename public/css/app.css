@@ -26,6 +26,89 @@ h2 {
   color: rgba(102, 177, 148, 0.5);
 }
 
+.view-leaderboard {
+  font-size: 12px;
+  color: silver;
+}
+
+@media (min-width: 300px) {
+  .sa-brand {
+    display: none;
+  }
+
+  .sa-brand-short {
+    margin: 0 0 0 .5%;
+    font-family: Arial Black;
+    color: blue;
+  }
+
+  .sa-brand-short li a {
+    text-decoration: none !important;
+  }
+
+  .nav-search {
+    display: none;
+  }
+
+  .professionals {
+    border-radius: 3px;
+  }
+
+  .professionals .hire-btn {
+    margin: 5% 0 0 0;
+    width: 100%;
+    height: 40px;
+    background-color: #4a8360;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sa-brand {
+    margin: 0 0 0 .5%;
+    font-family: Arial Black;
+    color: blue;
+    display: block;
+  }
+
+  .sa-brand li a {
+    text-decoration: none !important;
+  }
+
+  .sa-brand-short {
+    margin: 0 0 0 .5%;
+    font-family: Arial Black;
+    color: blue;
+    display: none;
+  }
+
+  .sa-brand-short li a {
+    text-decoration: none !important;
+  }
+
+  .nav-search {
+    display: inline-block;
+  }
+
+  .professionals .hire-btn {
+    margin: 2% 0 0 88%;
+    width: 100px;
+    height: 40px;
+    color: #4a8360;
+    background: white;
+    border: 2px solid #4a8360;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .coaches:hover .hire-btn {
+    background-color: #4a8360;
+    color: white;
+  }
+}
+
 .sa-nav {
   -webkit-box-shadow: 10px -20px 30px rgba(0, 0, 0, 0.2) !important;
           box-shadow: 10px -20px 30px rgba(0, 0, 0, 0.2) !important;
@@ -48,6 +131,15 @@ h2 {
   text-decoration: none !important;
 }
 
+.sa-brand-short {
+  font-family: Arial Black;
+  color: blue;
+}
+
+.sa-brand-short li a {
+  text-decoration: none !important;
+}
+
 .nav-search {
   width: 600px;
   height: 40px;
@@ -58,6 +150,10 @@ h2 {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.search-results {
+  display: none;
 }
 
 .upload-btn {
@@ -83,8 +179,8 @@ h2 {
 
 .content {
   height: 100vh;
-  padding: 0;
-  background: #fafafa;
+  padding: 6%;
+  background: #f2f3f5 !important;
   overflow: scroll;
 }
 
@@ -161,8 +257,8 @@ body {
 
 @media (min-width: 1200px) {
   #leaderboard .leaderboards-videos {
-    width: 90%;
-    margin: 5% 0 5% 5%;
+    width: 100%;
+    margin: 5% 0;
     padding: 1%;
   }
 
@@ -185,12 +281,15 @@ body {
   }
 }
 
+#leaderboard {
+  padding: 1% 5%;
+}
+
 #leaderboard .leaderboard-table {
-  width: 90%;
-  margin: 5% 0 5% 5%;
-  padding: 1%;
-  -webkit-box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
-          box-shadow: 0px 1px 30px rgba(100, 140, 230, 0.15);
+  width: 100%;
+  margin: 5% 0;
+  padding: 1% 5%;
+  background: white;
 }
 
 #leaderboard .leaderboard-table th {
@@ -228,6 +327,14 @@ body {
   min-height: 100% !important;
 }
 
+.col-lg-3 {
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
 .award a {
   text-decoration: none !important;
 }
@@ -240,17 +347,73 @@ body {
   .awards {
     display: none;
   }
+
+  .mobile-awards-carousel {
+    padding: 4%;
+    display: block;
+  }
+
+  .awards {
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .award .circle {
+    width: 100% !important;
+    height: 400px;
+    background-color: #4f8f64;
+    background-image: url("/img/austin-light.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 3px;
+  }
+
+  .awards .award {
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .award .accolade {
+    margin: 30% 0 0 0;
+  }
+
+  .hire-btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  .roping-videos {
+    padding: 4%;
+  }
+
+  .rope-vid {
+    margin: 0 0 3% 0;
+    padding: 4%;
+    border-radius: 3px;
+    background: white;
+  }
+
+  .rope-vid .vid-description {
+    padding: 2% 0 0 0;
+    color: black;
+  }
+
+  .rope-vid .vid-views {
+    color: #c4c4c4;
+  }
 }
 
 @media (min-width: 1200px) {
   #home .sec-title {
-    margin: 10% 0 .5% 5%;
+    margin: 10% 0 .5% 0;
   }
 
   #home .award-center {
-    width: 90%;
-    margin: 0 0 0 5%;
-    padding: 0;
+    width: 100%;
+    margin: 0;
+    padding: 2%;
   }
 
   #home .awards {
@@ -287,9 +450,9 @@ body {
   }
 
   #home .roping-videos {
-    width: 90%;
+    width: 100%;
     padding: 0;
-    margin: 0 0 10% 5%;
+    margin: 0 0 10% 0;
   }
 
   #home .video-wrapper:hover .vid-time {
@@ -309,15 +472,17 @@ body {
   }
 
   #home .roping-videos .rope-vid {
-    padding: 0;
-    margin: 0 0 3% 0;
+    padding: 1%;
+    margin: 1% 1% 15% 1%;
+    background: white;
+    border-radius: 3px;
   }
 
   #home .roping-videos .vid-thumbnail {
     width: 96%;
     height: 120px;
     padding: 0;
-    margin: 0;
+    margin: 2% 0 0 2%;
   }
 
   #home .roping-videos .vid-description {
@@ -343,13 +508,7 @@ body {
 #home .sec-title {
   font-family: 'Arial Black';
   font-size: 20px;
-  margin: 10% 0 2% 5%;
-}
-
-#home .awards {
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  display: block;
+  margin: 10% 0 2% 0;
 }
 
 #home .awards .circle {
@@ -394,20 +553,27 @@ body {
   background-position: center center;
 }
 
+#home .award {
+  border-radius: 3px;
+}
+
 #home .award .award-background {
   height: 100%;
+  padding: 2% 4% !important;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
-  padding: 2% 0 0 5%;
+  padding: 2% 0 0 0;
 }
 
 #home .award .full-name {
   color: white;
+  font-size: 20px;
   font-family: 'Arial Black' !important;
 }
 
 #home .award .description {
   color: white;
+  font-size: 18px;
   font-family: 'Arial';
   font-weight: lighter;
 }
@@ -420,10 +586,6 @@ body {
 
 #home .award:hover .accolade {
   color: #6ad681;
-}
-
-#home .mobile-awards-carousel {
-  display: none;
 }
 
 #home .roping-videos .vid-thumbnail {
@@ -474,7 +636,6 @@ body {
 
 #profile {
   padding: 3% 0;
-  background: #f2f3f5 !important;
   overflow: hidden !important;
 }
 
@@ -486,39 +647,171 @@ body {
   padding: 0 !important;
 }
 
-#profile .banner {
-  overflow: hidden !important;
-  padding: 0 !important;
+@media (min-width: 300px) {
+  #profile .profile {
+    width: 100%;
+    padding: 4% !important;
+  }
+
+  #profile .profile .profile-pic {
+    margin-bottom: 4%;
+    display: inline-block;
+  }
+
+  #profile .profile .hire-btn {
+    width: 90%;
+    margin: 50px 0 0 5%;
+  }
+
+  #profile .recent-upload {
+    height: auto;
+    padding: 1% 6% !important;
+  }
+
+  #profile .upload {
+    height: auto;
+    padding: 3%;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid rgba(205, 214, 224, 0.5);
+  }
+
+  #profile .upload .video {
+    height: 200px;
+  }
+
+  #profile .upload h5 {
+    margin: 2% 0 0 0;
+    font-weight: 500;
+  }
+
+  #profile .upload p {
+    margin: 1% 0 0 0;
+    font-size: 12px;
+    color: #b8b8b8;
+  }
+
+  #profile .run-types {
+    margin: 0 0 3% 0;
+  }
 }
 
-#profile .profile-container {
-  width: 100%;
-  padding: 0 !important;
-}
+@media (min-width: 1200px) {
+  #profile .profile {
+    width: 300px;
+    margin: 0 0 20% 0;
+    padding: 0 0 5% 0;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid rgba(205, 214, 224, 0.5);
+  }
 
-#profile .run-types {
-  width: 100%;
-  height: 60px;
-  margin: 0 0 3% 0;
-  border-bottom: 1px solid rgba(205, 214, 224, 0.5);
-}
+  #profile .profile .profile-stats {
+    height: 70px;
+    margin: 25px 0 0 0;
+    border-top: 1px solid rgba(205, 214, 224, 0.3);
+  }
 
-#profile .run-types p {
-  margin: 0;
-  line-height: 60px;
-  vertical-align: middle;
-}
+  #profile .profile .profile-stats h4 {
+    margin: 15px 0 0 0;
+    padding: 0;
+    font-size: 15px;
+  }
 
-#profile .run-types .run-active {
-  color: #257740;
-  border-bottom: 2px solid #257740;
+  #profile .profile .profile-stats h5 {
+    margin: 0;
+    padding: 0;
+    color: #dadada;
+  }
+
+  #profile .profile .profile-stats .stat-vids {
+    height: 70px;
+    padding: 0;
+    border-right: 1px solid rgba(205, 214, 224, 0.3);
+  }
+
+  #profile .profile .profile-stats .stat-views {
+    height: 70px;
+    padding: 0;
+  }
+
+  #profile .profile .profile-desc {
+    height: 110px;
+    margin: 0;
+    padding: 5% 0;
+    border-top: 1px solid rgba(205, 214, 224, 0.3);
+  }
+
+  #profile .profile .profile-desc .s-media {
+    margin: 0 25px;
+    line-height: 20px;
+    vertical-align: middle;
+    color: #b1b0b0;
+  }
+
+  #profile .profile .profile-desc h5 {
+    line-height: 20px;
+    vertical-align: middle;
+    color: #adadad;
+  }
+
+  #profile .profile h5 {
+    font-size: 15px;
+  }
+
+  #profile .profile .location {
+    margin: 1% 0 0 0;
+    font-size: 13px;
+    color: #c7c7c7;
+  }
+
+  #profile .profile .hire-btn {
+    width: 90%;
+    height: 40px;
+    margin: 5% 0 0 5%;
+    border-radius: 3px;
+    background: #149957;
+    color: white !important;
+  }
+
+  #profile .profile .hire-btn h5 {
+    line-height: 40px;
+    vertical-align: middle;
+    font-size: 15px;
+    line-height: 40px;
+    vertical-align: middle;
+  }
+
+  #profile .recent-upload {
+    padding: 0 2% !important;
+  }
+
+  #profile .upload {
+    height: 500px;
+    padding: 3%;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid rgba(205, 214, 224, 0.5);
+  }
+
+  #profile .upload .video {
+    height: 350px;
+  }
+
+  #profile .upload h5 {
+    margin: 2% 0 0 0;
+    font-weight: 500;
+  }
+
+  #profile .upload p {
+    margin: 1% 0 0 0;
+    font-size: 12px;
+    color: #b8b8b8;
+  }
 }
 
 #profile .profile {
-  width: 300px;
   height: 500px;
-  margin: 0 0 20% 0;
-  padding: 0 0 5% 0;
   background: white;
   border-radius: 3px;
   border: 1px solid rgba(205, 214, 224, 0.5);
@@ -584,9 +877,7 @@ body {
 }
 
 #profile .profile .hire-btn {
-  width: 90%;
   height: 40px;
-  margin: 5% 0 0 5%;
   border-radius: 3px;
   background: #149957;
   color: white !important;
@@ -600,10 +891,37 @@ body {
   vertical-align: middle;
 }
 
+#profile .banner {
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+#profile .profile-container {
+  width: 100%;
+  padding: 0 !important;
+}
+
+#profile .run-types {
+  width: 100%;
+  height: 60px;
+  margin: 0 0 3% 0;
+  border-bottom: 1px solid rgba(205, 214, 224, 0.5);
+}
+
+#profile .run-types p {
+  margin: 0;
+  line-height: 60px;
+  vertical-align: middle;
+}
+
+#profile .run-types .run-active {
+  color: #257740;
+  border-bottom: 2px solid #257740;
+}
+
 #profile .profile-pic {
   width: 110px;
   height: 110px;
-  margin: 50px 0 25px 95px;
   background-size: cover;
   background-image: url("/img/profile-pic.jpg");
   border-radius: 100px;
@@ -617,14 +935,8 @@ body {
   padding: 8% 0;
 }
 
-#profile .recent-upload {
-  height: 500px;
-  padding: 0 0 0 5%;
-}
-
 #profile .upload {
   width: 100%;
-  height: 500px;
   padding: 3%;
   background: white;
   border-radius: 3px;
@@ -632,9 +944,6 @@ body {
 }
 
 #profile .upload .video {
-  height: 350px;
-  width: 100%;
-  margin: 0;
   background-size: cover;
   background-image: url("/img/india.jpg");
 }
@@ -829,42 +1138,36 @@ body {
 }
 
 .coaches {
-  width: 90%;
-  margin: 1% 0 1% 5%;
+  width: 100%;
+  margin: 1% 0 1% 0;
   padding: 0;
+  border-radius: 3px;
 }
 
 .professionals {
   padding: 0;
-  height: 350px;
+  border-radius: 3px !important;
   background: white !important;
 }
 
 .professionals .pro-image {
-  background-image: url("/img/mustache.jpg");
+  height: 300px;
+  background-image: url("/img/prof.jpg");
   background-size: cover;
 }
 
-.professionals .hire-btn {
-  margin: 2% 0 0 82%;
-  width: 100px;
-  height: 40px;
+.professionals .pro-image h2 {
+  margin: 12% 0 0 0;
+  font-size: 50px;
   color: white;
-  background: #81b48c;
-  border: 1px solid #81b48c;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.coaches:hover .hire-btn {
-  background-color: #6ad681;
 }
 
 .professionals .pro-content {
-  height: 350px;
+  height: 80px;
 }
 
 .professionals .pro-content h2 {
+  color: white;
   margin: 3% 0 3% 5%;
 }
 

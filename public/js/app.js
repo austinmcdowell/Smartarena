@@ -35670,7 +35670,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -35911,9 +35910,14 @@ var render = function() {
                               [_vm._v(" Most Runs")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(_vm._s(_vm.mostRunsBadge.count))
-                            ])
+                            _c(
+                              "div",
+                              {
+                                staticClass: "accolade",
+                                attrs: { align: "center" }
+                              },
+                              [_vm._v(_vm._s(_vm.mostRunsBadge.count))]
+                            )
                           ])
                         ])
                       ]
@@ -35968,9 +35972,14 @@ var render = function() {
                               [_vm._v("Most Efficient")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v("Most Efficient")
-                            ])
+                            _c(
+                              "div",
+                              {
+                                staticClass: "accolade",
+                                attrs: { align: "center" }
+                              },
+                              [_vm._v("Most Efficient")]
+                            )
                           ])
                         ])
                       ]
@@ -36028,11 +36037,19 @@ var render = function() {
                               [_vm._v("Best Average Time")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(
-                                " " + _vm._s(_vm.shortestAverageTimeBadge.count)
-                              )
-                            ])
+                            _c(
+                              "div",
+                              {
+                                staticClass: "accolade",
+                                attrs: { align: "center" }
+                              },
+                              [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(_vm.shortestAverageTimeBadge.count)
+                                )
+                              ]
+                            )
                           ])
                         ])
                       ]
@@ -36087,9 +36104,18 @@ var render = function() {
                               [_vm._v("Most uploads")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "accolade" }, [
-                              _vm._v(_vm._s(_vm.mostVideosUploadedBadge.count))
-                            ])
+                            _c(
+                              "div",
+                              {
+                                staticClass: "accolade",
+                                attrs: { align: "center" }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.mostVideosUploadedBadge.count)
+                                )
+                              ]
+                            )
                           ])
                         ])
                       ]
@@ -36379,36 +36405,30 @@ var render = function() {
                 [
                   _c("div", { staticClass: "container-fluid" }, [
                     _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire " + _vm._s(coach.first_name))]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [
+                      _c("div", { staticClass: "col-lg-12 pro-image" }, [
+                        _c("h2", { attrs: { align: "center" } }, [
                           _vm._v(
                             _vm._s(coach.first_name) +
                               " " +
                               _vm._s(coach.last_name)
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
                         ])
-                      ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-sm-12 col-lg-12 pro-content" },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "hire-btn",
+                              attrs: { align: "center" }
+                            },
+                            [_vm._v("Hire " + _vm._s(coach.first_name))]
+                          )
+                        ]
+                      )
                     ])
                   ])
                 ]
@@ -36418,7 +36438,19 @@ var render = function() {
         })
       ),
       _vm._v(" "),
-      _c("h3", { staticClass: "sec-title" }, [_vm._v("Team Roping")]),
+      _c(
+        "h3",
+        { staticClass: "sec-title" },
+        [
+          _vm._v("Team Roping | "),
+          _c("router-link", { attrs: { to: "/leaderboard/teamroping" } }, [
+            _c("span", { staticClass: "view-leaderboard" }, [
+              _vm._v("view leaderboard")
+            ])
+          ])
+        ],
+        1
+      ),
       _vm._v(" "),
       _c(
         "div",
@@ -36573,21 +36605,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -36651,56 +36668,30 @@ var render = function() {
                 [
                   _c("div", { staticClass: "container-fluid" }, [
                     _c("div", { staticClass: "row justify-content-center" }, [
-                      _c("div", { staticClass: "col-lg-6 pro-image" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "hire-btn",
-                            attrs: { align: "center" }
-                          },
-                          [_vm._v("Hire " + _vm._s(coach.first_name))]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-lg-6 pro-content" }, [
-                        _c("h2", [
+                      _c("div", { staticClass: "col-lg-12 pro-image" }, [
+                        _c("h2", { attrs: { align: "center" } }, [
                           _vm._v(
                             _vm._s(coach.first_name) +
                               " " +
                               _vm._s(coach.last_name)
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "sport-btn" }, [
-                          _c("p", { attrs: { align: "center" } }, [
-                            _vm._v("roping")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "pro-description" }, [
-                          _vm._v("Lorem ipsum ana init elo tu reinay")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "container-fluid" }, [
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-4" }, [
-                                _c("div", { staticClass: "coach-vid" })
-                              ])
-                            ]
-                          )
                         ])
-                      ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-sm-12 col-lg-12 pro-content" },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "hire-btn",
+                              attrs: { align: "center" }
+                            },
+                            [_vm._v("Hire " + _vm._s(coach.first_name))]
+                          )
+                        ]
+                      )
                     ])
                   ])
                 ]
@@ -37263,13 +37254,13 @@ var staticRenderFns = [
     return _c("div", { staticClass: "profile-stats" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-6 stat-vids" }, [
+          _c("div", { staticClass: "col-6 stat-vids" }, [
             _c("h4", { attrs: { align: "center" } }, [_vm._v("12")]),
             _vm._v(" "),
             _c("h5", { attrs: { align: "center" } }, [_vm._v("videos")])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-lg-6 stat-views" }, [
+          _c("div", { staticClass: "col-6 stat-views" }, [
             _c("h4", { attrs: { align: "center" } }, [_vm._v("1000")]),
             _vm._v(" "),
             _c("h5", { attrs: { align: "center" } }, [_vm._v("runs")])
@@ -42547,29 +42538,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "results" } }, [
-    _c(
-      "ul",
-      _vm._l(_vm.results, function(result) {
-        return _c(
-          "li",
-          { key: result.id },
-          [
-            _c("router-link", { attrs: { to: "/profile/" + result.id } }, [
-              _vm._v(
-                _vm._s(result.first_name) +
-                  " " +
-                  _vm._s(result.last_name) +
-                  " - " +
-                  _vm._s(result.location)
-              )
-            ])
-          ],
-          1
-        )
-      })
-    )
-  ])
+  return _c(
+    "div",
+    { staticClass: "search-results", attrs: { id: "results" } },
+    [
+      _c(
+        "ul",
+        _vm._l(_vm.results, function(result) {
+          return _c(
+            "li",
+            { key: result.id },
+            [
+              _c("router-link", { attrs: { to: "/profile/" + result.id } }, [
+                _vm._v(
+                  _vm._s(result.first_name) +
+                    " " +
+                    _vm._s(result.last_name) +
+                    " - " +
+                    _vm._s(result.location)
+                )
+              ])
+            ],
+            1
+          )
+        })
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
