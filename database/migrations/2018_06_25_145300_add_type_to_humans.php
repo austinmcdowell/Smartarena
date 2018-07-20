@@ -14,7 +14,7 @@ class AddTypeToHumans extends Migration
     public function up()
     {
         Schema::table('humans', function (Blueprint $table) {
-            $table->string('type');
+            $table->string('type')->default('standard');
         });
     }
 
