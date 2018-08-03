@@ -14,11 +14,11 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-6 stat-vids">
-                                                    <h4 align="center">12</h4>
+                                                    <h4 align="center">{{ videoCount }}</h4>
                                                     <h5 align="center">videos</h5>
                                                 </div>
                                                 <div class="col-6 stat-views">
-                                                    <h4 align="center">1000</h4>
+                                                    <h4 align="center">{{ runCount }}</h4>
                                                     <h5 align="center">runs</h5>
                                                 </div>
                                             </div>
@@ -29,7 +29,7 @@
                                         <h5><i style="font-size:18px" class="fab fa-facebook s-media"></i>facebook.com</h5>
                                     </div>
                                     
-                                    <div class="hire-btn"><h5 align="center"><b>Hire {{ human.first_name }}</b></h5></div>
+                                    <div v-if="human.type === 'pro'" class="hire-btn"><h5 align="center"><b><a :href="human.calendly_link">Hire {{ human.first_name }}</a></b></h5></div>
                                 </div>
                                 
                             </div>
@@ -110,26 +110,7 @@
                                 <h5>Recent Uploads</h5>
                                 <div class="container">
                                     <div class="row recent-uploads justify-content-between">
-                                        <div class="col-lg-3">
-                                            <div class="rec-vid">
-                                                <div class="video"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="rec-vid">
-                                                <div class="video"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="rec-vid">
-                                                <div class="video"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="rec-vid">
-                                                <div class="video"></div>
-                                            </div>
-                                        </div>
+                                        <div class="col-lg-3 rec-vid" v-for="video in uploadedVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
                                     </div>
                                 </div>
                             </div>
@@ -273,6 +254,9 @@
     </div>
 </template>
 <script>
+
+import VideoCellComponent from './VideoCellComponent.vue';
+
 export default {
     mounted() {
         let $this = this;
@@ -294,6 +278,7 @@ export default {
             $this.heelerRuns = data.heelerRuns;
             $this.human      = data.human;
             $this.uploadedVideos = data.uploadedVideos;
+            $this.associatedVideos     = data.associatedVideos;
         }).catch(e => {
             alert('There has been an error. Please contact support.')
         })
@@ -302,10 +287,22 @@ export default {
         return {
             user: {},
             human: {},
+            associatedVideos: [],
             uploadedVideos: [],
             headerRuns: [],
-            heelerRuns: [],
+            heelerRuns: []
         }
+    },
+    computed: {
+        runCount() {
+            return this.headerRuns.length + this.heelerRuns.length;
+        },
+        videoCount() {
+            return this.associatedVideos.length + this.uploadedVideos.length;
+        }
+    },
+    components: {
+        'video-cell': VideoCellComponent
     }
 };
 </script>
