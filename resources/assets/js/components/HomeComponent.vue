@@ -130,7 +130,7 @@
                                     
                                 </div>
                                 <div class="col-sm-12 col-lg-12 pro-content">
-                                    <button class="hire-btn" align="center">Hire {{ coach.first_name }}</button>
+                                    <a :href="coach.calendly_link" class="hire-btn" align="center">Hire {{ coach.first_name }}</a>
                                 </div>
                             </div>
                         </div>

@@ -36420,10 +36420,13 @@ var render = function() {
                         { staticClass: "col-sm-12 col-lg-12 pro-content" },
                         [
                           _c(
-                            "button",
+                            "a",
                             {
                               staticClass: "hire-btn",
-                              attrs: { align: "center" }
+                              attrs: {
+                                href: coach.calendly_link,
+                                align: "center"
+                              }
                             },
                             [_vm._v("Hire " + _vm._s(coach.first_name))]
                           )
