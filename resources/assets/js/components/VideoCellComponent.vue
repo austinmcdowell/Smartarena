@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="video">
         <router-link :to="`/video/${video.id}`" class="video-wrapper">
             <div class="vid-thumbnail" :style="`background-image: url('${video.thumbnail_url}')`">
                 <div class="vid-time" align="center"><p>0:30</p></div>
