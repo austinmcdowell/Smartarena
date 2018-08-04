@@ -56926,7 +56926,7 @@ var render = function() {
                             "b-tab",
                             { attrs: { title: "Header", active: "" } },
                             [
-                              _c("table", { staticClass: "table" }, [
+                              _c("table", { staticClass: "table runs-table" }, [
                                 _c("thead", [
                                   _c("tr", [
                                     _c("th"),
@@ -56960,15 +56960,20 @@ var render = function() {
                                       _c(
                                         "td",
                                         [
-                                          _c(
-                                            "router-link",
-                                            {
-                                              attrs: {
-                                                to: "/run/edit/" + run.id
-                                              }
-                                            },
-                                            [_vm._v("Edit")]
-                                          )
+                                          _vm.window.user &&
+                                          _vm.window.user.human &&
+                                          _vm.window.user.human.id ===
+                                            run.stats.header.human_id
+                                            ? _c(
+                                                "router-link",
+                                                {
+                                                  attrs: {
+                                                    to: "/run/edit/" + run.id
+                                                  }
+                                                },
+                                                [_vm._v("Edit")]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       ),
@@ -57043,7 +57048,7 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("b-tab", { attrs: { title: "Heeler" } }, [
-                            _c("table", { staticClass: "table" }, [
+                            _c("table", { staticClass: "table runs-table" }, [
                               _c("thead", [
                                 _c("tr", [
                                   _c("th"),
@@ -57077,13 +57082,20 @@ var render = function() {
                                     _c(
                                       "td",
                                       [
-                                        _c(
-                                          "router-link",
-                                          {
-                                            attrs: { to: "/run/edit/" + run.id }
-                                          },
-                                          [_vm._v("Edit")]
-                                        )
+                                        _vm.window.user &&
+                                        _vm.window.user.human &&
+                                        _vm.window.user.human.id ===
+                                          run.stats.heeler.human_id
+                                          ? _c(
+                                              "router-link",
+                                              {
+                                                attrs: {
+                                                  to: "/run/edit/" + run.id
+                                                }
+                                              },
+                                              [_vm._v("Edit")]
+                                            )
+                                          : _vm._e()
                                       ],
                                       1
                                     ),

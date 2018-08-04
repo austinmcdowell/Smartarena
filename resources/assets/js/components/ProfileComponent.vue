@@ -56,7 +56,7 @@
                                 <b-card no-body>
                                     <b-tabs card>
                                         <b-tab title="Header" active>
-                                            <table class="table">
+                                            <table class="table runs-table">
                                                 <thead>
                                                     <tr>
                                                         <th></th>
@@ -74,7 +74,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr v-for="run in headerRuns" :key="run.id">
-                                                        <td><router-link :to="`/run/edit/${run.id}`">Edit</router-link></td>
+                                                        <td><router-link v-if="window.user && window.user.human && window.user.human.id === run.stats.header.human_id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
                                                         <td><router-link :to="`/video/${run.videos[0].id}`">Play</router-link></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
@@ -90,7 +90,7 @@
                                             </table>
                                         </b-tab>
                                         <b-tab title="Heeler">
-                                            <table class="table">
+                                            <table class="table runs-table">
                                                 <thead>
                                                     <tr>
                                                         <th></th>
@@ -108,7 +108,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr v-for="run in heelerRuns" :key="run.id">
-                                                        <td><router-link :to="`/run/edit/${run.id}`">Edit</router-link></td>
+                                                        <td><router-link v-if="window.user && window.user.human && window.user.human.id === run.stats.heeler.human_id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
                                                         <td><router-link :to="`/video/${run.videos[0].id}`">Play</router-link></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>

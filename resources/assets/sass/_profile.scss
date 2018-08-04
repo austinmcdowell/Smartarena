@@ -27,6 +27,9 @@
   padding: 3% 0;
   overflow: hidden !important;
 
+  .runs-table {
+    font-size: 1vw;
+  }
 
   // Small devices (landscape phones, 576px and up)
   @media (min-width: 300px) { 
@@ -300,6 +303,8 @@
     // margin: 0 !important;
     padding: 0 !important;
   }
+
+
 
   .run-types {
     width: 100%;

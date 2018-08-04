@@ -600,6 +600,10 @@ body {
   padding: 0 !important;
 }
 
+#profile .runs-table {
+  font-size: 1vw;
+}
+
 @media (min-width: 300px) {
   #profile .profile {
     width: 100%;
