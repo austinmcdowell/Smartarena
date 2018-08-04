@@ -65,6 +65,18 @@ h2 {
   }
 }
 
+@media (min-width: 768px) {
+  .roping-videos .vid-thumbnail {
+    height: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .roping-videos .vid-thumbnail {
+    height: 300px;
+  }
+}
+
 @media (min-width: 1200px) {
   .sa-brand {
     margin: 0 0 0 .5%;
@@ -106,6 +118,72 @@ h2 {
   .coaches:hover .hire-btn {
     background-color: #4a8360;
     color: white;
+  }
+
+  .roping-videos .rope-vid {
+    padding: 1%;
+    margin: 0;
+  }
+
+  .roping-videos .video-wrapper {
+    margin: 0 1%;
+  }
+
+  .roping-videos .video-wrapper:hover .vid-time {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .roping-videos .video-wrapper:hover .light-green {
+    color: #66b194;
+  }
+
+  .roping-videos .vid-thumbnail {
+    width: 100%;
+    height: 120px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background-size: cover;
+    background-image: url("/img/cow.jpg");
+  }
+
+  .roping-videos .vid-time {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+  }
+
+  .roping-videos .vid-time p {
+    color: white;
+    font-size: 10px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .roping-videos .vid-content {
+    width: 100%;
+    padding: 2%;
+    margin: 0;
+    background: white;
+  }
+
+  .roping-videos .vid-content .vid-description {
+    color: black !important;
+  }
+
+  .roping-videos .vid-content .vid-description li a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .roping-videos .vid-content .vid-views {
+    color: #c4c4c4;
+    font-size: 13px;
   }
 }
 
@@ -255,32 +333,6 @@ body {
   min-height: 100% !important;
 }
 
-@media (min-width: 1200px) {
-  #leaderboard .leaderboards-videos {
-    width: 100%;
-    margin: 5% 0;
-    padding: 1%;
-  }
-
-  #leaderboard .leaderboards-videos .rope-vid {
-    padding: 0;
-    margin: 0 0 3% 0;
-  }
-
-  #leaderboard .leaderboards-videos .vid-thumbnail {
-    width: 96%;
-    height: 100px;
-    padding: 0;
-    margin: 0;
-  }
-
-  #leaderboard .leaderboards-videos .vid-description {
-    width: 96%;
-    padding: 2% 0 5% 3%;
-    margin: 0;
-  }
-}
-
 #leaderboard {
   padding: 1% 5%;
 }
@@ -383,22 +435,6 @@ body {
   .roping-videos {
     padding: 4%;
   }
-
-  .rope-vid {
-    margin: 0 0 3% 0;
-    padding: 4%;
-    border-radius: 3px;
-    background: white;
-  }
-
-  .rope-vid .vid-description {
-    padding: 2% 0 0 0;
-    color: black;
-  }
-
-  .rope-vid .vid-views {
-    color: #c4c4c4;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -443,61 +479,6 @@ body {
 
   #home .card-content img {
     width: 100%;
-  }
-
-  #home .roping-videos {
-    width: 100%;
-    padding: 0;
-    margin: 0 0 10% 0;
-  }
-
-  #home .video-wrapper:hover .vid-time {
-    background: rgba(0, 0, 0, 0.85);
-  }
-
-  #home .video-wrapper:hover .light-green {
-    color: #66b194;
-  }
-
-  #home .rope-vid {
-    margin: 0 0 50% 0;
-  }
-
-  #home .roping-videos a {
-    width: 200px;
-  }
-
-  #home .roping-videos .rope-vid {
-    padding: 1%;
-    margin: 1% 1% 15% 1%;
-    background: white;
-    border-radius: 3px;
-  }
-
-  #home .roping-videos .vid-thumbnail {
-    width: 96%;
-    height: 120px;
-    padding: 0;
-    margin: 2% 0 0 2%;
-  }
-
-  #home .roping-videos .vid-description {
-    width: 96%;
-    padding: 2% 0 5% 1.5%;
-    margin: 0;
-    color: black !important;
-  }
-
-  #home .roping-videos .vid-description li a {
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  #home .roping-videos .vid-views {
-    padding: 0 0 0 1.5%;
-    color: #c8c8c8;
-    font-size: 13px;
   }
 }
 
@@ -582,32 +563,6 @@ body {
 
 #home .award:hover .accolade {
   color: #6ad681;
-}
-
-#home .roping-videos .vid-thumbnail {
-  padding: 36% 0 0 0;
-  background-size: cover;
-  background-image: url("/img/cow.jpg");
-}
-
-#home .roping-videos .vid-time {
-  width: 40px;
-  height: 20px;
-  margin: 0 0 0 75%;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
-}
-
-#home .roping-videos .vid-time p {
-  color: white;
-  font-size: 10px;
-  line-height: 20px;
-  vertical-align: middle;
-}
-
-#home .roping-videos .vid-description {
-  background: white;
-  font-family: 'Arial Black';
 }
 
 .input-field > select {
@@ -1187,5 +1142,70 @@ body {
   margin: 10% 0 0 10%;
   background-size: cover;
   background-image: url("/img/cow.jpg");
+}
+
+.roping-videos .rope-vid {
+  padding: 1%;
+  margin: 0;
+}
+
+.roping-videos .video-wrapper {
+  margin: 0 1%;
+}
+
+.roping-videos .video-wrapper:hover .vid-time {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.roping-videos .video-wrapper:hover .light-green {
+  color: #66b194;
+}
+
+.roping-videos .vid-thumbnail {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-size: cover;
+  background-image: url("/img/cow.jpg");
+}
+
+.roping-videos .vid-time {
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+.roping-videos .vid-time p {
+  color: white;
+  font-size: 10px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.roping-videos .vid-content {
+  width: 100%;
+  padding: 2%;
+  margin: 0;
+  background: white;
+}
+
+.roping-videos .vid-content .vid-description {
+  color: black !important;
+}
+
+.roping-videos .vid-content .vid-description li a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.roping-videos .vid-content .vid-views {
+  color: #c4c4c4;
+  font-size: 13px;
 }
 

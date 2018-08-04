@@ -69,10 +69,19 @@ h2 {
 }
 
 @media (min-width: 768px) {
-  
+  .roping-videos {
+    .vid-thumbnail {
+      height: 300px;
+    }
+  }
 }
 
 @media (min-width: 992px) {
+  .roping-videos {
+    .vid-thumbnail {
+      height: 300px;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -122,6 +131,81 @@ h2 {
     }
   }
 
+  .roping-videos {
+
+    .rope-vid {
+      padding: 1%;
+      margin: 0;
+    }
+
+    .video-wrapper {
+      margin: 0 1%;
+    }
+
+    .video-wrapper:hover {
+      .vid-time {
+        background: rgba(0, 0, 0, .85);
+      }
+
+      .light-green {
+        color: rgba(102, 177, 148, 1);
+      }
+    }
+
+    .vid-thumbnail {
+      width: 100%;
+      height: 120px;
+  
+      padding: 0;
+      margin: 0;
+      position: relative;
+
+      background-size: cover;
+      background-image: url('/img/cow.jpg');
+    }
+
+    .vid-time {
+      width: 40px;
+      height: 20px;
+      // margin: 0 0 0 75%;
+      position: absolute;
+      right: 6px;
+      bottom: 6px;
+  
+      background: rgba(0, 0, 0, .6);
+  
+      border-radius: 5px;
+  
+      p {
+        color: white;
+        font-size: 10px;
+        line-height: 20px;
+        vertical-align: middle;
+      }
+    }
+
+    .vid-content {
+      width: 100%;
+      padding: 2%;
+      margin: 0;
+      background: white;
+
+      .vid-description {
+        color: black !important;
+  
+        li a {
+          text-decoration: none;
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      .vid-views {
+        color: rgb(196, 196, 196);
+        font-size: 13px;
+      }
+    }    
+  }
 }
 
 
@@ -347,4 +431,80 @@ h2 {
   margin: 10% 0 0 10%;
   background-size: cover;
   background-image: url('/img/cow.jpg');
+}
+
+
+.roping-videos {
+
+  .rope-vid {
+    padding: 1%;
+    margin: 0;
+  }
+
+  .video-wrapper {
+    margin: 0 1%;
+  }
+
+  .video-wrapper:hover {
+    .vid-time {
+      background: rgba(0, 0, 0, .85);
+    }
+
+    .light-green {
+      color: rgba(102, 177, 148, 1);
+    }
+  }
+
+  .vid-thumbnail {
+    width: 100%;
+
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    background-size: cover;
+    background-image: url('/img/cow.jpg');
+  }
+
+  .vid-time {
+    width: 40px;
+    height: 20px;
+    // margin: 0 0 0 75%;
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+
+    background: rgba(0, 0, 0, .6);
+
+    border-radius: 5px;
+
+    p {
+      color: white;
+      font-size: 10px;
+      line-height: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  .vid-content {
+    width: 100%;
+    padding: 2%;
+    margin: 0;
+    background: white;
+
+    .vid-description {
+      color: black !important;
+
+      li a {
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .vid-views {
+      color: rgb(196, 196, 196);
+      font-size: 13px;
+    }
+  }    
 }
