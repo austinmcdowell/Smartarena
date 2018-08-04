@@ -55334,7 +55334,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -55391,6 +55390,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['video']
@@ -55435,19 +55436,23 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "vid-description" }, [
-            _vm.video.human
-              ? _c("span", [_vm._v(_vm._s(_vm.video.human.name))])
-              : _vm._e(),
-            _vm._v(" " + _vm._s(_vm.video.uploaded_at))
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "vid-views" }, [
-            _vm.video.human
-              ? _c("span", [_vm._v(_vm._s(_vm.video.human.name))])
-              : _vm._e(),
-            _vm._v(" | "),
-            _c("span", { staticClass: "light-green" }, [_vm._v("1,001 views")])
+          _c("div", { staticClass: "vid-content" }, [
+            _c("div", { staticClass: "vid-description" }, [
+              _vm.video.human
+                ? _c("span", [_vm._v(_vm._s(_vm.video.human.name))])
+                : _vm._e(),
+              _vm._v(" " + _vm._s(_vm.video.uploaded_at))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "vid-views" }, [
+              _vm.video.human
+                ? _c("span", [_vm._v(_vm._s(_vm.video.human.name))])
+                : _vm._e(),
+              _vm._v(" | "),
+              _c("span", { staticClass: "light-green" }, [
+                _vm._v("1,001 views")
+              ])
+            ])
           ])
         ]
       )
@@ -56076,7 +56081,7 @@ var render = function() {
         _vm._l(_vm.teamropingVideos, function(video) {
           return _c(
             "div",
-            { key: video.id, staticClass: "col-lg-3 rope-vid" },
+            { key: video.id, staticClass: "col-sm-12 col-lg-3 rope-vid" },
             [_c("video-cell", { attrs: { video: video } })],
             1
           )

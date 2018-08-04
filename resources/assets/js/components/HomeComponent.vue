@@ -146,8 +146,7 @@
         
         <div class="row roping-videos justify-content-between">
             <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-            <div class="col-lg-3 rope-vid" v-for="video in teamropingVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
-            
+            <div class="col-sm-12 col-lg-3 rope-vid" v-for="video in teamropingVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
         </div>
         <!-- <div class="row hide-on-large-only">
             <div class="col s10 offset-s1">

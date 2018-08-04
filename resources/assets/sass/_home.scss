@@ -69,23 +69,6 @@ body {
     padding: 4%;
   }
 
-  .rope-vid {
-    margin: 0 0 3% 0;
-    padding: 4%;
-    border-radius: 3px;
-
-    background: white;
-
-    .vid-description {
-      padding: 2% 0 0 0;
-      color: black;
-    }
-
-    .vid-views {
-      color: rgb(196, 196, 196);
-    }
-  }
-
 }
 
 @media (min-width: 768px) {
@@ -139,75 +122,6 @@ body {
         width:100%
       }
     }
-  
-  
-    .roping-videos {
-      width: 100%;
-      padding: 0;
-      margin: 0 0 10% 0;
-    }
-
-    .video-wrapper {
-      // width: 200px;
-    }
-
-    .video-wrapper:hover {
-      .vid-time {
-        background: rgba(0, 0, 0, .85);
-      }
-
-      .light-green {
-        color: rgba(102, 177, 148, 1);
-      }
-    }
-
-    .rope-vid {
-      // width: 200px !important;
-      margin: 0 0 50% 0;
-    }
-
-    .roping-videos a {
-      width: 200px;
-    }
-  
-    .roping-videos .rope-vid {
-      padding: 1%;
-      margin: 1% 1% 15% 1%;
-
-      background: white;
-      border-radius: 3px;
-      // border: 1px solid rgba(205, 214, 224, .5);
-    }
-  
-    .roping-videos .vid-thumbnail {
-      width: 96%;
-      height: 120px;
-  
-      padding: 0;
-      margin: 2% 0 0 2%;
-    }
-  
-    .roping-videos .vid-description {
-      width: 96%;
-      padding: 2% 0 5% 1.5%;
-      margin: 0;
-
-      color: black !important;
-
-      li a {
-        text-decoration: none;
-        padding: 0;
-        margin: 0;
-      }
-    }
-
-    .roping-videos .vid-views {
-      padding: 0 0 0 1.5%;
-      color: rgb(200, 200, 200);
-
-      font-size: 13px;
-    }
-  
   }  
 }
 
@@ -301,38 +215,5 @@ body {
       color: rgb(106, 214, 129);
     }
   }
-
-  .roping-videos {
-    // border-bottom: 1x solid rgb(240, 240, 240);
-  }
-
-  .roping-videos .vid-thumbnail {
-    padding: 36% 0 0 0;
-    background-size: cover;
-    background-image: url('/img/cow.jpg');
-  }
-
-  .roping-videos .vid-time {
-    width: 40px;
-    height: 20px;
-    margin: 0 0 0 75%;
-
-    background: rgba(0, 0, 0, .6);
-
-    border-radius: 5px;
-
-    p {
-      color: white;
-      font-size: 10px;
-      line-height: 20px;
-      vertical-align: middle;
-    }
-  }
-
-  .roping-videos .vid-description {
-    background: white;
-    font-family: 'Arial Black';
-  }
-
 }
 
