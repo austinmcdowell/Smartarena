@@ -55,8 +55,74 @@
                             <div class="col-lg-12">
                                 <b-card no-body>
                                     <b-tabs card>
-                                        <b-tab title="Header" active>Header</b-tab>
-                                        <b-tab title="Heeler">Heeler</b-tab>
+                                        <b-tab title="Header" active>
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th>Date</th>
+                                                        <th>Event</th>
+                                                        <th>Header Catch</th>
+                                                        <th>Heeler Catch</th>
+                                                        <th>Header Penalty</th>
+                                                        <th>Penalties</th>
+                                                        <th>Total Run Penalties</th>
+                                                        <th>Raw Time</th>
+                                                        <th>Total Time</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr v-for="run in headerRuns" :key="run.id">
+                                                        <td><router-link :to="`/run/edit/${run.id}`">Edit</router-link></td>
+                                                        <td><router-link :to="`/video/${run.videos[0].id}`">Play</router-link></td>
+                                                        <td>{{ run.date }}</td>
+                                                        <td>{{ run.event.location }}</td>
+                                                        <td>{{ run.stats.header.catch_type }}</td>
+                                                        <td>{{ run.stats.heeler.catch_type }}</td>
+                                                        <td>{{ run.stats.header.penalty_type }}</td>
+                                                        <td>{{ run.stats.header.penalty_time }}</td>
+                                                        <td>{{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</td>
+                                                        <td>{{ run.stats.raw_time }}</td>
+                                                        <td>{{ run.stats.total_time }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </b-tab>
+                                        <b-tab title="Heeler">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th>Date</th>
+                                                        <th>Event</th>
+                                                        <th>Header Catch</th>
+                                                        <th>Heeler Catch</th>
+                                                        <th>Heeler Penalty</th>
+                                                        <th>Penalties</th>
+                                                        <th>Total Run Penalties</th>
+                                                        <th>Raw Time</th>
+                                                        <th>Total Time</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr v-for="run in heelerRuns" :key="run.id">
+                                                        <td><router-link :to="`/run/edit/${run.id}`">Edit</router-link></td>
+                                                        <td><router-link :to="`/video/${run.videos[0].id}`">Play</router-link></td>
+                                                        <td>{{ run.date }}</td>
+                                                        <td>{{ run.event.location }}</td>
+                                                        <td>{{ run.stats.header.catch_type }}</td>
+                                                        <td>{{ run.stats.heeler.catch_type }}</td>
+                                                        <td>{{ run.stats.heeler.penalty_type }}</td>
+                                                        <td>{{ run.stats.header.penalty_time }}</td>
+                                                        <td>{{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</td>
+                                                        <td>{{ run.stats.raw_time }}</td>
+                                                        <td>{{ run.stats.total_time }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </b-tab>
                                     </b-tabs>
                                 </b-card>
                             </div>
