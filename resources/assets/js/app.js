@@ -10,6 +10,9 @@ require('./bootstrap');
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueCarousel from 'vue-carousel';
+import BootstrapVue from 'bootstrap-vue'
+
+Vue.use(BootstrapVue);
 Vue.use(VueCarousel);
 
 // Components

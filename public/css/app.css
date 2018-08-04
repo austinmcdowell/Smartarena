@@ -652,8 +652,8 @@ body {
   }
 
   #profile .profile .profile-pic {
-    margin-bottom: 4%;
-    display: inline-block;
+    display: block;
+    margin: 10px auto 20px;
   }
 
   #profile .profile .hire-btn {
@@ -887,11 +887,6 @@ body {
   font-size: 15px;
   line-height: 40px;
   vertical-align: middle;
-}
-
-#profile .banner {
-  overflow: hidden !important;
-  padding: 0 !important;
 }
 
 #profile .profile-container {

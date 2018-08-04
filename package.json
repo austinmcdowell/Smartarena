@@ -19,6 +19,7 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.11",
     "vue-carousel": "^0.8.1",
     "vue-router": "^3.0.1",
     "vuejs-datepicker": "^1.5.2"

@@ -53,57 +53,12 @@
                             </div>
 
                             <div class="col-lg-12">
-                                <div class="run-types">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-4"></div>
-                                            <div class="col-lg-1 run-active"><p align="center">Header</p></div>
-                                            <div class="col-lg-1"><p align="center">Heeler</p></div>
-                                            <div class="col-lg-1"><p align="center">3</p></div>
-                                            <div class="col-lg-1"><p align="center">4</p></div>
-                                            <div class="col-lg-4"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="runs">
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-                                </div>
+                                <b-card no-body>
+                                    <b-tabs card>
+                                        <b-tab title="Header" active>Header</b-tab>
+                                        <b-tab title="Heeler">Heeler</b-tab>
+                                    </b-tabs>
+                                </b-card>
                             </div>
 
                             <div class="col-lg-12 uploads">
