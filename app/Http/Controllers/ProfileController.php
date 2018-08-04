@@ -15,6 +15,7 @@ class ProfileController extends Controller
     public function get($id)
     {
         $human       = Human::find($id);
+        $associated_videos = Video::orderBy('created_at')->where('human_id', $id)->whereNotNull('run_id')->get();
         $uploaded_videos = Video::orderBy('created_at')->where('human_id', $id)->whereNull('run_id')->get();
         $header_runs = Run::where('stats->header->human_id', $id)->with('event', 'videos')->get();
         $heeler_runs = Run::where('stats->heeler->human_id', $id)->with('event', 'videos')->get();
@@ -22,6 +23,7 @@ class ProfileController extends Controller
             'human'       => $human,
             'headerRuns' => $header_runs,
             'heelerRuns' => $heeler_runs,
+            'associatedVideos' => $associated_videos,
             'uploadedVideos' => $uploaded_videos
         ];
     }

@@ -14,11 +14,11 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-6 stat-vids">
-                                                    <h4 align="center">12</h4>
+                                                    <h4 align="center">{{ videoCount }}</h4>
                                                     <h5 align="center">videos</h5>
                                                 </div>
                                                 <div class="col-6 stat-views">
-                                                    <h4 align="center">1000</h4>
+                                                    <h4 align="center">{{ runCount }}</h4>
                                                     <h5 align="center">runs</h5>
                                                 </div>
                                             </div>
@@ -29,7 +29,7 @@
                                         <h5><i style="font-size:18px" class="fab fa-facebook s-media"></i>facebook.com</h5>
                                     </div>
                                     
-                                    <div class="hire-btn"><h5 align="center"><b>Hire {{ human.first_name }}</b></h5></div>
+                                    <div v-if="human.type === 'pro'" class="hire-btn"><h5 align="center"><b><a :href="human.calendly_link">Hire {{ human.first_name }}</a></b></h5></div>
                                 </div>
                                 
                             </div>
@@ -53,83 +53,19 @@
                             </div>
 
                             <div class="col-lg-12">
-                                <div class="run-types">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-4"></div>
-                                            <div class="col-lg-1 run-active"><p align="center">Header</p></div>
-                                            <div class="col-lg-1"><p align="center">Heeler</p></div>
-                                            <div class="col-lg-1"><p align="center">3</p></div>
-                                            <div class="col-lg-1"><p align="center">4</p></div>
-                                            <div class="col-lg-4"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="runs">
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-
-                                    <div class="run">
-                                        <p>test</p>
-                                    </div>
-                                </div>
+                                <b-card no-body>
+                                    <b-tabs card>
+                                        <b-tab title="Header" active>Header</b-tab>
+                                        <b-tab title="Heeler">Heeler</b-tab>
+                                    </b-tabs>
+                                </b-card>
                             </div>
 
                             <div class="col-lg-12 uploads">
                                 <h5>Recent Uploads</h5>
                                 <div class="container">
                                     <div class="row recent-uploads justify-content-between">
-                                        <div class="col-lg-3">
-                                            <div class="rec-vid">
-                                                <div class="video"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="rec-vid">
-                                                <div class="video"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="rec-vid">
-                                                <div class="video"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="rec-vid">
-                                                <div class="video"></div>
-                                            </div>
-                                        </div>
+                                        <div class="col-lg-3 rec-vid" v-for="video in uploadedVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
                                     </div>
                                 </div>
                             </div>
@@ -273,6 +209,9 @@
     </div>
 </template>
 <script>
+
+import VideoCellComponent from './VideoCellComponent.vue';
+
 export default {
     mounted() {
         let $this = this;
@@ -294,6 +233,7 @@ export default {
             $this.heelerRuns = data.heelerRuns;
             $this.human      = data.human;
             $this.uploadedVideos = data.uploadedVideos;
+            $this.associatedVideos     = data.associatedVideos;
         }).catch(e => {
             alert('There has been an error. Please contact support.')
         })
@@ -302,10 +242,22 @@ export default {
         return {
             user: {},
             human: {},
+            associatedVideos: [],
             uploadedVideos: [],
             headerRuns: [],
-            heelerRuns: [],
+            heelerRuns: []
         }
+    },
+    computed: {
+        runCount() {
+            return this.headerRuns.length + this.heelerRuns.length;
+        },
+        videoCount() {
+            return this.associatedVideos.length + this.uploadedVideos.length;
+        }
+    },
+    components: {
+        'video-cell': VideoCellComponent
     }
 };
 </script>
