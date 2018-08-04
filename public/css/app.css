@@ -127,8 +127,16 @@ h2 {
     margin: 0;
   }
 
+  .roping-videos .video {
+    padding: 3%;
+    margin: 0 0 6% 0;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
   .roping-videos .video-wrapper {
-    margin: 0 1%;
+    margin: 0 0 1% 0;
   }
 
   .roping-videos .video-wrapper:hover .vid-time {
@@ -433,10 +441,6 @@ body {
     width: 100%;
     margin: 0;
   }
-
-  .roping-videos {
-    padding: 4%;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -446,8 +450,7 @@ body {
 
   #home .award-center {
     width: 100%;
-    margin: 0;
-    padding: 2%;
+    margin: 0 0 7% 0;
   }
 
   #home .awards {
@@ -1091,7 +1094,7 @@ body {
 
 .coaches {
   width: 100%;
-  margin: 1% 0 1% 0;
+  margin: 0 0 7% 0;
   padding: 0;
   border-radius: 3px;
 }
@@ -1146,12 +1149,12 @@ body {
 }
 
 .roping-videos .rope-vid {
-  padding: 1%;
+  padding: 0 1%;
   margin: 0;
 }
 
 .roping-videos .video-wrapper {
-  margin: 0 1%;
+  margin: 0 0 1% 0;
 }
 
 .roping-videos .video-wrapper:hover .vid-time {

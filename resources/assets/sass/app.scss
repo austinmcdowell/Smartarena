@@ -141,8 +141,18 @@ h2 {
       margin: 0;
     }
 
+    .video {
+      padding: 3%;
+      margin: 0 0 6% 0;
+
+      background: white;
+
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, .05);
+    }
+
     .video-wrapper {
-      margin: 0 1%;
+      margin: 0 0 1% 0;
     }
 
     .video-wrapper:hover {
@@ -374,7 +384,7 @@ h2 {
 
 .coaches {
   width: 100%;
-  margin: 1% 0 1% 0;
+  margin: 0 0 7% 0;
   padding: 0;
 
   border-radius: 3px;
@@ -440,12 +450,12 @@ h2 {
 .roping-videos {
 
   .rope-vid {
-    padding: 1%;
+    padding: 0 1%;
     margin: 0;
   }
 
   .video-wrapper {
-    margin: 0 1%;
+    margin: 0 0 1% 0;
   }
 
   .video-wrapper:hover {
