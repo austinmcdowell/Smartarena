@@ -56711,6 +56711,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -56860,11 +56926,235 @@ var render = function() {
                           _c(
                             "b-tab",
                             { attrs: { title: "Header", active: "" } },
-                            [_vm._v("Header")]
+                            [
+                              _c("table", { staticClass: "table" }, [
+                                _c("thead", [
+                                  _c("tr", [
+                                    _c("th"),
+                                    _vm._v(" "),
+                                    _c("th"),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Date")]),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Event")]),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Header Catch")]),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Heeler Catch")]),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Header Penalty")]),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Penalties")]),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Total Run Penalties")]),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Raw Time")]),
+                                    _vm._v(" "),
+                                    _c("th", [_vm._v("Total Time")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "tbody",
+                                  _vm._l(_vm.headerRuns, function(run) {
+                                    return _c("tr", { key: run.id }, [
+                                      _c(
+                                        "td",
+                                        [
+                                          _c(
+                                            "router-link",
+                                            {
+                                              attrs: {
+                                                to: "/run/edit/" + run.id
+                                              }
+                                            },
+                                            [_vm._v("Edit")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        [
+                                          _c(
+                                            "router-link",
+                                            {
+                                              attrs: {
+                                                to: "/video/" + run.videos[0].id
+                                              }
+                                            },
+                                            [_vm._v("Play")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c("td", [_vm._v(_vm._s(run.date))]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(_vm._s(run.event.location))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          _vm._s(run.stats.header.catch_type)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          _vm._s(run.stats.heeler.catch_type)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          _vm._s(run.stats.header.penalty_type)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          _vm._s(run.stats.header.penalty_time)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(
+                                          _vm._s(
+                                            run.stats.header.penalty_time +
+                                              run.stats.heeler.penalty_time
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(_vm._s(run.stats.raw_time))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(_vm._s(run.stats.total_time))
+                                      ])
+                                    ])
+                                  })
+                                )
+                              ])
+                            ]
                           ),
                           _vm._v(" "),
                           _c("b-tab", { attrs: { title: "Heeler" } }, [
-                            _vm._v("Heeler")
+                            _c("table", { staticClass: "table" }, [
+                              _c("thead", [
+                                _c("tr", [
+                                  _c("th"),
+                                  _vm._v(" "),
+                                  _c("th"),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Date")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Event")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Header Catch")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Heeler Catch")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Heeler Penalty")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Penalties")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Total Run Penalties")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Raw Time")]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v("Total Time")])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "tbody",
+                                _vm._l(_vm.heelerRuns, function(run) {
+                                  return _c("tr", { key: run.id }, [
+                                    _c(
+                                      "td",
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: { to: "/run/edit/" + run.id }
+                                          },
+                                          [_vm._v("Edit")]
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "td",
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: "/video/" + run.videos[0].id
+                                            }
+                                          },
+                                          [_vm._v("Play")]
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("td", [_vm._v(_vm._s(run.date))]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(run.event.location))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(
+                                        _vm._s(run.stats.header.catch_type)
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(
+                                        _vm._s(run.stats.heeler.catch_type)
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(
+                                        _vm._s(run.stats.heeler.penalty_type)
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(
+                                        _vm._s(run.stats.header.penalty_time)
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(
+                                        _vm._s(
+                                          run.stats.header.penalty_time +
+                                            run.stats.heeler.penalty_time
+                                        )
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(run.stats.raw_time))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(run.stats.total_time))
+                                    ])
+                                  ])
+                                })
+                              )
+                            ])
                           ])
                         ],
                         1
