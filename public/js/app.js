@@ -55334,6 +55334,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -55752,247 +55760,256 @@ var render = function() {
               },
               [
                 _c("slide", [
-                  _c(
-                    "div",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.mostRunsBadge.human_name,
-                          expression: "mostRunsBadge.human_name"
-                        }
-                      ],
-                      staticClass: "col-lg-12 award most-runs"
-                    },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to: "/profile/" + _vm.mostRunsBadge.human_id
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.mostRunsBadge.human_name,
+                            expression: "mostRunsBadge.human_name"
                           }
-                        },
-                        [
-                          _c("div", { staticClass: "circle" }, [
-                            _c("div", { staticClass: "award-background" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "full-name",
-                                  attrs: { align: "left" }
-                                },
-                                [_vm._v(_vm._s(_vm.mostRunsBadge.human_name))]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "description",
-                                  attrs: { align: "left" }
-                                },
-                                [_vm._v(" Most Runs")]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "accolade" }, [
-                                _vm._v(_vm._s(_vm.mostRunsBadge.count))
+                        ],
+                        staticClass: "col-lg-12 award most-runs"
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: "/profile/" + _vm.mostRunsBadge.human_id
+                            }
+                          },
+                          [
+                            _c("div", { staticClass: "circle" }, [
+                              _c("div", { staticClass: "award-background" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "full-name",
+                                    attrs: { align: "left" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.mostRunsBadge.human_name))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "description",
+                                    attrs: { align: "left" }
+                                  },
+                                  [_vm._v(" Most Runs")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "accolade" }, [
+                                  _vm._v(_vm._s(_vm.mostRunsBadge.count))
+                                ])
                               ])
                             ])
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("slide", [
-                  _c(
-                    "div",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.mostEfficientBadge.human_name,
-                          expression: "mostEfficientBadge.human_name"
-                        }
-                      ],
-                      staticClass: "col-lg-12 award most-efficient"
-                    },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to: "/profile/" + _vm.mostEfficientBadge.human_id
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.mostEfficientBadge.human_name,
+                            expression: "mostEfficientBadge.human_name"
                           }
-                        },
-                        [
-                          _c("div", { staticClass: "circle" }, [
-                            _c("div", { staticClass: "award-background" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "full-name",
-                                  attrs: { align: "left" }
-                                },
-                                [
-                                  _vm._v(
-                                    _vm._s(_vm.mostEfficientBadge.human_name)
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "description",
-                                  attrs: { align: "left" }
-                                },
-                                [_vm._v("Most Efficient")]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "accolade" }, [
-                                _vm._v("Most Efficient")
-                              ])
-                            ])
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("slide", [
-                  _c(
-                    "div",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.shortestAverageTimeBadge.human_name,
-                          expression: "shortestAverageTimeBadge.human_name"
-                        }
-                      ],
-                      staticClass: "col-lg-12 award shortest-average-time"
-                    },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to:
-                              "/profile/" +
-                              _vm.shortestAverageTimeBadge.human_id
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "circle" }, [
-                            _c("div", { staticClass: "award-background" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "full-name",
-                                  attrs: { align: "left" }
-                                },
-                                [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.shortestAverageTimeBadge.human_name
+                        ],
+                        staticClass: "col-lg-12 award most-efficient"
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: "/profile/" + _vm.mostEfficientBadge.human_id
+                            }
+                          },
+                          [
+                            _c("div", { staticClass: "circle" }, [
+                              _c("div", { staticClass: "award-background" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "full-name",
+                                    attrs: { align: "left" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(_vm.mostEfficientBadge.human_name)
                                     )
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "description",
-                                  attrs: { align: "left" }
-                                },
-                                [_vm._v("Best Average Time")]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "accolade" }, [
-                                _vm._v(
-                                  " " +
-                                    _vm._s(_vm.shortestAverageTimeBadge.count)
-                                )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "description",
+                                    attrs: { align: "left" }
+                                  },
+                                  [_vm._v("Most Efficient")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "accolade" }, [
+                                  _vm._v("Most Efficient")
+                                ])
                               ])
                             ])
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("slide", [
-                  _c(
-                    "div",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.mostVideosUploadedBadge.human_name,
-                          expression: "mostVideosUploadedBadge.human_name"
-                        }
-                      ],
-                      staticClass: "col-lg-12 award most-videos-uploaded"
-                    },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to:
-                              "/profile/" + _vm.mostVideosUploadedBadge.human_id
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.shortestAverageTimeBadge.human_name,
+                            expression: "shortestAverageTimeBadge.human_name"
                           }
-                        },
-                        [
-                          _c("div", { staticClass: "circle" }, [
-                            _c("div", { staticClass: "award-background" }, [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "full-name",
-                                  attrs: { align: "left" }
-                                },
-                                [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.mostVideosUploadedBadge.human_name
+                        ],
+                        staticClass: "col-lg-12 award shortest-average-time"
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to:
+                                "/profile/" +
+                                _vm.shortestAverageTimeBadge.human_id
+                            }
+                          },
+                          [
+                            _c("div", { staticClass: "circle" }, [
+                              _c("div", { staticClass: "award-background" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "full-name",
+                                    attrs: { align: "left" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm.shortestAverageTimeBadge.human_name
+                                      )
                                     )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "description",
+                                    attrs: { align: "left" }
+                                  },
+                                  [_vm._v("Best Average Time")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "accolade" }, [
+                                  _vm._v(
+                                    " " +
+                                      _vm._s(_vm.shortestAverageTimeBadge.count)
                                   )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "description",
-                                  attrs: { align: "left" }
-                                },
-                                [_vm._v("Most uploads")]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "accolade" }, [
-                                _vm._v(
-                                  _vm._s(_vm.mostVideosUploadedBadge.count)
-                                )
+                                ])
                               ])
                             ])
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("slide", [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.mostVideosUploadedBadge.human_name,
+                            expression: "mostVideosUploadedBadge.human_name"
+                          }
+                        ],
+                        staticClass: "col-lg-12 award most-videos-uploaded"
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to:
+                                "/profile/" +
+                                _vm.mostVideosUploadedBadge.human_id
+                            }
+                          },
+                          [
+                            _c("div", { staticClass: "circle" }, [
+                              _c("div", { staticClass: "award-background" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "full-name",
+                                    attrs: { align: "left" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm.mostVideosUploadedBadge.human_name
+                                      )
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "description",
+                                    attrs: { align: "left" }
+                                  },
+                                  [_vm._v("Most uploads")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "accolade" }, [
+                                  _vm._v(
+                                    _vm._s(_vm.mostVideosUploadedBadge.count)
+                                  )
+                                ])
+                              ])
+                            ])
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
                 ])
               ],
               1
@@ -56961,20 +56978,15 @@ var render = function() {
                                       _c(
                                         "td",
                                         [
-                                          _vm.window.user &&
-                                          _vm.window.user.human &&
-                                          _vm.window.user.human.id ===
-                                            run.stats.header.human_id
-                                            ? _c(
-                                                "router-link",
-                                                {
-                                                  attrs: {
-                                                    to: "/run/edit/" + run.id
-                                                  }
-                                                },
-                                                [_vm._v("Edit")]
-                                              )
-                                            : _vm._e()
+                                          _c(
+                                            "router-link",
+                                            {
+                                              attrs: {
+                                                to: "/run/edit/" + run.id
+                                              }
+                                            },
+                                            [_vm._v("Edit")]
+                                          )
                                         ],
                                         1
                                       ),
@@ -57083,20 +57095,13 @@ var render = function() {
                                     _c(
                                       "td",
                                       [
-                                        _vm.window.user &&
-                                        _vm.window.user.human &&
-                                        _vm.window.user.human.id ===
-                                          run.stats.heeler.human_id
-                                          ? _c(
-                                              "router-link",
-                                              {
-                                                attrs: {
-                                                  to: "/run/edit/" + run.id
-                                                }
-                                              },
-                                              [_vm._v("Edit")]
-                                            )
-                                          : _vm._e()
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: { to: "/run/edit/" + run.id }
+                                          },
+                                          [_vm._v("Edit")]
+                                        )
                                       ],
                                       1
                                     ),

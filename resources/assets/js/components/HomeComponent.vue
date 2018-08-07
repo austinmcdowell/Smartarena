@@ -59,58 +59,66 @@
             <div class="col-lg-12">
                 <carousel :per-page="1" :autoplay="true" :autoplayTimeout="2500" :loop="true" :mouse-drag="false" class="mobile-awards-carousel">
                     <slide>
-                        <div v-show="mostRunsBadge.human_name" class="col-lg-12 award most-runs">
-                            <router-link :to="`/profile/${mostRunsBadge.human_id}`">
-                                <div class="circle">
-                                    <div class="award-background">
-                                        <div class='full-name' align="left">{{ mostRunsBadge.human_name }}</div>
-                                        <div class='description' align="left"> Most Runs</div>
-                                        <div class="accolade">{{ mostRunsBadge.count }}</div>
+                        <div class="row">
+                            <div v-show="mostRunsBadge.human_name" class="col-lg-12 award most-runs">
+                                <router-link :to="`/profile/${mostRunsBadge.human_id}`">
+                                    <div class="circle">
+                                        <div class="award-background">
+                                            <div class='full-name' align="left">{{ mostRunsBadge.human_name }}</div>
+                                            <div class='description' align="left"> Most Runs</div>
+                                            <div class="accolade">{{ mostRunsBadge.count }}</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </router-link>
+                                </router-link>
+                            </div>
                         </div>
                     </slide>
 
                     <slide>
-                        <div v-show="mostEfficientBadge.human_name" class="col-lg-12 award most-efficient">
-                            <router-link :to="`/profile/${mostEfficientBadge.human_id}`">
-                                <div class="circle">
-                                    <div class="award-background">
-                                        <div class='full-name' align="left">{{ mostEfficientBadge.human_name }}</div>
-                                        <div class='description' align="left">Most Efficient</div>
-                                        <div class="accolade">Most Efficient</div>
+                        <div class="row">
+                            <div v-show="mostEfficientBadge.human_name" class="col-lg-12 award most-efficient">
+                                <router-link :to="`/profile/${mostEfficientBadge.human_id}`">
+                                    <div class="circle">
+                                        <div class="award-background">
+                                            <div class='full-name' align="left">{{ mostEfficientBadge.human_name }}</div>
+                                            <div class='description' align="left">Most Efficient</div>
+                                            <div class="accolade">Most Efficient</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </router-link>
+                                </router-link>
+                            </div>
                         </div>
                     </slide>
 
                     <slide>
-                        <div v-show="shortestAverageTimeBadge.human_name" class="col-lg-12 award shortest-average-time">
-                            <router-link :to="`/profile/${shortestAverageTimeBadge.human_id}`">
-                                <div class="circle">
-                                    <div class="award-background">
-                                        <div class='full-name' align="left">{{ shortestAverageTimeBadge.human_name }}</div>
-                                        <div class='description' align="left">Best Average Time</div>
-                                        <div class="accolade"> {{ shortestAverageTimeBadge.count }}</div>
+                        <div class="row">
+                            <div v-show="shortestAverageTimeBadge.human_name" class="col-lg-12 award shortest-average-time">
+                                <router-link :to="`/profile/${shortestAverageTimeBadge.human_id}`">
+                                    <div class="circle">
+                                        <div class="award-background">
+                                            <div class='full-name' align="left">{{ shortestAverageTimeBadge.human_name }}</div>
+                                            <div class='description' align="left">Best Average Time</div>
+                                            <div class="accolade"> {{ shortestAverageTimeBadge.count }}</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </router-link>
+                                </router-link>
+                            </div>
                         </div>
                     </slide>
 
                     <slide>
-                        <div v-show="mostVideosUploadedBadge.human_name" class="col-lg-12 award most-videos-uploaded">
-                            <router-link :to="`/profile/${mostVideosUploadedBadge.human_id}`">
-                                <div class="circle">
-                                    <div class="award-background">
-                                        <div class='full-name' align="left">{{ mostVideosUploadedBadge.human_name }}</div>
-                                        <div class='description' align="left">Most uploads</div>
-                                        <div class="accolade">{{ mostVideosUploadedBadge.count }}</div>
+                        <div class="row">
+                            <div v-show="mostVideosUploadedBadge.human_name" class="col-lg-12 award most-videos-uploaded">
+                                <router-link :to="`/profile/${mostVideosUploadedBadge.human_id}`">
+                                    <div class="circle">
+                                        <div class="award-background">
+                                            <div class='full-name' align="left">{{ mostVideosUploadedBadge.human_name }}</div>
+                                            <div class='description' align="left">Most uploads</div>
+                                            <div class="accolade">{{ mostVideosUploadedBadge.count }}</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </router-link>
+                                </router-link>
+                            </div>
                         </div>
                     </slide>
                 </carousel>
