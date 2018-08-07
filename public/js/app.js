@@ -55660,11 +55660,7 @@ var render = function() {
                               staticClass: "accolade",
                               attrs: { align: "center" }
                             },
-                            [
-                              _vm._v(
-                                " " + _vm._s(_vm.shortestAverageTimeBadge.count)
-                              )
-                            ]
+                            [_vm._v(_vm._s(_vm.shortestAverageTimeBadge.count))]
                           )
                         ])
                       ])

@@ -35,7 +35,7 @@
                                     <div class="award-background">
                                         <div class='full-name' align="left">{{ shortestAverageTimeBadge.human_name }}</div>
                                         <div class='description' align="left">Best Average Time</div>
-                                        <div class="accolade" align="center"> {{ shortestAverageTimeBadge.count }}</div>
+                                        <div class="accolade" align="center">{{ shortestAverageTimeBadge.count }}</div>
                                     </div>
                                 </div>
                             </router-link>
