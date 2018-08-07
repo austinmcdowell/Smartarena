@@ -24,12 +24,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="profile-desc">
+                                    <!-- <div class="profile-desc">
                                         <h5><i style="font-size:18px" class="fab fa-twitter s-media"></i>twitter.com</h5>
                                         <h5><i style="font-size:18px" class="fab fa-facebook s-media"></i>facebook.com</h5>
-                                    </div>
+                                    </div> -->
                                     
-                                    <div v-if="human.type === 'pro'" class="hire-btn"><h5 align="center"><b><a :href="human.calendly_link">Hire {{ human.first_name }}</a></b></h5></div>
+                                    <div v-if="human.type === 'pro'">
+                                        <a class="hire-btn btn" :href="human.calendly_link">Hire {{ human.first_name }}</a>
+                                    </div>
                                 </div>
                                 
                             </div>
@@ -130,8 +132,8 @@
                             <div class="col-lg-12 uploads">
                                 <h5>Recent Uploads</h5>
                                 <div class="container">
-                                    <div class="row recent-uploads justify-content-between">
-                                        <div class="col-lg-3 rec-vid" v-for="video in uploadedVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
+                                    <div class="row roping-videos justify-content-between">
+                                        <div class="col-sm-12 col-lg-4 rope-vid" v-for="video in uploadedVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
                                     </div>
                                 </div>
                             </div>

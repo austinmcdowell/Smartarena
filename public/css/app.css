@@ -266,7 +266,7 @@ h2 {
 
 .content {
   height: 100vh;
-  padding: 6%;
+  padding-top: 60px;
   background: #f2f3f5 !important;
   overflow: scroll;
 }
@@ -845,11 +845,6 @@ body {
   font-size: 15px;
   line-height: 40px;
   vertical-align: middle;
-}
-
-#profile .profile-container {
-  width: 100%;
-  padding: 0 !important;
 }
 
 #profile .run-types {

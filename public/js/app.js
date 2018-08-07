@@ -56787,6 +56787,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -56901,25 +56903,22 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(0),
-                  _vm._v(" "),
                   _vm.human.type === "pro"
-                    ? _c("div", { staticClass: "hire-btn" }, [
-                        _c("h5", { attrs: { align: "center" } }, [
-                          _c("b", [
-                            _c(
-                              "a",
-                              { attrs: { href: _vm.human.calendly_link } },
-                              [_vm._v("Hire " + _vm._s(_vm.human.first_name))]
-                            )
-                          ])
-                        ])
+                    ? _c("div", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "hire-btn btn",
+                            attrs: { href: _vm.human.calendly_link }
+                          },
+                          [_vm._v("Hire " + _vm._s(_vm.human.first_name))]
+                        )
                       ])
                     : _vm._e()
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(1),
+              _vm._m(0),
               _vm._v(" "),
               _c(
                 "div",
@@ -57183,12 +57182,15 @@ var render = function() {
                   _c(
                     "div",
                     {
-                      staticClass: "row recent-uploads justify-content-between"
+                      staticClass: "row roping-videos justify-content-between"
                     },
                     _vm._l(_vm.uploadedVideos, function(video) {
                       return _c(
                         "div",
-                        { key: video.id, staticClass: "col-lg-3 rec-vid" },
+                        {
+                          key: video.id,
+                          staticClass: "col-sm-12 col-lg-4 rope-vid"
+                        },
                         [_c("video-cell", { attrs: { video: video } })],
                         1
                       )
@@ -57204,28 +57206,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "profile-desc" }, [
-      _c("h5", [
-        _c("i", {
-          staticClass: "fab fa-twitter s-media",
-          staticStyle: { "font-size": "18px" }
-        }),
-        _vm._v("twitter.com")
-      ]),
-      _vm._v(" "),
-      _c("h5", [
-        _c("i", {
-          staticClass: "fab fa-facebook s-media",
-          staticStyle: { "font-size": "18px" }
-        }),
-        _vm._v("facebook.com")
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
