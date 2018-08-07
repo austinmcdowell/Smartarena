@@ -55341,7 +55341,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -55491,8 +55490,6 @@ var render = function() {
     "div",
     { staticClass: "container", attrs: { id: "home" } },
     [
-      _c("br"),
-      _vm._v(" "),
       _c("h3", { staticClass: "sec-title" }, [_vm._v("Best of")]),
       _vm._v(" "),
       _c("div", { staticClass: "row award-center justify-content-between" }, [
@@ -56099,7 +56096,7 @@ var render = function() {
         _vm._l(_vm.teamropingVideos, function(video) {
           return _c(
             "div",
-            { key: video.id, staticClass: "col-sm-12 col-lg-3 rope-vid" },
+            { key: video.id, staticClass: "col-sm-12 col-lg-4 rope-vid" },
             [_c("video-cell", { attrs: { video: video } })],
             1
           )

@@ -1,6 +1,5 @@
 <template>
     <div id="home" class="container">
-        <br />
         <h3 class="sec-title">Best of</h3>
         <div class="row award-center justify-content-between">
             <div class="col-lg-12 awards">
@@ -154,7 +153,7 @@
         
         <div class="row roping-videos justify-content-between">
             <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-            <div class="col-sm-12 col-lg-3 rope-vid" v-for="video in teamropingVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
+            <div class="col-sm-12 col-lg-4 rope-vid" v-for="video in teamropingVideos" :key="video.id"><video-cell :video="video"></video-cell></div>
         </div>
         <!-- <div class="row hide-on-large-only">
             <div class="col s10 offset-s1">

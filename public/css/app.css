@@ -31,6 +31,85 @@ h2 {
   color: silver;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+}
+
+#home {
+  margin-top: 70px;
+}
+
+.roping-videos .video {
+  padding: 3%;
+  margin: 0 0 6% 0;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.roping-videos .video-wrapper {
+  margin: 0 0 1% 0;
+}
+
+.roping-videos .video-wrapper:hover .vid-time {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.roping-videos .video-wrapper:hover .light-green {
+  color: #66b194;
+}
+
+.roping-videos .vid-thumbnail {
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-size: cover;
+  background-image: url("/img/cow.jpg");
+}
+
+.roping-videos .vid-time {
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+.roping-videos .vid-time p {
+  color: white;
+  font-size: 10px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.roping-videos .vid-content {
+  width: 100%;
+  padding: 2%;
+  margin: 0;
+  background: white;
+}
+
+.roping-videos .vid-content .vid-description {
+  color: black !important;
+}
+
+.roping-videos .vid-content .vid-description li a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.roping-videos .vid-content .vid-views {
+  color: #c4c4c4;
+  font-size: 13px;
+}
+
 @media (min-width: 300px) {
   .sa-brand {
     display: none;
@@ -69,13 +148,7 @@ h2 {
 
 @media (min-width: 768px) {
   .roping-videos .vid-thumbnail {
-    height: 300px;
-  }
-}
-
-@media (min-width: 992px) {
-  .roping-videos .vid-thumbnail {
-    height: 300px;
+    height: 200px;
   }
 }
 
@@ -120,80 +193,6 @@ h2 {
   .coaches:hover .hire-btn {
     background-color: #4a8360;
     color: white;
-  }
-
-  .roping-videos .rope-vid {
-    padding: 1%;
-    margin: 0;
-  }
-
-  .roping-videos .video {
-    padding: 3%;
-    margin: 0 0 6% 0;
-    background: white;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-  }
-
-  .roping-videos .video-wrapper {
-    margin: 0 0 1% 0;
-  }
-
-  .roping-videos .video-wrapper:hover .vid-time {
-    background: rgba(0, 0, 0, 0.85);
-  }
-
-  .roping-videos .video-wrapper:hover .light-green {
-    color: #66b194;
-  }
-
-  .roping-videos .vid-thumbnail {
-    width: 100%;
-    height: 120px;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    background-size: cover;
-    background-image: url("/img/cow.jpg");
-  }
-
-  .roping-videos .vid-time {
-    width: 40px;
-    height: 20px;
-    position: absolute;
-    right: 6px;
-    bottom: 6px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 5px;
-  }
-
-  .roping-videos .vid-time p {
-    color: white;
-    font-size: 10px;
-    line-height: 20px;
-    vertical-align: middle;
-  }
-
-  .roping-videos .vid-content {
-    width: 100%;
-    padding: 2%;
-    margin: 0;
-    background: white;
-  }
-
-  .roping-videos .vid-content .vid-description {
-    color: black !important;
-  }
-
-  .roping-videos .vid-content .vid-description li a {
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .roping-videos .vid-content .vid-views {
-    color: #c4c4c4;
-    font-size: 13px;
   }
 }
 
@@ -387,10 +386,6 @@ html {
 body {
   background: white !important;
   min-height: 100% !important;
-}
-
-.col-lg-3 {
-  padding: 0;
 }
 
 .award a {
@@ -1146,70 +1141,5 @@ body {
   margin: 10% 0 0 10%;
   background-size: cover;
   background-image: url("/img/cow.jpg");
-}
-
-.roping-videos .rope-vid {
-  padding: 0 1%;
-  margin: 0;
-}
-
-.roping-videos .video-wrapper {
-  margin: 0 0 1% 0;
-}
-
-.roping-videos .video-wrapper:hover .vid-time {
-  background: rgba(0, 0, 0, 0.85);
-}
-
-.roping-videos .video-wrapper:hover .light-green {
-  color: #66b194;
-}
-
-.roping-videos .vid-thumbnail {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  background-size: cover;
-  background-image: url("/img/cow.jpg");
-}
-
-.roping-videos .vid-time {
-  width: 40px;
-  height: 20px;
-  position: absolute;
-  right: 6px;
-  bottom: 6px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
-}
-
-.roping-videos .vid-time p {
-  color: white;
-  font-size: 10px;
-  line-height: 20px;
-  vertical-align: middle;
-}
-
-.roping-videos .vid-content {
-  width: 100%;
-  padding: 2%;
-  margin: 0;
-  background: white;
-}
-
-.roping-videos .vid-content .vid-description {
-  color: black !important;
-}
-
-.roping-videos .vid-content .vid-description li a {
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-}
-
-.roping-videos .vid-content .vid-views {
-  color: #c4c4c4;
-  font-size: 13px;
 }
 

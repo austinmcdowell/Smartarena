@@ -1,5 +1,3 @@
-
-
 body {
   height: 100%;
   width: 100%;
@@ -31,6 +29,94 @@ h2 {
 .view-leaderboard {
   font-size: 12px;
   color: rgb(192, 192, 192);
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+}
+
+#home {
+  margin-top: 70px;
+}
+
+.roping-videos {
+  .video {
+    padding: 3%;
+    margin: 0 0 6% 0;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .05);
+  }
+
+  .video-wrapper {
+    margin: 0 0 1% 0;
+  }
+
+  .video-wrapper:hover {
+    .vid-time {
+      background: rgba(0, 0, 0, .85);
+    }
+
+    .light-green {
+      color: rgba(102, 177, 148, 1);
+    }
+  }
+
+  .vid-thumbnail {
+    width: 100%;
+    height: 200px;
+
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    background-size: cover;
+    background-image: url('/img/cow.jpg');
+  }
+
+  .vid-time {
+    width: 40px;
+    height: 20px;
+    // margin: 0 0 0 75%;
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+
+    background: rgba(0, 0, 0, .6);
+
+    border-radius: 5px;
+
+    p {
+      color: white;
+      font-size: 10px;
+      line-height: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  .vid-content {
+    width: 100%;
+    padding: 2%;
+    margin: 0;
+    background: white;
+
+    .vid-description {
+      color: black !important;
+
+      li a {
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .vid-views {
+      color: rgb(196, 196, 196);
+      font-size: 13px;
+    }
+  }    
 }
 
 @media (min-width: 300px) {
@@ -74,17 +160,17 @@ h2 {
 @media (min-width: 768px) {
   .roping-videos {
     .vid-thumbnail {
-      height: 300px;
+      height: 200px;
     }
   }
 }
 
 @media (min-width: 992px) {
-  .roping-videos {
-    .vid-thumbnail {
-      height: 300px;
-    }
-  }
+  // .roping-videos {
+  //   .vid-thumbnail {
+  //     height: 300px;
+  //   }
+  // }
 }
 
 @media (min-width: 1200px) {
@@ -132,92 +218,6 @@ h2 {
       background-color: rgb(74, 131, 96);
       color: white;
     }
-  }
-
-  .roping-videos {
-
-    .rope-vid {
-      padding: 1%;
-      margin: 0;
-    }
-
-    .video {
-      padding: 3%;
-      margin: 0 0 6% 0;
-
-      background: white;
-
-      border-radius: 5px;
-      border: 1px solid rgba(0, 0, 0, .05);
-    }
-
-    .video-wrapper {
-      margin: 0 0 1% 0;
-    }
-
-    .video-wrapper:hover {
-      .vid-time {
-        background: rgba(0, 0, 0, .85);
-      }
-
-      .light-green {
-        color: rgba(102, 177, 148, 1);
-      }
-    }
-
-    .vid-thumbnail {
-      width: 100%;
-      height: 120px;
-  
-      padding: 0;
-      margin: 0;
-      position: relative;
-
-      background-size: cover;
-      background-image: url('/img/cow.jpg');
-    }
-
-    .vid-time {
-      width: 40px;
-      height: 20px;
-      // margin: 0 0 0 75%;
-      position: absolute;
-      right: 6px;
-      bottom: 6px;
-  
-      background: rgba(0, 0, 0, .6);
-  
-      border-radius: 5px;
-  
-      p {
-        color: white;
-        font-size: 10px;
-        line-height: 20px;
-        vertical-align: middle;
-      }
-    }
-
-    .vid-content {
-      width: 100%;
-      padding: 2%;
-      margin: 0;
-      background: white;
-
-      .vid-description {
-        color: black !important;
-  
-        li a {
-          text-decoration: none;
-          padding: 0;
-          margin: 0;
-        }
-      }
-
-      .vid-views {
-        color: rgb(196, 196, 196);
-        font-size: 13px;
-      }
-    }    
   }
 }
 
@@ -447,77 +447,72 @@ h2 {
 }
 
 
-.roping-videos {
+// .roping-videos {
 
-  .rope-vid {
-    padding: 0 1%;
-    margin: 0;
-  }
+//   .video-wrapper {
+//     margin: 0 0 1% 0;
+//   }
 
-  .video-wrapper {
-    margin: 0 0 1% 0;
-  }
+//   .video-wrapper:hover {
+//     .vid-time {
+//       background: rgba(0, 0, 0, .85);
+//     }
 
-  .video-wrapper:hover {
-    .vid-time {
-      background: rgba(0, 0, 0, .85);
-    }
+//     .light-green {
+//       color: rgba(102, 177, 148, 1);
+//     }
+//   }
 
-    .light-green {
-      color: rgba(102, 177, 148, 1);
-    }
-  }
+//   .vid-thumbnail {
+//     width: 100%;
 
-  .vid-thumbnail {
-    width: 100%;
+//     padding: 0;
+//     margin: 0;
+//     position: relative;
 
-    padding: 0;
-    margin: 0;
-    position: relative;
+//     background-size: cover;
+//     background-image: url('/img/cow.jpg');
+//   }
 
-    background-size: cover;
-    background-image: url('/img/cow.jpg');
-  }
+//   .vid-time {
+//     width: 40px;
+//     height: 20px;
+//     // margin: 0 0 0 75%;
+//     position: absolute;
+//     right: 6px;
+//     bottom: 6px;
 
-  .vid-time {
-    width: 40px;
-    height: 20px;
-    // margin: 0 0 0 75%;
-    position: absolute;
-    right: 6px;
-    bottom: 6px;
+//     background: rgba(0, 0, 0, .6);
 
-    background: rgba(0, 0, 0, .6);
+//     border-radius: 5px;
 
-    border-radius: 5px;
+//     p {
+//       color: white;
+//       font-size: 10px;
+//       line-height: 20px;
+//       vertical-align: middle;
+//     }
+//   }
 
-    p {
-      color: white;
-      font-size: 10px;
-      line-height: 20px;
-      vertical-align: middle;
-    }
-  }
+//   .vid-content {
+//     width: 100%;
+//     padding: 2%;
+//     margin: 0;
+//     background: white;
 
-  .vid-content {
-    width: 100%;
-    padding: 2%;
-    margin: 0;
-    background: white;
+//     .vid-description {
+//       color: black !important;
 
-    .vid-description {
-      color: black !important;
+//       li a {
+//         text-decoration: none;
+//         padding: 0;
+//         margin: 0;
+//       }
+//     }
 
-      li a {
-        text-decoration: none;
-        padding: 0;
-        margin: 0;
-      }
-    }
-
-    .vid-views {
-      color: rgb(196, 196, 196);
-      font-size: 13px;
-    }
-  }    
-}
+//     .vid-views {
+//       color: rgb(196, 196, 196);
+//       font-size: 13px;
+//     }
+//   }    
+// }
