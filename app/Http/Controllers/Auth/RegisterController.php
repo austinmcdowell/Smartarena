@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Human;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -62,10 +63,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $name = explode(' ', $data['name']);
+
+        $human = new Human;
+
+        $human->type           = 'standard';
+        $human->classification = 0;
+        $human->first_name     = reset($name);
+        $human->last_name      = end($name);
+        $human->email          = $data['email'];
+
+        $human->save();
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => bcrypt($data['password'])
         ]);
+
+        $user->human_id = $human->id;
+        $user->save();
+        
+        return $user;
     }
 }
