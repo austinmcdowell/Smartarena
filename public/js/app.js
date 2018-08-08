@@ -56012,7 +56012,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("h3", { staticClass: "sec-title" }, [_vm._v("Coaches")]),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Hire a Coach")]),
       _vm._v(" "),
       _c(
         "carousel",
@@ -56044,25 +56044,7 @@ var render = function() {
                               _vm._s(coach.last_name)
                           )
                         ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "col-sm-12 col-lg-12 pro-content" },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "hire-btn",
-                              attrs: {
-                                href: coach.calendly_link,
-                                align: "center"
-                              }
-                            },
-                            [_vm._v("Hire " + _vm._s(coach.first_name))]
-                          )
-                        ]
-                      )
+                      ])
                     ])
                   ])
                 ]
@@ -56092,7 +56074,10 @@ var render = function() {
         _vm._l(_vm.teamropingVideos, function(video) {
           return _c(
             "div",
-            { key: video.id, staticClass: "col-sm-12 col-lg-4 rope-vid" },
+            {
+              key: video.id,
+              staticClass: "col-sm-12 col-md-4 col-lg-3 rope-vid"
+            },
             [_c("video-cell", { attrs: { video: video } })],
             1
           )
