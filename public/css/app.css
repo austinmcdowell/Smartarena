@@ -258,24 +258,15 @@ body {
   overflow: hidden !important;
 }
 
-#profile .col-lg-3 {
-  padding: 0 !important;
-}
-
-#profile .container {
-  padding: 0 !important;
-}
-
 #profile .runs-table {
   font-size: 1vw;
 }
 
-@media (min-width: 300px) {
-  #profile .profile {
-    width: 100%;
-    padding: 4% !important;
-  }
+#profile .stats {
+  display: none;
+}
 
+@media (min-width: 300px) {
   #profile .profile .profile-pic {
     display: block;
     margin: 10px auto 20px;
@@ -288,12 +279,10 @@ body {
 
   #profile .recent-upload {
     height: auto;
-    padding: 1% 6% !important;
   }
 
   #profile .upload {
     height: auto;
-    padding: 3%;
     background: white;
     border-radius: 3px;
     border: 1px solid rgba(205, 214, 224, 0.5);
@@ -319,11 +308,15 @@ body {
   }
 }
 
+@media (min-width: 768px) {
+  #profile .stats {
+    display: block;
+    margin-top: 30px;
+  }
+}
+
 @media (min-width: 1200px) {
   #profile .profile {
-    width: 300px;
-    margin: 0 0 20% 0;
-    padding: 0 0 5% 0;
     background: white;
     border-radius: 3px;
     border: 1px solid rgba(205, 214, 224, 0.5);
@@ -405,13 +398,8 @@ body {
     vertical-align: middle;
   }
 
-  #profile .recent-upload {
-    padding: 0 2% !important;
-  }
-
   #profile .upload {
     height: 500px;
-    padding: 3%;
     background: white;
     border-radius: 3px;
     border: 1px solid rgba(205, 214, 224, 0.5);
