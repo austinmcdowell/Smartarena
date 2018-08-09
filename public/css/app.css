@@ -828,6 +828,7 @@ body {
   height: 100%;
   width: 100%;
   /* overflow: hidden; */
+  background: #f2f3f5 !important;
 }
 
 html {
@@ -951,7 +952,82 @@ h2 {
   }
 
   .nav-search {
+    display: block;
+  }
+
+  .desktop-search {
     display: none;
+  }
+
+  .mobile-search {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 20px 0 0 0;
+    padding: 0 0 0 1%;
+    border: none;
+    background: #f4f6f7;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  .results-mobile {
+    display: block;
+    width: 100%;
+    padding: 5% 0 2% 0;
+    background: white;
+    border-radius: 5px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1);
+            box-shadow: rgba(0, 0, 0, 0.1);
+  }
+
+  .results-mobile li {
+    height: 40px;
+    width: 100%;
+    padding: 0 2%;
+    font-size: 15px;
+    color: black !important;
+    border-radius: 5px;
+    list-style-type: none;
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+
+  .results-mobile li a {
+    text-decoration: none !important;
+    font-size: 15px;
+    line-height: 40px;
+    vertical-align: middle;
+    color: black !important;
+  }
+
+  .results-mobile li:hover {
+    background: #e2e2e2;
+  }
+
+  .results-desktop {
+    display: none;
+  }
+
+  .mobile-profile-btn {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 0 0;
+    background: rgba(0, 128, 90, 0) !important;
+    border: 2px solid #00805a !important;
+    border-radius: 5px;
+    color: #00805a;
+  }
+
+  .mobile-upload-btn {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 0 0;
+    background: #00805a !important;
+    border: 2px solid #00805a !important;
+    border-radius: 5px;
+    color: white;
   }
 
   .coaches {
@@ -1015,6 +1091,61 @@ h2 {
     display: inline-block;
   }
 
+  .results-desktop {
+    display: block;
+    width: 100%;
+    padding: 5% 3% 2% 0;
+    background: white;
+    border-radius: 5px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1);
+            box-shadow: rgba(0, 0, 0, 0.1);
+  }
+
+  .results-desktop li {
+    height: 40px;
+    width: 100%;
+    padding: 0 2%;
+    font-size: 15px;
+    color: black !important;
+    border-radius: 5px;
+    list-style-type: none;
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+
+  .results-desktop li a {
+    text-decoration: none !important;
+    font-size: 15px;
+    line-height: 40px;
+    vertical-align: middle;
+    color: black !important;
+  }
+
+  .results-desktop li:hover {
+    background: #e2e2e2;
+  }
+
+  .results-mobile {
+    display: none;
+  }
+
+  .desktop-search {
+    display: block;
+    width: 600px;
+    height: 40px;
+    margin: 0 0 0 20%;
+    padding: 0 0 0 1%;
+    border: none;
+    background: #f4f6f7;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  .mobile-search {
+    display: none;
+  }
+
   .professionals .hire-btn {
     margin: 2% 0 0 88%;
     width: 100px;
@@ -1065,23 +1196,6 @@ h2 {
 
 .sa-brand-short li a {
   text-decoration: none !important;
-}
-
-.nav-search {
-  width: 600px;
-  height: 40px;
-  margin: 0 0 0 20%;
-  padding: 0 0 0 1%;
-  border: none;
-  background: #f4f6f7;
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.search-results {
-  display: none;
-  padding: 80px 0 0 0;
 }
 
 .upload-btn {

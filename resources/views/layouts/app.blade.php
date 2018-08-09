@@ -44,7 +44,7 @@
             <div class="navbar navbar-expand-lg navbar-light sa-nav">
                 <router-link to="/" class="navbar-brand sa-brand green">SmartArena</router-link>
                 <router-link to="/" class="navbar-brand sa-brand-short green">SA</router-link>
-                <search-bar></search-bar>
+                <search-bar class="desktop-search"></search-bar>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -60,16 +60,24 @@
                     @if (isset($isLoggedIn) && $isLoggedIn) 
                     <ul class="navbar-nav">
                         @if ($user->human)
-                        <li class="nav-item"><router-link to="/video/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li>
-                        <div class="nav-profile-pic"></div>
-                        <li class="nav-item dropdown">
+                        <search-bar class="mobile-search"></search-bar>
+                        <search-results class="results-mobile"></search-results>
+                        
+                        <!-- <div class="nav-profile-pic"></div> -->
+                        
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $user->name }}</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <router-link class="dropdown-item" to="/profile">My Profile</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Log Out</a> 
                             </div>
-                        </li>
+                        </li> -->
+
+                        <button class="mobile-profile-btn">My Profile</button>
+                        <button class="mobile-upload-btn">Upload Video</button>
+
+                        <!-- <li class="nav-item"><router-link to="/video/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li> -->
                         @endif
                     </ul>
                     @else
@@ -81,7 +89,7 @@
                 </div>
             </div>
 
-            <search-results></search-results>
+            <search-results class="results-desktop"></search-results>
 
             <div class="container-fluid">
                 <div class="row">
