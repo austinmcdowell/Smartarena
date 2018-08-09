@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123711198-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-123711198-1');
+        </script>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -42,14 +52,14 @@
                         @if ($user->human)
                         <li class="nav-item"><router-link to="/video/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li>
                         <div class="nav-profile-pic"></div>
-                        <!-- <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $user->name }}</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <router-link class="dropdown-item" to="/profile">My Profile</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Log Out</a> 
                             </div>
-                        </li> -->
+                        </li>
                         @endif
                     </ul>
                     @else
