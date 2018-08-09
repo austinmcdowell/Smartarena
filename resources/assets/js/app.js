@@ -59,7 +59,7 @@ router.beforeEach((to, from, next) => {
   }
 
   if (to.matched.some(record => record.meta.requireAdmin)) {                
-    if (!window.user || !window.user.type !== 'admin') {
+    if (!window.user || !window.user.role !== 'admin') {
         window.location = '/';
         return;
     }
