@@ -62347,7 +62347,18 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "search-results", attrs: { id: "results" } },
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.results.length,
+          expression: "results.length"
+        }
+      ],
+      staticClass: "search-results",
+      attrs: { id: "results" }
+    },
     [
       _c(
         "ul",
