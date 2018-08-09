@@ -63,8 +63,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $name = explode(' ', $data['name']);
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password'])
+        ]);
 
+        $name = explode(' ', $data['name']);
         $human = new Human;
 
         $human->type           = 'standard';
@@ -72,17 +77,9 @@ class RegisterController extends Controller
         $human->first_name     = reset($name);
         $human->last_name      = end($name);
         $human->email          = $data['email'];
+        $human->user_id = $user->id; 
 
         $human->save();
-
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password'])
-        ]);
-
-        $user->human_id = $human->id;
-        $user->save();
         
         return $user;
     }
