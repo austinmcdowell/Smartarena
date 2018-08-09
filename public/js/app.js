@@ -20857,7 +20857,7 @@ router.beforeEach(function (to, from, next) {
     if (to.matched.some(function (record) {
         return record.meta.requireAdmin;
     })) {
-        if (!window.user || !window.user.role !== 'admin') {
+        if (!window.user || window.user.role !== 'admin') {
             window.location = '/';
             return;
         }
@@ -55347,6 +55347,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
         var $this = this;
+
+        if (window.user) {
+            this.user = window.user;
+        }
+
         axios.get('/home').then(function (response) {
             var data = response.data;
             $this.humans = data.humans;

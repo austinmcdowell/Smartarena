@@ -221,6 +221,11 @@ import VideoCellComponent from './VideoCellComponent.vue';
 export default {    
     mounted() {
         let $this = this;
+
+        if (window.user) {
+            this.user = window.user;
+        }
+
         axios.get('/home').then(response => {
             let data = response.data;
             $this.humans = data.humans;
@@ -233,7 +238,7 @@ export default {
             $this.teamropingVideos = data.teamropingVideos;
         }).catch(e => {
             alert('There was an error. Please contact support.');
-        })
+        });
     },
     data() {
         return {

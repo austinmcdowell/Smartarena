@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('javascript')
 <script>
     window.user = @json($user);
