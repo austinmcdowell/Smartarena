@@ -1,11 +1,11 @@
 <template>
     <div id="profile">
-        <div class="container profile-container">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 banner">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-12 col-lg-3">
+                            <div class="col-sm-12 col-lg-4">
                                 <div class="profile">
                                     <div class="profile-pic"></div>
                                     <h5 class="human-name" v-text="`${human.first_name} ${human.last_name}`" align="center"></h5>
@@ -35,7 +35,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="col-sm-12 col-lg-9 recent-upload">
+                            <div class="col-sm-12 col-lg-8 recent-upload">
                                 <div class="upload">
                                     <div class="video"></div>
 
@@ -55,7 +55,7 @@
                             </div>
 
                             <div class="col-lg-12">
-                                <b-card no-body>
+                                <b-card class="stats" no-body>
                                     <b-tabs card>
                                         <b-tab title="Header" active>
                                             <table class="table runs-table">

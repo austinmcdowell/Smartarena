@@ -56842,12 +56842,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "profile" } }, [
-    _c("div", { staticClass: "container profile-container" }, [
+    _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-lg-12 banner" }, [
           _c("div", { staticClass: "container" }, [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-12 col-lg-3" }, [
+              _c("div", { staticClass: "col-sm-12 col-lg-4" }, [
                 _c("div", { staticClass: "profile" }, [
                   _c("div", { staticClass: "profile-pic" }),
                   _vm._v(" "),
@@ -56916,7 +56916,7 @@ var render = function() {
                 [
                   _c(
                     "b-card",
-                    { attrs: { "no-body": "" } },
+                    { staticClass: "stats", attrs: { "no-body": "" } },
                     [
                       _c(
                         "b-tabs",
@@ -57200,7 +57200,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-12 col-lg-9 recent-upload" }, [
+    return _c("div", { staticClass: "col-sm-12 col-lg-8 recent-upload" }, [
       _c("div", { staticClass: "upload" }, [
         _c("div", { staticClass: "video" }),
         _vm._v(" "),
