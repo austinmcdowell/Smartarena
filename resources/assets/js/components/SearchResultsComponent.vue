@@ -1,5 +1,5 @@
 <template>
-    <div id="results" class="search-results" >
+    <div id="results" class="search-results">
         <ul>
             <li v-for="result in results" :key="result.id"><router-link :to="`/profile/${result.id}`">{{ result.first_name }} {{ result.last_name }} - {{ result.location }}</router-link></li>
         </ul>
