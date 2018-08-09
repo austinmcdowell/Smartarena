@@ -11,6 +11,11 @@ class SearchController extends Controller
     public function __invoke(Request $request)
     {
         $q = $request->query('query');
+
+        if (empty($q)) {
+            return [];
+        }
+
         $qstr = '%' . strtolower($q) . '%';
 
         $results = Human::select('id', 'first_name', 'last_name', 'location')
