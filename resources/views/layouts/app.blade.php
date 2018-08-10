@@ -74,8 +74,11 @@
                             </div>
                         </li> -->
 
-                        <button class="mobile-profile-btn">My Profile</button>
-                        <button class="mobile-upload-btn">Upload Video</button>
+                        @if ($user->role == "admin")
+                        <router-link class="btn mobile-profile-btn" to="/admin">Admin</router-link>
+                        @endif
+                        <router-link class="btn mobile-profile-btn" to="/profile/{{ $user->human->id }}">My Profile</router-link>
+                        <router-link class="btn mobile-upload-btn" to="/video/new">Upload Video</router-link>
 
                         <!-- <li class="nav-item"><router-link to="/video/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li> -->
                         @endif
