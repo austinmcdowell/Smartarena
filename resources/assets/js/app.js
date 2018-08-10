@@ -25,6 +25,7 @@ import VideoUploaderComponent from './components/VideoUploaderComponent.vue';
 import RunEditorComponent from './components/RunEditorComponent.vue';
 import AdminComponent from './components/admin/AdminComponent.vue';
 import CreateHumanComponent from './components/admin/CreateHumanComponent.vue';
+import EditHumanComponent from './components/admin/EditHumanComponent.vue';
 import UserHumanLinkerComponent from './components/admin/UserHumanLinkerComponent.vue';
 import MassUploadRunsComponent from './components/admin/MassUploadRunsComponent.vue';
 import MassUploadHumansComponent from './components/admin/MassUploadHumansComponent.vue';
@@ -44,6 +45,7 @@ let routes = [
   { path: '/video/:id', component: VideoComponent },
   { path: '/admin', component: AdminComponent, meta: { requireAdmin: true } },
   { path: '/admin/create-human', component: CreateHumanComponent, meta: { requireAdmin: true } },
+  { path: '/admin/edit-human', component: EditHumanComponent, meta: { requireAdmin: true } },
   { path: '/admin/user-human-linker', component: UserHumanLinkerComponent, meta: { requireAdmin: true } },
   { path: '/admin/mass-upload-runs', component: MassUploadRunsComponent, meta: { requireAdmin: true } },
   { path: '/admin/mass-upload-humans', component:  MassUploadHumansComponent, meta: { requireAdmin: true } },

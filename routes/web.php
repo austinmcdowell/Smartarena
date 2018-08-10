@@ -43,6 +43,8 @@ Route::get('/home', 'HomeController');
 Route::get('/leaderboard/teamroping', 'LeaderboardController@teamroping');
 
 Route::get('/humans', 'HumanController@get');
+Route::post('/humans/save', 'HumanController@save');
+
 Route::get('/events', 'EventController@get');
 
 Route::get('/massupload/humans', 'MassHumanUploader@get')->middleware('auth', 'admin');
