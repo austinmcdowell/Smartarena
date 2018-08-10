@@ -1,5 +1,5 @@
 <template>
-    <div v-show="results.length" id="results" class="search-results">
+    <div v-show="shouldDisplay" id="results" class="search-results">
         <ul>
             <li v-for="result in results" :key="result.id"><router-link :to="`/profile/${result.id}`">{{ result.first_name }} {{ result.last_name }} - {{ result.location }}</router-link></li>
         </ul>
@@ -13,16 +13,18 @@ export default {
     mounted() {
         const $this = this;
         EventBus.$on('searchResultsReceived', function(data) {
-            console.log(data);
+            $this.shouldDisplay = true;
             $this.results = data;
         });
 
         EventBus.$on('queryEmptied', function() {
+            $this.shouldDisplay = false;
             $this.results = [];
         });
     },
     data() {
         return { 
+            shouldDisplay: false,
             results: []
         }
     }

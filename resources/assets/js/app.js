@@ -23,6 +23,7 @@ import ProfileComponent from './components/ProfileComponent.vue';
 import VideoComponent from './components/VideoComponent.vue';
 import VideoUploaderComponent from './components/VideoUploaderComponent.vue';
 import RunEditorComponent from './components/RunEditorComponent.vue';
+import AdminComponent from './components/admin/AdminComponent.vue';
 import CreateHumanComponent from './components/admin/CreateHumanComponent.vue';
 import UserHumanLinkerComponent from './components/admin/UserHumanLinkerComponent.vue';
 import MassUploadRunsComponent from './components/admin/MassUploadRunsComponent.vue';
@@ -41,6 +42,7 @@ let routes = [
   { path: '/leaderboard/:type', component: LeaderboardComponent },
   { path: '/video/new', component: VideoUploaderComponent, meta: { requireSubscription: true } },
   { path: '/video/:id', component: VideoComponent },
+  { path: '/admin', component: AdminComponent, meta: { requireAdmin: true } },
   { path: '/admin/create-human', component: CreateHumanComponent, meta: { requireAdmin: true } },
   { path: '/admin/user-human-linker', component: UserHumanLinkerComponent, meta: { requireAdmin: true } },
   { path: '/admin/mass-upload-runs', component: MassUploadRunsComponent, meta: { requireAdmin: true } },

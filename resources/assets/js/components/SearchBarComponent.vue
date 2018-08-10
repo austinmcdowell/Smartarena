@@ -1,5 +1,5 @@
 <template>
-    <input v-model="query" @keyup="search" type="text" placeholder="search" class="nav-search">
+    <input v-model="query" type="text" placeholder="search" class="nav-search">
 </template>
 
 <script>
@@ -12,15 +12,19 @@ export default {
             query: ''
         }
     },
-    methods: {
-        search() {
+    watch: {
+        query: function(value) {
+            let $this = this;
+
             if (!this.query.length) {
                 EventBus.$emit('queryEmptied');
                 return;
             }
 
             axios.get(`/search?query=${this.query}`).then(response => {
-                EventBus.$emit('searchResultsReceived', response.data);
+                if ($this.query.length) {
+                    EventBus.$emit('searchResultsReceived', response.data);
+                }
             });
         }
     }
