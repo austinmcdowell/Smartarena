@@ -207,7 +207,7 @@ class MassRunUploader extends Controller
             
             return $video;
         } catch (\Exception $e) {
-            return ['message' => 'Video record not found.'];
+            return ['message' => $e->getMessage()];
         }
         
     }
