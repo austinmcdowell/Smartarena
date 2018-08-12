@@ -191,7 +191,8 @@ export default {
                                 $this.uploadPercentage = Math.round((progressEvent.loaded / progressEvent.total) * 100);
                             }
                         }).then(response => {
-                            $this.successfullyUploaded.push(filename)
+                            $this.successfullyUploaded.push(filename);
+                            return Promise.resolve();
                         }).catch(e => {
                             alert('There has been an error, please contact support.');
                         });
