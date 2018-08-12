@@ -62331,9 +62331,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             onUploadProgress: function onUploadProgress(progressEvent) {
                                 $this.uploadPercentage = Math.round(progressEvent.loaded / progressEvent.total * 100);
                             }
-                        }).then(function (response) {
-                            $this.successfullyUploaded.push(filename);
-                            return Promise.resolve();
                         }).catch(function (e) {
                             alert('There has been an error, please contact support.');
                         });
@@ -62361,12 +62358,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         // All of the items in the queue are functions, but the only way this can run is if we run .then against a promise
                         // We first check if promiseChain is a function and if so we call it. After that iteration it'll be a promise object.
                         if (typeof promiseChain === 'function') {
-                            console.log("promiseChain is a function.");
                             return promiseChain().then(function (result) {
                                 return nextPromise().then(Array.prototype.concat.bind(result));
                             }, Promise.resolve([]));
                         } else {
-                            console.log("promiseChain is not a function.");
                             return promiseChain.then(function (result) {
                                 return nextPromise().then(Array.prototype.concat.bind(result));
                             }, Promise.resolve([]));
