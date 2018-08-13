@@ -20,7 +20,7 @@ class HomeController extends Controller
         $isLoggedIn = Auth::check();
         $humans = Human::orderBy('first_name')->get();
         $coaches = Human::orderBy('first_name')->where('type', 'pro')->get();
-        $teamroping_videos = Video::with('human')->where('run_type', 'teamroping')->limit(8)->get();
+        $teamroping_videos = Video::with('human')->limit(8)->get();
 
         $most_runs_badge = [];
         $most_efficient_badge = [];
