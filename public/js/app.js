@@ -56656,135 +56656,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -56811,6 +56682,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             $this.human = data.human;
             $this.uploadedVideos = data.uploadedVideos;
             $this.associatedVideos = data.associatedVideos;
+
+            if ($this.uploadedVideos.length) {
+                $this.firstVideo = $this.uploadedVideos[0];
+            } else if ($this.associatedVideos.length) {
+                $this.firstVideo = $this.associatedVideos[0];
+            }
         }).catch(function (e) {
             alert('There has been an error. Please contact support.');
         });
@@ -56819,6 +56696,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             user: {},
             human: {},
+            firstVideo: {},
             associatedVideos: [],
             uploadedVideos: [],
             headerRuns: [],
@@ -56914,7 +56792,64 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(0),
+              _c("div", { staticClass: "col-sm-12 col-lg-8 recent-upload" }, [
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.firstVideo.id,
+                        expression: "firstVideo.id"
+                      }
+                    ],
+                    staticClass: "upload"
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: "/video/" + _vm.firstVideo.id } },
+                      [
+                        _c("div", {
+                          staticClass: "video",
+                          style:
+                            "background-image: url('" +
+                            _vm.firstVideo.thumbnail_url +
+                            "')"
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("h5", [
+                      _vm._v(
+                        "Watch " +
+                          _vm._s(
+                            _vm.human.first_name + " " + _vm.human.last_name
+                          ) +
+                          "'s featured video"
+                      )
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.firstVideo.id,
+                        expression: "!firstVideo.id"
+                      }
+                    ],
+                    staticClass: "no-videos"
+                  },
+                  [_vm._v("This user doesn't have any uploaded videos!")]
+                )
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -56932,7 +56867,194 @@ var render = function() {
                             "b-tab",
                             { attrs: { title: "Header", active: "" } },
                             [
-                              _c("table", { staticClass: "table runs-table" }, [
+                              _c(
+                                "h5",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: !_vm.headerRuns.length,
+                                      expression: "!headerRuns.length"
+                                    }
+                                  ]
+                                },
+                                [
+                                  _vm._v(
+                                    "This user doesn't have any header runs."
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "table",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: _vm.headerRuns.length,
+                                      expression: "headerRuns.length"
+                                    }
+                                  ],
+                                  staticClass: "table runs-table"
+                                },
+                                [
+                                  _c("thead", [
+                                    _c("tr", [
+                                      _c("th"),
+                                      _vm._v(" "),
+                                      _c("th"),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Date")]),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Event")]),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Header Catch")]),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Heeler Catch")]),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Header Penalty")]),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Penalties")]),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Total Run Penalties")]),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Raw Time")]),
+                                      _vm._v(" "),
+                                      _c("th", [_vm._v("Total Time")])
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "tbody",
+                                    _vm._l(_vm.headerRuns, function(run) {
+                                      return _c("tr", { key: run.id }, [
+                                        _c(
+                                          "td",
+                                          [
+                                            _c(
+                                              "router-link",
+                                              {
+                                                attrs: {
+                                                  to: "/run/edit/" + run.id
+                                                }
+                                              },
+                                              [_vm._v("Edit")]
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          [
+                                            _c(
+                                              "router-link",
+                                              {
+                                                attrs: {
+                                                  to:
+                                                    "/video/" + run.videos[0].id
+                                                }
+                                              },
+                                              [_vm._v("Play")]
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c("td", [_vm._v(_vm._s(run.date))]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(run.event.location))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(run.stats.header.catch_type)
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(run.stats.heeler.catch_type)
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              run.stats.header.penalty_type
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              run.stats.header.penalty_time
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              run.stats.header.penalty_time +
+                                                run.stats.heeler.penalty_time
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(run.stats.raw_time))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(run.stats.total_time))
+                                        ])
+                                      ])
+                                    })
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("b-tab", { attrs: { title: "Heeler" } }, [
+                            _c(
+                              "h5",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: !_vm.heelerRuns.length,
+                                    expression: "!heelerRuns.length"
+                                  }
+                                ]
+                              },
+                              [
+                                _vm._v(
+                                  "This user doesn't have any heeler runs."
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "table",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.heelerRuns.length,
+                                    expression: "heelerRuns.length"
+                                  }
+                                ],
+                                staticClass: "table runs-table"
+                              },
+                              [
                                 _c("thead", [
                                   _c("tr", [
                                     _c("th"),
@@ -56947,7 +57069,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("th", [_vm._v("Heeler Catch")]),
                                     _vm._v(" "),
-                                    _c("th", [_vm._v("Header Penalty")]),
+                                    _c("th", [_vm._v("Heeler Penalty")]),
                                     _vm._v(" "),
                                     _c("th", [_vm._v("Penalties")]),
                                     _vm._v(" "),
@@ -56961,7 +57083,7 @@ var render = function() {
                                 _vm._v(" "),
                                 _c(
                                   "tbody",
-                                  _vm._l(_vm.headerRuns, function(run) {
+                                  _vm._l(_vm.heelerRuns, function(run) {
                                     return _c("tr", { key: run.id }, [
                                       _c(
                                         "td",
@@ -57015,7 +57137,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("td", [
                                         _vm._v(
-                                          _vm._s(run.stats.header.penalty_type)
+                                          _vm._s(run.stats.heeler.penalty_type)
                                         )
                                       ]),
                                       _vm._v(" "),
@@ -57044,122 +57166,8 @@ var render = function() {
                                     ])
                                   })
                                 )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("b-tab", { attrs: { title: "Heeler" } }, [
-                            _c("table", { staticClass: "table runs-table" }, [
-                              _c("thead", [
-                                _c("tr", [
-                                  _c("th"),
-                                  _vm._v(" "),
-                                  _c("th"),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Date")]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Event")]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Header Catch")]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Heeler Catch")]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Heeler Penalty")]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Penalties")]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Total Run Penalties")]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Raw Time")]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v("Total Time")])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "tbody",
-                                _vm._l(_vm.heelerRuns, function(run) {
-                                  return _c("tr", { key: run.id }, [
-                                    _c(
-                                      "td",
-                                      [
-                                        _c(
-                                          "router-link",
-                                          {
-                                            attrs: { to: "/run/edit/" + run.id }
-                                          },
-                                          [_vm._v("Edit")]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "td",
-                                      [
-                                        _c(
-                                          "router-link",
-                                          {
-                                            attrs: {
-                                              to: "/video/" + run.videos[0].id
-                                            }
-                                          },
-                                          [_vm._v("Play")]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c("td", [_vm._v(_vm._s(run.date))]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(_vm._s(run.event.location))
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(
-                                        _vm._s(run.stats.header.catch_type)
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(
-                                        _vm._s(run.stats.heeler.catch_type)
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(
-                                        _vm._s(run.stats.heeler.penalty_type)
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(
-                                        _vm._s(run.stats.header.penalty_time)
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(
-                                        _vm._s(
-                                          run.stats.header.penalty_time +
-                                            run.stats.heeler.penalty_time
-                                        )
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(_vm._s(run.stats.raw_time))
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(_vm._s(run.stats.total_time))
-                                    ])
-                                  ])
-                                })
-                              )
-                            ])
+                              ]
+                            )
                           ])
                         ],
                         1
@@ -57201,22 +57209,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-12 col-lg-8 recent-upload" }, [
-      _c("div", { staticClass: "upload" }, [
-        _c("div", { staticClass: "video" }),
-        _vm._v(" "),
-        _c("h5", [_vm._v("Rider Name does example run for X Rodeo")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("1,001 views | July 13")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

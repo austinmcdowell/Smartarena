@@ -281,6 +281,11 @@ body {
     height: auto;
   }
 
+  #profile .recent-upload .no-videos {
+    text-align: center;
+    margin-top: 25px;
+  }
+
   #profile .upload {
     height: auto;
     background: white;
@@ -315,7 +320,7 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   #profile .profile {
     background: white;
     border-radius: 3px;
@@ -398,8 +403,12 @@ body {
     vertical-align: middle;
   }
 
+  #profile .recent-upload .no-videos {
+    margin-top: 150px;
+  }
+
   #profile .upload {
-    height: 500px;
+    height: 440px;
     background: white;
     border-radius: 3px;
     border: 1px solid rgba(205, 214, 224, 0.5);
@@ -422,7 +431,7 @@ body {
 }
 
 #profile .profile {
-  height: 500px;
+  height: 440px;
   background: white;
   border-radius: 3px;
   border: 1px solid rgba(205, 214, 224, 0.5);
