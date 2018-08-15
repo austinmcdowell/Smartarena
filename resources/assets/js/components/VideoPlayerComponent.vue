@@ -8,57 +8,32 @@
         </p>
       </video>
     </div>
-    <!-- <div class="row zoom-panel">
-      
-      <div class="col-sm-4 zoom-button text-center">
-        <span class="zoom-out"><i class="fas fa-minus"></i></span>
+    <div class="container-fluid">
+      <div class="row zoom-panel">
+        <div @click="togglePlay()" class="col-4 col-sm-4 video-control-button text-center">
+          <span><i v-show="!isPlaying" class="fas fa-play"></i><i v-show="isPlaying" class="fas fa-pause"></i></span>
+        </div>
+        <div class="col-4 col-sm-4 zoom-button text-center">
+          <span class="zoom-out"><i class="fas fa-minus"></i></span>
+        </div>
+        <div class="col-4 col-sm-4 zoom-button text-center">
+          <span class="zoom-in"><i class="fas fa-plus"></i></span>
+        </div>
       </div>
-      <div class="col-sm-4 zoom-button text-center">
-        <span class="zoom-in"><i class="fas fa-plus"></i></span>
+      <div class="row">
+        <div class="col-3 col-sm-3 control-button text-center double-rewind">
+          <span><i class="fas fa-angle-double-left"></i></span>
+        </div>
+        <div class="col-3 col-sm-3 control-button text-center single-rewind">
+          <span><i class="fas fa-angle-left"></i></span>
+        </div>
+        <div class="col-3 col-sm-3 control-button text-center single-forward">
+          <span><i class="fas fa-angle-right"></i></span>
+        </div>
+        <div class="col-3 col-sm-3 control-button text-center double-forward">
+          <span><i class="fas fa-angle-double-right"></i></span>
+        </div>
       </div>
-    </div> -->
-      <div class="row playback-panel">
-        <div class="column-one">
-          <div class="container">
-            <div class="row">
-              <div class="flex-one control-button text-center double-rewind">
-                <span><i class="fas fa-angle-double-left"></i></span>
-              </div>
-              <div class="flex-one col-sm-4 control-button text-center single-rewind">
-                <span><i class="fas fa-angle-left"></i></span>
-              </div>
-              <div class="flex-one col-sm-4 zoom-button text-center">
-                <span class="zoom-out"><i class="fas fa-minus"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="column-two">
-          <div class="container">
-            <div class="row">
-              <div @click="togglePlay()" class="col-xs-12 col-sm-12 video-control-button text-center">
-                <span><i v-show="!isPlaying" class="fas fa-play"></i><i v-show="isPlaying" class="fas fa-pause"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column-three">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-4 zoom-button text-center">
-                <span class="zoom-in"><i class="fas fa-plus"></i></span>
-              </div>
-              <div class="col-sm-4 control-button text-center single-forward">
-                <span><i class="fas fa-angle-right"></i></span>
-              </div>
-              <div class="col-sm-4 control-button text-center double-forward">
-                <span><i class="fas fa-angle-double-right"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
     </div>
     <h2 class="video-title">Test Title</h2>
   </div>
@@ -161,9 +136,12 @@
         this.playingVideoId = videoId;
       },
       playingVideoId: function(videoId) {
+        console.log('im here');
         const $this = this;
         axios.get(`/video/${videoId}`).then(response => {
           let data = response.data;
+          console.log(data);
+          window.player = $this.player;
           $this.player.src({ type: 'video/mp4', src: data.file_url });
           $this.player.play();
         }).catch(e => {
