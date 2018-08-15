@@ -57128,29 +57128,43 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "col-lg-12 uploads" }, [
-                _c("h5", [_vm._v("Recent Uploads")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "container" }, [
-                  _c(
-                    "div",
+              _c(
+                "div",
+                {
+                  directives: [
                     {
-                      staticClass: "row roping-videos justify-content-between"
-                    },
-                    _vm._l(_vm.uploadedVideos, function(video) {
-                      return _c(
-                        "div",
-                        {
-                          key: video.id,
-                          staticClass: "col-sm-12 col-lg-4 rope-vid"
-                        },
-                        [_c("video-cell", { attrs: { video: video } })],
-                        1
-                      )
-                    })
-                  )
-                ])
-              ])
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.uploadedVideos.length,
+                      expression: "uploadedVideos.length"
+                    }
+                  ],
+                  staticClass: "col-lg-12 uploads"
+                },
+                [
+                  _c("h5", [_vm._v("Recent Uploads")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "container" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "row roping-videos justify-content-between"
+                      },
+                      _vm._l(_vm.uploadedVideos, function(video) {
+                        return _c(
+                          "div",
+                          {
+                            key: video.id,
+                            staticClass: "col-sm-12 col-lg-4 rope-vid"
+                          },
+                          [_c("video-cell", { attrs: { video: video } })],
+                          1
+                        )
+                      })
+                    )
+                  ])
+                ]
+              )
             ])
           ])
         ])
