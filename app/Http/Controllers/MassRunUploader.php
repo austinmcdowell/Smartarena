@@ -188,7 +188,7 @@ class MassRunUploader extends Controller
 
         try {
             $video = Video::where('file_name', $original_filename)
-            ->where('processing_complete', 'false')
+            ->where('processing_complete', false)
             ->where('file_url', null)
             ->where('thumbnail_url', null)->firstOrFail();
 

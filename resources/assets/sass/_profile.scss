@@ -26,6 +26,11 @@
 
     .recent-upload {
       height: auto;
+
+      .no-videos {
+        text-align: center;
+        margin-top: 25px;
+      }
     }
 
     .upload {
@@ -64,10 +69,7 @@
   }
 
   // Large devices (desktops, 992px and up)
-  @media (min-width: 992px) {}
-
-  // Extra large devices (large desktops, 1200px and up)
-  @media (min-width: 1200px) { 
+  @media (min-width: 992px) { 
     .profile {
       background: white;
       border-radius: 3px;
@@ -149,10 +151,14 @@
         }
       }
     }
-    .recent-upload {}
+    .recent-upload {
+      .no-videos {
+        margin-top: 150px;
+      }
+    }
 
     .upload {
-      height: 500px;  
+      height: 440px;  
       background: white;
       border-radius: 3px;
       border: 1px solid rgba(205, 214, 224, .5);
@@ -175,7 +181,7 @@
   }
 
   .profile {
-    height: 500px;
+    height: 440px;
     background: white;
     border-radius: 3px;
     border: 1px solid rgba(205, 214, 224, .5);

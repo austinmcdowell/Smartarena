@@ -21,58 +21,35 @@
             </slide>
         </carousel>
 
-    <table class="table leaderboard-table">
-        <thead>
-            <tr>
-                <th scope="col">Classification</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr @click="showProfile(human.id)" v-for="human in humans" :key="human.id">
-                <td scope="row">{{ human.classification }}</td>
-                <td>{{ human.first_name }}</td>
-                <td>{{ human.last_name }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table leaderboard-table">
+            <thead>
+                <tr>
+                    <th scope="col">Classification</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr @click="showProfile(human.id)" v-for="human in humans" :key="human.id">
+                    <td scope="row">{{ human.classification }}</td>
+                    <td>{{ human.first_name }}</td>
+                    <td>{{ human.last_name }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <div class="row">
-        <div class="col-lg-10"><h3 class="sec-title">Latest Roping Videos</h3></div>
-    </div>
-    
-    <div class="row leaderboards-videos justify-content-between">
-        <!-- NEEDS THUMBNAIL AND LINK TO VIDEO -->
-        <div class="col-lg-2 rope-vid">
-            <div class="vid-thumbnail" style="background-image: url('/img/cow.jpg');"></div>
-            <div class="vid-description">Vid Title</div>
+        <div class="row">
+            <div class="col-lg-10"><h3 class="sec-title">Latest Roping Videos</h3></div>
         </div>
-        <div class="col-lg-2 rope-vid">
-            <div class="vid-thumbnail"></div>
-            <div class="vid-description">Vid Title</div>
-        </div>
-        <div class="col-lg-2 rope-vid">
-            <div class="vid-thumbnail"></div>
-            <div class="vid-description">Vid Title</div>
-        </div>
-        <div class="col-lg-2 rope-vid">
-            <div class="vid-thumbnail"></div>
-            <div class="vid-description">Vid Title</div>
-        </div>
-        <div class="col-lg-2 rope-vid">
-            <div class="vid-thumbnail"></div>
-            <div class="vid-description">Vid Title</div>
-        </div>
-        <div class="col-lg-2 rope-vid">
-            <div class="vid-thumbnail"></div>
-            <div class="vid-description">Vid Title</div>
-        </div>
-    </div>
 
+        <div class="row roping-videos justify-content-between">
+            <div class="col-sm-12 col-md-4 col-lg-3 rope-vid" v-for="video in videos" :key="video.id"><video-cell :video="video"></video-cell></div>
+        </div>
     </div>
 </template>
 <script>
+import VideoCellComponent from './VideoCellComponent.vue';
+
 export default {    
     mounted() {
         let $this = this;
@@ -80,6 +57,7 @@ export default {
             let data = response.data;
             $this.humans = data.humans;
             $this.coaches  = data.coaches;
+            $this.videos = data.videos;
         }).catch(e => {
             alert('There was an error. Please contact support.');
         });
@@ -88,13 +66,17 @@ export default {
         return {
             user: {},
             humans: [],
-            coaches: []
+            coaches: [],
+            videos: [],
         }
     },
     methods: {
         showProfile(humanId) {
             this.$router.push(`/profile/${humanId}`);
         }
+    },
+    components: {
+        'video-cell': VideoCellComponent
     }
 }
 </script>
