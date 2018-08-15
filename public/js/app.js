@@ -57358,6 +57358,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -57571,51 +57599,58 @@ var render = function() {
   return _c("div", { attrs: { id: "video-player" } }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "row zoom-panel" }, [
-      _c(
-        "div",
-        {
-          staticClass: "col-sm-4 video-control-button text-center",
-          on: {
-            click: function($event) {
-              _vm.togglePlay()
-            }
-          }
-        },
-        [
-          _c("span", [
-            _c("i", {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: !_vm.isPlaying,
-                  expression: "!isPlaying"
-                }
-              ],
-              staticClass: "fas fa-play"
-            }),
-            _c("i", {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.isPlaying,
-                  expression: "isPlaying"
-                }
-              ],
-              staticClass: "fas fa-pause"
-            })
-          ])
-        ]
-      ),
-      _vm._v(" "),
+    _c("div", { staticClass: "row playback-panel" }, [
       _vm._m(1),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xs-4 col-lg-4" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-xs-12 col-sm-12 video-control-button text-center",
+                on: {
+                  click: function($event) {
+                    _vm.togglePlay()
+                  }
+                }
+              },
+              [
+                _c("span", [
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.isPlaying,
+                        expression: "!isPlaying"
+                      }
+                    ],
+                    staticClass: "fas fa-play"
+                  }),
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isPlaying,
+                        expression: "isPlaying"
+                      }
+                    ],
+                    staticClass: "fas fa-pause"
+                  })
+                ])
+              ]
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _vm._m(2)
     ]),
     _vm._v(" "),
-    _vm._m(3)
+    _c("h2", { staticClass: "video-title" }, [_vm._v("Test Title")])
   ])
 }
 var staticRenderFns = [
@@ -57660,9 +57695,37 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-4 zoom-button text-center" }, [
-      _c("span", { staticClass: "zoom-out" }, [
-        _c("i", { staticClass: "fas fa-minus" })
+    return _c("div", { staticClass: "col-xs-4 col-sm-4" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-xs-4 col-sm-4 control-button text-center double-rewind"
+            },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-xs-4 col-sm-4 control-button text-center single-rewind"
+            },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-xs-4 col-sm-4 zoom-button text-center" },
+            [
+              _c("span", { staticClass: "zoom-out" }, [
+                _c("i", { staticClass: "fas fa-minus" })
+              ])
+            ]
+          )
+        ])
       ])
     ])
   },
@@ -57670,40 +57733,42 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-4 zoom-button text-center" }, [
-      _c("span", { staticClass: "zoom-in" }, [
-        _c("i", { staticClass: "fas fa-plus" })
+    return _c("div", { staticClass: "col-xs-4 col-lg-4" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-xs-4 col-sm-4 zoom-button text-center" },
+            [
+              _c("span", { staticClass: "zoom-in" }, [
+                _c("i", { staticClass: "fas fa-plus" })
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-xs-4 col-sm-4 control-button text-center single-forward"
+            },
+            [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-xs-4 col-sm-4 control-button text-center double-forward"
+            },
+            [
+              _c("span", [
+                _c("i", { staticClass: "fas fa-angle-double-right" })
+              ])
+            ]
+          )
+        ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-sm-3 control-button text-center double-rewind" },
-        [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-sm-3 control-button text-center single-rewind" },
-        [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-sm-3 control-button text-center single-forward" },
-        [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-sm-3 control-button text-center double-forward" },
-        [_c("span", [_c("i", { staticClass: "fas fa-angle-double-right" })])]
-      )
     ])
   }
 ]

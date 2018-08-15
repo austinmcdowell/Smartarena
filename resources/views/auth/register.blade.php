@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id="login">
     <div class="row">
         <div class="col m8 offset-m2">
-            <div class="card">
-                <span class="card-title">Create Your Account</span>
+            <div class="card spacer add-padding">
+                <span class="card-title" align="center">Create Your Account</span>
 
                 <div class="card-content">
                     <form method="POST" action="{{ route('register') }}">

@@ -711,9 +711,27 @@ body {
   margin-top: 20px;
 }
 
+@media (min-width: 300px) {
+  #my-video {
+    height: 200px;
+  }
+
+  #my-video video {
+    height: 200px;
+  }
+
+  .zoom-button,
+  .control-button,
+  .video-control-button {
+    color: #fff;
+    font-size: 3.3vw;
+  }
+}
+
 #my-video {
-  width: 100% !important;
+  width: 96% !important;
   height: 500px !important;
+  margin: 0 2%;
   pointer-events: none;
 }
 
@@ -726,16 +744,29 @@ body {
 }
 
 #protection {
+  width: 90%;
+  margin: 2% 0 0 5%;
   background-color: #000;
   overflow: hidden;
+}
+
+.zoom-panel,
+.playback-panel {
+  width: 90% !important;
+  height: 50px;
+  margin: 0 5%;
+  background-color: #2b333f;
 }
 
 .zoom-button,
 .control-button,
 .video-control-button {
-  background-color: #2b333f;
   color: #fff;
-  font-size: 20pt;
+  font-size: 2.3vw;
+}
+
+.video-title {
+  margin: 1% 5%;
 }
 
 body {
@@ -810,6 +841,18 @@ html {
   #subscribe .subscription-card {
     margin-top: 10px;
   }
+}
+
+#login .spacer {
+  margin-top: 2%;
+}
+
+#login .extra-spacing {
+  margin: 5%;
+}
+
+#login .add-padding {
+  padding: 4%;
 }
 
 body {

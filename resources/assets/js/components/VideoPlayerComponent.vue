@@ -8,31 +8,59 @@
         </p>
       </video>
     </div>
-    <div class="row zoom-panel">
-      <div @click="togglePlay()" class="col-sm-4 video-control-button text-center">
-        <span><i v-show="!isPlaying" class="fas fa-play"></i><i v-show="isPlaying" class="fas fa-pause"></i></span>
-      </div>
+    <!-- <div class="row zoom-panel">
+      
       <div class="col-sm-4 zoom-button text-center">
         <span class="zoom-out"><i class="fas fa-minus"></i></span>
       </div>
       <div class="col-sm-4 zoom-button text-center">
         <span class="zoom-in"><i class="fas fa-plus"></i></span>
       </div>
+    </div> -->
+    <div class="row playback-panel">
+        <div class="col-xs-4 col-sm-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-4 col-sm-4 control-button text-center double-rewind">
+                <span><i class="fas fa-angle-double-left"></i></span>
+              </div>
+              <div class="col-xs-4 col-sm-4 control-button text-center single-rewind">
+                <span><i class="fas fa-angle-left"></i></span>
+              </div>
+              <div class="col-xs-4 col-sm-4 zoom-button text-center">
+                <span class="zoom-out"><i class="fas fa-minus"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xs-4 col-lg-4">
+          <div class="container">
+            <div class="row">
+              <div @click="togglePlay()" class="col-xs-12 col-sm-12 video-control-button text-center">
+                <span><i v-show="!isPlaying" class="fas fa-play"></i><i v-show="isPlaying" class="fas fa-pause"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-4 col-lg-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-4 col-sm-4 zoom-button text-center">
+                <span class="zoom-in"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="col-xs-4 col-sm-4 control-button text-center single-forward">
+                <span><i class="fas fa-angle-right"></i></span>
+              </div>
+              <div class="col-xs-4 col-sm-4 control-button text-center double-forward">
+                <span><i class="fas fa-angle-double-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-sm-3 control-button text-center double-rewind">
-        <span><i class="fas fa-angle-double-left"></i></span>
-      </div>
-      <div class="col-sm-3 control-button text-center single-rewind">
-        <span><i class="fas fa-angle-left"></i></span>
-      </div>
-      <div class="col-sm-3 control-button text-center single-forward">
-        <span><i class="fas fa-angle-right"></i></span>
-      </div>
-      <div class="col-sm-3 control-button text-center double-forward">
-        <span><i class="fas fa-angle-double-right"></i></span>
-      </div>
-    </div>
+    <h2 class="video-title">Test Title</h2>
   </div>
 </template>
 <script>
