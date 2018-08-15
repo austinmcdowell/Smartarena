@@ -132,7 +132,7 @@
                                 </b-card>
                             </div>
 
-                            <div class="col-lg-12 uploads">
+                            <div class="col-lg-12 uploads" v-show="uploadedVideos.length">
                                 <h5>Recent Uploads</h5>
                                 <div class="container">
                                     <div class="row roping-videos justify-content-between">
