@@ -150,39 +150,22 @@
 <script>
 
 import VideoCellComponent from './VideoCellComponent.vue';
+import EventBus from './EventBus';
 
 export default {
     mounted() {
         let $this = this;
         let profileId = this.$route.params.id; 
 
-        if (!profileId) {
-            alert('There has been an error. Please contact support.');
-            return;
-        }
-
         if (window.user) {
             this.user = window.user;
         }
 
-        axios.get(`/profile/${this.$route.params.id}`).then(response => {
-            let data = response.data;
-
-            $this.headerRuns = data.headerRuns;
-            $this.heelerRuns = data.heelerRuns;
-            $this.human      = data.human;
-            $this.uploadedVideos = data.uploadedVideos;
-            $this.associatedVideos = data.associatedVideos;
-
-            if ($this.uploadedVideos.length) {
-                $this.firstVideo = $this.uploadedVideos[0];
-            } else if ($this.associatedVideos.length) {
-                $this.firstVideo = $this.associatedVideos[0];
-            }
-
-        }).catch(e => {
-            alert('There has been an error. Please contact support.')
-        })
+        EventBus.$on('searchResultSelected', function(profileId) {
+            $this.loadData(profileId);
+        });
+        
+        this.loadData(profileId);
     },
     data() {
         return {
@@ -193,6 +176,37 @@ export default {
             uploadedVideos: [],
             headerRuns: [],
             heelerRuns: []
+        }
+    },
+    methods: {
+        loadData(profileId) {
+            let $this = this;
+
+            if (!profileId) {
+                alert('There has been an error. Please contact support.');
+                return;
+            }
+
+            axios.get(`/profile/${profileId}`).then(response => {
+                let data = response.data;
+
+                $this.firstVideo = {};
+                $this.headerRuns = data.headerRuns;
+                $this.heelerRuns = data.heelerRuns;
+                $this.human      = data.human;
+                $this.uploadedVideos = data.uploadedVideos;
+                $this.associatedVideos = data.associatedVideos;
+
+                if ($this.uploadedVideos.length) {
+                    $this.firstVideo = $this.uploadedVideos[0];
+                } else if ($this.associatedVideos.length) {
+                    $this.firstVideo = $this.associatedVideos[0];
+                }
+
+            }).catch(e => {
+                console.log(e);
+                alert('There has been an error. Please contact support.')
+            })
         }
     },
     computed: {
