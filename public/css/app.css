@@ -15,7 +15,7 @@ body {
 
 #leaderboard .leaderboard-table {
   width: 100%;
-  margin: 5% 0;
+  margin: 1% 0;
   padding: 1% 5%;
   background: white;
 }
@@ -26,6 +26,7 @@ body {
 
 #leaderboard .leaderboard-table td {
   border: 1px solid white !important;
+  cursor: pointer;
 }
 
 #leaderboard .leaderboards-videos {
@@ -1129,12 +1130,13 @@ h2 {
 
   .professionals .hire-btn {
     display: block;
-    margin: 5% 0 0 0;
-    width: 100%;
+    margin: 10% auto;
+    width: 50%;
     height: 40px;
     padding-top: 5px;
-    background-color: #4a8360;
-    color: white;
+    background-color: transparent;
+    color: white !important;
+    border: 2px solid white;
     border-radius: 3px;
     cursor: pointer;
   }
@@ -1263,19 +1265,14 @@ h2 {
   }
 
   .professionals .hire-btn {
-    margin: 2% 0 0 88%;
+    margin: 2% auto;
     width: 100px;
     height: 40px;
-    color: #4a8360;
-    background: white;
-    border: 2px solid #4a8360;
+    color: white !important;
+    background: transparent;
+    border: 2px solid white;
     border-radius: 3px;
     cursor: pointer;
-  }
-
-  .coaches:hover .hire-btn {
-    background-color: #4a8360;
-    color: white;
   }
 
   .roping-videos .vid-thumbnail {
@@ -1402,10 +1399,16 @@ h2 {
   outline: 0;
 }
 
+.sec-title {
+  font-family: 'Arial Black';
+  font-size: 20px;
+  margin: 3% 0 .5% 0;
+}
+
 .coaches {
   width: 100%;
   height: 350px;
-  margin: 0 0 7% 0;
+  margin: 0 0 4% 0;
   padding: 0;
   border-radius: 3px;
 }
@@ -1413,23 +1416,23 @@ h2 {
 .professionals {
   padding: 0;
   border-radius: 3px !important;
-  background: white !important;
 }
 
 .professionals .pro-image {
-  height: 300px;
+  height: 350px;
   background-image: url("/img/prof.jpg");
   background-size: cover;
 }
 
 .professionals .pro-image h2 {
-  margin: 12% 0 0 0;
+  margin: 8% 0 0 0;
   font-size: 50px;
   color: white;
 }
 
 .professionals .pro-content {
   height: 80px;
+  background: white;
 }
 
 .professionals .pro-content h2 {

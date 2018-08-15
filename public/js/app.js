@@ -55347,6 +55347,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -56054,6 +56056,20 @@ var render = function() {
                               " " +
                               _vm._s(coach.last_name)
                           )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "hire-btn",
+                              attrs: {
+                                href: coach.calendly_link,
+                                align: "center"
+                              }
+                            },
+                            [_vm._v("Hire " + _vm._s(coach.first_name))]
+                          )
                         ])
                       ])
                     ])
@@ -56212,6 +56228,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -56258,7 +56277,7 @@ var render = function() {
     "div",
     { staticClass: "container-fluid", attrs: { id: "leaderboard" } },
     [
-      _c("h3", { staticClass: "sec-title" }, [_vm._v("Coaches")]),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Hire a Coach")]),
       _vm._v(" "),
       _c(
         "carousel",
@@ -56289,23 +56308,22 @@ var render = function() {
                               " " +
                               _vm._s(coach.last_name)
                           )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "col-sm-12 col-lg-12 pro-content" },
-                        [
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
                           _c(
-                            "button",
+                            "a",
                             {
                               staticClass: "hire-btn",
-                              attrs: { align: "center" }
+                              attrs: {
+                                href: coach.calendly_link,
+                                align: "center"
+                              }
                             },
                             [_vm._v("Hire " + _vm._s(coach.first_name))]
                           )
-                        ]
-                      )
+                        ])
+                      ])
                     ])
                   ])
                 ]
@@ -56314,6 +56332,8 @@ var render = function() {
           ])
         })
       ),
+      _vm._v(" "),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Leaderboard")]),
       _vm._v(" "),
       _c("table", { staticClass: "table leaderboard-table" }, [
         _vm._m(0),
