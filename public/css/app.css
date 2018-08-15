@@ -723,6 +723,7 @@ body {
 @media (min-width: 300px) {
   #my-video {
     height: 200px;
+    width: 100%;
   }
 
   #my-video video {
@@ -733,7 +734,24 @@ body {
   .control-button,
   .video-control-button {
     color: #fff;
-    font-size: 3.3vw;
+    font-size: 4.3vw !important;
+  }
+
+  .zoom-panel,
+  .playback-panel {
+    width: 100% !important;
+    height: 50px;
+    margin: 0;
+    background-color: #2b333f;
+  }
+}
+
+@media (min-width: 1000px) {
+  .zoom-button,
+  .control-button,
+  .video-control-button {
+    color: #fff;
+    font-size: 2.3vw !important;
   }
 }
 
@@ -753,25 +771,45 @@ body {
 }
 
 #protection {
-  width: 90%;
-  margin: 2% 0 0 5%;
+  width: 100%;
+  margin: 2% 0 0 0;
   background-color: #000;
   overflow: hidden;
 }
 
 .zoom-panel,
 .playback-panel {
-  width: 90% !important;
+  width: 100% !important;
   height: 50px;
-  margin: 0 5%;
+  margin: 0;
   background-color: #2b333f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.column-one,
+.column-two,
+.column-three {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .zoom-button,
 .control-button,
 .video-control-button {
   color: #fff;
-  font-size: 2.3vw;
+  font-size: 2vw;
 }
 
 .video-title {
