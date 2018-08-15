@@ -1,7 +1,7 @@
 <template>
     <div v-show="shouldDisplay" id="results" class="search-results">
         <ul>
-            <li v-for="result in results" :key="result.id"><router-link :to="`/profile/${result.id}`">{{ result.first_name }} {{ result.last_name }} - {{ result.location }}</router-link></li>
+            <li @click="presentProfile(result)" v-for="result in results" :key="result.id">{{ result.first_name }} {{ result.last_name }}<span v-if="result.location"> - {{ result.location }}</span></li>
         </ul>
     </div>
 </template>
@@ -26,6 +26,13 @@ export default {
         return { 
             shouldDisplay: false,
             results: []
+        }
+    },
+    methods: {
+        presentProfile(result) {
+            window.location = '#/profile/' + result.id; 
+            EventBus.$emit('searchResultSelected', result.id);
+            this.shouldDisplay = false;
         }
     }
 }
