@@ -1,6 +1,6 @@
 <template>
     <div id="leaderboard" class="container-fluid">
-        <h3 class="sec-title">Coaches</h3>
+        <h3 class="sec-title">Hire a Coach</h3>
         <carousel :per-page="1" :autoplay="true" :autoplayTimeout="2500" :loop="true" :mouse-drag="false">
             <slide v-for="coach in coaches" :key="coach.id">
                 <div class="row coaches">
@@ -9,11 +9,13 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-12 pro-image">
                                     <h2 align="center">{{ coach.first_name }} {{ coach.last_name }}</h2>
-                                    
+                                    <div>
+                                        <a :href="coach.calendly_link" class="hire-btn" align="center">Hire {{ coach.first_name }}</a>
+                                    </div>
                                 </div>
-                                <div class="col-sm-12 col-lg-12 pro-content">
-                                    <button class="hire-btn" align="center">Hire {{ coach.first_name }}</button>
-                                </div>
+                                <!-- <div class="col-sm-12 col-lg-12 pro-content">
+                                    <a :href="coach.calendly_link" class="hire-btn" align="center">Hire {{ coach.first_name }}</a>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -21,6 +23,7 @@
             </slide>
         </carousel>
 
+        <h3 class="sec-title">Leaderboard</h3>
         <table class="table leaderboard-table">
             <thead>
                 <tr>

@@ -55347,6 +55347,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -56054,6 +56056,20 @@ var render = function() {
                               " " +
                               _vm._s(coach.last_name)
                           )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "hire-btn",
+                              attrs: {
+                                href: coach.calendly_link,
+                                align: "center"
+                              }
+                            },
+                            [_vm._v("Hire " + _vm._s(coach.first_name))]
+                          )
                         ])
                       ])
                     ])
@@ -56212,6 +56228,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -56258,7 +56277,7 @@ var render = function() {
     "div",
     { staticClass: "container-fluid", attrs: { id: "leaderboard" } },
     [
-      _c("h3", { staticClass: "sec-title" }, [_vm._v("Coaches")]),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Hire a Coach")]),
       _vm._v(" "),
       _c(
         "carousel",
@@ -56289,23 +56308,22 @@ var render = function() {
                               " " +
                               _vm._s(coach.last_name)
                           )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "col-sm-12 col-lg-12 pro-content" },
-                        [
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
                           _c(
-                            "button",
+                            "a",
                             {
                               staticClass: "hire-btn",
-                              attrs: { align: "center" }
+                              attrs: {
+                                href: coach.calendly_link,
+                                align: "center"
+                              }
                             },
                             [_vm._v("Hire " + _vm._s(coach.first_name))]
                           )
-                        ]
-                      )
+                        ])
+                      ])
                     ])
                   ])
                 ]
@@ -56314,6 +56332,8 @@ var render = function() {
           ])
         })
       ),
+      _vm._v(" "),
+      _c("h3", { staticClass: "sec-title" }, [_vm._v("Leaderboard")]),
       _vm._v(" "),
       _c("table", { staticClass: "table leaderboard-table" }, [
         _vm._m(0),
@@ -57357,6 +57377,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -57573,7 +57594,7 @@ var render = function() {
     _c("div", { staticClass: "row playback-panel" }, [
       _vm._m(1),
       _vm._v(" "),
-      _c("div", { staticClass: "col-xs-4 col-lg-4" }, [
+      _c("div", { staticClass: "column-two" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c(
@@ -57666,14 +57687,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xs-4 col-sm-4" }, [
+    return _c("div", { staticClass: "column-one" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c(
             "div",
             {
-              staticClass:
-                "col-xs-4 col-sm-4 control-button text-center double-rewind"
+              staticClass: "flex-one control-button text-center double-rewind"
             },
             [_c("span", [_c("i", { staticClass: "fas fa-angle-double-left" })])]
           ),
@@ -57682,14 +57702,14 @@ var staticRenderFns = [
             "div",
             {
               staticClass:
-                "col-xs-4 col-sm-4 control-button text-center single-rewind"
+                "flex-one col-sm-4 control-button text-center single-rewind"
             },
             [_c("span", [_c("i", { staticClass: "fas fa-angle-left" })])]
           ),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-xs-4 col-sm-4 zoom-button text-center" },
+            { staticClass: "flex-one col-sm-4 zoom-button text-center" },
             [
               _c("span", { staticClass: "zoom-out" }, [
                 _c("i", { staticClass: "fas fa-minus" })
@@ -57704,24 +57724,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xs-4 col-lg-4" }, [
+    return _c("div", { staticClass: "column-three" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "col-xs-4 col-sm-4 zoom-button text-center" },
-            [
-              _c("span", { staticClass: "zoom-in" }, [
-                _c("i", { staticClass: "fas fa-plus" })
-              ])
-            ]
-          ),
+          _c("div", { staticClass: "col-sm-4 zoom-button text-center" }, [
+            _c("span", { staticClass: "zoom-in" }, [
+              _c("i", { staticClass: "fas fa-plus" })
+            ])
+          ]),
           _vm._v(" "),
           _c(
             "div",
             {
-              staticClass:
-                "col-xs-4 col-sm-4 control-button text-center single-forward"
+              staticClass: "col-sm-4 control-button text-center single-forward"
             },
             [_c("span", [_c("i", { staticClass: "fas fa-angle-right" })])]
           ),
@@ -57729,8 +57744,7 @@ var staticRenderFns = [
           _c(
             "div",
             {
-              staticClass:
-                "col-xs-4 col-sm-4 control-button text-center double-forward"
+              staticClass: "col-sm-4 control-button text-center double-forward"
             },
             [
               _c("span", [

@@ -1,6 +1,7 @@
 @media(min-width: 300px) {
   #my-video {
     height: 200px;
+    width: 100%;
 
     video {
       height: 200px;
@@ -9,8 +10,38 @@
 
   .zoom-button, .control-button, .video-control-button {
     color: #fff;
-    font-size:3.3vw;
+    font-size:4.3vw !important;
   }
+
+  .zoom-panel, .playback-panel {
+    width: 100% !important;
+    height: 50px;
+    // height: 500px !important;
+    margin: 0;
+    background-color: #2b333f;
+  }
+}
+
+@media(min-width: 1000px) {
+  // #my-video {
+  //   height: 200px;
+  //   width: 100%;
+
+  //   video {
+  //     height: 200px;
+  //   }
+  // }
+
+  .zoom-button, .control-button, .video-control-button {
+    color: #fff;
+    font-size:2.3vw !important;
+  }
+
+  // .zoom-panel, .playback-panel {
+  //   width: 100% !important;
+  //   height: 50px;
+  //   background-color: #2b333f;
+  // }
 }
 #my-video {
   width: 96% !important;
@@ -28,23 +59,36 @@
 }
 
 #protection {
-  width: 90%;
-  margin: 2% 0 0 5%;
+  width: 100%;
+  margin: 2% 0 0 0;
   background-color: #000;
   overflow: hidden;
 }
 
+
 .zoom-panel, .playback-panel {
-  width: 90% !important;
+  width: 100% !important;
   height: 50px;
+  margin: 0;
   // height: 500px !important;
-  margin: 0 5%;
   background-color: #2b333f;
+  
+  display: flex;
 }
+
+.column-one, .column-two, .column-three {
+  flex: 1;
+  display: flex;
+}
+
+.flex-one {
+  display: flex;
+}
+
 
 .zoom-button, .control-button, .video-control-button {
   color: #fff;
-  font-size:2.3vw;
+  font-size:2vw;
 }
 
 

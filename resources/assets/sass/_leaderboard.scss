@@ -28,7 +28,7 @@ body {
   padding: 1% 5%;
   .leaderboard-table {
     width: 100%;
-    margin: 5% 0;
+    margin: 1% 0;
     padding: 1% 5%;
 
     background: white;
@@ -41,6 +41,7 @@ body {
 
   .leaderboard-table td {
     border: 1px solid white !important;
+    cursor: pointer;
   }
 
   .leaderboards-videos {
