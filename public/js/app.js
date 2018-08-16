@@ -56677,10 +56677,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 $this.uploadedVideos = data.uploadedVideos;
                 $this.associatedVideos = data.associatedVideos;
 
+                // This code will go and find a first video that's used as the Highlighted video
+                // Later on we want to refactor this to only use Uploaded videos.
                 if ($this.uploadedVideos.length) {
                     $this.firstVideo = $this.uploadedVideos[0];
                 } else if ($this.associatedVideos.length) {
                     $this.firstVideo = $this.associatedVideos[0];
+                } else if ($this.headerRuns.length) {
+                    for (var i = 0; i < $this.headerRuns.length; i++) {
+                        if ($this.headerRuns[i].videos.length) {
+                            $this.firstVideo = $this.headerRuns[i].videos[0];
+                        } else {
+                            continue;
+                        }
+                    }
+                } else if ($this.heelerRuns.length) {
+                    for (var _i = 0; _i < $this.heelerRuns.length; _i++) {
+                        if ($this.heelerRuns[_i].videos.length) {
+                            $this.firstVideo = $this.heelerRuns[_i].videos[0];
+                        } else {
+                            continue;
+                        }
+                    }
                 }
             }).catch(function (e) {
                 console.log(e);
