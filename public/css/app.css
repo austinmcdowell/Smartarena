@@ -1412,3 +1412,11 @@ h2 {
   background-image: url("/img/cow.jpg");
 }
 
+.mobile-profile-btn:hover {
+  color: green;
+}
+
+.mobile-upload-btn:hover {
+  color: white;
+}
+
