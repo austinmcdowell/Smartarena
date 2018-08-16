@@ -197,10 +197,28 @@ export default {
                 $this.uploadedVideos = data.uploadedVideos;
                 $this.associatedVideos = data.associatedVideos;
 
+                // This code will go and find a first video that's used as the Highlighted video
+                // Later on we want to refactor this to only use Uploaded videos.
                 if ($this.uploadedVideos.length) {
                     $this.firstVideo = $this.uploadedVideos[0];
                 } else if ($this.associatedVideos.length) {
                     $this.firstVideo = $this.associatedVideos[0];
+                } else if ($this.headerRuns.length) {
+                    for (let i = 0; i < $this.headerRuns.length; i++) {
+                        if ($this.headerRuns[i].videos.length) { 
+                            $this.firstVideo = $this.headerRuns[i].videos[0];
+                        } else {
+                            continue;
+                        }
+                    }
+                } else if ($this.heelerRuns.length) {
+                    for (let i = 0; i < $this.heelerRuns.length; i++) {
+                        if ($this.heelerRuns[i].videos.length) { 
+                            $this.firstVideo = $this.heelerRuns[i].videos[0];
+                        } else {
+                            continue;
+                        }
+                    }
                 }
 
             }).catch(e => {
