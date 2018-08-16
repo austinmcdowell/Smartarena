@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <h2 class="video-title">Test Title</h2>
+    <!-- <h2 class="video-title">Test Title</h2> -->
   </div>
     
 </template>
