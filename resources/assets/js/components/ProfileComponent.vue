@@ -78,8 +78,8 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr v-for="run in headerRuns" :key="run.id">
-                                                        <td><router-link :to="`/run/edit/${run.id}`">Edit</router-link></td>
-                                                        <td><router-link :to="`/video/${run.videos[0].id}`">Play</router-link></td>
+                                                        <td><router-link v-show="run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
+                                                        <td><router-link v-show="run.videos[0] && run.videos[0].processing_complete" :to="`/video/${run.videos[0].id}`">Play</router-link><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
                                                         <td>{{ run.stats.header.catch_type }}</td>
@@ -88,7 +88,7 @@
                                                         <td>{{ run.stats.header.penalty_time }}</td>
                                                         <td>{{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</td>
                                                         <td>{{ run.stats.raw_time }}</td>
-                                                        <td>{{ run.stats.total_time }}</td>
+                                                        <td>{{ run.stats.total_time.toFixed(2) }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -113,8 +113,8 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr v-for="run in heelerRuns" :key="run.id">
-                                                        <td><router-link :to="`/run/edit/${run.id}`">Edit</router-link></td>
-                                                        <td><router-link :to="`/video/${run.videos[0].id}`">Play</router-link></td>
+                                                        <td><router-link v-show="run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
+                                                        <td><router-link v-show="run.videos[0] && run.videos[0].processing_complete" :to="`/video/${run.videos[0].id}`">Play</router-link><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
                                                         <td>{{ run.stats.header.catch_type }}</td>
@@ -123,7 +123,7 @@
                                                         <td>{{ run.stats.header.penalty_time }}</td>
                                                         <td>{{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</td>
                                                         <td>{{ run.stats.raw_time }}</td>
-                                                        <td>{{ run.stats.total_time }}</td>
+                                                        <td>{{ run.stats.total_time.toFixed(2) }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

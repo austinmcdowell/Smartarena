@@ -56938,6 +56938,21 @@ var render = function() {
                                             _c(
                                               "router-link",
                                               {
+                                                directives: [
+                                                  {
+                                                    name: "show",
+                                                    rawName: "v-show",
+                                                    value:
+                                                      run.stats.header
+                                                        .human_id ===
+                                                        _vm.user.human_id ||
+                                                      run.stats.heeler
+                                                        .human_id ===
+                                                        _vm.user.human_id,
+                                                    expression:
+                                                      "run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id"
+                                                  }
+                                                ],
                                                 attrs: {
                                                   to: "/run/edit/" + run.id
                                                 }
@@ -56954,12 +56969,42 @@ var render = function() {
                                             _c(
                                               "router-link",
                                               {
+                                                directives: [
+                                                  {
+                                                    name: "show",
+                                                    rawName: "v-show",
+                                                    value:
+                                                      run.videos[0] &&
+                                                      run.videos[0]
+                                                        .processing_complete,
+                                                    expression:
+                                                      "run.videos[0] && run.videos[0].processing_complete"
+                                                  }
+                                                ],
                                                 attrs: {
                                                   to:
                                                     "/video/" + run.videos[0].id
                                                 }
                                               },
                                               [_vm._v("Play")]
+                                            ),
+                                            _c(
+                                              "span",
+                                              {
+                                                directives: [
+                                                  {
+                                                    name: "show",
+                                                    rawName: "v-show",
+                                                    value:
+                                                      run.videos[0] &&
+                                                      !run.videos[0]
+                                                        .processing_complete,
+                                                    expression:
+                                                      "run.videos[0] && !run.videos[0].processing_complete"
+                                                  }
+                                                ]
+                                              },
+                                              [_vm._v("Processing...")]
                                             )
                                           ],
                                           1
@@ -57013,7 +57058,11 @@ var render = function() {
                                         ]),
                                         _vm._v(" "),
                                         _c("td", [
-                                          _vm._v(_vm._s(run.stats.total_time))
+                                          _vm._v(
+                                            _vm._s(
+                                              run.stats.total_time.toFixed(2)
+                                            )
+                                          )
                                         ])
                                       ])
                                     })
@@ -57093,6 +57142,21 @@ var render = function() {
                                           _c(
                                             "router-link",
                                             {
+                                              directives: [
+                                                {
+                                                  name: "show",
+                                                  rawName: "v-show",
+                                                  value:
+                                                    run.stats.header
+                                                      .human_id ===
+                                                      _vm.user.human_id ||
+                                                    run.stats.heeler
+                                                      .human_id ===
+                                                      _vm.user.human_id,
+                                                  expression:
+                                                    "run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id"
+                                                }
+                                              ],
                                               attrs: {
                                                 to: "/run/edit/" + run.id
                                               }
@@ -57109,11 +57173,41 @@ var render = function() {
                                           _c(
                                             "router-link",
                                             {
+                                              directives: [
+                                                {
+                                                  name: "show",
+                                                  rawName: "v-show",
+                                                  value:
+                                                    run.videos[0] &&
+                                                    run.videos[0]
+                                                      .processing_complete,
+                                                  expression:
+                                                    "run.videos[0] && run.videos[0].processing_complete"
+                                                }
+                                              ],
                                               attrs: {
                                                 to: "/video/" + run.videos[0].id
                                               }
                                             },
                                             [_vm._v("Play")]
+                                          ),
+                                          _c(
+                                            "span",
+                                            {
+                                              directives: [
+                                                {
+                                                  name: "show",
+                                                  rawName: "v-show",
+                                                  value:
+                                                    run.videos[0] &&
+                                                    !run.videos[0]
+                                                      .processing_complete,
+                                                  expression:
+                                                    "run.videos[0] && !run.videos[0].processing_complete"
+                                                }
+                                              ]
+                                            },
+                                            [_vm._v("Processing...")]
                                           )
                                         ],
                                         1
@@ -57163,7 +57257,11 @@ var render = function() {
                                       ]),
                                       _vm._v(" "),
                                       _c("td", [
-                                        _vm._v(_vm._s(run.stats.total_time))
+                                        _vm._v(
+                                          _vm._s(
+                                            run.stats.total_time.toFixed(2)
+                                          )
+                                        )
                                       ])
                                     ])
                                   })
