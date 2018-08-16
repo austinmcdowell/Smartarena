@@ -62,7 +62,13 @@ class AuthController extends Controller
         $user = Socialite::driver('facebook')->user();
         
         $authUser = $this->findOrCreateUser($user, 'facebook');
+        $human    = $this->findOrCreateHuman($authUser);
         Auth::login($authUser, true);
+
+        if (!$authUser->stripe_id) {
+            return redirect('/choose-plan');
+        }
+
         return redirect('/');
     }
 
@@ -85,5 +91,21 @@ class AuthController extends Controller
             'provider' => $provider,
             'provider_id' => $user->id
         ]);
+    }
+
+    public function findOrCreateHuman($user)
+    {
+        $name = explode(' ', $user->name);
+        $human = new Human;
+
+        $human->type           = 'standard';
+        $human->classification = 0;
+        $human->first_name     = reset($name);
+        $human->last_name      = end($name);
+        $human->email          = $user->email;
+        $human->user_id = $user->id;
+
+        $human->save();
+        return $human;
     }
 }
