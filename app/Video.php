@@ -10,4 +10,9 @@ class Video extends Model
     {
         return $this->belongsTo('\App\Human');
     }
+
+    public function run()
+    {
+        return $this->belongsTo('\App\Run');
+    }
 }
