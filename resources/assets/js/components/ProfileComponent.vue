@@ -82,9 +82,9 @@
                                                         <td><router-link v-show="run.videos[0] && run.videos[0].processing_complete" :to="`/video/${run.videos[0].id}`">Play</router-link><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
-                                                        <td>{{ run.stats.header.catch_type }}</td>
-                                                        <td>{{ run.stats.heeler.catch_type }}</td>
-                                                        <td>{{ run.stats.header.penalty_type }}</td>
+                                                        <td>{{ capitalize(run.stats.header.catch_type) }}</td>
+                                                        <td>{{ capitalize(run.stats.heeler.catch_type) }}</td>
+                                                        <td>{{ capitalize(run.stats.header.penalty_type) }}</td>
                                                         <td>{{ run.stats.header.penalty_time }}</td>
                                                         <td>{{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</td>
                                                         <td>{{ run.stats.raw_time }}</td>
@@ -117,9 +117,9 @@
                                                         <td><router-link v-show="run.videos[0] && run.videos[0].processing_complete" :to="`/video/${run.videos[0].id}`">Play</router-link><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
-                                                        <td>{{ run.stats.header.catch_type }}</td>
-                                                        <td>{{ run.stats.heeler.catch_type }}</td>
-                                                        <td>{{ run.stats.heeler.penalty_type }}</td>
+                                                        <td>{{ capitalize(run.stats.header.catch_type) }}</td>
+                                                        <td>{{ capitalize(run.stats.heeler.catch_type) }}</td>
+                                                        <td>{{ capitalize(run.stats.heeler.penalty_type) }}</td>
                                                         <td>{{ run.stats.header.penalty_time }}</td>
                                                         <td>{{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</td>
                                                         <td>{{ run.stats.raw_time }}</td>
@@ -225,6 +225,9 @@ export default {
                 console.log(e);
                 alert('There has been an error. Please contact support.')
             })
+        },
+        capitalize(str) {
+            if (str) return str.split(' ').map((word) => { return word.charAt(0).toUpperCase() + word.substr(1) }).join(' ');
         }
     },
     computed: {

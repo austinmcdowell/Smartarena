@@ -56690,6 +56690,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(e);
                 alert('There has been an error. Please contact support.');
             });
+        },
+        capitalize: function capitalize(str) {
+            if (str) return str.split(' ').map(function (word) {
+                return word.charAt(0).toUpperCase() + word.substr(1);
+            }).join(' ');
         }
     },
     computed: {
@@ -57004,20 +57009,30 @@ var render = function() {
                                         _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
-                                            _vm._s(run.stats.header.catch_type)
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            _vm._s(run.stats.heeler.catch_type)
+                                            _vm._s(
+                                              _vm.capitalize(
+                                                run.stats.header.catch_type
+                                              )
+                                            )
                                           )
                                         ]),
                                         _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
                                             _vm._s(
-                                              run.stats.header.penalty_type
+                                              _vm.capitalize(
+                                                run.stats.heeler.catch_type
+                                              )
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.capitalize(
+                                                run.stats.header.penalty_type
+                                              )
                                             )
                                           )
                                         ]),
@@ -57207,19 +57222,31 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("td", [
                                         _vm._v(
-                                          _vm._s(run.stats.header.catch_type)
+                                          _vm._s(
+                                            _vm.capitalize(
+                                              run.stats.header.catch_type
+                                            )
+                                          )
                                         )
                                       ]),
                                       _vm._v(" "),
                                       _c("td", [
                                         _vm._v(
-                                          _vm._s(run.stats.heeler.catch_type)
+                                          _vm._s(
+                                            _vm.capitalize(
+                                              run.stats.heeler.catch_type
+                                            )
+                                          )
                                         )
                                       ]),
                                       _vm._v(" "),
                                       _c("td", [
                                         _vm._v(
-                                          _vm._s(run.stats.heeler.penalty_type)
+                                          _vm._s(
+                                            _vm.capitalize(
+                                              run.stats.heeler.penalty_type
+                                            )
+                                          )
                                         )
                                       ]),
                                       _vm._v(" "),
