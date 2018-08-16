@@ -27,14 +27,14 @@
         <table class="table leaderboard-table">
             <thead>
                 <tr>
-                    <th scope="col">Classification</th>
+                    <th scope="col">Quality Videos</th>
                     <th scope="col">First</th>
                     <th scope="col">Last</th>
                 </tr>
             </thead>
             <tbody>
                 <tr @click="showProfile(human.id)" v-for="human in humans" :key="human.id">
-                    <td scope="row">{{ human.classification }}</td>
+                    <td scope="row">{{ human.quality_videos_count }}</td>
                     <td>{{ human.first_name }}</td>
                     <td>{{ human.last_name }}</td>
                 </tr>
@@ -56,7 +56,7 @@ import VideoCellComponent from './VideoCellComponent.vue';
 export default {    
     mounted() {
         let $this = this;
-        axios.get('/leaderboard/teamroping').then(response => {
+        axios.get('/leaderboard/videos').then(response => {
             let data = response.data;
             $this.humans = data.humans;
             $this.coaches  = data.coaches;

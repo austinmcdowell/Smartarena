@@ -9,9 +9,9 @@ use App\Video;
 
 class LeaderboardController extends Controller
 {
-    public function teamroping()
+    public function videos()
     {   
-        $humans = Human::orderBy('last_name')->get();
+        $humans = Human::withCount('quality_videos')->orderBy('quality_videos_count', 'desc')->limit(10)->get();
         $coaches = Human::orderBy('first_name')->where('type', 'pro')->get();
         $teamroping_videos = Video::with('human')->limit(8)->get();
         

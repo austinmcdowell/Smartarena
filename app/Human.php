@@ -21,6 +21,11 @@ class Human extends Model
         return $this->hasMany('App\Video');
     }
 
+    public function quality_videos()
+    {
+        return $this->hasMany('App\Video')->where('run_id', '!=', null);
+    }
+
     public function getFirstVideoAttribute()
     {
         $video = $this->videos()->first();

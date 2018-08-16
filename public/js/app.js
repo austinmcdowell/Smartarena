@@ -55454,11 +55454,11 @@ var render = function() {
                     _vm._v(
                       _vm._s(_vm.video.human.first_name) +
                         " " +
-                        _vm._s(_vm.video.human.last_name)
+                        _vm._s(_vm.video.human.last_name) +
+                        "'s Video"
                     )
                   ])
-                : _vm._e(),
-              _vm._v(" " + _vm._s(_vm.video.created_at))
+                : _vm._e()
             ])
           ])
         ]
@@ -56223,7 +56223,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
         var $this = this;
-        axios.get('/leaderboard/teamroping').then(function (response) {
+        axios.get('/leaderboard/videos').then(function (response) {
             var data = response.data;
             $this.humans = data.humans;
             $this.coaches = data.coaches;
@@ -56339,7 +56339,7 @@ var render = function() {
               },
               [
                 _c("td", { attrs: { scope: "row" } }, [
-                  _vm._v(_vm._s(human.classification))
+                  _vm._v(_vm._s(human.quality_videos_count))
                 ]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(human.first_name))]),
@@ -56379,7 +56379,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Classification")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Quality Videos")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("First")]),
         _vm._v(" "),

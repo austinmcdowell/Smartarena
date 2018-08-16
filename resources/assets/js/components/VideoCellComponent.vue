@@ -5,7 +5,7 @@
                 <!-- <div class="vid-time" align="center"><p>0:30</p></div> -->
             </div>
             <div class="vid-content">
-                <div class="vid-description"><span v-if="video.human">{{ video.human.first_name }} {{ video.human.last_name }}</span> {{ video.created_at }}</div>
+                <div class="vid-description"><span v-if="video.human">{{ video.human.first_name }} {{ video.human.last_name }}'s Video</span></div>
                 <!-- <div class="vid-views"><span v-if="video.human">{{ video.human.name }}</span> | <span class="light-green">1,001 views</span></div> -->
             </div>
         </router-link>

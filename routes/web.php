@@ -40,7 +40,7 @@ Route::post('/charge', 'SubscriptionController@charge');
 Route::get('/', 'SPAController');
 Route::get('/search', 'SearchController');
 Route::get('/home', 'HomeController');
-Route::get('/leaderboard/teamroping', 'LeaderboardController@teamroping');
+Route::get('/leaderboard/videos', 'LeaderboardController@videos');
 
 Route::get('/humans', 'HumanController@get');
 Route::post('/humans/save', 'HumanController@save');
