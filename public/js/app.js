@@ -55442,37 +55442,23 @@ var render = function() {
           attrs: { to: "/video/" + _vm.video.id }
         },
         [
-          _c(
-            "div",
-            {
-              staticClass: "vid-thumbnail",
-              style: "background-image: url('" + _vm.video.thumbnail_url + "')"
-            },
-            [
-              _c(
-                "div",
-                { staticClass: "vid-time", attrs: { align: "center" } },
-                [_c("p", [_vm._v("0:30")])]
-              )
-            ]
-          ),
+          _c("div", {
+            staticClass: "vid-thumbnail",
+            style: "background-image: url('" + _vm.video.thumbnail_url + "')"
+          }),
           _vm._v(" "),
           _c("div", { staticClass: "vid-content" }, [
             _c("div", { staticClass: "vid-description" }, [
               _vm.video.human
-                ? _c("span", [_vm._v(_vm._s(_vm.video.human.name))])
+                ? _c("span", [
+                    _vm._v(
+                      _vm._s(_vm.video.human.first_name) +
+                        " " +
+                        _vm._s(_vm.video.human.last_name)
+                    )
+                  ])
                 : _vm._e(),
-              _vm._v(" " + _vm._s(_vm.video.uploaded_at))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vid-views" }, [
-              _vm.video.human
-                ? _c("span", [_vm._v(_vm._s(_vm.video.human.name))])
-                : _vm._e(),
-              _vm._v(" | "),
-              _c("span", { staticClass: "light-green" }, [
-                _vm._v("1,001 views")
-              ])
+              _vm._v(" " + _vm._s(_vm.video.created_at))
             ])
           ])
         ]
@@ -57731,9 +57717,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _vm._m(3)
-    ]),
-    _vm._v(" "),
-    _c("h2", { staticClass: "video-title" }, [_vm._v("Test Title")])
+    ])
   ])
 }
 var staticRenderFns = [
