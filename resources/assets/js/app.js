@@ -37,6 +37,7 @@ Vue.use(VueRouter);
 
 let routes = [
   { path: '/', component: HomeComponent },
+  { path: '/_=_', redirect: '/' },
   { path: '/profile/:id', component: ProfileComponent },
   { path: '/run/edit/:id', component: RunEditorComponent, meta: { requireSubscription: true } },
   { path: '/run/new/:videoId', component: RunEditorComponent, meta: { requireSubscription: true } },
