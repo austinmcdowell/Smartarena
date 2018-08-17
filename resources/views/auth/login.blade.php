@@ -79,7 +79,7 @@
         <div class="col-sm-12 col-lg-8 offset-lg-2 spacer">
             <div class="card add-padding">
                 <div class="card-content">
-                <a href="/login/google" class="login-button google waves-effect waves-light btn">Login with Google</a>
+                <!-- <a href="/login/google" class="login-button google waves-effect waves-light btn">Login with Google</a> -->
                 <!-- We have some code in place to start adding facebook authentication, but we need to do checks to make sure that
                 if users have signed in with google we link the accounts instead of creating a new one -->
                 <a href="/login/facebook" class="login-button facebook waves-effect waves-light btn">Login with Facebook</a>
