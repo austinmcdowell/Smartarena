@@ -96,6 +96,12 @@ class AuthController extends Controller
 
     public function findOrCreateHuman($user)
     {
+        $human = $user->human;
+
+        if (isset($human)) {
+            return $human; 
+        }
+        
         $name = explode(' ', $user->name);
         $human = new Human;
 
