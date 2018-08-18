@@ -43,7 +43,7 @@
                     {{ csrf_field() }}
                     <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_ygkkJT2lcGE3GGmGdJvMOurQ"
+                        data-key="pk_live_aZlhsimJsWybDP10BrMv7spB"
                         data-name="SmartArena"
                         data-description="6 Month Membership (1 Month Free)"
                         data-amount="9900"
@@ -84,7 +84,7 @@
                     {{ csrf_field() }}
                     <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_ygkkJT2lcGE3GGmGdJvMOurQ"
+                        data-key="pk_live_aZlhsimJsWybDP10BrMv7spB"
                         data-name="SmartArena"
                         data-description="12 Month Membership (3 Months Free)"
                         data-amount="17900"
