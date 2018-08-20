@@ -12,8 +12,25 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
-    
     public function get($id)
+    {
+        $video = Video::find($id);
+        $user = Auth::user();
+        
+        if ($user) {
+            $user->human;
+        }
+
+        if (!$video) {
+            return redirect('/');
+        }
+
+        return view('video', [
+            'user' => $user
+        ]);
+    }
+    
+    public function data($id)
     {
         $video = Video::find($id);
 

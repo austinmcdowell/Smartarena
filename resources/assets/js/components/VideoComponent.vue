@@ -10,10 +10,19 @@ export default {
   },
   mounted() {
     const $this = this;
-    const videoId = this.$route.params.id;
+    let videoId;
+
+    if (this.$route) {
+      videoId = this.$route.params.id;
+    }
+    
+    if (!videoId) {
+      let pathNameArray = window.location.pathname.split('/');
+      videoId = pathNameArray[pathNameArray.length - 1];
+    }
 
     if (videoId) {
-      axios.get(`/video/${videoId}`).then(response => {
+      axios.get(`/video/data/${videoId}`).then(response => {
         let data = response.data;
         $this.video = data;
       }).catch(e => {
@@ -22,7 +31,7 @@ export default {
         });
       
     } else {
-      window.history.back();
+      //window.history.back();
     }
   },
   data() {

@@ -201,7 +201,7 @@ export default {
     }).then(response => {
       $this.humans = response.data;
       if ($this.$route.params.videoId) {
-        return axios.get(`/video/${$this.$route.params.videoId}`).then(response => {
+        return axios.get(`/video/data/${$this.$route.params.videoId}`).then(response => {
           $this.video = response.data;
         });
       } else {

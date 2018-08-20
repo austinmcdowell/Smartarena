@@ -12,6 +12,11 @@ import EventBus from './EventBus';
 export default {
     mounted() {
         const $this = this;
+
+        if (this.$route) {
+            this.routerExists = true;
+        }
+
         EventBus.$on('searchResultsReceived', function(data) {
             $this.shouldDisplay = true;
             $this.results = data;
@@ -25,12 +30,13 @@ export default {
     data() {
         return { 
             shouldDisplay: false,
-            results: []
+            results: [],
+            routerExists: false
         }
     },
     methods: {
         presentProfile(result) {
-            window.location = '#/profile/' + result.id; 
+            window.location = '/#/profile/' + result.id; 
             EventBus.$emit('searchResultSelected', result.id);
             this.shouldDisplay = false;
         }

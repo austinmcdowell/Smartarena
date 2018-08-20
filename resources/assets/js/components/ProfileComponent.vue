@@ -37,9 +37,9 @@
                             </div>
                             <div class="col-sm-12 col-lg-8 recent-upload">
                                 <div class="upload" v-show="firstVideo.id">
-                                    <router-link :to="`/video/${firstVideo.id}`">
+                                    <a :href="`/video/${firstVideo.id}`">
                                         <div class="video" :style="`background-image: url('${firstVideo.thumbnail_url}')`"></div>
-                                    </router-link>
+                                    </a>
                                     
                                     <h5>Watch {{ human.first_name + ' ' + human.last_name }}'s featured video</h5>
                                     <!-- <p>1,001 views | July 13</p> -->
@@ -79,7 +79,7 @@
                                                 <tbody>
                                                     <tr v-for="run in headerRuns" :key="run.id">
                                                         <td><router-link v-show="run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
-                                                        <td><router-link v-show="run.videos[0] && run.videos[0].processing_complete" :to="`/video/${run.videos[0].id}`">Play</router-link><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
+                                                        <td><a v-show="run.videos[0] && run.videos[0].processing_complete" :href="`/video/${run.videos[0].id}`">Play</a><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
                                                         <td>{{ capitalize(run.stats.header.catch_type) }}</td>
@@ -114,7 +114,7 @@
                                                 <tbody>
                                                     <tr v-for="run in heelerRuns" :key="run.id">
                                                         <td><router-link v-show="run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
-                                                        <td><router-link v-show="run.videos[0] && run.videos[0].processing_complete" :to="`/video/${run.videos[0].id}`">Play</router-link><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
+                                                        <td><a v-show="run.videos[0] && run.videos[0].processing_complete" :href="`/video/${run.videos[0].id}`">Play</a><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
                                                         <td>{{ capitalize(run.stats.header.catch_type) }}</td>

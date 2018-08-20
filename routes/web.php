@@ -67,4 +67,5 @@ Route::get('/run/{id}', 'RunController@get')->middleware('auth', 'subscribed');
 Route::post('/run/save', 'RunController@save')->middleware('auth', 'subscribed');
 
 Route::get('/video/{id}', 'VideoController@get');
+Route::get('/video/data/{id}', 'VideoController@data');
 Route::post('/videos/upload', 'VideoController@upload')->middleware('auth', 'subscribed');

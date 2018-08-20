@@ -138,7 +138,7 @@
       playingVideoId: function(videoId) {
         console.log('im here');
         const $this = this;
-        axios.get(`/video/${videoId}`).then(response => {
+        axios.get(`/video/data/${videoId}`).then(response => {
           let data = response.data;
           console.log(data);
           window.player = $this.player;
