@@ -21,13 +21,13 @@ class SubscriptionController extends Controller
 
         switch ($plan) {
             case 'monthly':
-                $plan_id = 'plan_DABYeEy5FVdWsK';
+                $plan_id = 'plan_DUoN0q61wkdkpz';
                 break;
             case 'biyearly':
-                $plan_id = 'plan_DABZ8meY5go0V7';
+                $plan_id = 'plan_DUoNw4tMCZh9CS';
                 break;
             case 'yearly':
-                $plan_id = 'plan_DABZZ0UJj0QfZK';
+                $plan_id = 'plan_DUoNcYplZL4bFj';
                 break;
         }
 
