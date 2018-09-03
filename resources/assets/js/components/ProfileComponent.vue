@@ -178,7 +178,23 @@ export default {
             heelerRuns: []
         }
     },
+    watch: {
+        '$route' (to, from) {
+            this.clearData();
+            let profileId = this.$route.params.id; 
+            this.loadData(profileId);
+        }
+    },
     methods: {
+        clearData() {
+            this.user = {};
+            this.human = {};
+            this.firstVideo = {};
+            this.associatedVideos = [];
+            this.uploadedVideos = [];
+            this.headerRuns = [];
+            this.heelerRuns = [];
+        },
         loadData(profileId) {
             let $this = this;
 
