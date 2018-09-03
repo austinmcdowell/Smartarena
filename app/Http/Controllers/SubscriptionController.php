@@ -35,6 +35,6 @@ class SubscriptionController extends Controller
             'email' => $user->email
         ]);
 
-        return redirect('/');
+        return redirect('/confirmation');
     }
 }

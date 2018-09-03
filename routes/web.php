@@ -27,6 +27,10 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/logout', 'AuthController@logout');
 
+Route::get('/confirmation', function() {
+  return view('subscriptions.confirmation');
+});
+
 // Social Auth
 Route::get('login/google', 'AuthController@redirectToGoogle');
 Route::get('login/google/callback', 'AuthController@handleGoogleCallback');
