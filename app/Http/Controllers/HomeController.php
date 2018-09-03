@@ -46,6 +46,9 @@ class HomeController extends Controller
             $human['video'] = $human->first_video;
             
             foreach($human->runs as $run) {
+                if ($run->stats['no_time']) {
+                    continue;
+                }
                 $run_count++;
                 
                 $stats = $run->stats;
@@ -107,20 +110,22 @@ class HomeController extends Controller
                 $sum_of_average_time = $time_with_penalties / $run_count;
             }
 
-            if ($shortest_average_time_badge) {
-                if ($sum_of_average_time < $shortest_average_time_badge['count']) {
+            if ($human->runs->count() >= 5) {
+                if ($shortest_average_time_badge) {
+                    if ($sum_of_average_time < $shortest_average_time_badge['count']) {
+                        $shortest_average_time_badge = [
+                            'human_id' => $human->id,
+                            'human_name' => $human->first_name . ' ' . $human->last_name,
+                            'count' => $sum_of_average_time
+                        ];
+                    }
+                } else {
                     $shortest_average_time_badge = [
                         'human_id' => $human->id,
                         'human_name' => $human->first_name . ' ' . $human->last_name,
                         'count' => $sum_of_average_time
                     ];
                 }
-            } else {
-                $shortest_average_time_badge = [
-                    'human_id' => $human->id,
-                    'human_name' => $human->first_name . ' ' . $human->last_name,
-                    'count' => $sum_of_average_time
-                ];
             }
 
             if ($most_efficient_badge) {
