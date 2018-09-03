@@ -56,6 +56,8 @@
 
                         @if ($user->role == "admin")
                         <a class="btn mobile-profile-btn" href="/#/admin">Admin</a>
+                        @else
+                        <a class="btn mobile-profile-btn" href="/logout">Logout</a>
                         @endif
                         <a class="btn mobile-profile-btn" href="/#/profile/{{ $user->human->id }}">My Profile</a>
                         <a class="btn mobile-upload-btn" href="/#/video/new">Upload Video</a>
