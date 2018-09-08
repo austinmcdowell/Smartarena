@@ -56425,7 +56425,7 @@ var render = function() {
                               staticClass: "accolade",
                               attrs: { align: "center" }
                             },
-                            [_vm._v("Most Efficient")]
+                            [_vm._v(_vm._s(_vm.mostEfficientBadge.count))]
                           )
                         ])
                       ])

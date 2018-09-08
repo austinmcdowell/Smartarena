@@ -33,6 +33,7 @@ class HomeController extends Controller
 
         foreach ($humans as $human) {
             $run_count = 0;
+            $efficient_run_count = 0;
             $catch_count = 0;
             $penalties = 0;
             $total_penalties = 0;
@@ -44,7 +45,7 @@ class HomeController extends Controller
 
             // Attach first video
             $human['video'] = $human->first_video;
-            
+
             foreach($human->runs as $run) {
                 if ($run->stats['no_time']) {
                     continue;
@@ -104,6 +105,10 @@ class HomeController extends Controller
                     }
                 }
 
+                if ($penalties_for_run == 0) {
+                    $efficient_run_count++;
+                }
+
                 $total_penalties += $penalties_for_run;
                 $time_with_penalties = $total_raw_time + $total_penalties;
                 $catch_percentage = $catch_count / $run_count;
@@ -127,20 +132,20 @@ class HomeController extends Controller
                     ];
                 }
             }
-
+            
             if ($most_efficient_badge) {
-                if ($penalties < $most_efficient_badge['count']) {
+                if ($efficient_run_count > $most_efficient_badge['count']) {
                     $most_efficient_badge = [
                         'human_id' => $human->id,
                         'human_name' => $human->first_name . ' ' . $human->last_name,
-                        'count' => $penalties
+                        'count' => $efficient_run_count
                     ];
                 }
             } else {
                 $most_efficient_badge = [
                     'human_id' => $human->id,
                     'human_name' => $human->first_name . ' ' . $human->last_name,
-                    'count' => $penalties
+                    'count' => $efficient_run_count
                 ];
             }
 

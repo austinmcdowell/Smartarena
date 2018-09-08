@@ -23,7 +23,7 @@
                                     <div class="award-background">
                                         <div class='full-name' align="left">{{ mostEfficientBadge.human_name }}</div>
                                         <div class='description' align="left">Most Efficient</div>
-                                        <div class="accolade" align="center">Most Efficient</div>
+                                        <div class="accolade" align="center">{{ mostEfficientBadge.count }}</div>
                                     </div>
                                 </div>
                             </router-link>
