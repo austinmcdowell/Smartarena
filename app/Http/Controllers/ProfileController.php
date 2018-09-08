@@ -27,4 +27,15 @@ class ProfileController extends Controller
             'uploadedVideos' => $uploaded_videos
         ];
     }
+
+    public function hire($id)
+    {
+        $human = Human::find($id);
+
+        if ($human->type === "pro" && isset($human->calendly_link)) {
+            return redirect($human->calendly_link);
+        }
+
+        return abort(401, "This pro doesn't exist!");
+    }
 }

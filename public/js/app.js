@@ -56878,7 +56878,7 @@ var render = function() {
                             {
                               staticClass: "hire-btn",
                               attrs: {
-                                href: coach.calendly_link,
+                                href: "/hire/" + coach.id,
                                 align: "center"
                               }
                             },
@@ -57130,7 +57130,7 @@ var render = function() {
                             {
                               staticClass: "hire-btn",
                               attrs: {
-                                href: coach.calendly_link,
+                                href: "/hire/" + coach.id,
                                 align: "center"
                               }
                             },

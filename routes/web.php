@@ -64,6 +64,7 @@ Route::get('/user-human-linker-data', 'UserHumanLinkController@get')->middleware
 Route::post('/link-user-human', 'UserHumanLinkController@post')->middleware('auth', 'admin');
 
 Route::get('/profile/{id}', 'ProfileController@get');
+Route::get('/hire/{id}', 'ProfileController@hire')->middleware('auth', 'subscribed');
 
 Route::get('/teamroping/new/{videoId}', 'RunController@new')->middleware('auth', 'subscribed');
 Route::get('/teamroping/{id}/edit', 'RunController@edit')->middleware('auth', 'subscribed');
