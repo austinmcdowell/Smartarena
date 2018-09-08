@@ -47,9 +47,9 @@ class HomeController extends Controller
             $human['video'] = $human->first_video;
 
             foreach($human->runs as $run) {
-                // if ($run->stats['no_time']) {
-                //     continue;
-                // }
+                if ($run->stats['no_time']) {
+                    continue;
+                }
                 $run_count++;
                 
                 $stats = $run->stats;
