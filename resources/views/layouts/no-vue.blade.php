@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            @yield('content')
+            <div style="padding-top: 5%">@yield('content')</div>
         </div>
     </body>
     <!-- <script src="/js/manifest.js"></script>
