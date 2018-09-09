@@ -56849,7 +56849,8 @@ var render = function() {
             autoplay: true,
             autoplayTimeout: 2500,
             loop: true,
-            "mouse-drag": false
+            "mouse-drag": false,
+            paginationColor: "rgb(140, 140, 140)"
           }
         },
         _vm._l(_vm.coaches, function(coach) {
@@ -57101,7 +57102,8 @@ var render = function() {
             autoplay: true,
             autoplayTimeout: 2500,
             loop: true,
-            "mouse-drag": false
+            "mouse-drag": false,
+            paginationColor: "rgb(140, 140, 140)"
           }
         },
         _vm._l(_vm.coaches, function(coach) {

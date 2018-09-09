@@ -127,7 +127,7 @@
         
 
         <h3 class="sec-title">Hire a Coach</h3>
-        <carousel :per-page="1" :autoplay="true" :autoplayTimeout="2500" :loop="true" :mouse-drag="false">
+        <carousel :per-page="1" :autoplay="true" :autoplayTimeout="2500" :loop="true" :mouse-drag="false" paginationColor="rgb(140, 140, 140)">
             <slide v-for="coach in coaches" :key="coach.id">
                 <div class="row coaches">
                     <div class="col-lg-12 justify-content-center professionals">
