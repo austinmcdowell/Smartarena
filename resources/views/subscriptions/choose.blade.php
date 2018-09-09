@@ -32,8 +32,9 @@
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4">
             <div class="subscription-card">
+            <h2 align="center">$1 Limited time</h2>
                 <div class="sub-price">
-                    <h1 class="sub-price" align="center">$99</h1>
+                    <h1 class="sub-price" align="center" style="text-decoration-line: line-through">$99</h1>
                 </div>
                 <div class="sub-title">
                     <h3 align="center">6 Month Membership (1 Month Free)</h3>

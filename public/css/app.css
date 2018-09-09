@@ -83,7 +83,6 @@ body {
     width: 100% !important;
     height: 400px;
     background-color: #4f8f64;
-    background-image: url("/img/austin-light.jpg") !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -169,7 +168,7 @@ body {
 
 #home .awards .most-runs .circle {
   background-color: #4f8f64;
-  background-image: url("/img/austin-light.jpg");
+  background-image: url("/img/runs.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -177,7 +176,7 @@ body {
 
 #home .awards .most-efficient .circle {
   background-color: #ffdb8c;
-  background-image: url("/img/austin-light.jpg");
+  background-image: url("/img/efficient.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -185,7 +184,7 @@ body {
 
 #home .awards .shortest-average-time .circle {
   background-color: #ffaeae;
-  background-image: url("/img/austin-light.jpg");
+  background-image: url("/img/time.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -193,7 +192,7 @@ body {
 
 #home .awards .most-videos-uploaded .circle {
   background-color: #aedfff;
-  background-image: url("/img/austin-light.jpg");
+  background-image: url("/img/uploads.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -886,6 +885,22 @@ h2 {
 
 #home {
   margin-top: 70px;
+}
+
+.runs-award {
+  background-image: url("/public/img/runs.jpeg") !important;
+}
+
+.efficient-award {
+  background-image: url("/public/img/efficient.jpeg") !important;
+}
+
+.time-award {
+  background-image: url("/public/img/time.jpeg") !important;
+}
+
+.uploads-award {
+  background-image: url("/public/img/uploads.jpeg") !important;
 }
 
 .roping-videos .video {
