@@ -66,12 +66,12 @@
                         </li> -->
 
                         @if ($user->role == "admin")
-                        <router-link class="btn mobile-profile-btn" to="/admin">Admin</router-link>
+                        <router-link data-toggle="collapse" data-target=".navbar-collapse.show" class="btn mobile-profile-btn" to="/admin">Admin</router-link>
                         @else
                         <a class="btn mobile-profile-btn" href="/logout">Logout</a>
                         @endif
-                        <router-link class="btn mobile-profile-btn" to="/profile/{{ $user->human->id }}">My Profile</router-link>
-                        <router-link class="btn mobile-upload-btn" to="/video/new">Upload Video</router-link>
+                        <router-link data-toggle="collapse" data-target=".navbar-collapse.show" class="btn mobile-profile-btn" to="/profile/{{ $user->human->id }}">My Profile</router-link>
+                        <router-link data-toggle="collapse" data-target=".navbar-collapse.show" class="btn mobile-upload-btn" to="/video/new">Upload Video</router-link>
 
                         <!-- <li class="nav-item"><router-link to="/video/new" class="nav-link"><i style="font-size:24px" class="fa fa-cloud-upload-alt upload-btn"></i></router-link></li> -->
                         @endif
