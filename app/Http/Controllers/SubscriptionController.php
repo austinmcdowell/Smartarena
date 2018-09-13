@@ -24,7 +24,7 @@ class SubscriptionController extends Controller
                 $plan_id = 'plan_DUoN0q61wkdkpz';
                 break;
             case 'biyearly':
-                $plan_id = 'plan_DUoNw4tMCZh9CS';
+                $plan_id = 'plan_DbDuQ3G3P76Mqc';
                 break;
             case 'yearly':
                 $plan_id = 'plan_DUoNcYplZL4bFj';

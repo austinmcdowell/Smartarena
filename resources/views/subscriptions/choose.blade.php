@@ -47,7 +47,7 @@
                         data-key="pk_live_aZlhsimJsWybDP10BrMv7spB"
                         data-name="SmartArena"
                         data-description="6 Month Membership (1 Month Free)"
-                        data-amount="9900"
+                        data-amount="100"
                         data-label="Sign Me Up!">
                     </script>
                     <script>
