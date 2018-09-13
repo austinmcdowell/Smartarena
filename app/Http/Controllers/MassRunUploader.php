@@ -182,7 +182,7 @@ class MassRunUploader extends Controller
         $mime_type = $original_file->getClientMimeType();
         $date = new DateTime;
         $original_filename = $original_file->getClientOriginalName();
-        $filename = $user->id . "-" . $date->getTimestamp() . "-" . str_replace([' ', '(', ')', '%'], '', $original_filename);
+        $filename = $user->id . "-" . $date->getTimestamp() . "-" . uniqid();
 
         // Eventually do MIME type checks
 
