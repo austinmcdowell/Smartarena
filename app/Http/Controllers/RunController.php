@@ -130,6 +130,7 @@ class RunController extends Controller
             $heeler_penalty_time = 5;
         }
 
+        $stats['raw_time'] = $raw_time;
         $stats['total_time'] = $raw_time + $heeler_penalty_time + $header_penalty_time + $header_barrier_penalty + $heeler_barrier_penalty;
         
         $run->stats = $stats;
