@@ -58740,6 +58740,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             did_catch: false,
             catch_type: null,
             penalty_time: null,
+            penalty_type: null,
             barrier_penalty: 0
           },
           heeler: {
@@ -58747,6 +58748,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             did_catch: false,
             catch_type: null,
             penalty_time: null,
+            penalty_type: null,
             barrier_penalty: 0
           },
           no_time: false,
