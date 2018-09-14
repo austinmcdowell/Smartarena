@@ -58754,7 +58754,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           no_time: false,
           time: 0,
           raw_time: 0,
-          total_time: 0
+          total_time: 0,
+          roping: null,
+          round: null
         }
       },
       events: [],
