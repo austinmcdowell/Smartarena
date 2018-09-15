@@ -56877,6 +56877,14 @@ var render = function() {
                           _c(
                             "a",
                             {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: coach.calendly_link,
+                                  expression: "coach.calendly_link"
+                                }
+                              ],
                               staticClass: "hire-btn",
                               attrs: {
                                 href: "/hire/" + coach.id,
@@ -57130,6 +57138,14 @@ var render = function() {
                           _c(
                             "a",
                             {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: coach.calendly_link,
+                                  expression: "coach.calendly_link"
+                                }
+                              ],
                               staticClass: "hire-btn",
                               attrs: {
                                 href: "/hire/" + coach.id,

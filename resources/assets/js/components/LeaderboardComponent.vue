@@ -10,7 +10,7 @@
                                 <div class="col-lg-12 pro-image">
                                     <h2 align="center">{{ coach.first_name }} {{ coach.last_name }}</h2>
                                     <div>
-                                        <a :href="`/hire/${coach.id}`" class="hire-btn" align="center">Hire {{ coach.first_name }}</a>
+                                        <a v-show="coach.calendly_link" :href="`/hire/${coach.id}`" class="hire-btn" align="center">Hire {{ coach.first_name }}</a>
                                     </div>
                                 </div>
                                 <!-- <div class="col-sm-12 col-lg-12 pro-content">
