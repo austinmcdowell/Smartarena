@@ -33,7 +33,7 @@ class ProfileController extends Controller
         $human = Human::find($id);
 
         if ($human->type === "pro" && isset($human->calendly_link)) {
-            return redirect($human->calendly_link);
+            return Redirect::to($human->calendly_link);
         }
 
         return abort(401, "This pro doesn't exist!");
