@@ -8,7 +8,6 @@ use App\Human;
 use App\Run;
 use App\Video;
 
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -32,9 +31,18 @@ class ProfileController extends Controller
     public function hire($id)
     {
         $human = Human::find($id);
+        $link  = $human->calendly_link;
 
-        if ($human->type === "pro" && isset($human->calendly_link)) {
-            return Redirect::to($human->calendly_link);
+        if ($human->type === "pro" && isset($link)) {
+            $check_http = substr($link, 0, 7);
+            $check_https = substr($link, 0, 8);
+
+            if ($check_http == "http://" || $check_https == "https://") {
+                return redirect($link);
+            } else {
+                return redirect("http://" . $link);
+            }
+            
         }
 
         return abort(401, "This pro doesn't exist!");
