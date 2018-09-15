@@ -78,7 +78,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr v-for="run in headerRuns" :key="run.id">
-                                                        <td><router-link v-show="run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
+                                                        <td><router-link v-show="run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
                                                         <td><a v-show="run.videos[0] && run.videos[0].processing_complete" :href="`/video/${run.videos[0].id}`">Play</a><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
@@ -113,7 +113,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr v-for="run in heelerRuns" :key="run.id">
-                                                        <td><router-link v-show="run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
+                                                        <td><router-link v-show="run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id" :to="`/run/edit/${run.id}`">Edit</router-link></td>
                                                         <td><a v-show="run.videos[0] && run.videos[0].processing_complete" :href="`/video/${run.videos[0].id}`">Play</a><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>

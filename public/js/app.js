@@ -57797,12 +57797,12 @@ var render = function() {
                                                     value:
                                                       run.stats.header
                                                         .human_id ===
-                                                        _vm.user.human_id ||
+                                                        _vm.user.human.id ||
                                                       run.stats.heeler
                                                         .human_id ===
-                                                        _vm.user.human_id,
+                                                        _vm.user.human.id,
                                                     expression:
-                                                      "run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id"
+                                                      "run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id"
                                                   }
                                                 ],
                                                 attrs: {
@@ -58007,12 +58007,12 @@ var render = function() {
                                                   value:
                                                     run.stats.header
                                                       .human_id ===
-                                                      _vm.user.human_id ||
+                                                      _vm.user.human.id ||
                                                     run.stats.heeler
                                                       .human_id ===
-                                                      _vm.user.human_id,
+                                                      _vm.user.human.id,
                                                   expression:
-                                                    "run.stats.header.human_id === user.human_id || run.stats.heeler.human_id === user.human_id"
+                                                    "run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id"
                                                 }
                                               ],
                                               attrs: {
