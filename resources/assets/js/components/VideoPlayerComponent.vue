@@ -10,14 +10,17 @@
     </div>
     <div class="container-fluid">
       <div class="row zoom-panel">
-        <div @click="togglePlay()" class="col-4 col-sm-4 video-control-button text-center">
+        <div @click="togglePlay()" class="col-3 col-sm-3 video-control-button text-center">
           <span><i v-show="!isPlaying" class="fas fa-play"></i><i v-show="isPlaying" class="fas fa-pause"></i></span>
         </div>
-        <div class="col-4 col-sm-4 zoom-button text-center">
+        <div class="col-3 col-sm-3 zoom-button text-center">
           <span class="zoom-out"><i class="fas fa-minus"></i></span>
         </div>
-        <div class="col-4 col-sm-4 zoom-button text-center">
+        <div class="col-3 col-sm-3 zoom-button text-center">
           <span class="zoom-in"><i class="fas fa-plus"></i></span>
+        </div>
+        <div @click="toggleMute()" class="col-3 col-sm-3 video-control-button text-center">
+          <span><i v-show="isMuted" class="fas fa-volume-off"></i><i v-show="!isMuted" class="fas fa-volume-up"></i></span>
         </div>
       </div>
       <div class="row">
@@ -119,6 +122,7 @@
         currentScale: 1,
         isZoomed: false,
         isPlaying: true,
+        isMuted: true,
         playbackInterval: null,
         isIntervalSet: false,
         currentScrobbleTime: 0
@@ -157,6 +161,15 @@
           this.player.pause();
         } else {
           this.player.play();
+        }
+      },
+      toggleMute() {
+        if (this.isMuted) {
+          this.isMuted = false;
+          this.player.muted(false);
+        } else {
+          this.isMuted = true;
+          this.player.muted(true);
         }
       },
       rewind: function(rate, ms) {

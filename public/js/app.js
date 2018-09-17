@@ -38910,6 +38910,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -38996,6 +38999,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       currentScale: 1,
       isZoomed: false,
       isPlaying: true,
+      isMuted: true,
       playbackInterval: null,
       isIntervalSet: false,
       currentScrobbleTime: 0
@@ -39035,6 +39039,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.player.pause();
       } else {
         this.player.play();
+      }
+    },
+    toggleMute: function toggleMute() {
+      if (this.isMuted) {
+        this.isMuted = false;
+        this.player.muted(false);
+      } else {
+        this.isMuted = true;
+        this.player.muted(true);
       }
     },
 
@@ -39132,7 +39145,7 @@ var render = function() {
         _c(
           "div",
           {
-            staticClass: "col-4 col-sm-4 video-control-button text-center",
+            staticClass: "col-3 col-sm-3 video-control-button text-center",
             on: {
               click: function($event) {
                 _vm.togglePlay()
@@ -39169,7 +39182,45 @@ var render = function() {
         _vm._v(" "),
         _vm._m(1),
         _vm._v(" "),
-        _vm._m(2)
+        _vm._m(2),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "col-3 col-sm-3 video-control-button text-center",
+            on: {
+              click: function($event) {
+                _vm.toggleMute()
+              }
+            }
+          },
+          [
+            _c("span", [
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.isMuted,
+                    expression: "isMuted"
+                  }
+                ],
+                staticClass: "fas fa-volume-off"
+              }),
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.isMuted,
+                    expression: "!isMuted"
+                  }
+                ],
+                staticClass: "fas fa-volume-up"
+              })
+            ])
+          ]
+        )
       ]),
       _vm._v(" "),
       _vm._m(3)
@@ -39219,7 +39270,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "col-4 col-sm-4 zoom-button text-center" },
+      { staticClass: "col-3 col-sm-3 zoom-button text-center" },
       [
         _c("span", { staticClass: "zoom-out" }, [
           _c("i", { staticClass: "fas fa-minus" })
@@ -39233,7 +39284,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "col-4 col-sm-4 zoom-button text-center" },
+      { staticClass: "col-3 col-sm-3 zoom-button text-center" },
       [
         _c("span", { staticClass: "zoom-in" }, [
           _c("i", { staticClass: "fas fa-plus" })
