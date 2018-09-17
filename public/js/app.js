@@ -57787,36 +57787,42 @@ var render = function() {
                                     "tbody",
                                     _vm._l(_vm.headerRuns, function(run) {
                                       return _c("tr", { key: run.id }, [
-                                        _c(
-                                          "td",
-                                          [
-                                            _c(
-                                              "router-link",
-                                              {
-                                                directives: [
-                                                  {
-                                                    name: "show",
-                                                    rawName: "v-show",
-                                                    value:
-                                                      run.stats.header
-                                                        .human_id ===
-                                                        _vm.user.human.id ||
-                                                      run.stats.heeler
-                                                        .human_id ===
-                                                        _vm.user.human.id,
-                                                    expression:
-                                                      "run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id"
-                                                  }
+                                        _c("td", [
+                                          _vm.user && _vm.user.human
+                                            ? _c(
+                                                "div",
+                                                [
+                                                  _c(
+                                                    "router-link",
+                                                    {
+                                                      directives: [
+                                                        {
+                                                          name: "show",
+                                                          rawName: "v-show",
+                                                          value:
+                                                            run.stats.header
+                                                              .human_id ===
+                                                              _vm.user.human
+                                                                .id ||
+                                                            run.stats.heeler
+                                                              .human_id ===
+                                                              _vm.user.human.id,
+                                                          expression:
+                                                            "run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id"
+                                                        }
+                                                      ],
+                                                      attrs: {
+                                                        to:
+                                                          "/run/edit/" + run.id
+                                                      }
+                                                    },
+                                                    [_vm._v("Edit")]
+                                                  )
                                                 ],
-                                                attrs: {
-                                                  to: "/run/edit/" + run.id
-                                                }
-                                              },
-                                              [_vm._v("Edit")]
-                                            )
-                                          ],
-                                          1
-                                        ),
+                                                1
+                                              )
+                                            : _vm._e()
+                                        ]),
                                         _vm._v(" "),
                                         _c("td", [
                                           _c(
@@ -57997,36 +58003,40 @@ var render = function() {
                                   "tbody",
                                   _vm._l(_vm.heelerRuns, function(run) {
                                     return _c("tr", { key: run.id }, [
-                                      _c(
-                                        "td",
-                                        [
-                                          _c(
-                                            "router-link",
-                                            {
-                                              directives: [
-                                                {
-                                                  name: "show",
-                                                  rawName: "v-show",
-                                                  value:
-                                                    run.stats.header
-                                                      .human_id ===
-                                                      _vm.user.human.id ||
-                                                    run.stats.heeler
-                                                      .human_id ===
-                                                      _vm.user.human.id,
-                                                  expression:
-                                                    "run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id"
-                                                }
+                                      _c("td", [
+                                        _vm.user && _vm.user.human
+                                          ? _c(
+                                              "div",
+                                              [
+                                                _c(
+                                                  "router-link",
+                                                  {
+                                                    directives: [
+                                                      {
+                                                        name: "show",
+                                                        rawName: "v-show",
+                                                        value:
+                                                          run.stats.header
+                                                            .human_id ===
+                                                            _vm.user.human.id ||
+                                                          run.stats.heeler
+                                                            .human_id ===
+                                                            _vm.user.human.id,
+                                                        expression:
+                                                          "run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id"
+                                                      }
+                                                    ],
+                                                    attrs: {
+                                                      to: "/run/edit/" + run.id
+                                                    }
+                                                  },
+                                                  [_vm._v("Edit")]
+                                                )
                                               ],
-                                              attrs: {
-                                                to: "/run/edit/" + run.id
-                                              }
-                                            },
-                                            [_vm._v("Edit")]
-                                          )
-                                        ],
-                                        1
-                                      ),
+                                              1
+                                            )
+                                          : _vm._e()
+                                      ]),
                                       _vm._v(" "),
                                       _c("td", [
                                         _c(
