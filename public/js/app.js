@@ -57461,6 +57461,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -58190,11 +58192,25 @@ var render = function() {
                           [
                             _c("video-cell", { attrs: { video: video } }),
                             _vm._v(" "),
-                            _c(
-                              "router-link",
-                              { attrs: { to: "/run/new/" + video.id } },
-                              [_vm._v("Add Stats")]
-                            )
+                            _vm.user && _vm.user.human
+                              ? _c(
+                                  "div",
+                                  [
+                                    _vm.user.human.id === video.human_id
+                                      ? _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: "/run/new/" + video.id
+                                            }
+                                          },
+                                          [_vm._v("Add Stats")]
+                                        )
+                                      : _vm._e()
+                                  ],
+                                  1
+                                )
+                              : _vm._e()
                           ],
                           1
                         )

@@ -138,7 +138,9 @@
                                     <div class="row roping-videos justify-content-between">
                                         <div class="col-sm-12 col-lg-4 rope-vid" v-for="video in uploadedVideos" :key="video.id">
                                             <video-cell :video="video"></video-cell>
-                                            <router-link :to="`/run/new/${video.id}`">Add Stats</router-link>
+                                            <div v-if="user && user.human">
+                                                <router-link v-if="user.human.id === video.human_id" :to="`/run/new/${video.id}`">Add Stats</router-link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
