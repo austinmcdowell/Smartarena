@@ -57458,6 +57458,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -58174,7 +58177,15 @@ var render = function() {
                             key: video.id,
                             staticClass: "col-sm-12 col-lg-4 rope-vid"
                           },
-                          [_c("video-cell", { attrs: { video: video } })],
+                          [
+                            _c("video-cell", { attrs: { video: video } }),
+                            _vm._v(" "),
+                            _c(
+                              "router-link",
+                              { attrs: { to: "/run/new/" + video.id } },
+                              [_vm._v("Add Stats")]
+                            )
+                          ],
                           1
                         )
                       })
