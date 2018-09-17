@@ -1,7 +1,7 @@
 <template>
   <div id="video-player">
     <div id="protection">
-      <video id="my-video" class="video-js" autoplay controls data-setup="{}" playsinline>
+      <video id="my-video" class="video-js" controls data-setup="{}" playsinline>
         <p class="vjs-no-js">
           To view this video please enable JavaScript, and consider upgrading to a web browser that
           <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -48,6 +48,7 @@
       this.player = videojs('my-video');
       this.videoHeight = $('#my-video').height();
       this.videoWidth = $('#my-video').width();
+      this.player.muted(true);
 
       let $this = this;
       let el = document.getElementById('protection');
@@ -136,13 +137,13 @@
         this.playingVideoId = videoId;
       },
       playingVideoId: function(videoId) {
-        console.log('im here');
         const $this = this;
         axios.get(`/video/data/${videoId}`).then(response => {
           let data = response.data;
-          console.log(data);
           window.player = $this.player;
           $this.player.src({ type: 'video/mp4', src: data.file_url });
+
+          // videojs is broken, holding off for two seconds and then playing
           $this.player.play();
         }).catch(e => {
           console.log(e);

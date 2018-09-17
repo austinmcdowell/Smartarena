@@ -38919,6 +38919,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.player = videojs('my-video');
     this.videoHeight = $('#my-video').height();
     this.videoWidth = $('#my-video').width();
+    this.player.muted(true);
 
     var $this = this;
     var el = document.getElementById('protection');
@@ -39014,13 +39015,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.playingVideoId = _videoId;
     },
     playingVideoId: function playingVideoId(videoId) {
-      console.log('im here');
       var $this = this;
       axios.get('/video/data/' + videoId).then(function (response) {
         var data = response.data;
-        console.log(data);
         window.player = $this.player;
         $this.player.src({ type: 'video/mp4', src: data.file_url });
+
+        // videojs is broken, holding off for two seconds and then playing
         $this.player.play();
       }).catch(function (e) {
         console.log(e);
@@ -39187,7 +39188,6 @@ var staticRenderFns = [
           staticClass: "video-js",
           attrs: {
             id: "my-video",
-            autoplay: "",
             controls: "",
             "data-setup": "{}",
             playsinline: ""
