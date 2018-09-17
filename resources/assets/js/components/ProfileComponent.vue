@@ -85,8 +85,8 @@
                                                         <td>{{ capitalize(run.stats.header.catch_type) }}</td>
                                                         <td>{{ capitalize(run.stats.heeler.catch_type) }}</td>
                                                         <td>{{ capitalize(run.stats.header.penalty_type) }}</td>
-                                                        <td>{{ run.stats.header.penalty_time }}</td>
-                                                        <td>{{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</td>
+                                                        <td>{{ penaltyCount(run) }}</td>
+                                                        <td>{{ totalPenaltyTime(run) }}</td>
                                                         <td>{{ run.stats.raw_time }}</td>
                                                         <td>{{ run.stats.total_time.toFixed(2) }}</td>
                                                     </tr>
@@ -120,8 +120,8 @@
                                                         <td>{{ capitalize(run.stats.header.catch_type) }}</td>
                                                         <td>{{ capitalize(run.stats.heeler.catch_type) }}</td>
                                                         <td>{{ capitalize(run.stats.heeler.penalty_type) }}</td>
-                                                        <td>{{ run.stats.header.penalty_time }}</td>
-                                                        <td>{{ run.stats.header.penalty_time + run.stats.heeler.penalty_time }}</td>
+                                                        <td>{{ penaltyCount(run) }}</td>
+                                                        <td>{{ totalPenaltyTime(run) }}</td>
                                                         <td>{{ run.stats.raw_time }}</td>
                                                         <td>{{ run.stats.total_time.toFixed(2) }}</td>
                                                     </tr>
@@ -249,6 +249,48 @@ export default {
         },
         capitalize(str) {
             if (str) return str.split(' ').map((word) => { return word.charAt(0).toUpperCase() + word.substr(1) }).join(' ');
+        },
+        penaltyCount(run) {
+            let count = 0;
+
+            if (run.stats.header.barrier_penalty) {
+                count++;
+            }
+
+            if (run.stats.heeler.barrier_penalty) {
+                count++;
+            }
+
+            if (run.stats.header.penalty_type) {
+                count++;
+            }
+
+            if (run.stats.heeler.penalty_type) {
+                count++;
+            }
+
+            return count;
+        },
+        totalPenaltyTime(run) {
+            let time = 0;
+
+            if (run.stats.header.barrier_penalty) {
+                time += 5;
+            }
+
+            if (run.stats.heeler.barrier_penalty) {
+                time += 5;
+            }
+
+            if (run.stats.header.penalty_type) {
+                time += 5;
+            }
+
+            if (run.stats.heeler.penalty_type) {
+                time += 5;
+            }
+
+            return time;
         }
     },
     computed: {

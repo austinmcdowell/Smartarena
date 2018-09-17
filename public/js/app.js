@@ -57613,6 +57613,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (str) return str.split(' ').map(function (word) {
                 return word.charAt(0).toUpperCase() + word.substr(1);
             }).join(' ');
+        },
+        penaltyCount: function penaltyCount(run) {
+            var count = 0;
+
+            if (run.stats.header.barrier_penalty) {
+                count++;
+            }
+
+            if (run.stats.heeler.barrier_penalty) {
+                count++;
+            }
+
+            if (run.stats.header.penalty_type) {
+                count++;
+            }
+
+            if (run.stats.heeler.penalty_type) {
+                count++;
+            }
+
+            return count;
+        },
+        totalPenaltyTime: function totalPenaltyTime(run) {
+            var time = 0;
+
+            if (run.stats.header.barrier_penalty) {
+                time += 5;
+            }
+
+            if (run.stats.heeler.barrier_penalty) {
+                time += 5;
+            }
+
+            if (run.stats.header.penalty_type) {
+                time += 5;
+            }
+
+            if (run.stats.heeler.penalty_type) {
+                time += 5;
+            }
+
+            return time;
         }
     },
     computed: {
@@ -57957,19 +57999,12 @@ var render = function() {
                                         ]),
                                         _vm._v(" "),
                                         _c("td", [
-                                          _vm._v(
-                                            _vm._s(
-                                              run.stats.header.penalty_time
-                                            )
-                                          )
+                                          _vm._v(_vm._s(_vm.penaltyCount(run)))
                                         ]),
                                         _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
-                                            _vm._s(
-                                              run.stats.header.penalty_time +
-                                                run.stats.heeler.penalty_time
-                                            )
+                                            _vm._s(_vm.totalPenaltyTime(run))
                                           )
                                         ]),
                                         _vm._v(" "),
@@ -58170,17 +58205,12 @@ var render = function() {
                                       ]),
                                       _vm._v(" "),
                                       _c("td", [
-                                        _vm._v(
-                                          _vm._s(run.stats.header.penalty_time)
-                                        )
+                                        _vm._v(_vm._s(_vm.penaltyCount(run)))
                                       ]),
                                       _vm._v(" "),
                                       _c("td", [
                                         _vm._v(
-                                          _vm._s(
-                                            run.stats.header.penalty_time +
-                                              run.stats.heeler.penalty_time
-                                          )
+                                          _vm._s(_vm.totalPenaltyTime(run))
                                         )
                                       ]),
                                       _vm._v(" "),
