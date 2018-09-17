@@ -138,7 +138,7 @@
                                     <div class="row roping-videos justify-content-between">
                                         <div class="col-sm-12 col-lg-4 rope-vid" v-for="video in uploadedVideos" :key="video.id">
                                             <video-cell :video="video"></video-cell>
-                                            <!-- <router-link :to="`/run/new/${video.id}`">Add Stats</router-link> -->
+                                            <router-link :to="`/run/new/${video.id}`">Add Stats</router-link>
                                         </div>
                                     </div>
                                 </div>
