@@ -58195,11 +58195,13 @@ var render = function() {
                             _vm.user && _vm.user.human
                               ? _c(
                                   "div",
+                                  { staticStyle: { "text-align": "center" } },
                                   [
                                     _vm.user.human.id === video.human_id
                                       ? _c(
                                           "router-link",
                                           {
+                                            staticClass: "btn btn-primary",
                                             attrs: {
                                               to: "/run/new/" + video.id
                                             }
