@@ -30,7 +30,7 @@ class Run extends Model
         return $this->hasMany('\App\Video', 'run_id')->where('processing_complete', true);
     }
 
-    public function attach_human($human_ids)
+    public function attach_humans($human_ids)
     {
         $currently_attached_human_ids = $this->humans->map(function($human) {
             return $human->id;
