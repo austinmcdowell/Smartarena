@@ -29,4 +29,33 @@ class Run extends Model
     {
         return $this->hasMany('\App\Video', 'run_id')->where('processing_complete', true);
     }
+
+    public function attach_human($human_ids)
+    {
+        $currently_attached_human_ids = $this->humans->map(function($human) {
+            return $human->id;
+        });
+
+        foreach($currently_attached_human_ids as $human_id) {
+            // if not in human_ids from attached, detach
+            if (!in_array($human_id, $human_ids)) {
+                $this->humans()->detach($human_id);
+            }
+        }
+
+        foreach($human_ids as $human) {
+            // if human is already attached, skip
+            if ($currently_attached_human_ids->contains($human_id)) {
+                continue;
+            }
+
+            // if not, let's attach!
+            $human = Human::find($human_id);
+            if ($human) {
+                $this->humans()->attach($human->id);
+            }
+        }
+
+        return true;
+    }
 }

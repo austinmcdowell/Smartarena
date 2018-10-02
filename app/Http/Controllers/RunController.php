@@ -140,6 +140,9 @@ class RunController extends Controller
         try {
             $run->save();
 
+            $human_ids = [$header->id, $heeler->id];
+            $run->attach_humans($human_ids);
+
             // Video linking
             $video->run_id = $run->id;
             $video->save();
