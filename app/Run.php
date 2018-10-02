@@ -43,7 +43,7 @@ class Run extends Model
             }
         }
 
-        foreach($human_ids as $human) {
+        foreach($human_ids as $human_id) {
             // if human is already attached, skip
             if ($currently_attached_human_ids->contains($human_id)) {
                 continue;
