@@ -34,6 +34,7 @@ class ProfileController extends Controller
         $link  = $human->calendly_link;
 
         if ($human->type === "pro" && isset($link)) {
+            // This lets you omit https:// from the calendly url
             $check_http = substr($link, 0, 7);
             $check_https = substr($link, 0, 8);
 

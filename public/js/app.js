@@ -57926,28 +57926,22 @@ var render = function() {
                                         ]),
                                         _vm._v(" "),
                                         _c("td", [
-                                          _c(
-                                            "a",
-                                            {
-                                              directives: [
-                                                {
-                                                  name: "show",
-                                                  rawName: "v-show",
-                                                  value:
-                                                    run.videos[0] &&
-                                                    run.videos[0]
-                                                      .processing_complete,
-                                                  expression:
-                                                    "run.videos[0] && run.videos[0].processing_complete"
-                                                }
-                                              ],
-                                              attrs: {
-                                                href:
-                                                  "/video/" + run.videos[0].id
-                                              }
-                                            },
-                                            [_vm._v("Play")]
-                                          ),
+                                          run.videos[0] &&
+                                          run.videos[0].processing_complete
+                                            ? _c("span", [
+                                                _c(
+                                                  "a",
+                                                  {
+                                                    attrs: {
+                                                      href:
+                                                        "/video/" +
+                                                        run.videos[0].id
+                                                    }
+                                                  },
+                                                  [_vm._v("Play")]
+                                                )
+                                              ])
+                                            : _vm._e(),
                                           _c(
                                             "span",
                                             {
@@ -58133,27 +58127,22 @@ var render = function() {
                                       ]),
                                       _vm._v(" "),
                                       _c("td", [
-                                        _c(
-                                          "a",
-                                          {
-                                            directives: [
-                                              {
-                                                name: "show",
-                                                rawName: "v-show",
-                                                value:
-                                                  run.videos[0] &&
-                                                  run.videos[0]
-                                                    .processing_complete,
-                                                expression:
-                                                  "run.videos[0] && run.videos[0].processing_complete"
-                                              }
-                                            ],
-                                            attrs: {
-                                              href: "/video/" + run.videos[0].id
-                                            }
-                                          },
-                                          [_vm._v("Play")]
-                                        ),
+                                        run.videos[0] &&
+                                        run.videos[0].processing_complete
+                                          ? _c("span", [
+                                              _c(
+                                                "a",
+                                                {
+                                                  attrs: {
+                                                    href:
+                                                      "/video/" +
+                                                      run.videos[0].id
+                                                  }
+                                                },
+                                                [_vm._v("Play")]
+                                              )
+                                            ])
+                                          : _vm._e(),
                                         _c(
                                           "span",
                                           {

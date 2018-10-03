@@ -79,7 +79,7 @@
                                                 <tbody>
                                                     <tr v-for="run in headerRuns" :key="run.id">
                                                         <td><div v-if="user && user.human"><router-link v-show="run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id" :to="`/run/edit/${run.id}`">Edit</router-link></div></td>
-                                                        <td><a v-show="run.videos[0] && run.videos[0].processing_complete" :href="`/video/${run.videos[0].id}`">Play</a><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
+                                                        <td><span v-if="run.videos[0] && run.videos[0].processing_complete"><a :href="`/video/${run.videos[0].id}`">Play</a></span><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
                                                         <td>{{ capitalize(run.stats.header.catch_type) }}</td>
@@ -114,7 +114,7 @@
                                                 <tbody>
                                                     <tr v-for="run in heelerRuns" :key="run.id">
                                                         <td><div v-if="user && user.human"><router-link v-show="run.stats.header.human_id === user.human.id || run.stats.heeler.human_id === user.human.id" :to="`/run/edit/${run.id}`">Edit</router-link></div></td>
-                                                        <td><a v-show="run.videos[0] && run.videos[0].processing_complete" :href="`/video/${run.videos[0].id}`">Play</a><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
+                                                        <td><span v-if="run.videos[0] && run.videos[0].processing_complete"><a :href="`/video/${run.videos[0].id}`">Play</a></span><span v-show="run.videos[0] && !run.videos[0].processing_complete">Processing...</span></td>
                                                         <td>{{ run.date }}</td>
                                                         <td>{{ run.event.location }}</td>
                                                         <td>{{ capitalize(run.stats.header.catch_type) }}</td>
